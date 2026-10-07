@@ -7,7 +7,7 @@
 //   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
 //   Progress  date | lang | cardId | done | mode | updatedAt
 
-var BACKEND_VERSION = "2026-10-07.4";
+var BACKEND_VERSION = "2026-10-07.5";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var LANGS = ["en", "ja"];
@@ -180,7 +180,7 @@ function deleteCard_(id) {
 // ====== 每日進度 ======
 function progressRows_() {
   return rows_(sheet_("Progress", PROGRESS_HEADERS), PROGRESS_HEADERS.length).map(function (r, i) {
-    return { row: i + 2, date: dateStr_(r[0]), lang: r[1], cardId: String(r[2]), done: r[3] === true || r[3] === "TRUE" };
+    return { row: i + 2, date: dateStr_(r[0]), lang: r[1], cardId: String(r[2]), done: r[3] === true || String(r[3]).toUpperCase() === "TRUE" }; // 該列被設成純文字格式，布林會被存成文字 "true"
   });
 }
 
