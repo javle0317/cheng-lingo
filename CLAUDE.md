@@ -10,9 +10,15 @@
 - localStorage key 一律加 `lingo_` 前綴（同一個 github.io 網域與其他專案共用）。
 - 改了 js/css 要更新 HTML 的 `?v=`：pre-commit hook 會自動做（hook 不跟著 repo，新環境先跑 `sh scripts/install-hooks.sh`）；否則瀏覽器會用舊檔，登入時看起來像「密碼錯誤」。
 - 改了 `apps-script/Code.gs`：要手動貼進 Apps Script、「管理部署作業 → 編輯 → 新版本」重新部署，並同步 `BACKEND_VERSION`（Code.gs）與 `BACKEND_MIN_VERSION`（shared.js）。
-- 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要 push 後約 10 分鐘（快取）才生效。
+- 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要等 Pages 部署完成（約 1–4 分鐘），後端快取最久再 10 分鐘才生效；程度小考與字帖是前端直接讀檔，沒有後端快取。
 - Sheet 分頁名稱 `Cards`、`Progress`、`Mastered`、`TestResults` 是程式寫死的，不能改名。
 - 新增分頁一律用 `sheet_(名稱, 表頭陣列)`（找不到就自動建立並寫表頭，已存在的不動；跟 cheng-daily 的 `ensureSheet` 同一個做法），並把「分頁名稱＋欄位」寫進 `Code.gs` 開頭的分頁清單註解。寫入純文字照既有慣例：`setNumberFormat("@")`、使用者輸入過 `safeText_`。
+
+## 功能地圖（邏輯放哪裡）
+- 抽卡：`Code.gs` 的 `pickStaged_`（階段順序）→ `pickReview_`（每 3 天複習）→ `pickRandom_`；「完全記得」存 `Mastered`，階段順序與複習都會跳過它。
+- 程度小考：題庫 `data/placement/<lang>.json`、抽題／計分／評語 `placement-score.js`、頁面 `placement.js`、結果存 `TestResults`；要登入。
+- 檢查指令（改了對應檔案就跑）：`node scripts/cards-check.js`、`placement-check.js`、`backend-check.js`、`layout-check.js`、`contrast-check.js`（用途見 README）。
+- 慣例：英文卡正面一定是英文、背面是中文；新增卡片資料後一定跑 `cards-check.js`（欄位放錯會直接讓卡片正面變成中文）。
 
 ## 與 cheng-daily 的關係：不聯動
 決議（2026-10-08）：兩個專案完全獨立，要帶的東西太多、太複雜。練習、進度、小考都只在 lingo；daily 的「語言練習」習慣只是一般的手動打卡，列上多一個「語」連結連到這裡。字帖頁從 daily 的「練字」習慣用「字」連結連過來。
@@ -23,4 +29,4 @@
 `copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。
 
 ## 待辦
-日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）、閱讀理解題、口說與寫作（更後面）。學習目標：旅遊、工作、體育（棒球、匹克球）；聽說讀都重要，先從「讀」開始。
+閱讀理解題（加進小考與閱讀卡）、唸（TTS）、日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、口說與寫作（更後面）。學習目標：旅遊、工作、體育（棒球、匹克球）；聽說讀都重要，先從「讀」開始。
