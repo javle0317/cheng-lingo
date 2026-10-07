@@ -1,0 +1,8 @@
+[
+  { "lang": "en", "type": "word", "front": "reluctant", "reading": "/rɪˈlʌktənt/", "back": "不情願的", "note": "be reluctant to do sth" },
+  { "lang": "en", "type": "word", "front": "reliable", "reading": "/rɪˈlaɪəbl/", "back": "可靠的", "note": "" },
+  { "lang": "en", "type": "sentence", "front": "I'm looking forward to hearing from you.", "reading": "", "back": "期待你的回覆。", "note": "looking forward to + V-ing" },
+  { "lang": "ja", "type": "word", "front": "水", "reading": "みず", "back": "水", "note": "" },
+  { "lang": "ja", "type": "word", "front": "ありがとう", "reading": "", "back": "謝謝", "note": "" },
+  { "lang": "ja", "type": "sentence", "front": "はじめまして。", "reading": "", "back": "初次見面。", "note": "" }
+]

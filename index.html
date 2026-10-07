@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f2eee4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141f" media="(prefers-color-scheme: dark)">
+<title>承語 · 每日練習</title>
+<link rel="stylesheet" href="style.css?v=20261007000000">
+<link rel="stylesheet" href="lingo.css?v=20261007000000">
+</head>
+<body>
+
+  <div id="lockScreen" class="lock-screen">
+    <div id="lockLoading" class="lock-card hidden">
+      <h1>承語</h1>
+      <p>登入中…</p>
+    </div>
+    <form id="lockForm" class="lock-card">
+      <h1>承語</h1>
+      <input id="passwordInput" type="password" placeholder="輸入密碼" autocomplete="off" required>
+      <button type="submit">解鎖</button>
+      <p id="lockError" class="error-text"></p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="app-header">
+      <div>
+        <h1>承語</h1>
+        <p class="progress-line" id="todayLine"></p>
+      </div>
+      <div class="header-actions">
+        <button id="logoutBtn" class="ghost-btn">登出</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="lingo-tabs" role="group" aria-label="語言">
+        <button type="button" class="ghost-btn lingo-lang" data-lang="en">English</button>
+        <button type="button" class="ghost-btn lingo-lang" data-lang="ja">日本語</button>
+      </div>
+
+      <section class="card" id="cardSection">
+        <div id="cardEmpty" class="empty-hint hidden">還沒有這個語言的內容，先在下面「內容庫」新增幾張。</div>
+        <div id="cardBody" class="hidden">
+          <div class="lingo-modes" role="group" aria-label="練習模式">
+            <button type="button" class="ghost-btn lingo-mode" data-mode="look">看</button>
+            <button type="button" class="ghost-btn lingo-mode" data-mode="recall">背</button>
+            <button type="button" class="ghost-btn lingo-mode" data-mode="copy">抄</button>
+          </div>
+
+          <div class="lingo-card">
+            <p id="cardType" class="lingo-type"></p>
+            <p id="cardFront" class="lingo-front"></p>
+            <p id="cardReading" class="lingo-reading"></p>
+            <div id="cardBackWrap">
+              <p id="cardBack" class="lingo-back"></p>
+              <p id="cardNote" class="lingo-note"></p>
+            </div>
+          </div>
+
+          <div id="recallBox" class="lingo-recall hidden">
+            <button id="revealBtn" type="button" class="ghost-btn">顯示答案</button>
+          </div>
+
+          <div id="copyBox" class="lingo-copy hidden">
+            <textarea id="copyInput" rows="3" placeholder="照著抄一遍（可以對照上面的原文）" autocomplete="off" spellcheck="false"></textarea>
+            <p id="copyResult" class="lingo-copy-result"></p>
+          </div>
+
+          <div class="lingo-actions">
+            <button id="drawBtn" type="button" class="ghost-btn">🎲 換一張</button>
+            <button id="doneBtn" type="button">✓ 完成今天的練習</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <details id="manage">
+          <summary>內容庫（新增單字、例句、短文）</summary>
+          <form id="addForm" class="lingo-form">
+            <label>語言
+              <select id="addLang">
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+              </select>
+            </label>
+            <label>類型
+              <select id="addType">
+                <option value="word">單字</option>
+                <option value="sentence">例句</option>
+                <option value="passage">短文</option>
+              </select>
+            </label>
+            <label>正面（要記的內容）
+              <textarea id="addFront" rows="2" required></textarea>
+            </label>
+            <label>讀音（日文假名／英文音標，可空白）
+              <input id="addReading" type="text" autocomplete="off">
+            </label>
+            <label>意思（中文）
+              <textarea id="addBack" rows="2" required></textarea>
+            </label>
+            <label>備註（可空白）
+              <input id="addNote" type="text" autocomplete="off">
+            </label>
+            <button type="submit">新增</button>
+          </form>
+          <ul id="cardList" class="lingo-list"></ul>
+        </details>
+      </section>
+    </main>
+
+    <p id="statusLine" class="status-line"></p>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="dialogModal" class="modal-overlay hidden">
+    <div class="modal-card dialog-card">
+      <p id="dialogMessage"></p>
+      <div class="dialog-actions">
+        <button id="dialogCancelBtn" class="ghost-btn" type="button">取消</button>
+        <button id="dialogOkBtn" type="button">確定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js?v=20261007000000"></script>
+  <script src="lingo.js?v=20261007000000"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* 承語專用樣式；底色與按鈕沿用 style.css 的變數 */
+.lingo-tabs, .lingo-modes { display: flex; gap: 8px; margin-bottom: 12px; }
+.lingo-tabs .ghost-btn, .lingo-modes .ghost-btn { flex: 1; }
+.lingo-tabs .active, .lingo-modes .active { background: var(--accent, #25407a); color: #fff; }
+
+.lingo-card { padding: 16px 4px; text-align: center; }
+.lingo-type { font-size: 0.8rem; color: var(--text-dim); margin: 0 0 8px; }
+.lingo-front { font-size: 1.6rem; font-weight: 600; line-height: 1.5; margin: 0 0 6px; white-space: pre-wrap; }
+.lingo-reading { color: var(--text-dim); margin: 0 0 12px; min-height: 1.2em; }
+.lingo-back { font-size: 1.15rem; margin: 0 0 6px; white-space: pre-wrap; }
+.lingo-note { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
+.lingo-card.passage .lingo-front { font-size: 1.1rem; text-align: left; }
+
+.lingo-recall, .lingo-copy { margin: 8px 0 12px; }
+.lingo-recall { text-align: center; }
+.lingo-copy textarea { width: 100%; box-sizing: border-box; }
+.lingo-copy-result { margin: 6px 0 0; font-size: 0.9rem; min-height: 1.2em; }
+.lingo-copy-result.ok { color: var(--success, #2e7d4f); }
+.lingo-copy-result.bad { color: var(--danger); }
+
+.lingo-actions { display: flex; gap: 8px; margin-top: 8px; }
+.lingo-actions button { flex: 1; }
+
+.lingo-form { display: grid; gap: 10px; margin-top: 12px; }
+.lingo-form label { display: grid; gap: 4px; font-size: 0.9rem; }
+.lingo-form textarea, .lingo-form input, .lingo-form select { width: 100%; box-sizing: border-box; }
+
+.lingo-list { list-style: none; padding: 0; margin: 14px 0 0; }
+.lingo-list li { display: flex; justify-content: space-between; gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid var(--border, rgba(0,0,0,.1)); }
+.lingo-list .lingo-list-text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hidden { display: none !important; }
