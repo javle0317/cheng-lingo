@@ -1,0 +1,940 @@
+{
+ "stages": [
+  {
+   "id": "ja-1-hiragana",
+   "lang": "ja",
+   "title": "平假名",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "ja-hira-a",
+     "type": "word",
+     "front": "あ い う え お",
+     "reading": "a i u e o",
+     "back": "平假名・あ行",
+     "note": "あ←安 い←以 う←宇 え←衣 お←於｜母音。う嘴唇不要圓"
+    },
+    {
+     "id": "ja-hira-ka",
+     "type": "word",
+     "front": "か き く け こ",
+     "reading": "ka ki ku ke ko",
+     "back": "平假名・か行",
+     "note": "か←加 き←幾 く←久 け←計 こ←己"
+    },
+    {
+     "id": "ja-hira-sa",
+     "type": "word",
+     "front": "さ し す せ そ",
+     "reading": "sa shi su se so",
+     "back": "平假名・さ行",
+     "note": "さ←左 し←之 す←寸 せ←世 そ←曾｜し念 shi。易混：さ vs ち"
+    },
+    {
+     "id": "ja-hira-ta",
+     "type": "word",
+     "front": "た ち つ て と",
+     "reading": "ta chi tsu te to",
+     "back": "平假名・た行",
+     "note": "た←太 ち←知 つ←川 て←天 と←止｜ち念 chi、つ念 tsu"
+    },
+    {
+     "id": "ja-hira-na",
+     "type": "word",
+     "front": "な に ぬ ね の",
+     "reading": "na ni nu ne no",
+     "back": "平假名・な行",
+     "note": "な←奈 に←仁 ぬ←奴 ね←祢 の←乃｜易混：ぬ vs め、ね vs れ vs わ"
+    },
+    {
+     "id": "ja-hira-ha",
+     "type": "word",
+     "front": "は ひ ふ へ ほ",
+     "reading": "ha hi fu he ho",
+     "back": "平假名・は行",
+     "note": "は←波 ひ←比 ふ←不 へ←部 ほ←保｜ふ念 fu；は當助詞念 wa、へ當助詞念 e。易混：は vs ほ"
+    },
+    {
+     "id": "ja-hira-ma",
+     "type": "word",
+     "front": "ま み む め も",
+     "reading": "ma mi mu me mo",
+     "back": "平假名・ま行",
+     "note": "ま←末 み←美 む←武 め←女 も←毛｜易混：め vs ぬ"
+    },
+    {
+     "id": "ja-hira-ya",
+     "type": "word",
+     "front": "や ゆ よ",
+     "reading": "ya yu yo",
+     "back": "平假名・や行",
+     "note": "や←也 ゆ←由 よ←與｜只有三個字"
+    },
+    {
+     "id": "ja-hira-ra",
+     "type": "word",
+     "front": "ら り る れ ろ",
+     "reading": "ra ri ru re ro",
+     "back": "平假名・ら行",
+     "note": "ら←良 り←利 る←留 れ←礼 ろ←呂｜舌尖輕彈，介於 r 和 l。易混：る vs ろ"
+    },
+    {
+     "id": "ja-hira-wa",
+     "type": "word",
+     "front": "わ を ん",
+     "reading": "wa wo n",
+     "back": "平假名・わ行",
+     "note": "わ←和 を←遠 ん←无｜を念 o，幾乎只當助詞；ん撥音單獨一拍"
+    }
+   ]
+  },
+  {
+   "id": "ja-2-hiragana-words",
+   "lang": "ja",
+   "title": "平假名單字",
+   "order": "random",
+   "cards": [
+    {
+     "id": "ja-hirawd-asa",
+     "type": "word",
+     "front": "あさ",
+     "reading": "asa",
+     "back": "早晨",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-ame",
+     "type": "word",
+     "front": "あめ",
+     "reading": "ame",
+     "back": "雨",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-ie",
+     "type": "word",
+     "front": "いえ",
+     "reading": "ie",
+     "back": "家",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-inu",
+     "type": "word",
+     "front": "いぬ",
+     "reading": "inu",
+     "back": "狗",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-umi",
+     "type": "word",
+     "front": "うみ",
+     "reading": "umi",
+     "back": "海",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-ue",
+     "type": "word",
+     "front": "うえ",
+     "reading": "ue",
+     "back": "上面",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-oto",
+     "type": "word",
+     "front": "おと",
+     "reading": "oto",
+     "back": "聲音",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-kao",
+     "type": "word",
+     "front": "かお",
+     "reading": "kao",
+     "back": "臉",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-kasa",
+     "type": "word",
+     "front": "かさ",
+     "reading": "kasa",
+     "back": "傘",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-kiku",
+     "type": "word",
+     "front": "きく",
+     "reading": "kiku",
+     "back": "聽",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-kuchi",
+     "type": "word",
+     "front": "くち",
+     "reading": "kuchi",
+     "back": "嘴巴",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-koi",
+     "type": "word",
+     "front": "こい",
+     "reading": "koi",
+     "back": "戀愛",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-sakana",
+     "type": "word",
+     "front": "さかな",
+     "reading": "sakana",
+     "back": "魚",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-sushi",
+     "type": "word",
+     "front": "すし",
+     "reading": "sushi",
+     "back": "壽司",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-sekai",
+     "type": "word",
+     "front": "せかい",
+     "reading": "sekai",
+     "back": "世界",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-sora",
+     "type": "word",
+     "front": "そら",
+     "reading": "sora",
+     "back": "天空",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-tako",
+     "type": "word",
+     "front": "たこ",
+     "reading": "tako",
+     "back": "章魚",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-tsuki",
+     "type": "word",
+     "front": "つき",
+     "reading": "tsuki",
+     "back": "月亮",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-te",
+     "type": "word",
+     "front": "て",
+     "reading": "te",
+     "back": "手",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-tori",
+     "type": "word",
+     "front": "とり",
+     "reading": "tori",
+     "back": "鳥",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-natsu",
+     "type": "word",
+     "front": "なつ",
+     "reading": "natsu",
+     "back": "夏天",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-niku",
+     "type": "word",
+     "front": "にく",
+     "reading": "niku",
+     "back": "肉",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-neko",
+     "type": "word",
+     "front": "ねこ",
+     "reading": "neko",
+     "back": "貓",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-hana",
+     "type": "word",
+     "front": "はな",
+     "reading": "hana",
+     "back": "花",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-hito",
+     "type": "word",
+     "front": "ひと",
+     "reading": "hito",
+     "back": "人",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-fune",
+     "type": "word",
+     "front": "ふね",
+     "reading": "fune",
+     "back": "船",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-hoshi",
+     "type": "word",
+     "front": "ほし",
+     "reading": "hoshi",
+     "back": "星星",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-machi",
+     "type": "word",
+     "front": "まち",
+     "reading": "machi",
+     "back": "城鎮",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-mise",
+     "type": "word",
+     "front": "みせ",
+     "reading": "mise",
+     "back": "商店",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-mimi",
+     "type": "word",
+     "front": "みみ",
+     "reading": "mimi",
+     "back": "耳朵",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-mushi",
+     "type": "word",
+     "front": "むし",
+     "reading": "mushi",
+     "back": "蟲",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-me",
+     "type": "word",
+     "front": "め",
+     "reading": "me",
+     "back": "眼睛",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-momo",
+     "type": "word",
+     "front": "もも",
+     "reading": "momo",
+     "back": "桃子",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-yama",
+     "type": "word",
+     "front": "やま",
+     "reading": "yama",
+     "back": "山",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-yume",
+     "type": "word",
+     "front": "ゆめ",
+     "reading": "yume",
+     "back": "夢",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-yoru",
+     "type": "word",
+     "front": "よる",
+     "reading": "yoru",
+     "back": "夜晚",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-risu",
+     "type": "word",
+     "front": "りす",
+     "reading": "risu",
+     "back": "松鼠",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-roku",
+     "type": "word",
+     "front": "ろく",
+     "reading": "roku",
+     "back": "六",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-watashi",
+     "type": "word",
+     "front": "わたし",
+     "reading": "watashi",
+     "back": "我",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-hon",
+     "type": "word",
+     "front": "ほん",
+     "reading": "hon",
+     "back": "書",
+     "note": "只用已學的平假名"
+    },
+    {
+     "id": "ja-hirawd-mikan",
+     "type": "word",
+     "front": "みかん",
+     "reading": "mikan",
+     "back": "橘子",
+     "note": "只用已學的平假名"
+    }
+   ]
+  },
+  {
+   "id": "ja-3-katakana",
+   "lang": "ja",
+   "title": "片假名",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "ja-kata-a",
+     "type": "word",
+     "front": "ア イ ウ エ オ",
+     "reading": "a i u e o",
+     "back": "片假名・ア行",
+     "note": "ア←阿 イ←伊 ウ←宇 エ←江 オ←於"
+    },
+    {
+     "id": "ja-kata-ka",
+     "type": "word",
+     "front": "カ キ ク ケ コ",
+     "reading": "ka ki ku ke ko",
+     "back": "片假名・カ行",
+     "note": "カ←加 キ←幾 ク←久 ケ←介 コ←己"
+    },
+    {
+     "id": "ja-kata-sa",
+     "type": "word",
+     "front": "サ シ ス セ ソ",
+     "reading": "sa shi su se so",
+     "back": "片假名・サ行",
+     "note": "サ←散 シ←之 ス←須 セ←世 ソ←曾｜易混：シ（點在左、橫向）vs ツ；ソ（點在上、直向）vs ン"
+    },
+    {
+     "id": "ja-kata-ta",
+     "type": "word",
+     "front": "タ チ ツ テ ト",
+     "reading": "ta chi tsu te to",
+     "back": "片假名・タ行",
+     "note": "タ←多 チ←千 ツ←川 テ←天 ト←止｜易混：ツ（點在上、直向）vs シ"
+    },
+    {
+     "id": "ja-kata-na",
+     "type": "word",
+     "front": "ナ ニ ヌ ネ ノ",
+     "reading": "na ni nu ne no",
+     "back": "片假名・ナ行",
+     "note": "ナ←奈 ニ←二 ヌ←奴 ネ←禰 ノ←乃｜易混：ヌ vs ス"
+    },
+    {
+     "id": "ja-kata-ha",
+     "type": "word",
+     "front": "ハ ヒ フ ヘ ホ",
+     "reading": "ha hi fu he ho",
+     "back": "片假名・ハ行",
+     "note": "ハ←八 ヒ←比 フ←不 ヘ←部 ホ←保"
+    },
+    {
+     "id": "ja-kata-ma",
+     "type": "word",
+     "front": "マ ミ ム メ モ",
+     "reading": "ma mi mu me mo",
+     "back": "片假名・マ行",
+     "note": "マ←末 ミ←三 ム←牟 メ←女 モ←毛｜易混：ミ vs シ"
+    },
+    {
+     "id": "ja-kata-ya",
+     "type": "word",
+     "front": "ヤ ユ ヨ",
+     "reading": "ya yu yo",
+     "back": "片假名・ヤ行",
+     "note": "ヤ←也 ユ←由 ヨ←與｜只有三個字"
+    },
+    {
+     "id": "ja-kata-ra",
+     "type": "word",
+     "front": "ラ リ ル レ ロ",
+     "reading": "ra ri ru re ro",
+     "back": "片假名・ラ行",
+     "note": "ラ←良 リ←利 ル←流 レ←礼 ロ←呂"
+    },
+    {
+     "id": "ja-kata-wa",
+     "type": "word",
+     "front": "ワ ヲ ン",
+     "reading": "wa wo n",
+     "back": "片假名・ワ行",
+     "note": "ワ←和 ヲ←乎 ン←尓｜ヲ幾乎不用；易混：ソ vs ン、ワ vs ウ"
+    }
+   ]
+  },
+  {
+   "id": "ja-4-katakana-words",
+   "lang": "ja",
+   "title": "片假名單字",
+   "order": "random",
+   "cards": [
+    {
+     "id": "ja-katawd-kamera",
+     "type": "word",
+     "front": "カメラ",
+     "reading": "kamera",
+     "back": "相機",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-hoteru",
+     "type": "word",
+     "front": "ホテル",
+     "reading": "hoteru",
+     "back": "飯店",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-naifu",
+     "type": "word",
+     "front": "ナイフ",
+     "reading": "naifu",
+     "back": "刀子",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-masuku",
+     "type": "word",
+     "front": "マスク",
+     "reading": "masuku",
+     "back": "口罩",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-memo",
+     "type": "word",
+     "front": "メモ",
+     "reading": "memo",
+     "back": "便條",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-tenisu",
+     "type": "word",
+     "front": "テニス",
+     "reading": "tenisu",
+     "back": "網球",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-kokoa",
+     "type": "word",
+     "front": "ココア",
+     "reading": "kokoa",
+     "back": "可可",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-hamu",
+     "type": "word",
+     "front": "ハム",
+     "reading": "hamu",
+     "back": "火腿",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-aisu",
+     "type": "word",
+     "front": "アイス",
+     "reading": "aisu",
+     "back": "冰淇淋",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-inku",
+     "type": "word",
+     "front": "インク",
+     "reading": "inku",
+     "back": "墨水",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-remon",
+     "type": "word",
+     "front": "レモン",
+     "reading": "remon",
+     "back": "檸檬",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-misu",
+     "type": "word",
+     "front": "ミス",
+     "reading": "misu",
+     "back": "失誤",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-taoru",
+     "type": "word",
+     "front": "タオル",
+     "reading": "taoru",
+     "back": "毛巾",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-miruku",
+     "type": "word",
+     "front": "ミルク",
+     "reading": "miruku",
+     "back": "牛奶",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-hinto",
+     "type": "word",
+     "front": "ヒント",
+     "reading": "hinto",
+     "back": "提示",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-omuretsu",
+     "type": "word",
+     "front": "オムレツ",
+     "reading": "omuretsu",
+     "back": "歐姆蛋",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-marason",
+     "type": "word",
+     "front": "マラソン",
+     "reading": "marason",
+     "back": "馬拉松",
+     "note": "只用已學的片假名（外來語）"
+    },
+    {
+     "id": "ja-katawd-roman",
+     "type": "word",
+     "front": "ロマン",
+     "reading": "roman",
+     "back": "浪漫",
+     "note": "只用已學的片假名（外來語）"
+    }
+   ]
+  },
+  {
+   "id": "ja-5-dakuon",
+   "lang": "ja",
+   "title": "濁音・半濁音",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "ja-hira-d-ga",
+     "type": "word",
+     "front": "が ぎ ぐ げ ご",
+     "reading": "ga gi gu ge go",
+     "back": "平假名・が行（濁音）",
+     "note": "か行加濁點"
+    },
+    {
+     "id": "ja-hira-d-za",
+     "type": "word",
+     "front": "ざ じ ず ぜ ぞ",
+     "reading": "za ji zu ze zo",
+     "back": "平假名・ざ行（濁音）",
+     "note": "さ行加濁點"
+    },
+    {
+     "id": "ja-hira-d-da",
+     "type": "word",
+     "front": "だ ぢ づ で ど",
+     "reading": "da ji zu de do",
+     "back": "平假名・だ行（濁音）",
+     "note": "ぢ、づ與じ、ず同音，很少用"
+    },
+    {
+     "id": "ja-hira-d-ba",
+     "type": "word",
+     "front": "ば び ぶ べ ぼ",
+     "reading": "ba bi bu be bo",
+     "back": "平假名・ば行（濁音）",
+     "note": "は行加濁點"
+    },
+    {
+     "id": "ja-hira-d-pa",
+     "type": "word",
+     "front": "ぱ ぴ ぷ ぺ ぽ",
+     "reading": "pa pi pu pe po",
+     "back": "平假名・ぱ行（濁音）",
+     "note": "は行加半濁點（小圈）"
+    },
+    {
+     "id": "ja-kata-d-ga",
+     "type": "word",
+     "front": "ガ ギ グ ゲ ゴ",
+     "reading": "ga gi gu ge go",
+     "back": "片假名・ガ行（濁音）",
+     "note": "カ行加濁點"
+    },
+    {
+     "id": "ja-kata-d-za",
+     "type": "word",
+     "front": "ザ ジ ズ ゼ ゾ",
+     "reading": "za ji zu ze zo",
+     "back": "片假名・ザ行（濁音）",
+     "note": "サ行加濁點"
+    },
+    {
+     "id": "ja-kata-d-da",
+     "type": "word",
+     "front": "ダ ヂ ヅ デ ド",
+     "reading": "da ji zu de do",
+     "back": "片假名・ダ行（濁音）",
+     "note": "ヂ、ヅ極少用"
+    },
+    {
+     "id": "ja-kata-d-ba",
+     "type": "word",
+     "front": "バ ビ ブ ベ ボ",
+     "reading": "ba bi bu be bo",
+     "back": "片假名・バ行（濁音）",
+     "note": "ハ行加濁點"
+    },
+    {
+     "id": "ja-kata-d-pa",
+     "type": "word",
+     "front": "パ ピ プ ペ ポ",
+     "reading": "pa pi pu pe po",
+     "back": "片假名・パ行（濁音）",
+     "note": "ハ行加半濁點（小圈）"
+    }
+   ]
+  },
+  {
+   "id": "ja-6-yoon",
+   "lang": "ja",
+   "title": "拗音",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "ja-hira-y-kya",
+     "type": "word",
+     "front": "きゃ きゅ きょ",
+     "reading": "kya kyu kyo",
+     "back": "平假名・きゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：きゃく 客人"
+    },
+    {
+     "id": "ja-hira-y-sha",
+     "type": "word",
+     "front": "しゃ しゅ しょ",
+     "reading": "sha shu sho",
+     "back": "平假名・しゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：しゃしん 照片"
+    },
+    {
+     "id": "ja-hira-y-cha",
+     "type": "word",
+     "front": "ちゃ ちゅ ちょ",
+     "reading": "cha chu cho",
+     "back": "平假名・ちゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ちゃ 茶"
+    },
+    {
+     "id": "ja-hira-y-nya",
+     "type": "word",
+     "front": "にゃ にゅ にょ",
+     "reading": "nya nyu nyo",
+     "back": "平假名・にゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：にゅういん 住院"
+    },
+    {
+     "id": "ja-hira-y-hya",
+     "type": "word",
+     "front": "ひゃ ひゅ ひょ",
+     "reading": "hya hyu hyo",
+     "back": "平假名・ひゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ひゃく 百"
+    },
+    {
+     "id": "ja-hira-y-mya",
+     "type": "word",
+     "front": "みゃ みゅ みょ",
+     "reading": "mya myu myo",
+     "back": "平假名・みゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：みゃく 脈搏"
+    },
+    {
+     "id": "ja-hira-y-rya",
+     "type": "word",
+     "front": "りゃ りゅ りょ",
+     "reading": "rya ryu ryo",
+     "back": "平假名・りゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：りょこう 旅行"
+    },
+    {
+     "id": "ja-hira-y-gya",
+     "type": "word",
+     "front": "ぎゃ ぎゅ ぎょ",
+     "reading": "gya gyu gyo",
+     "back": "平假名・ぎゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ぎゅうにく 牛肉"
+    },
+    {
+     "id": "ja-hira-y-ja",
+     "type": "word",
+     "front": "じゃ じゅ じょ",
+     "reading": "ja ju jo",
+     "back": "平假名・じゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：じゅう 十"
+    },
+    {
+     "id": "ja-hira-y-bya",
+     "type": "word",
+     "front": "びゃ びゅ びょ",
+     "reading": "bya byu byo",
+     "back": "平假名・びゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：びょういん 醫院"
+    },
+    {
+     "id": "ja-hira-y-pya",
+     "type": "word",
+     "front": "ぴゃ ぴゅ ぴょ",
+     "reading": "pya pyu pyo",
+     "back": "平假名・ぴゃ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ぴょんぴょん 蹦蹦跳"
+    },
+    {
+     "id": "ja-kata-y-kya",
+     "type": "word",
+     "front": "キャ キュ キョ",
+     "reading": "kya kyu kyo",
+     "back": "片假名・キャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：キャンプ 露營"
+    },
+    {
+     "id": "ja-kata-y-sha",
+     "type": "word",
+     "front": "シャ シュ ショ",
+     "reading": "sha shu sho",
+     "back": "片假名・シャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：シャツ 襯衫"
+    },
+    {
+     "id": "ja-kata-y-cha",
+     "type": "word",
+     "front": "チャ チュ チョ",
+     "reading": "cha chu cho",
+     "back": "片假名・チャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：チャンス 機會"
+    },
+    {
+     "id": "ja-kata-y-nya",
+     "type": "word",
+     "front": "ニャ ニュ ニョ",
+     "reading": "nya nyu nyo",
+     "back": "片假名・ニャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ニュース 新聞"
+    },
+    {
+     "id": "ja-kata-y-hya",
+     "type": "word",
+     "front": "ヒャ ヒュ ヒョ",
+     "reading": "hya hyu hyo",
+     "back": "片假名・ヒャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：（外來語少見）"
+    },
+    {
+     "id": "ja-kata-y-mya",
+     "type": "word",
+     "front": "ミャ ミュ ミョ",
+     "reading": "mya myu myo",
+     "back": "片假名・ミャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ミュージック 音樂"
+    },
+    {
+     "id": "ja-kata-y-rya",
+     "type": "word",
+     "front": "リャ リュ リョ",
+     "reading": "rya ryu ryo",
+     "back": "片假名・リャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：リュック 背包"
+    },
+    {
+     "id": "ja-kata-y-gya",
+     "type": "word",
+     "front": "ギャ ギュ ギョ",
+     "reading": "gya gyu gyo",
+     "back": "片假名・ギャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ギャグ 笑話"
+    },
+    {
+     "id": "ja-kata-y-ja",
+     "type": "word",
+     "front": "ジャ ジュ ジョ",
+     "reading": "ja ju jo",
+     "back": "片假名・ジャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ジャム 果醬"
+    },
+    {
+     "id": "ja-kata-y-bya",
+     "type": "word",
+     "front": "ビャ ビュ ビョ",
+     "reading": "bya byu byo",
+     "back": "片假名・ビャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ビュッフェ 自助餐"
+    },
+    {
+     "id": "ja-kata-y-pya",
+     "type": "word",
+     "front": "ピャ ピュ ピョ",
+     "reading": "pya pyu pyo",
+     "back": "片假名・ピャ行（拗音）",
+     "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ピュア 純粹"
+    }
+   ]
+  }
+ ]
+}

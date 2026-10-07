@@ -2,16 +2,19 @@
 // 指令碼屬性（專案設定 → 指令碼屬性）：
 //   PASSWORD     前端登入密碼
 //   LINGO_TOKEN  給 cheng-daily 後端呼叫用的 token（cheng-daily 的 LANG_TOKEN 要填同一個），可先不設
+//   CARDS_URL    內建內容 data/cards.json 的網址，可先不設（預設 GitHub Pages 上的檔案）
 // 分頁（第一次執行會自動建立）：
-//   Cards     id | lang | type | front | reading | back | note | createdAt
+//   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
 //   Progress  date | lang | cardId | done | mode | updatedAt
 
-var BACKEND_VERSION = "2026-10-07.2";
+var BACKEND_VERSION = "2026-10-07.3";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var LANGS = ["en", "ja"];
 var TYPES = ["word", "sentence", "passage"];
 var RECENT_DAYS = 14; // 這幾天內抽過的卡盡量不重複
+var CARDS_URL = "https://javle0317.github.io/cheng-lingo/data/cards.json";
+var CARDS_CACHE_SEC = 600;
 
 function doPost(e) {
   try {
@@ -40,7 +43,7 @@ function route_(b) {
 
 function read_(b) {
   switch (b.action) {
-    case "getCards": return readCards_();
+    case "getCards": return allCards_();
     case "getToday": return todayState_(textArg_(b.date, "date", 10));
     default: throw new Error("unknown action");
   }
@@ -94,6 +97,42 @@ function rows_(sh, width) {
   var n = sh.getLastRow() - 1;
   return n > 0 ? sh.getRange(2, 1, n, width).getValues() : [];
 }
+
+// ====== 內建內容（repo 的 data/cards.json，依階段排序）======
+// 讀不到時回傳空陣列（只剩自己新增的卡），錯誤寫進執行記錄
+function repoStages_() {
+  var cache = CacheService.getScriptCache();
+  var raw = cache.get("repoCards");
+  try {
+    if (!raw) {
+      var url = PropertiesService.getScriptProperties().getProperty("CARDS_URL") || CARDS_URL;
+      var res = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
+      if (res.getResponseCode() !== 200) throw new Error("HTTP " + res.getResponseCode());
+      raw = res.getContentText();
+      JSON.parse(raw);
+      cache.put("repoCards", raw, CARDS_CACHE_SEC);
+    }
+    return JSON.parse(raw).stages || [];
+  } catch (err) {
+    console.error("讀取 cards.json 失敗：" + err.message);
+    return [];
+  }
+}
+
+function repoCards_() {
+  var out = [];
+  repoStages_().forEach(function (s) {
+    s.cards.forEach(function (c) {
+      out.push({
+        id: c.id, lang: s.lang, type: c.type, front: c.front, reading: c.reading || "",
+        back: c.back, note: c.note || "", stage: s.id, stageTitle: s.title, repo: true,
+      });
+    });
+  });
+  return out;
+}
+
+function allCards_() { return repoCards_().concat(readCards_()); }
 
 // ====== 卡片 ======
 function readCards_() {
@@ -149,7 +188,7 @@ function todayState_(date) {
     if (p.date !== date) return;
     if (!fronts) {
       fronts = {};
-      readCards_().forEach(function (c) { fronts[c.id] = c.front; });
+      allCards_().forEach(function (c) { fronts[c.id] = c.front; });
     }
     out[p.lang] = { cardId: p.cardId, lang: p.lang, front: fronts[p.cardId] || "", done: p.done };
   });
@@ -161,8 +200,9 @@ function todayState_(date) {
 function drawAnyOrCard_(date, lang, reroll) {
   if (lang) return drawCard_(date, langArg_(lang), reroll);
   if (Object.keys(todayState_(date)).length) return todayState_(date);
+  var cards = allCards_();
   var withCards = LANGS.filter(function (l) {
-    return readCards_().some(function (c) { return c.lang === l; });
+    return cards.some(function (c) { return c.lang === l; });
   });
   if (!withCards.length) throw new Error("還沒有任何卡片內容");
   return drawCard_(date, withCards[Math.floor(Math.random() * withCards.length)], false);
@@ -174,19 +214,10 @@ function drawCard_(date, lang, reroll) {
   if (existing && !reroll) return todayState_(date);
   if (existing && existing.done) throw new Error("今天已完成，不能再換卡");
 
-  var cards = readCards_().filter(function (c) { return c.lang === lang; });
+  var cards = allCards_().filter(function (c) { return c.lang === lang; });
   if (!cards.length) throw new Error("這個語言還沒有內容");
 
-  var cutoff = new Date(date + "T00:00:00");
-  cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
-  var cutoffStr = Utilities.formatDate(cutoff, Session.getScriptTimeZone(), "yyyy-MM-dd");
-  var recent = {};
-  progress.forEach(function (p) { if (p.lang === lang && p.date >= cutoffStr) recent[p.cardId] = true; });
-  if (existing) recent[existing.cardId] = true; // 換一張不要又抽到同一張
-  var pool = cards.filter(function (c) { return !recent[c.id]; });
-  if (!pool.length) pool = cards.filter(function (c) { return !existing || c.id !== existing.cardId; });
-  if (!pool.length) pool = cards; // 只有一張卡就沒得換
-  var pick = pool[Math.floor(Math.random() * pool.length)];
+  var pick = pickStaged_(lang, existing, progress) || pickRandom_(cards, date, existing, progress, lang);
 
   var sh = sheet_("Progress", PROGRESS_HEADERS);
   if (existing) {
@@ -198,6 +229,35 @@ function drawCard_(date, lang, reroll) {
     range.setValues([[date, lang, pick.id, false, "", new Date()]]);
   }
   return todayState_(date);
+}
+
+// 有階段內容的語言：從第一個還沒練完的階段挑；seq 階段照順序，random 階段隨機。
+// 階段都練完、或這個語言沒有階段內容 → 回傳 null，改用 pickRandom_
+function pickStaged_(lang, existing, progress) {
+  var done = {};
+  progress.forEach(function (p) { if (p.lang === lang && p.done) done[p.cardId] = true; });
+  var stages = repoStages_().filter(function (s) { return s.lang === lang; });
+  for (var i = 0; i < stages.length; i++) {
+    var left = stages[i].cards.filter(function (c) { return !done[c.id]; });
+    if (!left.length) continue;
+    var others = left.filter(function (c) { return !existing || c.id !== existing.cardId; });
+    if (!others.length) others = left; // 只剩目前這張就沒得換
+    return stages[i].order === "seq" ? others[0] : others[Math.floor(Math.random() * others.length)];
+  }
+  return null;
+}
+
+function pickRandom_(cards, date, existing, progress, lang) {
+  var cutoff = new Date(date + "T00:00:00");
+  cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
+  var cutoffStr = Utilities.formatDate(cutoff, Session.getScriptTimeZone(), "yyyy-MM-dd");
+  var recent = {};
+  progress.forEach(function (p) { if (p.lang === lang && p.date >= cutoffStr) recent[p.cardId] = true; });
+  if (existing) recent[existing.cardId] = true; // 換一張不要又抽到同一張
+  var pool = cards.filter(function (c) { return !recent[c.id]; });
+  if (!pool.length) pool = cards.filter(function (c) { return !existing || c.id !== existing.cardId; });
+  if (!pool.length) pool = cards; // 只有一張卡就沒得換
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 function completeCard_(date, lang, mode) {

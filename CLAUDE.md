@@ -10,6 +10,7 @@
 - localStorage key 一律加 `lingo_` 前綴（同一個 github.io 網域與其他專案共用）。
 - 改了 js/css 要更新 HTML 的 `?v=`：pre-commit hook 會自動做（hook 不跟著 repo，新環境先跑 `sh scripts/install-hooks.sh`）；否則瀏覽器會用舊檔，登入時看起來像「密碼錯誤」。
 - 改了 `apps-script/Code.gs`：要手動貼進 Apps Script、「管理部署作業 → 編輯 → 新版本」重新部署，並同步 `BACKEND_VERSION`（Code.gs）與 `BACKEND_MIN_VERSION`（shared.js）。
+- 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要 push 後約 10 分鐘（快取）才生效。
 - Sheet 分頁名稱 `Cards`、`Progress` 是程式寫死的，不能改名。
 
 ## 與 cheng-daily 的連動（進行中）
@@ -21,4 +22,4 @@
 - 完整計畫：`~/.claude/plans/sideproject-cheng-daily-github-dazzling-catmull.md`。
 
 ## 待辦
-英文程度小測、日文五十音、唸（TTS）、字帖（含日文）從 cheng-daily 搬過來。
+英文程度小測、日文基礎單字／例句階段、唸（TTS）、字帖（含日文）從 cheng-daily 搬過來。

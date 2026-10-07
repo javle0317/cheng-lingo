@@ -49,7 +49,7 @@ function renderCard() {
   }
   const done = !!(state.today[state.lang] || {}).done;
   document.querySelector(".lingo-card").classList.toggle("passage", card.type === "passage");
-  document.getElementById("cardType").textContent = TYPE_LABEL[card.type] || card.type;
+  document.getElementById("cardType").textContent = (TYPE_LABEL[card.type] || card.type) + (card.stageTitle ? "・" + card.stageTitle : "");
   document.getElementById("cardFront").textContent = card.front;
   document.getElementById("cardReading").textContent = card.reading || "";
   document.getElementById("cardBack").textContent = card.back;
@@ -68,7 +68,7 @@ function renderCard() {
 function renderList() {
   const ul = document.getElementById("cardList");
   ul.replaceChildren();
-  state.cards.filter(c => c.lang === state.lang).forEach(c => {
+  state.cards.filter(c => c.lang === state.lang && !c.repo).forEach(c => { // 內建卡在 repo，只列自己新增的
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.className = "lingo-list-text";
