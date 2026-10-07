@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#f2eee4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#10141f" media="(prefers-color-scheme: dark)">
 <title>承語 · 每日練習</title>
-<link rel="stylesheet" href="style.css?v=20261007234853">
-<link rel="stylesheet" href="lingo.css?v=20261007234853">
+<link rel="stylesheet" href="style.css?v=20261008000820">
+<link rel="stylesheet" href="lingo.css?v=20261008000820">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
     <header class="app-header">
       <div>
         <h1>承語</h1>
-        <p class="progress-line" id="todayLine"></p>
+        <p class="progress-line"><span id="todayLine"></span>　<a href="copybook.html" class="back-link">練字字帖</a></p>
       </div>
       <div class="header-actions">
         <button id="logoutBtn" class="ghost-btn">登出</button>
@@ -68,6 +68,8 @@
             <textarea id="copyInput" rows="3" placeholder="照著抄一遍（可以對照上面的原文）" autocomplete="off" spellcheck="false"></textarea>
             <p id="copyResult" class="lingo-copy-result"></p>
           </div>
+
+          <a id="printLink" class="lingo-print-link hidden" href="copybook.html" target="_blank" rel="noopener">🖨️ 印這一行的描紅字帖</a>
 
           <label id="masteredWrap" class="lingo-mastered hidden">
             <input id="masteredCheck" type="checkbox"> 我完全記得這張了，之後不用再出現
@@ -131,7 +133,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261007234853"></script>
-  <script src="lingo.js?v=20261007234853"></script>
+  <script src="shared.js?v=20261008000820"></script>
+  <script src="lingo.js?v=20261008000820"></script>
 </body>
 </html>

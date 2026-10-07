@@ -10,12 +10,18 @@
 - 內容庫：在頁面上新增、刪除自己的卡片（存在 Sheet 的 Cards 分頁，不參與階段抽卡）
 - 從 cheng-daily 可用 `?card=<id>` 直接開到那張卡
 
+- 練字字帖（`copybook.html`，從 cheng-daily 搬來）：只印淺灰色的描紅字，一張 A4 = 一週。中文直排（A4 橫向）、英文（A4 直向）、日文五十音（A4 直向，一個假名一行、整行淡灰色的同一個假名）。純靜態、不用登入、不呼叫後端
+  - 內容：中文、英文在 `data/copybook.json`（`id | lang | title | author | text`，`text` 的換行 = 一行／一句；改檔案 push 即生效）；日文直接用 `data/cards.json` 裡 `order: "seq"` 的假名階段（每張卡片 = 一行）
+  - 抽卡頁的假名卡有「🖨️ 印這一行的描紅字帖」，網址 `copybook.html?lang=ja&start=<卡片 id>` 從那一行開始排
+  - 版面計算在 `copybook-layout.js`（純函式），回歸檢查：`node scripts/layout-check.js`
+  - 列印請選 A4、縮放 100%（不要「符合頁面」），建議用 Mac；紙張左上角有 10 cm 刻度可以量
+
 ## 還沒做（依序）
 1. 部署後端並實測、手機實測 github.io
 2. cheng-daily 的習慣連動（`drawLanguageCard` / `syncLanguageCard`），後端用 `LINGO_TOKEN` 呼叫這邊
 3. 英文程度小測
 4. 唸（TTS 發音）
-5. 字帖（含日文）從 cheng-daily 搬過來
+5. 日文短文／詩的字帖（五十音練好了再加）
 
 ## 部署步驟
 1. 新建一份 Google Sheet → 擴充功能 → Apps Script，貼上 `apps-script/Code.gs`

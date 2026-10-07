@@ -55,6 +55,10 @@ function renderCard() {
   document.getElementById("cardBack").textContent = card.back;
   document.getElementById("cardNote").textContent = card.note || "";
   const t = state.today[state.lang] || {};
+  const printLink = document.getElementById("printLink"); // 假名階段的卡才有描紅字帖（單字階段沒有）
+  const kana = card.repo && card.lang === "ja" && /^ja-\d+-(hiragana|katakana|dakuon|yoon)$/.test(card.stage);
+  printLink.classList.toggle("hidden", !kana);
+  if (kana) printLink.href = `copybook.html?lang=ja&start=${encodeURIComponent(card.id)}`;
   document.getElementById("masteredWrap").classList.toggle("hidden", !card.repo); // 只有內建卡有階段／複習
   document.getElementById("masteredCheck").checked = !!t.mastered;
 

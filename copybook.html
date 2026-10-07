@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f2eee4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141f" media="(prefers-color-scheme: dark)">
+<title>練字字帖 · 承語</title>
+<link rel="stylesheet" href="style.css?v=20261008000820">
+<link rel="stylesheet" href="lingo.css?v=20261008000820">
+<style id="pageStyle"></style>
+</head>
+<body>
+
+  <div id="app" class="app">
+    <header class="app-header no-print">
+      <div>
+        <h1>練字字帖</h1>
+        <p class="progress-line"><a href="index.html" class="back-link">← 返回</a></p>
+      </div>
+    </header>
+
+    <main class="practice-main">
+      <section class="card practice-controls no-print">
+        <div class="practice-row">
+          <div class="practice-tabs" role="group" aria-label="語言">
+            <button type="button" class="ghost-btn practice-lang" data-lang="zh">中文（直排）</button>
+            <button type="button" class="ghost-btn practice-lang" data-lang="en">English</button>
+            <button type="button" class="ghost-btn practice-lang" data-lang="ja">日文五十音</button>
+          </div>
+          <button id="practiceShuffle" type="button" class="ghost-btn">🎲 重新抽</button>
+          <label id="jaStartWrap" class="practice-gray hidden">從
+            <select id="jaStart"></select>
+          </label>
+          <label class="practice-gray">描紅深淺
+            <select id="optGray">
+              <option value="light">淡</option>
+              <option value="medium">中</option>
+              <option value="dark">深</option>
+            </select>
+          </label>
+          <button id="practicePrint" type="button">🖨️ 列印</button>
+        </div>
+
+        <p id="practiceInfo" class="practice-info"></p>
+        <p class="practice-tip">列印請選 <b>A4、縮放 100%（實際大小）</b>，不要選「符合頁面」，建議用電腦（Mac）列印。紙張左上角的 10 cm 刻度可以量一下是不是 100mm。</p>
+        <p class="practice-tip">內容在 repo 的 <code>data/copybook.json</code>（中文、英文）；日文五十音直接用 <code>data/cards.json</code> 的假名行。</p>
+      </section>
+
+      <section class="practice-preview">
+        <div id="sheetHost" class="sheet-host"></div>
+        <p id="practiceEmpty" class="empty-hint hidden no-print">還沒有內容。</p>
+      </section>
+    </main>
+
+    <p id="statusLine" class="status-line no-print"></p>
+  </div>
+
+  <script src="copybook-layout.js?v=20261008000820"></script>
+  <script src="copybook.js?v=20261008000820"></script>
+</body>
+</html>

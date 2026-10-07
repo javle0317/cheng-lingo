@@ -21,5 +21,8 @@
 - daily 端已寫好（`drawLanguageCard` / `syncLanguageCard`、習慣列 UI），待兩邊部署後連線驗證。
 - 完整計畫：`~/.claude/plans/sideproject-cheng-daily-github-dazzling-catmull.md`。
 
+## 字帖
+`copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。
+
 ## 待辦
-英文程度小測、日文基礎單字／例句階段、唸（TTS）、字帖（含日文）從 cheng-daily 搬過來。
+英文程度小測、日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）。
