@@ -72,8 +72,8 @@
 .placement-level-label { margin: 0; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
 .placement-level { margin: 4px 0; text-align: center; font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent); }
 .placement-hint { margin: 0 0 16px; text-align: center; line-height: 1.6; }
-.placement-skills { display: flex; gap: 8px; margin-bottom: 16px; }
-.placement-skill { flex: 1; display: flex; justify-content: space-between; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); }
+.placement-skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 16px; }
+.placement-skill { display: flex; justify-content: space-between; gap: 10px; white-space: nowrap; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); }
 .placement-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: center; margin-bottom: 12px; }
 .placement-table th, .placement-table td { padding: 6px 4px; border-bottom: 1px solid var(--border); }
 .placement-table th:first-child { text-align: left; font-weight: 500; }
@@ -84,3 +84,15 @@
 .placement-wrong-q { font-weight: 500; }
 .placement-wrong-exp { color: var(--text-dim); }
 .placement-tip { font-size: 0.8rem; color: var(--text-dim); margin: 8px 0 12px; }
+.placement-comment { margin: 4px 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--accent-soft); line-height: 1.6; }
+.placement-note { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 8px; }
+.placement-note textarea { width: 100%; }
+.placement-save { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-dim); flex-wrap: wrap; }
+.placement-save-error { color: var(--danger); }
+.placement-chart { width: 100%; max-width: 360px; margin: 8px auto; display: block; }
+.placement-hist td { text-align: left; }
+.placement-hist-detail td { color: var(--text-dim); font-size: 0.8rem; line-height: 1.5; border-bottom: 1px solid var(--border); }
+.placement-last b { color: var(--accent); }
+#startBtn { margin-bottom: 12px; }
+.lingo-retest { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--accent-soft); font-size: 0.9rem; line-height: 1.5; }
+.placement-table th:first-child { white-space: nowrap; padding-right: 10px; }

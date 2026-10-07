@@ -1,0 +1,490 @@
+{
+ "lang": "ja",
+ "title": "日文程度小考",
+ "levels": [
+  "假名",
+  "N5",
+  "N4"
+ ],
+ "skills": {
+  "kana": "假名辨認",
+  "vocab": "單字",
+  "grammar": "文法"
+ },
+ "topics": {
+  "vocab": "單字",
+  "hiragana": "平假名",
+  "katakana": "片假名",
+  "dakuon-yoon": "濁音・拗音",
+  "particles": "助詞",
+  "verb-forms": "動詞變化",
+  "connectors": "連接詞（ので 等）",
+  "patterns": "句型（こと／あとで 等）",
+  "giving-receiving": "授受表現（もらう／くれる）"
+ },
+ "blueprint": {
+  "假名": {
+   "kana": 10
+  },
+  "N5": {
+   "vocab": 6,
+   "grammar": 6
+  },
+  "N4": {
+   "vocab": 4,
+   "grammar": 4
+  }
+ },
+ "questions": [
+  {
+   "id": "ja01",
+   "type": "kana",
+   "level": "假名",
+   "topic": "hiragana",
+   "q": "「さ」怎麼念？",
+   "options": [
+    "sa",
+    "za",
+    "ta",
+    "ka"
+   ],
+   "answer": 0,
+   "explain": "さ = sa；ざ（有濁點）才是 za。"
+  },
+  {
+   "id": "ja02",
+   "type": "kana",
+   "level": "假名",
+   "topic": "hiragana",
+   "q": "「ち」怎麼念？",
+   "options": [
+    "chi",
+    "shi",
+    "tsu",
+    "ki"
+   ],
+   "answer": 0,
+   "explain": "ち = chi；し = shi、つ = tsu。"
+  },
+  {
+   "id": "ja03",
+   "type": "kana",
+   "level": "假名",
+   "topic": "hiragana",
+   "q": "「ふ」怎麼念？",
+   "options": [
+    "fu",
+    "ha",
+    "hi",
+    "he"
+   ],
+   "answer": 0,
+   "explain": "ふ = fu（雙唇輕吹），は行其他是 ha、hi、he、ho。"
+  },
+  {
+   "id": "ja04",
+   "type": "kana",
+   "level": "假名",
+   "topic": "hiragana",
+   "q": "哪一個是「ね」？",
+   "options": [
+    "ね",
+    "れ",
+    "わ",
+    "ぬ"
+   ],
+   "answer": 0,
+   "explain": "ね、れ、わ 長得很像：ね 右邊有一個小圈。"
+  },
+  {
+   "id": "ja05",
+   "type": "kana",
+   "level": "假名",
+   "topic": "hiragana",
+   "q": "哪一個是「め」？",
+   "options": [
+    "め",
+    "ぬ",
+    "ね",
+    "あ"
+   ],
+   "answer": 0,
+   "explain": "め 和 ぬ 很像：ぬ 的尾巴有一個小圈。"
+  },
+  {
+   "id": "ja06",
+   "type": "kana",
+   "level": "假名",
+   "topic": "katakana",
+   "q": "片假名「ン」怎麼念？",
+   "options": [
+    "n",
+    "so",
+    "shi",
+    "tsu"
+   ],
+   "answer": 0,
+   "explain": "ン = n；ソ = so（點在上、直向），ン 的點在左、橫向。"
+  },
+  {
+   "id": "ja07",
+   "type": "kana",
+   "level": "假名",
+   "topic": "katakana",
+   "q": "哪一個是片假名「シ」？",
+   "options": [
+    "シ",
+    "ツ",
+    "ソ",
+    "ン"
+   ],
+   "answer": 0,
+   "explain": "シ 的三點橫向排列；ツ 的點在上方、直向。"
+  },
+  {
+   "id": "ja08",
+   "type": "kana",
+   "level": "假名",
+   "topic": "katakana",
+   "q": "片假名「ツ」怎麼念？",
+   "options": [
+    "tsu",
+    "shi",
+    "so",
+    "n"
+   ],
+   "answer": 0,
+   "explain": "ツ = tsu。"
+  },
+  {
+   "id": "ja09",
+   "type": "kana",
+   "level": "假名",
+   "topic": "dakuon-yoon",
+   "q": "「が」怎麼念？",
+   "options": [
+    "ga",
+    "ka",
+    "ba",
+    "da"
+   ],
+   "answer": 0,
+   "explain": "か 加濁點變成 が（ga）。"
+  },
+  {
+   "id": "ja10",
+   "type": "kana",
+   "level": "假名",
+   "topic": "dakuon-yoon",
+   "q": "「きゃ」怎麼念？",
+   "options": [
+    "kya",
+    "ki",
+    "ya",
+    "kyu"
+   ],
+   "answer": 0,
+   "explain": "き + 小字的 ゃ 合成一拍：kya。"
+  },
+  {
+   "id": "ja11",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「ねこ」是什麼意思？",
+   "options": [
+    "貓",
+    "狗",
+    "鳥",
+    "魚"
+   ],
+   "answer": 0,
+   "explain": "ねこ（猫）= 貓。"
+  },
+  {
+   "id": "ja12",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「たべる」是什麼意思？",
+   "options": [
+    "吃",
+    "喝",
+    "看",
+    "聽"
+   ],
+   "answer": 0,
+   "explain": "たべる（食べる）= 吃。"
+  },
+  {
+   "id": "ja13",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「がっこう」是什麼意思？",
+   "options": [
+    "學校",
+    "醫院",
+    "銀行",
+    "車站"
+   ],
+   "answer": 0,
+   "explain": "がっこう（学校）= 學校。"
+  },
+  {
+   "id": "ja14",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「あした」是什麼意思？",
+   "options": [
+    "明天",
+    "昨天",
+    "今天",
+    "每天"
+   ],
+   "answer": 0,
+   "explain": "あした（明日）= 明天。"
+  },
+  {
+   "id": "ja15",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「大きい」怎麼念？",
+   "options": [
+    "おおきい",
+    "ちいさい",
+    "たかい",
+    "ひくい"
+   ],
+   "answer": 0,
+   "explain": "大きい = おおきい（大的）；ちいさい 是小的。"
+  },
+  {
+   "id": "ja16",
+   "type": "vocab",
+   "level": "N5",
+   "topic": "vocab",
+   "q": "「ありがとう」是什麼意思？",
+   "options": [
+    "謝謝",
+    "對不起",
+    "你好",
+    "再見"
+   ],
+   "answer": 0,
+   "explain": "ありがとう = 謝謝。"
+  },
+  {
+   "id": "ja17",
+   "type": "vocab",
+   "level": "N4",
+   "topic": "vocab",
+   "q": "「べんり」（便利）是什麼意思？",
+   "options": [
+    "方便",
+    "危險",
+    "安靜",
+    "熱鬧"
+   ],
+   "answer": 0,
+   "explain": "便利（べんり）= 方便。"
+  },
+  {
+   "id": "ja18",
+   "type": "vocab",
+   "level": "N4",
+   "topic": "vocab",
+   "q": "「じゅんび」（準備）是什麼意思？",
+   "options": [
+    "準備",
+    "練習",
+    "約定",
+    "計算"
+   ],
+   "answer": 0,
+   "explain": "準備（じゅんび）= 準備。"
+  },
+  {
+   "id": "ja19",
+   "type": "vocab",
+   "level": "N4",
+   "topic": "vocab",
+   "q": "「よてい」（予定）是什麼意思？",
+   "options": [
+    "預定、計畫",
+    "回憶",
+    "意見",
+    "理由"
+   ],
+   "answer": 0,
+   "explain": "予定（よてい）= 預定、計畫。"
+  },
+  {
+   "id": "ja20",
+   "type": "vocab",
+   "level": "N4",
+   "topic": "vocab",
+   "q": "「ひつよう」（必要）是什麼意思？",
+   "options": [
+    "必要",
+    "自由",
+    "特別",
+    "簡單"
+   ],
+   "answer": 0,
+   "explain": "必要（ひつよう）= 必要。"
+  },
+  {
+   "id": "ja21",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "particles",
+   "q": "わたし____ がくせいです。（我是學生。）",
+   "options": [
+    "は",
+    "を",
+    "に",
+    "で"
+   ],
+   "answer": 0,
+   "explain": "は 表示主題：わたしは…です。"
+  },
+  {
+   "id": "ja22",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "particles",
+   "q": "パン____ たべます。（吃麵包。）",
+   "options": [
+    "を",
+    "は",
+    "に",
+    "へ"
+   ],
+   "answer": 0,
+   "explain": "を 表示動作的受詞：パンを たべます。"
+  },
+  {
+   "id": "ja23",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "particles",
+   "q": "がっこう____ べんきょうします。（在學校念書。）",
+   "options": [
+    "で",
+    "に",
+    "を",
+    "へ"
+   ],
+   "answer": 0,
+   "explain": "で 表示動作發生的地點。"
+  },
+  {
+   "id": "ja24",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "particles",
+   "q": "これは わたし____ ほんです。（這是我的書。）",
+   "options": [
+    "の",
+    "を",
+    "に",
+    "が"
+   ],
+   "answer": 0,
+   "explain": "の 表示所屬：わたしの ほん。"
+  },
+  {
+   "id": "ja25",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "verb-forms",
+   "q": "きのう えいがを ____。（昨天看了電影。）",
+   "options": [
+    "みました",
+    "みます",
+    "みません",
+    "みて"
+   ],
+   "answer": 0,
+   "explain": "過去肯定：みました。"
+  },
+  {
+   "id": "ja26",
+   "type": "grammar",
+   "level": "N5",
+   "topic": "particles",
+   "q": "わたしは コーヒー____ すきです。（我喜歡咖啡。）",
+   "options": [
+    "が",
+    "を",
+    "に",
+    "で"
+   ],
+   "answer": 0,
+   "explain": "すき（喜歡）前面的對象用 が。"
+  },
+  {
+   "id": "ja27",
+   "type": "grammar",
+   "level": "N4",
+   "topic": "connectors",
+   "q": "雨が ふって いる____、かさを もって いきます。（因為在下雨，所以帶傘去。）",
+   "options": [
+    "ので",
+    "のに",
+    "ても",
+    "ながら"
+   ],
+   "answer": 0,
+   "explain": "ので = 因為（說明原因）；のに 是「明明…卻」。"
+  },
+  {
+   "id": "ja28",
+   "type": "grammar",
+   "level": "N4",
+   "topic": "patterns",
+   "q": "日本語を はなす____が できます。（會說日語。）",
+   "options": [
+    "こと",
+    "もの",
+    "とき",
+    "ところ"
+   ],
+   "answer": 0,
+   "explain": "V-ること が できる = 會／能做某事。"
+  },
+  {
+   "id": "ja29",
+   "type": "grammar",
+   "level": "N4",
+   "topic": "patterns",
+   "q": "ごはんを たべた____、はを みがきます。（吃完飯之後刷牙。）",
+   "options": [
+    "あとで",
+    "まえに",
+    "ながら",
+    "ために"
+   ],
+   "answer": 0,
+   "explain": "V-た あとで = …之後。"
+  },
+  {
+   "id": "ja30",
+   "type": "grammar",
+   "level": "N4",
+   "topic": "giving-receiving",
+   "q": "先生に 本を かして ____。（老師借我書。）",
+   "options": [
+    "もらいました",
+    "くれました",
+    "あげました",
+    "さしあげました"
+   ],
+   "answer": 0,
+   "explain": "自己「得到」別人的好處：V-て もらいました。"
+  }
+ ]
+}

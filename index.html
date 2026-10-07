@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261008011125">
-<link rel="stylesheet" href="lingo.css?v=20261008011125">
+<link rel="stylesheet" href="style.css?v=20261008012830">
+<link rel="stylesheet" href="lingo.css?v=20261008012830">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     <header class="app-header">
       <div>
         <h1>承語</h1>
-        <p class="progress-line"><span id="todayLine"></span>　<a href="copybook.html" class="back-link">練字字帖</a>　<a href="placement.html" class="back-link">英文小考</a></p>
+        <p class="progress-line"><span id="todayLine"></span>　<a href="copybook.html" class="back-link">練字字帖</a>　<a href="placement.html" class="back-link">程度小考</a></p>
       </div>
       <div class="header-actions">
         <button id="logoutBtn" class="ghost-btn">登出</button>
@@ -50,6 +50,8 @@
         <button type="button" class="ghost-btn lingo-lang" data-lang="en">English</button>
         <button type="button" class="ghost-btn lingo-lang" data-lang="ja">日本語</button>
       </div>
+
+      <p id="retestHint" class="lingo-retest hidden"></p>
 
       <section class="card" id="cardSection">
         <div id="cardEmpty" class="empty-hint hidden">還沒有這個語言的內容，先在下面「內容庫」新增幾張。</div>
@@ -143,7 +145,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261008011125"></script>
-  <script src="lingo.js?v=20261008011125"></script>
+  <script src="shared.js?v=20261008012830"></script>
+  <script src="lingo.js?v=20261008012830"></script>
 </body>
 </html>

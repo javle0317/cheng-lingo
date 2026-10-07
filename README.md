@@ -9,7 +9,10 @@
 - 三種練習：看、背（先遮住答案）、抄（打字默寫並比對）
 - 英文內容（`data/cards.json` 的 `en-*` 階段）：依英文程度小考的結果（單字 B1、文法 A2 邊緣）與學習目標（旅遊、工作、體育：棒球、匹克球）編排，先從「讀」開始。階段交錯：文法（V-ing / to V）→ 旅遊單字 → 旅遊閱讀短文 → 文法（B1 句型）→ 工作單字 → 工作閱讀 → 體育單字 → 體育閱讀。單字卡 `reading` 是音標、`note` 是例句；閱讀卡是 60–80 字的短文（`passage`），`back` 是中文翻譯、`note` 是重點單字。要加新階段：在 `stages` 最後面照格式加一段即可，不用重新部署
 - 內容檢查：改了 `data/cards.json` 後跑 `node scripts/cards-check.js`（抓欄位放錯：英文卡正面一定要是英文、背面要有中文、id 不重複）
-- 英文程度小考（`placement.html`）：單字＋文法 40 題選擇題（A1–C1 各等級），題庫在 `data/placement.json`，計分規則在 `placement-score.js`（每等級答對 ≥ 60% 算過關，容忍一次失手），結果只存在這支瀏覽器的 localStorage（`lingo_placement`）。檢查：`node scripts/placement-check.js`
+- 程度小考（`placement.html`，英文／日文，要登入）：選語言 → 從題庫抽題 → 計分與評語 → 自動記錄到 Sheet 的 `TestResults` 分頁（日期、語言、整體等級、各題型等級、答對題數、自動評語、你補的備註、考過的題目 id）。頁面有歷次紀錄與等級折線圖；重考時優先抽沒考過的題目；距離上次同語言小考超過 8 週，首頁會提醒。
+  - 題庫：`data/placement/<lang>.json`（`levels` 由易到難、`skills`、`topics`、`blueprint` 每等級每題型抽幾題、`questions` 每題標主題；`options[answer]` 是正確答案，作答時才打亂）。英文 80 題庫每次抽 40 題（A1–C1）；日文 30 題（假名辨認＋N5／N4 單字、文法）。要加語言：新增一份題庫＋在 `placement.js` 的 `LANGS`、後端 `LANGS` 加上
+  - 規則：每等級答對 ≥ 60% 算過關，等級 = 最高的過關等級（容忍一次失手）；選「我不確定」算答錯。評語由程式依「與上次比較、題型落差、答錯的主題」產生，在 `placement-score.js` 的 `commentFor`
+  - 檢查：`node scripts/placement-check.js`（題庫格式、抽題、計分、評語）、`node scripts/backend-check.js`（TestResults 後端邏輯）
 - 內容庫：在頁面上新增、刪除自己的卡片（存在 Sheet 的 Cards 分頁，不參與階段抽卡）
 - 從 cheng-daily 可用 `?card=<id>` 直接開到那張卡
 
@@ -22,7 +25,7 @@
 ## 還沒做（依序）
 1. 部署後端並實測、手機實測 github.io
 2. cheng-daily 的習慣連動（`drawLanguageCard` / `syncLanguageCard`），後端用 `LINGO_TOKEN` 呼叫這邊
-3. 定期重考（不分語言）、閱讀理解題，之後再加口說與寫作
+3. 閱讀理解題（加進小考與閱讀卡），之後再加口說與寫作
 4. 唸（TTS 發音）
 5. 日文短文／詩的字帖（五十音練好了再加）
 

@@ -12,27 +12,49 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="manifest" href="manifest.webmanifest">
-<title>英文程度小考 · 承語</title>
+<title>程度小考 · 承語</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261008011125">
-<link rel="stylesheet" href="lingo.css?v=20261008011125">
+<link rel="stylesheet" href="style.css?v=20261008012830">
+<link rel="stylesheet" href="lingo.css?v=20261008012830">
 </head>
 <body>
-  <div id="app" class="app">
+
+  <div id="lockScreen" class="lock-screen">
+    <div id="lockLoading" class="lock-card hidden">
+      <h1>承語</h1>
+      <p>登入中…</p>
+    </div>
+    <form id="lockForm" class="lock-card">
+      <h1>承語</h1>
+      <input id="passwordInput" type="password" placeholder="輸入密碼" autocomplete="off" required>
+      <button type="submit">解鎖</button>
+      <p id="lockError" class="error-text"></p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
     <header class="app-header">
       <div>
-        <h1>英文程度小考</h1>
+        <h1>程度小考</h1>
         <p class="progress-line"><a href="index.html" class="back-link">← 返回</a></p>
+      </div>
+      <div class="header-actions">
+        <button id="logoutBtn" class="ghost-btn">登出</button>
       </div>
     </header>
 
     <main>
+      <div class="lingo-tabs" role="group" aria-label="語言">
+        <button type="button" class="ghost-btn placement-lang" data-lang="en">English</button>
+        <button type="button" class="ghost-btn placement-lang" data-lang="ja">日本語</button>
+      </div>
+
       <section id="startBox" class="card">
-        <p class="placement-lead">單字與文法共 40 題，選擇題，約 10–15 分鐘。題目從簡單排到困難，不確定就選「我不確定」，不要亂猜，結果比較準。</p>
-        <p id="lastResult" class="placement-last"></p>
+        <p id="startLead" class="placement-lead"></p>
         <button id="startBtn" type="button">開始</button>
+        <div id="historyBox"></div>
       </section>
 
       <section id="quizBox" class="card hidden">
@@ -44,21 +66,42 @@
       </section>
 
       <section id="resultBox" class="card hidden">
-        <p class="placement-level-label">你的英文程度大約是</p>
+        <p class="placement-level-label">你的程度大約是</p>
         <p id="levelBig" class="placement-level"></p>
         <p id="levelHint" class="placement-hint"></p>
         <div id="skillRows" class="placement-skills"></div>
         <div id="bandTable"></div>
+        <p id="commentText" class="placement-comment"></p>
+        <label class="placement-note">備註（選填，例如這次的狀況）
+          <textarea id="noteInput" rows="2" maxlength="500"></textarea>
+        </label>
+        <div class="placement-save">
+          <button id="saveNoteBtn" type="button" class="ghost-btn">儲存備註</button>
+          <span id="saveStatus"></span>
+        </div>
         <details id="wrongBox" class="placement-wrong"><summary id="wrongSummary"></summary><div id="wrongList"></div></details>
-        <p class="placement-tip">這是粗略的估計（單字、文法各約 20 題），不是正式檢定。每隔幾個月可以再考一次看進步。</p>
-        <button id="againBtn" type="button" class="ghost-btn">再考一次</button>
+        <p class="placement-tip">這是粗略的估計，不是正式檢定。每隔幾週到幾個月再考一次，就能看到自己的進步。</p>
+        <button id="againBtn" type="button" class="ghost-btn">回到小考首頁</button>
       </section>
     </main>
 
     <p id="statusLine" class="status-line"></p>
   </div>
 
-  <script src="placement-score.js?v=20261008011125"></script>
-  <script src="placement.js?v=20261008011125"></script>
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="dialogModal" class="modal-overlay hidden">
+    <div class="modal-card dialog-card">
+      <p id="dialogMessage"></p>
+      <div class="dialog-actions">
+        <button id="dialogCancelBtn" class="ghost-btn" type="button">取消</button>
+        <button id="dialogOkBtn" type="button">確定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js?v=20261008012830"></script>
+  <script src="placement-score.js?v=20261008012830"></script>
+  <script src="placement.js?v=20261008012830"></script>
 </body>
 </html>

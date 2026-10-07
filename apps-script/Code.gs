@@ -7,11 +7,14 @@
 //   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
 //   Progress  date | lang | cardId | done | mode | updatedAt
 //   Mastered  cardId | lang | updatedAt（勾了「完全記得」的卡：不再複習，階段順序也跳過）
+//   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
+//                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-07.6";
+var BACKEND_VERSION = "2026-10-08.1";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
+var TEST_HEADERS = ["id", "date", "lang", "level", "skills", "correct", "total", "comment", "note", "asked", "createdAt"];
 var LANGS = ["en", "ja"];
 var TYPES = ["word", "sentence", "passage"];
 var repoError_ = ""; // 這次請求讀 cards.json 失敗的原因，會用 warn 帶回前端
@@ -50,6 +53,7 @@ function read_(b) {
   switch (b.action) {
     case "getCards": return allCards_();
     case "getToday": return todayState_(textArg_(b.date, "date", 10));
+    case "getTestResults": return readTestResults_();
     default: throw new Error("unknown action");
   }
 }
@@ -59,6 +63,8 @@ function write_(b) {
     case "addCard": return addCard_(b);
     case "deleteCard": return deleteCard_(textArg_(b.id, "id", 64));
     case "drawCard": return drawAnyOrCard_(textArg_(b.date, "date", 10), b.lang, b.reroll === "1");
+    case "addTestResult": return addTestResult_(b);
+    case "updateTestNote": return updateTestNote_(textArg_(b.id, "id", 64), optTextArg_(b.note, 500));
     case "setMastered": return setMastered_(textArg_(b.date, "date", 10), textArg_(b.id, "id", 64), b.value === "1");
     case "completeCard": return completeCard_(textArg_(b.date, "date", 10), langArg_(b.lang), String(b.mode || "").slice(0, 10));
     default: throw new Error("unknown action");
@@ -118,7 +124,8 @@ function repoStages_() {
   try {
     if (!raw) {
       var url = PropertiesService.getScriptProperties().getProperty("CARDS_URL") || CARDS_URL;
-      var res = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
+      // 加時間參數跳過 GitHub Pages 的 CDN 快取（它最久會讓舊檔多活 10 分鐘），我們自己的快取（CARDS_CACHE_SEC）才是唯一的延遲
+      var res = UrlFetchApp.fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + new Date().getTime(), { muteHttpExceptions: true });
       if (res.getResponseCode() !== 200) throw new Error("HTTP " + res.getResponseCode());
       raw = res.getContentText();
       JSON.parse(raw);
@@ -179,6 +186,59 @@ function deleteCard_(id) {
     if (String(data[i][0]) === id) { sh.deleteRow(i + 2); break; }
   }
   return readCards_();
+}
+
+// ====== 程度小考歷次結果 ======
+function readTestResults_() {
+  return rows_(sheet_("TestResults", TEST_HEADERS), TEST_HEADERS.length).map(function (r) {
+    var skills = {};
+    try { skills = JSON.parse(r[4] || "{}"); } catch (e) { /* 壞掉的列當成沒有技能資料 */ }
+    return {
+      id: String(r[0]), date: dateStr_(r[1]), lang: r[2], level: unsafeText_(r[3]), skills: skills,
+      correct: Number(r[5]), total: Number(r[6]), comment: unsafeText_(r[7]), note: unsafeText_(r[8]),
+      asked: String(r[9] || "").split(",").filter(Boolean),
+    };
+  }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+}
+
+function intArg_(v, name, max) {
+  var n = Number(v);
+  if (!isFinite(n) || n < 0 || n > max || Math.floor(n) !== n) throw new Error(name + " 必須是 0 到 " + max + " 的整數");
+  return n;
+}
+
+function addTestResult_(b) {
+  var date = textArg_(b.date, "date", 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("日期格式錯誤");
+  var lang = langArg_(b.lang);
+  var level = textArg_(b.level, "等級", 20);
+  var skills = optTextArg_(b.skills, 400);
+  try { JSON.parse(skills || "{}"); } catch (e) { throw new Error("skills 不是有效的 JSON"); }
+  var total = intArg_(b.total, "題數", 500);
+  var correct = intArg_(b.correct, "答對題數", total);
+  var asked = optTextArg_(b.asked, 2000);
+  if (!/^[A-Za-z0-9_,-]*$/.test(asked)) throw new Error("asked 格式錯誤");
+  var sh = sheet_("TestResults", TEST_HEADERS);
+  var row = [Utilities.getUuid(), date, lang, safeText_(level), skills, correct, total,
+    safeText_(optTextArg_(b.comment, 500)), safeText_(optTextArg_(b.note, 500)), asked, new Date()];
+  var range = sh.getRange(sh.getLastRow() + 1, 1, 1, row.length);
+  range.setNumberFormat("@"); // 全部當純文字，日期與數字不會被 Sheet 自動轉型
+  range.setValues([row]);
+  return readTestResults_();
+}
+
+function updateTestNote_(id, note) {
+  var sh = sheet_("TestResults", TEST_HEADERS);
+  var data = rows_(sh, TEST_HEADERS.length);
+  for (var i = 0; i < data.length; i++) {
+    if (String(data[i][0]) === id) {
+      var cell = sh.getRange(i + 2, 9);
+      cell.setNumberFormat("@");
+      cell.setValue(safeText_(note));
+      return readTestResults_();
+    }
+  }
+  throw new Error("找不到這筆考試紀錄");
 }
 
 // ====== 「完全記得」標記 ======

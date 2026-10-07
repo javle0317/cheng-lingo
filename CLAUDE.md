@@ -11,7 +11,7 @@
 - 改了 js/css 要更新 HTML 的 `?v=`：pre-commit hook 會自動做（hook 不跟著 repo，新環境先跑 `sh scripts/install-hooks.sh`）；否則瀏覽器會用舊檔，登入時看起來像「密碼錯誤」。
 - 改了 `apps-script/Code.gs`：要手動貼進 Apps Script、「管理部署作業 → 編輯 → 新版本」重新部署，並同步 `BACKEND_VERSION`（Code.gs）與 `BACKEND_MIN_VERSION`（shared.js）。
 - 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要 push 後約 10 分鐘（快取）才生效。
-- Sheet 分頁名稱 `Cards`、`Progress` 是程式寫死的，不能改名。
+- Sheet 分頁名稱 `Cards`、`Progress`、`Mastered`、`TestResults` 是程式寫死的，不能改名。
 
 ## 與 cheng-daily 的連動（進行中）
 決議：練習在 lingo 做，daily 的習慣列只顯示今天抽到的卡片、「去練習 →」連結（`?card=<id>`）與完成狀態。
@@ -25,4 +25,4 @@
 `copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。
 
 ## 待辦
-日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）、定期重考（不分語言，先做本機小考）、閱讀理解題、口說與寫作（更後面）。學習目標：旅遊、工作、體育（棒球、匹克球）；聽說讀都重要，先從「讀」開始。
+日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）、閱讀理解題、口說與寫作（更後面）。學習目標：旅遊、工作、體育（棒球、匹克球）；聽說讀都重要，先從「讀」開始。

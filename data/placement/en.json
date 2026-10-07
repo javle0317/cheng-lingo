@@ -1,0 +1,1267 @@
+{
+ "lang": "en",
+ "title": "英文程度小考",
+ "levels": [
+  "A1",
+  "A2",
+  "B1",
+  "B2",
+  "C1"
+ ],
+ "skills": {
+  "vocab": "單字",
+  "grammar": "文法"
+ },
+ "topics": {
+  "vocab": "單字",
+  "be-verb": "be 動詞",
+  "there-be": "There is / are",
+  "present-simple": "現在簡單式",
+  "past-continuous": "過去進行式",
+  "comparatives": "比較級",
+  "first-conditional": "第一類條件句",
+  "present-perfect": "現在完成式",
+  "second-conditional": "第二類條件句",
+  "passive": "被動語態",
+  "indirect-question": "間接問句",
+  "gerund-infinitive": "V-ing / to V",
+  "past-perfect": "過去完成式",
+  "wish": "wish 假設",
+  "inversion": "倒裝句",
+  "relative-clause": "關係子句",
+  "modal-perfect": "should have 等情態＋完成式",
+  "third-conditional": "第三類條件句",
+  "subjunctive": "假設語氣（that + 原形）",
+  "modals": "情態動詞",
+  "quantifiers": "數量詞（any / some / many）",
+  "be-going-to": "be going to",
+  "present-perfect-continuous": "現在完成進行式",
+  "reported-speech": "間接引述",
+  "would-rather": "would rather",
+  "future-perfect": "未來完成式"
+ },
+ "blueprint": {
+  "A1": {
+   "vocab": 3,
+   "grammar": 3
+  },
+  "A2": {
+   "vocab": 4,
+   "grammar": 4
+  },
+  "B1": {
+   "vocab": 5,
+   "grammar": 5
+  },
+  "B2": {
+   "vocab": 5,
+   "grammar": 5
+  },
+  "C1": {
+   "vocab": 3,
+   "grammar": 3
+  }
+ },
+ "questions": [
+  {
+   "id": "en01",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "I drink a glass of ____ every morning.",
+   "options": [
+    "water",
+    "chair",
+    "shoe",
+    "window"
+   ],
+   "answer": 0,
+   "explain": "water（水）：喝的東西。"
+  },
+  {
+   "id": "en02",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "She is my mother's sister, so she is my ____.",
+   "options": [
+    "aunt",
+    "uncle",
+    "cousin",
+    "niece"
+   ],
+   "answer": 0,
+   "explain": "aunt（阿姨／姑姑）：媽媽的姊妹。"
+  },
+  {
+   "id": "en03",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "It is very cold today. Please wear a warm ____.",
+   "options": [
+    "coat",
+    "glass",
+    "pencil",
+    "plate"
+   ],
+   "answer": 0,
+   "explain": "coat（外套）：冷的時候穿。"
+  },
+  {
+   "id": "en04",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "be-verb",
+   "q": "She ____ a student.",
+   "options": [
+    "is",
+    "are",
+    "am",
+    "be"
+   ],
+   "answer": 0,
+   "explain": "主詞 she 搭配 is。"
+  },
+  {
+   "id": "en05",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "there-be",
+   "q": "There ____ two books on the table.",
+   "options": [
+    "are",
+    "is",
+    "am",
+    "be"
+   ],
+   "answer": 0,
+   "explain": "two books 是複數，用 there are。"
+  },
+  {
+   "id": "en06",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "present-simple",
+   "q": "I ____ breakfast at seven every day.",
+   "options": [
+    "have",
+    "has",
+    "having",
+    "am have"
+   ],
+   "answer": 0,
+   "explain": "主詞 I 的現在簡單式用 have。"
+  },
+  {
+   "id": "en07",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "I need to ____ my homework before I can watch TV.",
+   "options": [
+    "finish",
+    "arrive",
+    "borrow",
+    "wear"
+   ],
+   "answer": 0,
+   "explain": "finish（完成）搭配 homework。"
+  },
+  {
+   "id": "en08",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "The weather forecast says it will ____ tomorrow, so take an umbrella.",
+   "options": [
+    "rain",
+    "sing",
+    "drive",
+    "paint"
+   ],
+   "answer": 0,
+   "explain": "rain 當動詞是「下雨」。"
+  },
+  {
+   "id": "en09",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "We stayed at a small hotel near the beach during our ____.",
+   "options": [
+    "vacation",
+    "medicine",
+    "customer",
+    "recipe"
+   ],
+   "answer": 0,
+   "explain": "vacation（假期）：住飯店、去海邊的情境。"
+  },
+  {
+   "id": "en10",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "Could you ____ me your pen for a minute?",
+   "options": [
+    "lend",
+    "borrow",
+    "lose",
+    "spend"
+   ],
+   "answer": 0,
+   "explain": "lend A B 是「借給 A」；borrow 是「跟別人借」，所以這裡要用 lend。"
+  },
+  {
+   "id": "en11",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "past-continuous",
+   "q": "I ____ TV when you called me.",
+   "options": [
+    "was watching",
+    "am watching",
+    "watch",
+    "have watch"
+   ],
+   "answer": 0,
+   "explain": "過去某一刻正在進行的動作：過去進行式 was watching。"
+  },
+  {
+   "id": "en12",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "comparatives",
+   "q": "This bag is ____ than that one.",
+   "options": [
+    "heavier",
+    "more heavy",
+    "heaviest",
+    "most heavy"
+   ],
+   "answer": 0,
+   "explain": "heavy 的比較級是 heavier。"
+  },
+  {
+   "id": "en13",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "first-conditional",
+   "q": "If it rains tomorrow, we ____ at home.",
+   "options": [
+    "will stay",
+    "stayed",
+    "would stay",
+    "staying"
+   ],
+   "answer": 0,
+   "explain": "if + 現在式，主要子句用 will。"
+  },
+  {
+   "id": "en14",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "present-perfect",
+   "q": "I have lived here ____ 2015.",
+   "options": [
+    "since",
+    "for",
+    "from",
+    "during"
+   ],
+   "answer": 0,
+   "explain": "since 後面接一個起點時間（2015）；for 後面接一段時間。"
+  },
+  {
+   "id": "en15",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "The company decided to ____ the meeting until next week because the manager was sick.",
+   "options": [
+    "postpone",
+    "produce",
+    "protect",
+    "promise"
+   ],
+   "answer": 0,
+   "explain": "postpone（延後）。"
+  },
+  {
+   "id": "en16",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "He was ____ to find out that he had won the competition.",
+   "options": [
+    "thrilled",
+    "thrifty",
+    "thirsty",
+    "thorough"
+   ],
+   "answer": 0,
+   "explain": "thrilled（非常興奮）。"
+  },
+  {
+   "id": "en17",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "It is important to ____ a healthy balance between work and personal life.",
+   "options": [
+    "maintain",
+    "reject",
+    "invade",
+    "suppose"
+   ],
+   "answer": 0,
+   "explain": "maintain a balance（維持平衡）是常見搭配。"
+  },
+  {
+   "id": "en18",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "The new phone has many useful ____, such as a better camera and longer battery life.",
+   "options": [
+    "features",
+    "sections",
+    "surfaces",
+    "measures"
+   ],
+   "answer": 0,
+   "explain": "features（功能、特色）。"
+  },
+  {
+   "id": "en19",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "I'm not sure about the price, so I'll ____ the two shops before I decide.",
+   "options": [
+    "compare",
+    "compete",
+    "complain",
+    "compose"
+   ],
+   "answer": 0,
+   "explain": "compare（比較）。"
+  },
+  {
+   "id": "en20",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "second-conditional",
+   "q": "If I ____ more time, I would learn another language.",
+   "options": [
+    "had",
+    "have",
+    "will have",
+    "would have"
+   ],
+   "answer": 0,
+   "explain": "與現在事實相反的假設：if + 過去式，主要子句用 would。"
+  },
+  {
+   "id": "en21",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "passive",
+   "q": "The letter ____ yesterday.",
+   "options": [
+    "was sent",
+    "sent",
+    "is sending",
+    "has sent"
+   ],
+   "answer": 0,
+   "explain": "信「被寄出」，過去式被動 was sent。"
+  },
+  {
+   "id": "en22",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "indirect-question",
+   "q": "I wonder where ____.",
+   "options": [
+    "she has gone",
+    "has she gone",
+    "she gone",
+    "gone she"
+   ],
+   "answer": 0,
+   "explain": "間接問句用肯定句語序：where she has gone。"
+  },
+  {
+   "id": "en23",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "gerund-infinitive",
+   "q": "I'm not used to ____ up so early.",
+   "options": [
+    "getting",
+    "get",
+    "got",
+    "be get"
+   ],
+   "answer": 0,
+   "explain": "be used to 後面接動名詞（V-ing）。"
+  },
+  {
+   "id": "en24",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "gerund-infinitive",
+   "q": "He suggested ____ a taxi.",
+   "options": [
+    "taking",
+    "to take",
+    "take",
+    "to taking"
+   ],
+   "answer": 0,
+   "explain": "suggest 後面接 V-ing（或 that 子句），不接 to V。"
+  },
+  {
+   "id": "en25",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "Planting trees can help ____ the effects of climate change.",
+   "options": [
+    "mitigate",
+    "migrate",
+    "mimic",
+    "mingle"
+   ],
+   "answer": 0,
+   "explain": "mitigate（減輕）。"
+  },
+  {
+   "id": "en26",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "After years of hard work, she finally ____ her dream of becoming a doctor.",
+   "options": [
+    "fulfilled",
+    "flattered",
+    "fabricated",
+    "forbade"
+   ],
+   "answer": 0,
+   "explain": "fulfill a dream（實現夢想）。"
+  },
+  {
+   "id": "en27",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "His explanation was so ____ that nobody could understand what he meant.",
+   "options": [
+    "vague",
+    "vivid",
+    "vast",
+    "valid"
+   ],
+   "answer": 0,
+   "explain": "vague（含糊不清的）。"
+  },
+  {
+   "id": "en28",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "The two companies decided to ____ their resources to develop the product faster.",
+   "options": [
+    "pool",
+    "pour",
+    "poll",
+    "pile"
+   ],
+   "answer": 0,
+   "explain": "pool resources（集中資源）。"
+  },
+  {
+   "id": "en29",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "The report highlights a ____ gap between rich and poor families.",
+   "options": [
+    "significant",
+    "sufficient",
+    "superficial",
+    "simultaneous"
+   ],
+   "answer": 0,
+   "explain": "significant gap（明顯的差距）。"
+  },
+  {
+   "id": "en30",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "past-perfect",
+   "q": "By the time we arrived, the film ____.",
+   "options": [
+    "had already started",
+    "would already start",
+    "is already starting",
+    "has already started"
+   ],
+   "answer": 0,
+   "explain": "到達之前就已經開始：過去完成式 had started。"
+  },
+  {
+   "id": "en31",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "wish",
+   "q": "I wish I ____ harder when I was at school.",
+   "options": [
+    "had studied",
+    "studied",
+    "would study",
+    "have studied"
+   ],
+   "answer": 0,
+   "explain": "對過去的遺憾：wish + 過去完成式。"
+  },
+  {
+   "id": "en32",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "inversion",
+   "q": "Not only ____ late, but he also forgot the documents.",
+   "options": [
+    "did he arrive",
+    "he arrived",
+    "arrived he",
+    "he did arrive"
+   ],
+   "answer": 0,
+   "explain": "Not only 放句首要倒裝：did he arrive。"
+  },
+  {
+   "id": "en33",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "relative-clause",
+   "q": "The project, ____ was led by Maria, finished early.",
+   "options": [
+    "which",
+    "who",
+    "whom",
+    "whose"
+   ],
+   "answer": 0,
+   "explain": "先行詞是事物（project），用 which。"
+  },
+  {
+   "id": "en34",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "modal-perfect",
+   "q": "You ____ have told me earlier! Now it's too late.",
+   "options": [
+    "should",
+    "may",
+    "can",
+    "will"
+   ],
+   "answer": 0,
+   "explain": "should have + 過去分詞：早該做卻沒做。"
+  },
+  {
+   "id": "en35",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "The politician's ____ remarks offended many voters.",
+   "options": [
+    "derogatory",
+    "dormant",
+    "dubious",
+    "delicate"
+   ],
+   "answer": 0,
+   "explain": "derogatory（貶損的）。"
+  },
+  {
+   "id": "en36",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "The scientist's findings were ____ by further experiments.",
+   "options": [
+    "corroborated",
+    "corrupted",
+    "cultivated",
+    "compensated"
+   ],
+   "answer": 0,
+   "explain": "corroborate（證實、佐證）。"
+  },
+  {
+   "id": "en37",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "She has a ____ for languages; she picks them up effortlessly.",
+   "options": [
+    "knack",
+    "knot",
+    "knuckle",
+    "kindle"
+   ],
+   "answer": 0,
+   "explain": "have a knack for（對…很有天分）。"
+  },
+  {
+   "id": "en38",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "third-conditional",
+   "q": "Had I known about the delay, I ____ a different flight.",
+   "options": [
+    "would have booked",
+    "will book",
+    "would book",
+    "had booked"
+   ],
+   "answer": 0,
+   "explain": "省略 if 的過去完成式假設：Had I known…，主要子句 would have + 過去分詞。"
+  },
+  {
+   "id": "en39",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "subjunctive",
+   "q": "It is essential that every student ____ the form by Friday.",
+   "options": [
+    "submit",
+    "submits",
+    "will submit",
+    "submitted"
+   ],
+   "answer": 0,
+   "explain": "essential that + 原形動詞（假設語氣）。"
+  },
+  {
+   "id": "en40",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "inversion",
+   "q": "Hardly ____ the room when the phone rang.",
+   "options": [
+    "had she entered",
+    "she had entered",
+    "did she enter",
+    "she entered"
+   ],
+   "answer": 0,
+   "explain": "Hardly 放句首要倒裝，且搭配過去完成式：had she entered。"
+  },
+  {
+   "id": "en41",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "I eat a ____ for lunch every day.",
+   "options": [
+    "sandwich",
+    "mountain",
+    "pillow",
+    "ticket"
+   ],
+   "answer": 0,
+   "explain": "sandwich（三明治）：午餐吃的東西。"
+  },
+  {
+   "id": "en42",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "My sister is a ____. She works at a school and teaches children.",
+   "options": [
+    "teacher",
+    "driver",
+    "cook",
+    "singer"
+   ],
+   "answer": 0,
+   "explain": "teacher（老師）：在學校教小孩。"
+  },
+  {
+   "id": "en43",
+   "type": "vocab",
+   "level": "A1",
+   "topic": "vocab",
+   "q": "We can see a lot of ____ in the sky at night.",
+   "options": [
+    "stars",
+    "roads",
+    "shops",
+    "boats"
+   ],
+   "answer": 0,
+   "explain": "stars（星星）：晚上天空看得到。"
+  },
+  {
+   "id": "en44",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "present-simple",
+   "q": "He ____ to school by bus.",
+   "options": [
+    "goes",
+    "go",
+    "going",
+    "gone"
+   ],
+   "answer": 0,
+   "explain": "第三人稱單數（he）的現在簡單式動詞加 -s／-es：goes。"
+  },
+  {
+   "id": "en45",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "be-verb",
+   "q": "We ____ not at home now.",
+   "options": [
+    "are",
+    "is",
+    "am",
+    "be"
+   ],
+   "answer": 0,
+   "explain": "主詞 we 搭配 are。"
+  },
+  {
+   "id": "en46",
+   "type": "grammar",
+   "level": "A1",
+   "topic": "present-simple",
+   "q": "____ you like coffee?",
+   "options": [
+    "Do",
+    "Does",
+    "Are",
+    "Is"
+   ],
+   "answer": 0,
+   "explain": "一般動詞的現在簡單式疑問句，主詞 you 用 Do。"
+  },
+  {
+   "id": "en47",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "Please ____ the door when you leave the room.",
+   "options": [
+    "close",
+    "cook",
+    "climb",
+    "carry"
+   ],
+   "answer": 0,
+   "explain": "close the door（關門）。"
+  },
+  {
+   "id": "en48",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "I'm tired because I didn't ____ well last night.",
+   "options": [
+    "sleep",
+    "sell",
+    "sing",
+    "shine"
+   ],
+   "answer": 0,
+   "explain": "sleep well（睡得好）。"
+  },
+  {
+   "id": "en49",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "The restaurant was so ____ that we had to wait an hour for a table.",
+   "options": [
+    "crowded",
+    "curious",
+    "cheap",
+    "calm"
+   ],
+   "answer": 0,
+   "explain": "crowded（擠滿人的）：所以要等一小時。"
+  },
+  {
+   "id": "en50",
+   "type": "vocab",
+   "level": "A2",
+   "topic": "vocab",
+   "q": "Can you ____ me the way to the station?",
+   "options": [
+    "show",
+    "watch",
+    "make",
+    "look"
+   ],
+   "answer": 0,
+   "explain": "show someone the way（為某人指路）。"
+  },
+  {
+   "id": "en51",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "present-perfect",
+   "q": "She has ____ been to Paris.",
+   "options": [
+    "never",
+    "ago",
+    "since",
+    "when"
+   ],
+   "answer": 0,
+   "explain": "現在完成式搭配 never（從來沒有）；ago、when 不能和現在完成式連用。"
+  },
+  {
+   "id": "en52",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "modals",
+   "q": "You ____ smoke here. It's against the rules.",
+   "options": [
+    "mustn't",
+    "needn't",
+    "don't",
+    "aren't"
+   ],
+   "answer": 0,
+   "explain": "mustn't 表示「禁止」；needn't 是「不需要」。"
+  },
+  {
+   "id": "en53",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "quantifiers",
+   "q": "There isn't ____ milk in the fridge.",
+   "options": [
+    "any",
+    "some",
+    "a",
+    "many"
+   ],
+   "answer": 0,
+   "explain": "否定句的不可數名詞用 any；many 只能接可數名詞。"
+  },
+  {
+   "id": "en54",
+   "type": "grammar",
+   "level": "A2",
+   "topic": "be-going-to",
+   "q": "I'm going to ____ my grandparents this weekend.",
+   "options": [
+    "visit",
+    "visiting",
+    "visited",
+    "visits"
+   ],
+   "answer": 0,
+   "explain": "be going to 後面接原形動詞。"
+  },
+  {
+   "id": "en55",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "The hotel offers a free ____ to the airport for guests.",
+   "options": [
+    "shuttle",
+    "shelter",
+    "shadow",
+    "shovel"
+   ],
+   "answer": 0,
+   "explain": "shuttle（接駁車）。"
+  },
+  {
+   "id": "en56",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "She is very ____; she always thinks about other people's feelings.",
+   "options": [
+    "considerate",
+    "confident",
+    "curious",
+    "convenient"
+   ],
+   "answer": 0,
+   "explain": "considerate（體貼的）。"
+  },
+  {
+   "id": "en57",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "Prices ____ rapidly last year, so many families struggled.",
+   "options": [
+    "rose",
+    "raised",
+    "arose",
+    "roused"
+   ],
+   "answer": 0,
+   "explain": "rise 是不及物動詞：prices rose；raise 後面要接受詞。"
+  },
+  {
+   "id": "en58",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "The doctor told him to ____ salty food.",
+   "options": [
+    "avoid",
+    "avenge",
+    "award",
+    "avail"
+   ],
+   "answer": 0,
+   "explain": "avoid（避免）。"
+  },
+  {
+   "id": "en59",
+   "type": "vocab",
+   "level": "B1",
+   "topic": "vocab",
+   "q": "The flight was ____ because of the heavy snow.",
+   "options": [
+    "canceled",
+    "carved",
+    "collapsed",
+    "cultivated"
+   ],
+   "answer": 0,
+   "explain": "cancel（取消）：被取消的班機。"
+  },
+  {
+   "id": "en60",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "present-perfect-continuous",
+   "q": "How long ____ English?",
+   "options": [
+    "have you been learning",
+    "are you learning",
+    "do you learn",
+    "did you learn"
+   ],
+   "answer": 0,
+   "explain": "問「持續到現在多久」用現在完成進行式：have you been learning。"
+  },
+  {
+   "id": "en61",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "second-conditional",
+   "q": "If you ____ me, I would help you.",
+   "options": [
+    "asked",
+    "ask",
+    "will ask",
+    "would ask"
+   ],
+   "answer": 0,
+   "explain": "第二類條件句：if + 過去式，would + 原形。"
+  },
+  {
+   "id": "en62",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "passive",
+   "q": "This bridge ____ in 1995.",
+   "options": [
+    "was built",
+    "built",
+    "has built",
+    "is building"
+   ],
+   "answer": 0,
+   "explain": "橋「被建造」，過去式被動 was built。"
+  },
+  {
+   "id": "en63",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "reported-speech",
+   "q": "He asked me ____ I was hungry.",
+   "options": [
+    "if",
+    "that",
+    "what",
+    "do"
+   ],
+   "answer": 0,
+   "explain": "間接引述 Yes/No 問句用 if / whether。"
+  },
+  {
+   "id": "en64",
+   "type": "grammar",
+   "level": "B1",
+   "topic": "would-rather",
+   "q": "I'd rather ____ at home than go out tonight.",
+   "options": [
+    "stay",
+    "to stay",
+    "staying",
+    "stayed"
+   ],
+   "answer": 0,
+   "explain": "would rather + 原形動詞。"
+  },
+  {
+   "id": "en65",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "The company plans to ____ its business into Asia next year.",
+   "options": [
+    "expand",
+    "expend",
+    "expel",
+    "expose"
+   ],
+   "answer": 0,
+   "explain": "expand（擴大）。"
+  },
+  {
+   "id": "en66",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "He's very ____; he never gives up, even when things get difficult.",
+   "options": [
+    "persistent",
+    "persuasive",
+    "permanent",
+    "peculiar"
+   ],
+   "answer": 0,
+   "explain": "persistent（堅持不懈的）。"
+  },
+  {
+   "id": "en67",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "The new law will ____ in January.",
+   "options": [
+    "take effect",
+    "take part",
+    "take over",
+    "take off"
+   ],
+   "answer": 0,
+   "explain": "take effect（生效）。"
+  },
+  {
+   "id": "en68",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "The storm ____ train services across the region.",
+   "options": [
+    "disrupted",
+    "disputed",
+    "disclosed",
+    "displaced"
+   ],
+   "answer": 0,
+   "explain": "disrupt（擾亂、使中斷）。"
+  },
+  {
+   "id": "en69",
+   "type": "vocab",
+   "level": "B2",
+   "topic": "vocab",
+   "q": "There's a growing ____ that sleep is as important as diet.",
+   "options": [
+    "awareness",
+    "awkwardness",
+    "aggression",
+    "attendance"
+   ],
+   "answer": 0,
+   "explain": "awareness（意識、認知）。"
+  },
+  {
+   "id": "en70",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "future-perfect",
+   "q": "By next June, I ____ here for ten years.",
+   "options": [
+    "will have worked",
+    "will work",
+    "have worked",
+    "worked"
+   ],
+   "answer": 0,
+   "explain": "未來某時間點之前完成／持續到那時：未來完成式 will have worked。"
+  },
+  {
+   "id": "en71",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "relative-clause",
+   "q": "This is the house ____ I grew up.",
+   "options": [
+    "where",
+    "which",
+    "what",
+    "who"
+   ],
+   "answer": 0,
+   "explain": "先行詞是地點，關係副詞用 where。"
+  },
+  {
+   "id": "en72",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "would-rather",
+   "q": "I'd rather you ____ smoke in here.",
+   "options": [
+    "didn't",
+    "don't",
+    "won't",
+    "haven't"
+   ],
+   "answer": 0,
+   "explain": "would rather + 人 + 過去式：希望對方（現在）不要做某事。"
+  },
+  {
+   "id": "en73",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "gerund-infinitive",
+   "q": "Despite ____ hard, he failed the exam.",
+   "options": [
+    "studying",
+    "to study",
+    "he studied",
+    "studied"
+   ],
+   "answer": 0,
+   "explain": "Despite 後面接名詞或 V-ing。"
+  },
+  {
+   "id": "en74",
+   "type": "grammar",
+   "level": "B2",
+   "topic": "inversion",
+   "q": "Little ____ she know that the surprise party was waiting.",
+   "options": [
+    "did",
+    "does",
+    "has",
+    "was"
+   ],
+   "answer": 0,
+   "explain": "Little 放句首表示否定，要倒裝：did she know。"
+  },
+  {
+   "id": "en75",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "The negotiations reached a ____ when neither side would compromise.",
+   "options": [
+    "deadlock",
+    "dialect",
+    "dividend",
+    "dilemma"
+   ],
+   "answer": 0,
+   "explain": "deadlock（僵局）。"
+  },
+  {
+   "id": "en76",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "He was ____ about details and checked every number twice.",
+   "options": [
+    "meticulous",
+    "mischievous",
+    "monotonous",
+    "momentous"
+   ],
+   "answer": 0,
+   "explain": "meticulous（一絲不苟的）。"
+  },
+  {
+   "id": "en77",
+   "type": "vocab",
+   "level": "C1",
+   "topic": "vocab",
+   "q": "The policy was widely criticized for being ____ and failing to address the real problem.",
+   "options": [
+    "superficial",
+    "sufficient",
+    "spontaneous",
+    "sustainable"
+   ],
+   "answer": 0,
+   "explain": "superficial（膚淺的、表面的）。"
+  },
+  {
+   "id": "en78",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "third-conditional",
+   "q": "Had it not been for your help, I ____ the deadline.",
+   "options": [
+    "would have missed",
+    "would miss",
+    "will miss",
+    "had missed"
+   ],
+   "answer": 0,
+   "explain": "省略 if 的第三類條件句：Had it not been for…，would have + 過去分詞。"
+  },
+  {
+   "id": "en79",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "inversion",
+   "q": "No sooner ____ sat down than the phone rang.",
+   "options": [
+    "had she",
+    "she had",
+    "did she",
+    "has she"
+   ],
+   "answer": 0,
+   "explain": "No sooner 放句首要倒裝，且搭配過去完成式：had she sat down。"
+  },
+  {
+   "id": "en80",
+   "type": "grammar",
+   "level": "C1",
+   "topic": "modals",
+   "q": "I'd appreciate it if you ____ keep this confidential.",
+   "options": [
+    "could",
+    "can",
+    "shall",
+    "are"
+   ],
+   "answer": 0,
+   "explain": "禮貌請求：I'd appreciate it if you could…"
+  }
+ ]
+}

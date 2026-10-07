@@ -5,6 +5,7 @@ const state = {
   lang: localStorage.getItem("lingo_lang") || "en",
   mode: "look",
   cards: [],
+  tests: [],   // 程度小考歷次結果（用來提醒重考）
   today: {},   // lang -> { cardId, done }
 };
 
@@ -16,9 +17,13 @@ function currentCard() {
 }
 
 window.loadPageData = async function () {
-  const [cards, today] = await Promise.all([api("getCards"), api("getToday", { date: toDateStr(new Date()) })]);
+  const [cards, today, tests] = await Promise.all([
+    api("getCards"), api("getToday", { date: toDateStr(new Date()) }),
+    api("getTestResults").catch(() => []), // 提醒用，讀不到就不提醒（例如後端還沒部署新版）
+  ]);
   state.cards = cards;
   state.today = today;
+  state.tests = tests;
   // 從 cheng-daily 帶 ?card=<id> 過來：切到那張卡的語言
   const wanted = new URLSearchParams(location.search).get("card");
   const wantedCard = wanted && cards.find(c => c.id === wanted);
@@ -35,6 +40,25 @@ function render() {
   document.querySelectorAll(".lingo-mode").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
   renderCard();
   renderList();
+  renderRetestHint();
+}
+
+// 距離上次這個語言的程度小考超過 8 週，就在頂端提醒一句（沒考過不提醒）
+const RETEST_AFTER_DAYS = 56;
+const LANG_NAME = { en: "英文", ja: "日文" };
+function renderRetestHint() {
+  const el = document.getElementById("retestHint");
+  const list = state.tests.filter(t => t.lang === state.lang);
+  const last = list[list.length - 1];
+  const days = last ? Math.floor((new Date(toDateStr(new Date()) + "T00:00:00") - new Date(last.date + "T00:00:00")) / 86400000) : 0;
+  const due = !!last && days >= RETEST_AFTER_DAYS;
+  el.classList.toggle("hidden", !due);
+  if (!due) return;
+  el.textContent = `距離上次${LANG_NAME[state.lang] || ""}程度小考已經 ${Math.floor(days / 7)} 週了，要不要重考看看進步？ `;
+  const a = document.createElement("a");
+  a.href = "placement.html";
+  a.textContent = "去考試";
+  el.appendChild(a);
 }
 
 function renderCard() {
