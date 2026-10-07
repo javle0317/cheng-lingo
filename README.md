@@ -14,7 +14,6 @@
   - 規則：每等級答對 ≥ 60% 算過關，等級 = 最高的過關等級（容忍一次失手）；選「我不確定」算答錯。評語由程式依「與上次比較、題型落差、答錯的主題」產生，在 `placement-score.js` 的 `commentFor`
   - 檢查：`node scripts/placement-check.js`（題庫格式、抽題、計分、評語）、`node scripts/backend-check.js`（TestResults 後端邏輯）
 - 內容庫：在頁面上新增、刪除自己的卡片（存在 Sheet 的 Cards 分頁，不參與階段抽卡）
-- 網址 `?card=<id>` 可以直接開到那張卡（原本給 cheng-daily 連動用，現在兩邊不聯動，留著沒壞）
 
 - 練字字帖（`copybook.html`，從 cheng-daily 搬來）：只印淺灰色的描紅字，一張 A4 = 一週。中文直排（A4 橫向）、英文（A4 直向）、日文五十音（A4 直向，一個假名一行、整行淡灰色的同一個假名）。純靜態、不用登入、不呼叫後端
   - 內容：中文、英文在 `data/copybook.json`（`id | lang | title | author | text`，`text` 的換行 = 一行／一句；改檔案 push 即生效）；日文直接用 `data/cards.json` 裡 `order: "seq"` 的假名階段（每張卡片 = 一行）

@@ -16,7 +16,7 @@
 ## 與 cheng-daily 的關係：不聯動
 決議（2026-10-08）：兩個專案完全獨立，要帶的東西太多、太複雜。練習、進度、小考都只在 lingo；daily 的「語言練習」習慣只是一般的手動打卡，列上多一個「語」連結連到這裡。字帖頁從 daily 的「練字」習慣用「字」連結連過來。
 - 兩邊後端不互相呼叫，也不共用密碼或 token。
-- 後端還留著當初為連動做的東西，目前沒人用，之後可以順手清掉：`token` 驗證（指令碼屬性 `LINGO_TOKEN`，從沒設定過）、`drawCard` 可省略 `lang`、`?card=<id>` 開卡片。要不要刪看心情，留著不會壞。
+- 當初為連動做的東西都已清掉（`LINGO_TOKEN` 驗證、`drawCard` 可省略 `lang`、`getToday` 的 `front`/`lang` 欄位、`?card=<id>`）。後端現在只認密碼。
 
 ## 字帖
 `copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。

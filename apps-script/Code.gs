@@ -1,7 +1,6 @@
 // ====== 承語（cheng-lingo）後端：Google Apps Script，綁在一份獨立的 Google Sheet ======
 // 指令碼屬性（專案設定 → 指令碼屬性）：
 //   PASSWORD     前端登入密碼
-//   LINGO_TOKEN  給 cheng-daily 後端呼叫用的 token（cheng-daily 的 LANG_TOKEN 要填同一個），可先不設
 //   CARDS_URL    內建內容 data/cards.json 的網址，可先不設（預設 GitHub Pages 上的檔案）
 // 分頁（第一次執行會自動建立）：
 //   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
@@ -10,7 +9,7 @@
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-08.1";
+var BACKEND_VERSION = "2026-10-08.2";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -27,10 +26,7 @@ function doPost(e) {
   try {
     var body = JSON.parse(e.postData.contents);
     var props = PropertiesService.getScriptProperties();
-    var token = props.getProperty("LINGO_TOKEN");
-    var okPassword = body.password && body.password === props.getProperty("PASSWORD");
-    var okToken = token && body.token && body.token === token;
-    if (!okPassword && !okToken) throw new Error("unauthorized");
+    if (!body.password || body.password !== props.getProperty("PASSWORD")) throw new Error("unauthorized");
     var data = route_(body);
     return respond_({ ok: true, v: BACKEND_VERSION, data: data, warn: repoError_ });
   } catch (err) {
@@ -62,7 +58,7 @@ function write_(b) {
   switch (b.action) {
     case "addCard": return addCard_(b);
     case "deleteCard": return deleteCard_(textArg_(b.id, "id", 64));
-    case "drawCard": return drawAnyOrCard_(textArg_(b.date, "date", 10), b.lang, b.reroll === "1");
+    case "drawCard": return drawCard_(textArg_(b.date, "date", 10), langArg_(b.lang), b.reroll === "1");
     case "addTestResult": return addTestResult_(b);
     case "updateTestNote": return updateTestNote_(textArg_(b.id, "id", 64), optTextArg_(b.note, 500));
     case "setMastered": return setMastered_(textArg_(b.date, "date", 10), textArg_(b.id, "id", 64), b.value === "1");
@@ -276,38 +272,19 @@ function dateStr_(v) {
   return v instanceof Date ? Utilities.formatDate(v, Session.getScriptTimeZone(), "yyyy-MM-dd") : String(v);
 }
 
-// 回傳 { en: {cardId, lang, front, done}, ja: {...} }；沒抽過的語言不會出現
-// front 是卡片正面（cheng-daily 習慣列要顯示標題用），卡片被刪掉就是空字串
+// 回傳 { en: {cardId, done, review, mastered}, ja: {...} }；沒抽過的語言不會出現
 function todayState_(date) {
   var out = {};
-  var fronts = null;
   var rows = progressRows_();
   var mastered = masteredSet_();
   var doneBefore = {}; // 這張卡今天之前已經完成過 → 今天是複習
   rows.forEach(function (p) { if (p.done && p.date < date) doneBefore[p.cardId] = true; });
   rows.forEach(function (p) {
     if (p.date !== date) return;
-    if (!fronts) {
-      fronts = {};
-      allCards_().forEach(function (c) { fronts[c.id] = c.front; });
-    }
-    out[p.lang] = { cardId: p.cardId, lang: p.lang, front: fronts[p.cardId] || "", done: p.done,
+    out[p.lang] = { cardId: p.cardId, done: p.done,
       review: doneBefore[p.cardId] === true, mastered: mastered[p.cardId] === true };
   });
   return out;
-}
-
-// lang 省略（cheng-daily 的單一每日練習）：今天任何語言已有進度就直接回傳，
-// 否則在有卡片的語言裡隨機挑一個再抽。有帶 lang 就維持原本逐語言抽卡。
-function drawAnyOrCard_(date, lang, reroll) {
-  if (lang) return drawCard_(date, langArg_(lang), reroll);
-  if (Object.keys(todayState_(date)).length) return todayState_(date);
-  var cards = allCards_();
-  var withCards = LANGS.filter(function (l) {
-    return cards.some(function (c) { return c.lang === l; });
-  });
-  if (!withCards.length) throw new Error("還沒有任何卡片內容");
-  return drawCard_(date, withCards[Math.floor(Math.random() * withCards.length)], false);
 }
 
 function drawCard_(date, lang, reroll) {

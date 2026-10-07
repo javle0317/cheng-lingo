@@ -24,13 +24,6 @@ window.loadPageData = async function () {
   state.cards = cards;
   state.today = today;
   state.tests = tests;
-  // 從 cheng-daily 帶 ?card=<id> 過來：切到那張卡的語言
-  const wanted = new URLSearchParams(location.search).get("card");
-  const wantedCard = wanted && cards.find(c => c.id === wanted);
-  if (wantedCard) {
-    state.lang = wantedCard.lang;
-    state.today[state.lang] = { cardId: wantedCard.id, done: !!(state.today[state.lang] || {}).done };
-  }
   render();
 };
 
