@@ -1,0 +1,565 @@
+{
+ "title": "英文程度小考（單字＋文法）",
+ "questions": [
+  {
+   "type": "vocab",
+   "level": "A1",
+   "q": "I drink a glass of ____ every morning.",
+   "options": [
+    "water",
+    "chair",
+    "shoe",
+    "window"
+   ],
+   "answer": 0,
+   "explain": "water（水）：喝的東西。",
+   "id": "p01"
+  },
+  {
+   "type": "vocab",
+   "level": "A1",
+   "q": "She is my mother's sister, so she is my ____.",
+   "options": [
+    "aunt",
+    "uncle",
+    "cousin",
+    "niece"
+   ],
+   "answer": 0,
+   "explain": "aunt（阿姨／姑姑）：媽媽的姊妹。",
+   "id": "p02"
+  },
+  {
+   "type": "vocab",
+   "level": "A1",
+   "q": "It is very cold today. Please wear a warm ____.",
+   "options": [
+    "coat",
+    "glass",
+    "pencil",
+    "plate"
+   ],
+   "answer": 0,
+   "explain": "coat（外套）：冷的時候穿。",
+   "id": "p03"
+  },
+  {
+   "type": "grammar",
+   "level": "A1",
+   "q": "She ____ a student.",
+   "options": [
+    "is",
+    "are",
+    "am",
+    "be"
+   ],
+   "answer": 0,
+   "explain": "主詞 she 搭配 is。",
+   "id": "p04"
+  },
+  {
+   "type": "grammar",
+   "level": "A1",
+   "q": "There ____ two books on the table.",
+   "options": [
+    "are",
+    "is",
+    "am",
+    "be"
+   ],
+   "answer": 0,
+   "explain": "two books 是複數，用 there are。",
+   "id": "p05"
+  },
+  {
+   "type": "grammar",
+   "level": "A1",
+   "q": "I ____ breakfast at seven every day.",
+   "options": [
+    "have",
+    "has",
+    "having",
+    "am have"
+   ],
+   "answer": 0,
+   "explain": "主詞 I 的現在簡單式用 have。",
+   "id": "p06"
+  },
+  {
+   "type": "vocab",
+   "level": "A2",
+   "q": "I need to ____ my homework before I can watch TV.",
+   "options": [
+    "finish",
+    "arrive",
+    "borrow",
+    "wear"
+   ],
+   "answer": 0,
+   "explain": "finish（完成）搭配 homework。",
+   "id": "p07"
+  },
+  {
+   "type": "vocab",
+   "level": "A2",
+   "q": "The weather forecast says it will ____ tomorrow, so take an umbrella.",
+   "options": [
+    "rain",
+    "sing",
+    "drive",
+    "paint"
+   ],
+   "answer": 0,
+   "explain": "rain 當動詞是「下雨」。",
+   "id": "p08"
+  },
+  {
+   "type": "vocab",
+   "level": "A2",
+   "q": "We stayed at a small hotel near the beach during our ____.",
+   "options": [
+    "vacation",
+    "medicine",
+    "customer",
+    "recipe"
+   ],
+   "answer": 0,
+   "explain": "vacation（假期）：住飯店、去海邊的情境。",
+   "id": "p09"
+  },
+  {
+   "type": "vocab",
+   "level": "A2",
+   "q": "Could you ____ me your pen for a minute?",
+   "options": [
+    "lend",
+    "borrow",
+    "lose",
+    "spend"
+   ],
+   "answer": 0,
+   "explain": "lend A B 是「借給 A」；borrow 是「跟別人借」，所以這裡要用 lend。",
+   "id": "p10"
+  },
+  {
+   "type": "grammar",
+   "level": "A2",
+   "q": "I ____ TV when you called me.",
+   "options": [
+    "was watching",
+    "am watching",
+    "watch",
+    "have watch"
+   ],
+   "answer": 0,
+   "explain": "過去某一刻正在進行的動作：過去進行式 was watching。",
+   "id": "p11"
+  },
+  {
+   "type": "grammar",
+   "level": "A2",
+   "q": "This bag is ____ than that one.",
+   "options": [
+    "heavier",
+    "more heavy",
+    "heaviest",
+    "most heavy"
+   ],
+   "answer": 0,
+   "explain": "heavy 的比較級是 heavier。",
+   "id": "p12"
+  },
+  {
+   "type": "grammar",
+   "level": "A2",
+   "q": "If it rains tomorrow, we ____ at home.",
+   "options": [
+    "will stay",
+    "stayed",
+    "would stay",
+    "staying"
+   ],
+   "answer": 0,
+   "explain": "if + 現在式，主要子句用 will。",
+   "id": "p13"
+  },
+  {
+   "type": "grammar",
+   "level": "A2",
+   "q": "I have lived here ____ 2015.",
+   "options": [
+    "since",
+    "for",
+    "from",
+    "during"
+   ],
+   "answer": 0,
+   "explain": "since 後面接一個起點時間（2015）；for 後面接一段時間。",
+   "id": "p14"
+  },
+  {
+   "type": "vocab",
+   "level": "B1",
+   "q": "The company decided to ____ the meeting until next week because the manager was sick.",
+   "options": [
+    "postpone",
+    "produce",
+    "protect",
+    "promise"
+   ],
+   "answer": 0,
+   "explain": "postpone（延後）。",
+   "id": "p15"
+  },
+  {
+   "type": "vocab",
+   "level": "B1",
+   "q": "He was ____ to find out that he had won the competition.",
+   "options": [
+    "thrilled",
+    "thrifty",
+    "thirsty",
+    "thorough"
+   ],
+   "answer": 0,
+   "explain": "thrilled（非常興奮）。",
+   "id": "p16"
+  },
+  {
+   "type": "vocab",
+   "level": "B1",
+   "q": "It is important to ____ a healthy balance between work and personal life.",
+   "options": [
+    "maintain",
+    "reject",
+    "invade",
+    "suppose"
+   ],
+   "answer": 0,
+   "explain": "maintain a balance（維持平衡）是常見搭配。",
+   "id": "p17"
+  },
+  {
+   "type": "vocab",
+   "level": "B1",
+   "q": "The new phone has many useful ____, such as a better camera and longer battery life.",
+   "options": [
+    "features",
+    "sections",
+    "surfaces",
+    "measures"
+   ],
+   "answer": 0,
+   "explain": "features（功能、特色）。",
+   "id": "p18"
+  },
+  {
+   "type": "vocab",
+   "level": "B1",
+   "q": "I'm not sure about the price, so I'll ____ the two shops before I decide.",
+   "options": [
+    "compare",
+    "compete",
+    "complain",
+    "compose"
+   ],
+   "answer": 0,
+   "explain": "compare（比較）。",
+   "id": "p19"
+  },
+  {
+   "type": "grammar",
+   "level": "B1",
+   "q": "If I ____ more time, I would learn another language.",
+   "options": [
+    "had",
+    "have",
+    "will have",
+    "would have"
+   ],
+   "answer": 0,
+   "explain": "與現在事實相反的假設：if + 過去式，主要子句用 would。",
+   "id": "p20"
+  },
+  {
+   "type": "grammar",
+   "level": "B1",
+   "q": "The letter ____ yesterday.",
+   "options": [
+    "was sent",
+    "sent",
+    "is sending",
+    "has sent"
+   ],
+   "answer": 0,
+   "explain": "信「被寄出」，過去式被動 was sent。",
+   "id": "p21"
+  },
+  {
+   "type": "grammar",
+   "level": "B1",
+   "q": "I wonder where ____.",
+   "options": [
+    "she has gone",
+    "has she gone",
+    "she gone",
+    "gone she"
+   ],
+   "answer": 0,
+   "explain": "間接問句用肯定句語序：where she has gone。",
+   "id": "p22"
+  },
+  {
+   "type": "grammar",
+   "level": "B1",
+   "q": "I'm not used to ____ up so early.",
+   "options": [
+    "getting",
+    "get",
+    "got",
+    "be get"
+   ],
+   "answer": 0,
+   "explain": "be used to 後面接動名詞（V-ing）。",
+   "id": "p23"
+  },
+  {
+   "type": "grammar",
+   "level": "B1",
+   "q": "He suggested ____ a taxi.",
+   "options": [
+    "taking",
+    "to take",
+    "take",
+    "to taking"
+   ],
+   "answer": 0,
+   "explain": "suggest 後面接 V-ing（或 that 子句），不接 to V。",
+   "id": "p24"
+  },
+  {
+   "type": "vocab",
+   "level": "B2",
+   "q": "Planting trees can help ____ the effects of climate change.",
+   "options": [
+    "mitigate",
+    "migrate",
+    "mimic",
+    "mingle"
+   ],
+   "answer": 0,
+   "explain": "mitigate（減輕）。",
+   "id": "p25"
+  },
+  {
+   "type": "vocab",
+   "level": "B2",
+   "q": "After years of hard work, she finally ____ her dream of becoming a doctor.",
+   "options": [
+    "fulfilled",
+    "flattered",
+    "fabricated",
+    "forbade"
+   ],
+   "answer": 0,
+   "explain": "fulfill a dream（實現夢想）。",
+   "id": "p26"
+  },
+  {
+   "type": "vocab",
+   "level": "B2",
+   "q": "His explanation was so ____ that nobody could understand what he meant.",
+   "options": [
+    "vague",
+    "vivid",
+    "vast",
+    "valid"
+   ],
+   "answer": 0,
+   "explain": "vague（含糊不清的）。",
+   "id": "p27"
+  },
+  {
+   "type": "vocab",
+   "level": "B2",
+   "q": "The two companies decided to ____ their resources to develop the product faster.",
+   "options": [
+    "pool",
+    "pour",
+    "poll",
+    "pile"
+   ],
+   "answer": 0,
+   "explain": "pool resources（集中資源）。",
+   "id": "p28"
+  },
+  {
+   "type": "vocab",
+   "level": "B2",
+   "q": "The report highlights a ____ gap between rich and poor families.",
+   "options": [
+    "significant",
+    "sufficient",
+    "superficial",
+    "simultaneous"
+   ],
+   "answer": 0,
+   "explain": "significant gap（明顯的差距）。",
+   "id": "p29"
+  },
+  {
+   "type": "grammar",
+   "level": "B2",
+   "q": "By the time we arrived, the film ____.",
+   "options": [
+    "had already started",
+    "would already start",
+    "is already starting",
+    "has already started"
+   ],
+   "answer": 0,
+   "explain": "到達之前就已經開始：過去完成式 had started。",
+   "id": "p30"
+  },
+  {
+   "type": "grammar",
+   "level": "B2",
+   "q": "I wish I ____ harder when I was at school.",
+   "options": [
+    "had studied",
+    "studied",
+    "would study",
+    "have studied"
+   ],
+   "answer": 0,
+   "explain": "對過去的遺憾：wish + 過去完成式。",
+   "id": "p31"
+  },
+  {
+   "type": "grammar",
+   "level": "B2",
+   "q": "Not only ____ late, but he also forgot the documents.",
+   "options": [
+    "did he arrive",
+    "he arrived",
+    "arrived he",
+    "he did arrive"
+   ],
+   "answer": 0,
+   "explain": "Not only 放句首要倒裝：did he arrive。",
+   "id": "p32"
+  },
+  {
+   "type": "grammar",
+   "level": "B2",
+   "q": "The project, ____ was led by Maria, finished early.",
+   "options": [
+    "which",
+    "who",
+    "whom",
+    "whose"
+   ],
+   "answer": 0,
+   "explain": "先行詞是事物（project），用 which。",
+   "id": "p33"
+  },
+  {
+   "type": "grammar",
+   "level": "B2",
+   "q": "You ____ have told me earlier! Now it's too late.",
+   "options": [
+    "should",
+    "may",
+    "can",
+    "will"
+   ],
+   "answer": 0,
+   "explain": "should have + 過去分詞：早該做卻沒做。",
+   "id": "p34"
+  },
+  {
+   "type": "vocab",
+   "level": "C1",
+   "q": "The politician's ____ remarks offended many voters.",
+   "options": [
+    "derogatory",
+    "dormant",
+    "dubious",
+    "delicate"
+   ],
+   "answer": 0,
+   "explain": "derogatory（貶損的）。",
+   "id": "p35"
+  },
+  {
+   "type": "vocab",
+   "level": "C1",
+   "q": "The scientist's findings were ____ by further experiments.",
+   "options": [
+    "corroborated",
+    "corrupted",
+    "cultivated",
+    "compensated"
+   ],
+   "answer": 0,
+   "explain": "corroborate（證實、佐證）。",
+   "id": "p36"
+  },
+  {
+   "type": "vocab",
+   "level": "C1",
+   "q": "She has a ____ for languages; she picks them up effortlessly.",
+   "options": [
+    "knack",
+    "knot",
+    "knuckle",
+    "kindle"
+   ],
+   "answer": 0,
+   "explain": "have a knack for（對…很有天分）。",
+   "id": "p37"
+  },
+  {
+   "type": "grammar",
+   "level": "C1",
+   "q": "Had I known about the delay, I ____ a different flight.",
+   "options": [
+    "would have booked",
+    "will book",
+    "would book",
+    "had booked"
+   ],
+   "answer": 0,
+   "explain": "省略 if 的過去完成式假設：Had I known…，主要子句 would have + 過去分詞。",
+   "id": "p38"
+  },
+  {
+   "type": "grammar",
+   "level": "C1",
+   "q": "It is essential that every student ____ the form by Friday.",
+   "options": [
+    "submit",
+    "submits",
+    "will submit",
+    "submitted"
+   ],
+   "answer": 0,
+   "explain": "essential that + 原形動詞（假設語氣）。",
+   "id": "p39"
+  },
+  {
+   "type": "grammar",
+   "level": "C1",
+   "q": "Hardly ____ the room when the phone rang.",
+   "options": [
+    "had she entered",
+    "she had entered",
+    "did she enter",
+    "she entered"
+   ],
+   "answer": 0,
+   "explain": "Hardly 放句首要倒裝，且搭配過去完成式：had she entered。",
+   "id": "p40"
+  }
+ ]
+}

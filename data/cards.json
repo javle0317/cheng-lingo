@@ -935,6 +935,558 @@
      "note": "小さい ゃゅょ／ャュョ 與前一字合成一拍｜例：ピュア 純粹"
     }
    ]
+  },
+  {
+   "id": "en-1-grammar-ing-to",
+   "lang": "en",
+   "title": "文法・V-ing / to V",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g1-01",
+     "type": "sentence",
+     "front": "我喜歡下班後和同事一起打匹克球。",
+     "reading": "",
+     "back": "enjoy / avoid / finish / mind / suggest / keep + V-ing：這些動詞後面接動名詞，不接 to V。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-02",
+     "type": "sentence",
+     "front": "她建議搭火車，不要租車。",
+     "reading": "",
+     "back": "suggest + V-ing（也可以說 suggest that we take…）；不能說 suggest to take。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-03",
+     "type": "sentence",
+     "front": "我們辦好登機手續，就直接去登機門。",
+     "reading": "",
+     "back": "finish + V-ing：完成某件事。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-04",
+     "type": "sentence",
+     "front": "我們決定訂球場附近的飯店。",
+     "reading": "",
+     "back": "decide / plan / hope / want / need + to V：這些動詞後面接 to + 原形。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-05",
+     "type": "sentence",
+     "front": "我不能錯過第一球。",
+     "reading": "",
+     "back": "afford / manage / refuse / promise + to V。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-06",
+     "type": "sentence",
+     "front": "我不習慣為了搭飛機這麼早起。",
+     "reading": "",
+     "back": "be used to + V-ing：習慣於（to 是介系詞，後面接名詞或 V-ing）。",
+     "note": ""
+    },
+    {
+     "id": "en-g1-07",
+     "type": "sentence",
+     "front": "我以前每場棒球賽都看，現在只看季後賽。",
+     "reading": "",
+     "back": "used to + 原形動詞：過去的習慣（現在已經沒有了）。跟 be used to + V-ing 意思不同。",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "en-2-words-travel",
+   "lang": "en",
+   "title": "單字・旅遊",
+   "order": "random",
+   "cards": [
+    {
+     "id": "en-wt-01",
+     "type": "word",
+     "front": "itinerary",
+     "reading": "/aɪˈtɪnəreri/",
+     "back": "行程表",
+     "note": "Our itinerary includes two days in Tokyo and one day in Kyoto."
+    },
+    {
+     "id": "en-wt-02",
+     "type": "word",
+     "front": "luggage",
+     "reading": "/ˈlʌɡɪdʒ/",
+     "back": "行李（不可數）",
+     "note": "Please keep your luggage with you at all times."
+    },
+    {
+     "id": "en-wt-03",
+     "type": "word",
+     "front": "boarding pass",
+     "reading": "/ˈbɔːrdɪŋ pæs/",
+     "back": "登機證",
+     "note": "Show your boarding pass at the gate."
+    },
+    {
+     "id": "en-wt-04",
+     "type": "word",
+     "front": "delay",
+     "reading": "/dɪˈleɪ/",
+     "back": "延誤；延遲",
+     "note": "There was a two-hour delay because of the storm."
+    },
+    {
+     "id": "en-wt-05",
+     "type": "word",
+     "front": "reservation",
+     "reading": "/ˌrezərˈveɪʃn/",
+     "back": "預約；訂位",
+     "note": "I have a reservation under the name Lin."
+    },
+    {
+     "id": "en-wt-06",
+     "type": "word",
+     "front": "destination",
+     "reading": "/ˌdestɪˈneɪʃn/",
+     "back": "目的地",
+     "note": "Our final destination is Seattle."
+    },
+    {
+     "id": "en-wt-07",
+     "type": "word",
+     "front": "currency",
+     "reading": "/ˈkɜːrənsi/",
+     "back": "貨幣",
+     "note": "Where can I exchange foreign currency?"
+    },
+    {
+     "id": "en-wt-08",
+     "type": "word",
+     "front": "souvenir",
+     "reading": "/ˌsuːvəˈnɪr/",
+     "back": "紀念品",
+     "note": "I bought a small souvenir for my sister."
+    },
+    {
+     "id": "en-wt-09",
+     "type": "word",
+     "front": "customs",
+     "reading": "/ˈkʌstəmz/",
+     "back": "海關",
+     "note": "We had to wait in a long line at customs."
+    },
+    {
+     "id": "en-wt-10",
+     "type": "word",
+     "front": "refund",
+     "reading": "/ˈriːfʌnd/",
+     "back": "退款",
+     "note": "Can I get a refund if I cancel the tour?"
+    },
+    {
+     "id": "en-wt-11",
+     "type": "word",
+     "front": "commute",
+     "reading": "/kəˈmjuːt/",
+     "back": "通勤",
+     "note": "My daily commute takes about forty minutes."
+    },
+    {
+     "id": "en-wt-12",
+     "type": "word",
+     "front": "accommodation",
+     "reading": "/əˌkɑːməˈdeɪʃn/",
+     "back": "住宿",
+     "note": "Accommodation in the city center is expensive."
+    }
+   ]
+  },
+  {
+   "id": "en-3-reading-travel",
+   "lang": "en",
+   "title": "閱讀・旅遊",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-rt-01",
+     "type": "passage",
+     "front": "Last month I almost missed my train to Kaohsiung. I woke up late, so I took a taxi to the station. The traffic was terrible, and I arrived five minutes before the departure time. I ran to the platform and jumped on just as the doors were closing. I was out of breath, but I was happy to be on board. Next time, I will set two alarms.",
+     "reading": "",
+     "back": "上個月我差點錯過去高雄的火車。我睡過頭，所以搭計程車去車站。路上塞車很嚴重，我在發車前五分鐘才到。我跑到月台，在車門正要關上時跳上車。我氣喘吁吁，但很高興趕上了。下次我會設兩個鬧鐘。",
+     "note": "重點：almost 差點／departure 出發／out of breath 上氣不接下氣"
+    },
+    {
+     "id": "en-rt-02",
+     "type": "passage",
+     "front": "When we arrived at the hotel, the receptionist asked for our names and passports. She said our room was not ready yet, but we could leave our luggage at the front desk. She also gave us a map and explained how to get to the night market. After a short walk, we came back, and our room was ready. It had a great view of the city.",
+     "reading": "",
+     "back": "我們抵達飯店時，櫃檯人員請我們出示姓名和護照。她說房間還沒準備好，但我們可以把行李寄放在櫃檯。她還給了我們一張地圖，並說明怎麼去夜市。走了一小段路回來後，房間已經準備好了，窗外的城市景色很棒。",
+     "note": "重點：receptionist 櫃檯接待／front desk 櫃檯／view 景色"
+    },
+    {
+     "id": "en-rt-03",
+     "type": "passage",
+     "front": "I was looking for the museum, but I got lost. I asked a woman on the street, \"Excuse me, could you tell me how to get to the museum?\" She smiled and said it was a ten-minute walk. \"Go straight, turn left at the bank, and you will see it on your right.\" I thanked her and followed her directions. It was easy to find.",
+     "reading": "",
+     "back": "我在找博物館，但是迷路了。我問路上的一位女士：「不好意思，可以告訴我怎麼去博物館嗎？」她微笑著說走路大約十分鐘。「直走，在銀行那裡左轉，就會在右手邊看到。」我謝謝她，照著她說的走，很容易就找到了。",
+     "note": "重點：get lost 迷路／could you tell me how to… 間接問句／on your right 在你右手邊"
+    }
+   ]
+  },
+  {
+   "id": "en-4-grammar-b1",
+   "lang": "en",
+   "title": "文法・B1 句型",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g2-01",
+     "type": "sentence",
+     "front": "可以告訴我行李提領處在哪裡嗎？",
+     "reading": "",
+     "back": "間接問句用肯定句語序：where the baggage claim is（不是 where is the baggage claim）。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-02",
+     "type": "sentence",
+     "front": "我想知道門票要多少錢。",
+     "reading": "",
+     "back": "I wonder / I don't know / Do you know + 疑問詞 + 主詞 + 動詞（肯定句語序）。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-03",
+     "type": "sentence",
+     "front": "會議延到下週一。",
+     "reading": "",
+     "back": "被動語態：be + 過去分詞（was postponed）。重點是事情，不強調誰做的。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-04",
+     "type": "sentence",
+     "front": "這座球場建於一九九〇年，之後整修過兩次。",
+     "reading": "",
+     "back": "現在完成式被動：has / have been + 過去分詞。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-05",
+     "type": "sentence",
+     "front": "等我們到機場時，報到櫃檯已經關了。",
+     "reading": "",
+     "back": "過去完成式 had + 過去分詞：在過去某個時間點之前就已經完成的事。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-06",
+     "type": "sentence",
+     "front": "我們找到座位時，比賽已經開始了。",
+     "reading": "",
+     "back": "兩件過去的事，先發生的用過去完成式（had started），後發生的用過去式（found）。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-07",
+     "type": "sentence",
+     "front": "真希望我早點訂票。",
+     "reading": "",
+     "back": "wish + 過去完成式：對過去的遺憾。對現在的願望用 wish + 過去式（I wish I had more time）。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-08",
+     "type": "sentence",
+     "front": "如果我有更多假期，我會多去旅行。",
+     "reading": "",
+     "back": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形。",
+     "note": ""
+    },
+    {
+     "id": "en-g2-09",
+     "type": "sentence",
+     "front": "我們不只贏了，還得到了破紀錄的分數。",
+     "reading": "",
+     "back": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "en-5-words-work",
+   "lang": "en",
+   "title": "單字・工作",
+   "order": "random",
+   "cards": [
+    {
+     "id": "en-ww-01",
+     "type": "word",
+     "front": "deadline",
+     "reading": "/ˈdedlaɪn/",
+     "back": "截止期限",
+     "note": "We need to meet the deadline on Friday."
+    },
+    {
+     "id": "en-ww-02",
+     "type": "word",
+     "front": "schedule",
+     "reading": "/ˈskedʒuːl/",
+     "back": "行程表；排定",
+     "note": "Let's schedule a meeting for next week."
+    },
+    {
+     "id": "en-ww-03",
+     "type": "word",
+     "front": "colleague",
+     "reading": "/ˈkɑːliːɡ/",
+     "back": "同事",
+     "note": "I'm having lunch with a colleague."
+    },
+    {
+     "id": "en-ww-04",
+     "type": "word",
+     "front": "proposal",
+     "reading": "/prəˈpoʊzl/",
+     "back": "提案",
+     "note": "She presented a proposal for the new project."
+    },
+    {
+     "id": "en-ww-05",
+     "type": "word",
+     "front": "budget",
+     "reading": "/ˈbʌdʒɪt/",
+     "back": "預算",
+     "note": "The project is over budget."
+    },
+    {
+     "id": "en-ww-06",
+     "type": "word",
+     "front": "attend",
+     "reading": "/əˈtend/",
+     "back": "出席；參加",
+     "note": "Will you attend the conference next month?"
+    },
+    {
+     "id": "en-ww-07",
+     "type": "word",
+     "front": "negotiate",
+     "reading": "/nɪˈɡoʊʃieɪt/",
+     "back": "協商；談判",
+     "note": "We negotiated a better price with the supplier."
+    },
+    {
+     "id": "en-ww-08",
+     "type": "word",
+     "front": "responsible",
+     "reading": "/rɪˈspɑːnsəbl/",
+     "back": "負責的",
+     "note": "Who is responsible for this task?"
+    },
+    {
+     "id": "en-ww-09",
+     "type": "word",
+     "front": "priority",
+     "reading": "/praɪˈɔːrəti/",
+     "back": "優先事項",
+     "note": "Customer service is our top priority."
+    },
+    {
+     "id": "en-ww-10",
+     "type": "word",
+     "front": "feedback",
+     "reading": "/ˈfiːdbæk/",
+     "back": "意見回饋",
+     "note": "Thanks for your feedback on my report."
+    },
+    {
+     "id": "en-ww-11",
+     "type": "word",
+     "front": "agenda",
+     "reading": "/əˈdʒendə/",
+     "back": "議程",
+     "note": "What's on the agenda for today's meeting?"
+    },
+    {
+     "id": "en-ww-12",
+     "type": "word",
+     "front": "follow up",
+     "reading": "/ˈfɑːloʊ ʌp/",
+     "back": "後續追蹤",
+     "note": "I'll follow up with you by email tomorrow."
+    }
+   ]
+  },
+  {
+   "id": "en-6-reading-work",
+   "lang": "en",
+   "title": "閱讀・工作",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-rw-01",
+     "type": "passage",
+     "front": "On Monday morning, my team had a meeting to discuss a new project. Our manager explained the goals and asked everyone to share ideas. We agreed on a deadline of three weeks. After the meeting, I wrote down my tasks and sent an email to my colleagues. I felt a little nervous, but I was excited to start.",
+     "reading": "",
+     "back": "週一早上，我的團隊開會討論一個新專案。主管說明了目標，並請大家分享想法。我們同意以三週為期限。會後，我寫下自己的工作項目，並寄信給同事。我有一點緊張，但也很期待開始。",
+     "note": "重點：goal 目標／deadline 期限／task 工作項目"
+    },
+    {
+     "id": "en-rw-02",
+     "type": "passage",
+     "front": "Last week I finished a report for a client. Before sending it, I asked my colleague to read it and give me some feedback. She said the data was clear, but the summary was too long. I shortened it and added a chart. The client liked the new version and thanked us for the quick response.",
+     "reading": "",
+     "back": "上週我完成了一份給客戶的報告。寄出前，我請同事先看過並給我一些意見。她說資料很清楚，但摘要太長。我把它縮短，又加了一張圖表。客戶很喜歡新版本，並感謝我們快速回覆。",
+     "note": "重點：client 客戶／feedback 回饋／summary 摘要"
+    },
+    {
+     "id": "en-rw-03",
+     "type": "passage",
+     "front": "Some companies let employees work from home a few days a week. People who work at home save time because they don't have to commute. However, it can be hard to separate work from personal life. To stay productive, many people set a fixed schedule and take short breaks. Others miss talking face to face with their coworkers.",
+     "reading": "",
+     "back": "有些公司讓員工每週在家工作幾天。在家工作的人可以省下通勤時間。不過，要把工作和私人生活分開可能不容易。為了保持效率，許多人會訂定固定的作息並短暫休息。也有人懷念和同事面對面聊天。",
+     "note": "重點：commute 通勤／productive 有效率的／face to face 面對面"
+    }
+   ]
+  },
+  {
+   "id": "en-7-words-sports",
+   "lang": "en",
+   "title": "單字・體育（棒球、匹克球）",
+   "order": "random",
+   "cards": [
+    {
+     "id": "en-ws-01",
+     "type": "word",
+     "front": "pitcher",
+     "reading": "/ˈpɪtʃər/",
+     "back": "投手",
+     "note": "The pitcher threw a perfect game."
+    },
+    {
+     "id": "en-ws-02",
+     "type": "word",
+     "front": "inning",
+     "reading": "/ˈɪnɪŋ/",
+     "back": "（棒球的）局",
+     "note": "The score was tied after eight innings."
+    },
+    {
+     "id": "en-ws-03",
+     "type": "word",
+     "front": "strikeout",
+     "reading": "/ˈstraɪkaʊt/",
+     "back": "三振",
+     "note": "He ended the game with a strikeout."
+    },
+    {
+     "id": "en-ws-04",
+     "type": "word",
+     "front": "home run",
+     "reading": "/ˌhoʊm ˈrʌn/",
+     "back": "全壘打",
+     "note": "She hit a home run in the ninth inning."
+    },
+    {
+     "id": "en-ws-05",
+     "type": "word",
+     "front": "bullpen",
+     "reading": "/ˈbʊlpen/",
+     "back": "牛棚（後援投手區）",
+     "note": "The manager called the bullpen."
+    },
+    {
+     "id": "en-ws-06",
+     "type": "word",
+     "front": "lineup",
+     "reading": "/ˈlaɪnʌp/",
+     "back": "先發名單；打線",
+     "note": "Our lineup is strong this season."
+    },
+    {
+     "id": "en-ws-07",
+     "type": "word",
+     "front": "playoffs",
+     "reading": "/ˈpleɪɔːfs/",
+     "back": "季後賽",
+     "note": "Our team made the playoffs for the first time."
+    },
+    {
+     "id": "en-ws-08",
+     "type": "word",
+     "front": "paddle",
+     "reading": "/ˈpædl/",
+     "back": "（匹克球）球拍",
+     "note": "I bought a new paddle for pickleball."
+    },
+    {
+     "id": "en-ws-09",
+     "type": "word",
+     "front": "serve",
+     "reading": "/sɜːrv/",
+     "back": "發球",
+     "note": "You must serve underhand in pickleball."
+    },
+    {
+     "id": "en-ws-10",
+     "type": "word",
+     "front": "rally",
+     "reading": "/ˈræli/",
+     "back": "來回對打；一個回合",
+     "note": "We had a long rally before she scored."
+    },
+    {
+     "id": "en-ws-11",
+     "type": "word",
+     "front": "dink",
+     "reading": "/dɪŋk/",
+     "back": "（匹克球）吊小球",
+     "note": "A soft dink over the net won the point."
+    },
+    {
+     "id": "en-ws-12",
+     "type": "word",
+     "front": "volley",
+     "reading": "/ˈvɑːli/",
+     "back": "截擊（球落地前打回）",
+     "note": "Try to volley the ball before it bounces."
+    }
+   ]
+  },
+  {
+   "id": "en-8-reading-sports",
+   "lang": "en",
+   "title": "閱讀・體育",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-rs-01",
+     "type": "passage",
+     "front": "My friends and I went to a baseball game on Saturday night. We bought hot dogs and cold drinks and found our seats behind first base. In the seventh inning, everyone stood up and sang a song together. In the ninth inning, our team hit a home run and won the game. The whole stadium was shouting with joy.",
+     "reading": "",
+     "back": "星期六晚上，我和朋友去看了一場棒球賽。我們買了熱狗和冷飲，找到一壘後方的座位。第七局時，所有人站起來一起唱歌。第九局，我們的球隊打出全壘打並贏下比賽。整個球場都在歡呼。",
+     "note": "重點：seats 座位／inning 局／home run 全壘打"
+    },
+    {
+     "id": "en-rs-02",
+     "type": "passage",
+     "front": "Pickleball is easy to learn, which is why so many people enjoy it. The court is smaller than a tennis court, and the ball moves more slowly. You must let the ball bounce once on each side before you volley. Beginners usually spend their first few games trying to serve the ball over the net. After a week, most people can keep a rally going.",
+     "reading": "",
+     "back": "匹克球很容易學，所以很多人喜歡。球場比網球場小，球速也比較慢。球在兩邊各要落地一次，才可以截擊。初學者通常在最初幾場比賽都在努力把球發過網。一週後，大多數人都能持續對打。",
+     "note": "重點：bounce 彈跳／volley 截擊／rally 來回對打"
+    },
+    {
+     "id": "en-rs-03",
+     "type": "passage",
+     "front": "In October, baseball fans around the world watch the playoffs. Every game matters because one loss can end a team's season. Starting pitchers work hard to keep the other team from scoring, and the bullpen takes over when they get tired. A single strikeout in the last inning can change everything. Fans stay glued to their screens until the final out.",
+     "reading": "",
+     "back": "十月，世界各地的棒球迷都在看季後賽。每一場比賽都很重要，因為輸一場就可能結束整季。先發投手努力不讓對手得分，累了之後由牛棚接手。最後一局的一次三振就可能改變一切。球迷們盯著螢幕，直到最後一個出局數。",
+     "note": "重點：playoffs 季後賽／pitcher 投手／strikeout 三振"
+    }
+   ]
   }
  ]
 }

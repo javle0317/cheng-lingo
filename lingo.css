@@ -58,3 +58,29 @@
   body.print-portrait .sheet-host { width: 210mm; height: 296.5mm; }
   .sheet-svg { width: 100% !important; height: 100% !important; max-width: none; box-shadow: none; }
 }
+
+/* ====== 英文程度小考（placement.html）====== */
+.placement-lead { margin: 0 0 12px; line-height: 1.6; }
+.placement-last { margin: 0 0 12px; font-size: 0.85rem; color: var(--text-dim); min-height: 1.2em; }
+.placement-bar { height: 6px; border-radius: 3px; background: var(--input-bg); overflow: hidden; }
+#barFill { height: 100%; width: 0; background: var(--accent); transition: width 0.2s; }
+.placement-progress { margin: 8px 0 12px; font-size: 0.85rem; color: var(--text-dim); }
+.placement-q { font-size: 1.15rem; line-height: 1.6; margin: 0 0 16px; font-weight: 500; }
+.placement-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.placement-opt { text-align: left; padding: 12px 14px; font-size: 1rem; }
+#unsureBtn { width: 100%; color: var(--text-dim); }
+.placement-level-label { margin: 0; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+.placement-level { margin: 4px 0; text-align: center; font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent); }
+.placement-hint { margin: 0 0 16px; text-align: center; line-height: 1.6; }
+.placement-skills { display: flex; gap: 8px; margin-bottom: 16px; }
+.placement-skill { flex: 1; display: flex; justify-content: space-between; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); }
+.placement-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: center; margin-bottom: 12px; }
+.placement-table th, .placement-table td { padding: 6px 4px; border-bottom: 1px solid var(--border); }
+.placement-table th:first-child { text-align: left; font-weight: 500; }
+.placement-wrong { margin: 8px 0 12px; }
+.placement-wrong summary { cursor: pointer; font-size: 0.9rem; color: var(--text-dim); }
+.placement-wrong-item { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; line-height: 1.5; }
+.placement-wrong-item p { margin: 0 0 4px; }
+.placement-wrong-q { font-weight: 500; }
+.placement-wrong-exp { color: var(--text-dim); }
+.placement-tip { font-size: 0.8rem; color: var(--text-dim); margin: 8px 0 12px; }

@@ -25,4 +25,4 @@
 `copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。
 
 ## 待辦
-英文程度小測、日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）。
+日文基礎單字／例句階段、日文短文／詩的字帖（五十音練好了再加）、唸（TTS）、定期重考（不分語言，先做本機小考）、閱讀理解題、口說與寫作（更後面）。學習目標：旅遊、工作、體育（棒球、匹克球）；聽說讀都重要，先從「讀」開始。
