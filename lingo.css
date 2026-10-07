@@ -29,3 +29,6 @@
 .lingo-list li { display: flex; justify-content: space-between; gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid var(--border, rgba(0,0,0,.1)); }
 .lingo-list .lingo-list-text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hidden { display: none !important; }
+
+.lingo-mastered { display: flex; align-items: center; gap: 8px; margin: 4px 0 12px; font-size: 0.9rem; opacity: 0.85; cursor: pointer; }
+.lingo-mastered input { width: auto; margin: 0; }

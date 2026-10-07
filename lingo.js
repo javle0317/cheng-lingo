@@ -49,11 +49,14 @@ function renderCard() {
   }
   const done = !!(state.today[state.lang] || {}).done;
   document.querySelector(".lingo-card").classList.toggle("passage", card.type === "passage");
-  document.getElementById("cardType").textContent = (TYPE_LABEL[card.type] || card.type) + (card.stageTitle ? "・" + card.stageTitle : "");
+  document.getElementById("cardType").textContent = (TYPE_LABEL[card.type] || card.type) + (card.stageTitle ? "・" + card.stageTitle : "") + ((state.today[state.lang] || {}).review ? "・複習" : "");
   document.getElementById("cardFront").textContent = card.front;
   document.getElementById("cardReading").textContent = card.reading || "";
   document.getElementById("cardBack").textContent = card.back;
   document.getElementById("cardNote").textContent = card.note || "";
+  const t = state.today[state.lang] || {};
+  document.getElementById("masteredWrap").classList.toggle("hidden", !card.repo); // 只有內建卡有階段／複習
+  document.getElementById("masteredCheck").checked = !!t.mastered;
 
   // 看：全部顯示；背：先遮住答案；抄：全部顯示＋輸入框
   const recall = state.mode === "recall";
@@ -122,6 +125,22 @@ document.querySelectorAll(".lingo-mode").forEach(b => b.addEventListener("click"
   state.revealed = false;
   render();
 }));
+
+document.getElementById("masteredCheck").addEventListener("change", async (e) => {
+  const card = currentCard();
+  if (!card) return;
+  const box = e.target;
+  box.disabled = true;
+  try {
+    state.today = await api("setMastered", { date: toDateStr(new Date()), id: card.id, value: box.checked ? "1" : "0" });
+    showToast(box.checked ? "之後不會再出現這張" : "這張會再出現做複習");
+  } catch (err) {
+    box.checked = !box.checked;
+    setStatus("更新失敗：" + err.message, true);
+  } finally {
+    box.disabled = false;
+  }
+});
 
 document.getElementById("revealBtn").addEventListener("click", () => { state.revealed = true; renderCard(); });
 document.getElementById("drawBtn").addEventListener("click", () => draw(true));
