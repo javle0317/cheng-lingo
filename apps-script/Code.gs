@@ -7,11 +7,12 @@
 //   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
 //   Progress  date | lang | cardId | done | mode | updatedAt
 
-var BACKEND_VERSION = "2026-10-07.3";
+var BACKEND_VERSION = "2026-10-07.4";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var LANGS = ["en", "ja"];
 var TYPES = ["word", "sentence", "passage"];
+var repoError_ = ""; // 這次請求讀 cards.json 失敗的原因，會用 warn 帶回前端
 var RECENT_DAYS = 14; // 這幾天內抽過的卡盡量不重複
 var CARDS_URL = "https://javle0317.github.io/cheng-lingo/data/cards.json";
 var CARDS_CACHE_SEC = 600;
@@ -24,7 +25,8 @@ function doPost(e) {
     var okPassword = body.password && body.password === props.getProperty("PASSWORD");
     var okToken = token && body.token && body.token === token;
     if (!okPassword && !okToken) throw new Error("unauthorized");
-    return respond_({ ok: true, v: BACKEND_VERSION, data: route_(body) });
+    var data = route_(body);
+    return respond_({ ok: true, v: BACKEND_VERSION, data: data, warn: repoError_ });
   } catch (err) {
     return respond_({ ok: false, v: BACKEND_VERSION, error: String(err.message || err) });
   }
@@ -114,7 +116,8 @@ function repoStages_() {
     }
     return JSON.parse(raw).stages || [];
   } catch (err) {
-    console.error("讀取 cards.json 失敗：" + err.message);
+    repoError_ = "讀取 cards.json 失敗：" + err.message;
+    console.error(repoError_);
     return [];
   }
 }
