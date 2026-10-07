@@ -134,6 +134,8 @@ document.getElementById("masteredCheck").addEventListener("change", async (e) =>
   const card = currentCard();
   if (!card) return;
   const box = e.target;
+  // 勾了之後這張卡就不會再出現，隔天沒辦法再取消，所以勾選前先確認，避免誤觸
+  if (box.checked && !(await showConfirm("確定完全記得這張了嗎？之後就不會再出現。"))) { box.checked = false; return; }
   box.disabled = true;
   try {
     state.today = await api("setMastered", { date: toDateStr(new Date()), id: card.id, value: box.checked ? "1" : "0" });
