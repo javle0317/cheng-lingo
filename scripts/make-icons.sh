@@ -9,7 +9,7 @@ SVG="$(cat icons/icon.svg)"
 make() { # 尺寸 輸出檔
   cat > "$TMP/i.html" <<HTML
 <!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=block&text=%E8%AA%9E" rel="stylesheet">
-<style>html,body{margin:0;background:#1F4A43}svg{display:block;width:${1}px;height:${1}px}</style></head><body>${SVG}</body></html>
+<style>html,body{margin:0;background:#F3EDDC}svg{display:block;width:${1}px;height:${1}px}</style></head><body>${SVG}</body></html>
 HTML
   sed -i.bak "s/width:[0-9]*px;height:[0-9]*px/width:$1px;height:$1px/" "$TMP/i.html" && rm -f "$TMP/i.html.bak"
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size="$1,$1" --virtual-time-budget=15000 --screenshot="$2" "file://$TMP/i.html" >/dev/null 2>&1

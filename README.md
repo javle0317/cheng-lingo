@@ -23,9 +23,10 @@
 4. 唸（TTS 發音）
 5. 日文短文／詩的字帖（五十音練好了再加）
 
-## 加到手機主畫面（全螢幕 App）
+## 配色與加到手機主畫面（全螢幕 App）
+- 主題「墨綠・黃銅」：跟承日常同一套元件樣式，只換 `style.css` 最上面的色票（日間／夜間各一組，主色與底色偏墨綠；黃銅、磚紅沿用）。改色後跑 `node scripts/contrast-check.js` 檢查文字對比（WCAG ≥ 4.5）。
 - Safari 開 https://javle0317.github.io/cheng-lingo/ → 分享 → 加入主畫面。每頁 `<head>` 有 `apple-mobile-web-app-*`、`theme-color`（日夜各一）、`apple-touch-icon`、`manifest.webmanifest`；`style.css` 已用 `env(safe-area-inset-*)` 避開動態島與 Home 指示條。
-- 圖示是 `icons/icon.svg`（墨綠底、磚紅印章「語」、黃銅細線；跟承日常同一組配色，只換底色與字）。改圖示：改 svg 後跑 `sh scripts/make-icons.sh`（要本機 Chrome、要連網載入宋體）。**換圖示或名稱後要把主畫面舊的捷徑刪掉重新加**，iPhone 只在加入那一刻讀一次圖示。
+- 圖示是 `icons/icon.svg`（象牙色底、墨綠印章「語」、黃銅細線）。承日常是藏青底＋磚紅印章的深色圖示，這個是明暗互換的淺色圖示，主畫面上分得出來、語言（斜印章、雙線、黃銅線）一樣。改圖示：改 svg 後跑 `sh scripts/make-icons.sh`（要本機 Chrome、要連網載入宋體）。**換圖示或名稱後要把主畫面舊的捷徑刪掉重新加**，iPhone 只在加入那一刻讀一次圖示。
 - 全螢幕 App 的登入資料跟 Safari 分開，第一次要重新輸入密碼。
 
 ## 部署步驟

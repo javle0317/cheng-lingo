@@ -1,14 +1,14 @@
-/* ====== 色票：藏青・黃銅（日間／夜間各一組）======
-   換色只要改這裡；元件樣式都吃這些變數。--on-accent 是放在主色（藏青）上的文字色。
+/* ====== 色票：墨綠・黃銅（日間／夜間各一組；承日常是藏青・黃銅，這裡只換主色與底色的色相，黃銅與磚紅沿用）======
+   換色只要改這裡；元件樣式都吃這些變數。--on-accent 是放在主色（墨綠）上的文字色。
    健康燈號（--status-*）是醫學語意、血壓圖系列色（--series-*）要彼此好分辨，不跟著主題走。 */
 :root {
   --bg: #f2eee4;
   --card-bg: #fbf9f2;
   --input-bg: #ebe5d6;
-  --text: #1f2a44;
-  --text-dim: #646a80;
-  --accent: #25407a;
-  --accent-soft: #e3e8f4;
+  --text: #1c2926;
+  --text-dim: #5a6864;
+  --accent: #1f4a43;
+  --accent-soft: #e3ece8;
   --on-accent: #fbf9f2;
   --border: #d8d3c4;
   --danger: #b93a2b;
@@ -30,15 +30,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #10141f;
-    --card-bg: #171c2b;
-    --input-bg: #1f2638;
+    --bg: #10171a;
+    --card-bg: #162024;
+    --input-bg: #1d2b2a;
     --text: #e8e6de;
-    --text-dim: #9aa0b5;
-    --accent: #7c9be0;
-    --accent-soft: #1e2742;
-    --on-accent: #10141f;
-    --border: #2c3550;
+    --text-dim: #9aa8a5;
+    --accent: #7fb8a8;
+    --accent-soft: #1b2e2c;
+    --on-accent: #10171a;
+    --border: #2b3a38;
     --danger: #e88b91;
     --success-bg: #163b2c;
     --success-text: #8cd3b4;
@@ -1095,7 +1095,7 @@ input[type="checkbox"]:checked {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.4l2.3 2.3 4.7-5' fill='none' stroke='%23fbf9f2' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 }
 @media (prefers-color-scheme: dark) {
-  input[type="checkbox"]:checked { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.4l2.3 2.3 4.7-5' fill='none' stroke='%2310141f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+  input[type="checkbox"]:checked { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.4l2.3 2.3 4.7-5' fill='none' stroke='%2310171a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
 }
 
 /* 列、標籤、連續天數 */

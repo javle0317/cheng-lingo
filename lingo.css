@@ -1,7 +1,7 @@
 /* 承語專用樣式；底色與按鈕沿用 style.css 的變數 */
 .lingo-tabs, .lingo-modes { display: flex; gap: 8px; margin-bottom: 12px; }
 .lingo-tabs .ghost-btn, .lingo-modes .ghost-btn { flex: 1; }
-.lingo-tabs .active, .lingo-modes .active { background: var(--accent, #25407a); color: #fff; }
+.lingo-tabs .active, .lingo-modes .active { background: var(--accent); color: var(--on-accent); }
 
 .lingo-card { padding: 16px 4px; text-align: center; }
 .lingo-type { font-size: 0.8rem; color: var(--text-dim); margin: 0 0 8px; }
