@@ -16,7 +16,8 @@
 決議：練習在 lingo 做，daily 的習慣列只顯示今天抽到的卡片、「去練習 →」連結（`?card=<id>`）與完成狀態。
 - lingo 後端已接受 `password` 或 `token`（指令碼屬性 `LINGO_TOKEN`，尚未設定）兩種驗證；daily 後端以 token 呼叫，密碼不經瀏覽器。
 - lingo 已有 action：`getCards`、`getToday`、`addCard`、`deleteCard`、`drawCard`、`completeCard`。
-- daily 端還沒做：`drawLanguageCard` / `syncLanguageCard`、習慣列 UI、`LANG_URL` / `LANG_TOKEN` 指令碼屬性。做法仿 daily 的運動挑戰（`Code.gs` 的 `drawChallenge`、`app.js` 的 `setupChallengeRow`）。
+- `drawCard` 的 `lang` 可省略（daily 用）：今天任何語言已有進度就回傳，否則在有卡片的語言裡隨機挑。`drawCard` / `getToday` 回傳 `{cardId, lang, front, done}`（BACKEND_VERSION 2026-10-07.2）。
+- daily 端已寫好（`drawLanguageCard` / `syncLanguageCard`、習慣列 UI），待兩邊部署後連線驗證。
 - 完整計畫：`~/.claude/plans/sideproject-cheng-daily-github-dazzling-catmull.md`。
 
 ## 待辦

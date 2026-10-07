@@ -6,7 +6,7 @@
 //   Cards     id | lang | type | front | reading | back | note | createdAt
 //   Progress  date | lang | cardId | done | mode | updatedAt
 
-var BACKEND_VERSION = "2026-10-07.1";
+var BACKEND_VERSION = "2026-10-07.2";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var LANGS = ["en", "ja"];
@@ -50,7 +50,7 @@ function write_(b) {
   switch (b.action) {
     case "addCard": return addCard_(b);
     case "deleteCard": return deleteCard_(textArg_(b.id, "id", 64));
-    case "drawCard": return drawCard_(textArg_(b.date, "date", 10), langArg_(b.lang), b.reroll === "1");
+    case "drawCard": return drawAnyOrCard_(textArg_(b.date, "date", 10), b.lang, b.reroll === "1");
     case "completeCard": return completeCard_(textArg_(b.date, "date", 10), langArg_(b.lang), String(b.mode || "").slice(0, 10));
     default: throw new Error("unknown action");
   }
@@ -140,13 +140,32 @@ function dateStr_(v) {
   return v instanceof Date ? Utilities.formatDate(v, Session.getScriptTimeZone(), "yyyy-MM-dd") : String(v);
 }
 
-// 回傳 { en: {cardId, done}, ja: {...} }；沒抽過的語言不會出現
+// 回傳 { en: {cardId, lang, front, done}, ja: {...} }；沒抽過的語言不會出現
+// front 是卡片正面（cheng-daily 習慣列要顯示標題用），卡片被刪掉就是空字串
 function todayState_(date) {
   var out = {};
+  var fronts = null;
   progressRows_().forEach(function (p) {
-    if (p.date === date) out[p.lang] = { cardId: p.cardId, done: p.done };
+    if (p.date !== date) return;
+    if (!fronts) {
+      fronts = {};
+      readCards_().forEach(function (c) { fronts[c.id] = c.front; });
+    }
+    out[p.lang] = { cardId: p.cardId, lang: p.lang, front: fronts[p.cardId] || "", done: p.done };
   });
   return out;
+}
+
+// lang 省略（cheng-daily 的單一每日練習）：今天任何語言已有進度就直接回傳，
+// 否則在有卡片的語言裡隨機挑一個再抽。有帶 lang 就維持原本逐語言抽卡。
+function drawAnyOrCard_(date, lang, reroll) {
+  if (lang) return drawCard_(date, langArg_(lang), reroll);
+  if (Object.keys(todayState_(date)).length) return todayState_(date);
+  var withCards = LANGS.filter(function (l) {
+    return readCards_().some(function (c) { return c.lang === l; });
+  });
+  if (!withCards.length) throw new Error("還沒有任何卡片內容");
+  return drawCard_(date, withCards[Math.floor(Math.random() * withCards.length)], false);
 }
 
 function drawCard_(date, lang, reroll) {
