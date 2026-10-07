@@ -14,7 +14,7 @@
   - 規則：每等級答對 ≥ 60% 算過關，等級 = 最高的過關等級（容忍一次失手）；選「我不確定」算答錯。評語由程式依「與上次比較、題型落差、答錯的主題」產生，在 `placement-score.js` 的 `commentFor`
   - 檢查：`node scripts/placement-check.js`（題庫格式、抽題、計分、評語）、`node scripts/backend-check.js`（TestResults 後端邏輯）
 - 內容庫：在頁面上新增、刪除自己的卡片（存在 Sheet 的 Cards 分頁，不參與階段抽卡）
-- 從 cheng-daily 可用 `?card=<id>` 直接開到那張卡
+- 網址 `?card=<id>` 可以直接開到那張卡（原本給 cheng-daily 連動用，現在兩邊不聯動，留著沒壞）
 
 - 練字字帖（`copybook.html`，從 cheng-daily 搬來）：只印淺灰色的描紅字，一張 A4 = 一週。中文直排（A4 橫向）、英文（A4 直向）、日文五十音（A4 直向，一個假名一行、整行淡灰色的同一個假名）。純靜態、不用登入、不呼叫後端
   - 內容：中文、英文在 `data/copybook.json`（`id | lang | title | author | text`，`text` 的換行 = 一行／一句；改檔案 push 即生效）；日文直接用 `data/cards.json` 裡 `order: "seq"` 的假名階段（每張卡片 = 一行）
@@ -24,10 +24,9 @@
 
 ## 還沒做（依序）
 1. 部署後端並實測、手機實測 github.io
-2. cheng-daily 的習慣連動（`drawLanguageCard` / `syncLanguageCard`），後端用 `LINGO_TOKEN` 呼叫這邊
-3. 閱讀理解題（加進小考與閱讀卡），之後再加口說與寫作
-4. 唸（TTS 發音）
-5. 日文短文／詩的字帖（五十音練好了再加）
+2. 閱讀理解題（加進小考與閱讀卡），之後再加口說與寫作
+3. 唸（TTS 發音）
+4. 日文短文／詩的字帖（五十音練好了再加）
 
 ## 配色與加到手機主畫面（全螢幕 App）
 - 主題「墨綠・黃銅」：跟承日常同一套元件樣式，只換 `style.css` 最上面的色票（日間／夜間各一組，主色與底色偏墨綠；黃銅、磚紅沿用）。改色後跑 `node scripts/contrast-check.js` 檢查文字對比（WCAG ≥ 4.5）。

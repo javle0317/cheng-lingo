@@ -13,13 +13,10 @@
 - 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要 push 後約 10 分鐘（快取）才生效。
 - Sheet 分頁名稱 `Cards`、`Progress`、`Mastered`、`TestResults` 是程式寫死的，不能改名。
 
-## 與 cheng-daily 的連動（進行中）
-決議：練習在 lingo 做，daily 的習慣列只顯示今天抽到的卡片、「去練習 →」連結（`?card=<id>`）與完成狀態。
-- lingo 後端已接受 `password` 或 `token`（指令碼屬性 `LINGO_TOKEN`，尚未設定）兩種驗證；daily 後端以 token 呼叫，密碼不經瀏覽器。
-- lingo 已有 action：`getCards`、`getToday`、`addCard`、`deleteCard`、`drawCard`、`completeCard`。
-- `drawCard` 的 `lang` 可省略（daily 用）：今天任何語言已有進度就回傳，否則在有卡片的語言裡隨機挑。`drawCard` / `getToday` 回傳 `{cardId, lang, front, done}`（BACKEND_VERSION 2026-10-07.2）。
-- daily 端已寫好（`drawLanguageCard` / `syncLanguageCard`、習慣列 UI），待兩邊部署後連線驗證。
-- 完整計畫：`~/.claude/plans/sideproject-cheng-daily-github-dazzling-catmull.md`。
+## 與 cheng-daily 的關係：不聯動
+決議（2026-10-08）：兩個專案完全獨立，要帶的東西太多、太複雜。練習、進度、小考都只在 lingo；daily 的「語言練習」習慣只是一般的手動打卡，列上多一個「語」連結連到這裡。字帖頁從 daily 的「練字」習慣用「字」連結連過來。
+- 兩邊後端不互相呼叫，也不共用密碼或 token。
+- 後端還留著當初為連動做的東西，目前沒人用，之後可以順手清掉：`token` 驗證（指令碼屬性 `LINGO_TOKEN`，從沒設定過）、`drawCard` 可省略 `lang`、`?card=<id>` 開卡片。要不要刪看心情，留著不會壞。
 
 ## 字帖
 `copybook.html`（`copybook.js`、`copybook-layout.js`）從 cheng-daily 搬來，內容在 `data/copybook.json`，日文五十音用 `data/cards.json` 的假名行；純靜態不登入。改版面常數看 `copybook-layout.js` 最上面，改完跑 `node scripts/layout-check.js`。
