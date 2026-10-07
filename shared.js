@@ -2,7 +2,7 @@
 // 頁面要先定義 window.loadPageData（讀資料＋渲染），再呼叫 initAuth()。
 
 // 部署 Apps Script 之後把 Web App 網址貼在這裡
-const WEBAPP_URL = "";
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyN2j8iODdQvIgptJ0y33Zc_8kqv7HJX8zYpLLHW9xOpAnZaf5PvPVqR0j1c_0ctPld-Q/exec";
 
 // 跟 cheng-daily 用不同的 key：同一個 github.io 網域下 localStorage 是共用的，不加前綴會互相覆蓋
 const PASSWORD_KEY = "lingo_password";
