@@ -51,6 +51,20 @@ async function renderStart() {
   const total = quiz.levels.reduce((s, l) => s + Object.values(quiz.blueprint[l] || {}).reduce((a, b) => a + b, 0), 0);
   $("startLead").textContent = `${quiz.title}：共 ${total} 題選擇題，約 ${Math.round(total / 3)} 分鐘。題目從簡單排到困難，不確定就選「我不確定」，不要亂猜，結果比較準。`;
   renderHistory(quiz);
+  const last = historyOf(state.lang).slice(-1)[0];
+  $("guideStartBody").innerHTML = guideHtml(quiz, last && last.level);
+}
+
+// ====== 等級說明（可收合）：題庫的 guide，highlight 是要標出來的等級 ======
+function guideHtml(quiz, highlight) {
+  const g = quiz.guide;
+  if (!g) return "";
+  const base = typeof highlight === "string" ? highlight.replace(/ 以下$/, "") : "";
+  const below = typeof highlight === "string" && highlight.endsWith(" 以下");
+  const rows = g.levels.map(l => `<div class="placement-guide-row${!below && l.level === base ? " current" : ""}">
+    <b>${escapeHtml(l.level)}　${escapeHtml(l.name)}</b>${!below && l.level === base ? " <span>← 你目前在這裡</span>" : ""}
+    <p>${escapeHtml(l.text)}</p><p class="placement-guide-exam">${escapeHtml(l.exams)}</p></div>`).join("");
+  return `<p class="placement-guide-intro">${escapeHtml(g.intro)}</p>${rows}`;
 }
 
 // ====== 進步紀錄 ======
@@ -150,6 +164,8 @@ function finish() {
   });
   const head = `<tr><th></th>${quiz.levels.map(l => `<th>${escapeHtml(l)}</th>`).join("")}</tr>`;
   $("bandTable").innerHTML = `<table class="placement-table">${head}${bandRow("全部", r.bands, quiz.levels)}${Object.entries(r.skills).map(([t, sk]) => bandRow(quiz.skills[t] || t, sk.bands, quiz.levels)).join("")}</table>`;
+  $("guideResultBody").innerHTML = guideHtml(quiz, r.level);
+  $("guideResult").open = false;
   $("commentText").textContent = s.comment;
   $("noteInput").value = "";
   $("saveNoteBtn").disabled = true;

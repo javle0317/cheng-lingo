@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261008012830">
-<link rel="stylesheet" href="lingo.css?v=20261008012830">
+<link rel="stylesheet" href="style.css?v=20261008013520">
+<link rel="stylesheet" href="lingo.css?v=20261008013520">
 </head>
 <body>
 
@@ -55,6 +55,7 @@
         <p id="startLead" class="placement-lead"></p>
         <button id="startBtn" type="button">開始</button>
         <div id="historyBox"></div>
+        <details class="placement-guide" id="guideStart"><summary>等級是什麼意思？</summary><div id="guideStartBody"></div></details>
       </section>
 
       <section id="quizBox" class="card hidden">
@@ -71,6 +72,7 @@
         <p id="levelHint" class="placement-hint"></p>
         <div id="skillRows" class="placement-skills"></div>
         <div id="bandTable"></div>
+        <details class="placement-guide" id="guideResult"><summary>這個等級是什麼意思？</summary><div id="guideResultBody"></div></details>
         <p id="commentText" class="placement-comment"></p>
         <label class="placement-note">備註（選填，例如這次的狀況）
           <textarea id="noteInput" rows="2" maxlength="500"></textarea>
@@ -100,8 +102,8 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261008012830"></script>
-  <script src="placement-score.js?v=20261008012830"></script>
-  <script src="placement.js?v=20261008012830"></script>
+  <script src="shared.js?v=20261008013520"></script>
+  <script src="placement-score.js?v=20261008013520"></script>
+  <script src="placement.js?v=20261008013520"></script>
 </body>
 </html>

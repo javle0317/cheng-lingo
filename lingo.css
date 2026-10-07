@@ -96,3 +96,12 @@
 #startBtn { margin-bottom: 12px; }
 .lingo-retest { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--accent-soft); font-size: 0.9rem; line-height: 1.5; }
 .placement-table th:first-child { white-space: nowrap; padding-right: 10px; }
+.placement-guide { margin: 8px 0; }
+.placement-guide summary { cursor: pointer; font-size: 0.9rem; color: var(--accent); }
+.placement-guide-intro { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin: 8px 0; }
+.placement-guide-row { padding: 8px 10px; margin: 6px 0; border-radius: 10px; border: 1px solid var(--border); font-size: 0.9rem; line-height: 1.5; }
+.placement-guide-row p { margin: 2px 0 0; }
+.placement-guide-row b { font-weight: 600; }
+.placement-guide-row.current { border-color: var(--accent); background: var(--accent-soft); }
+.placement-guide-row.current span { color: var(--accent); font-size: 0.8rem; }
+.placement-guide-exam { color: var(--text-dim); font-size: 0.8rem; }

@@ -19,6 +19,7 @@ const seeded = (seed) => () => { seed = (seed * 16807) % 2147483647; return (see
 Object.entries(quizzes).forEach(([lang, quiz]) => {
   console.log(`題庫（${lang}）`);
   const qs = quiz.questions;
+  check("等級說明（guide）涵蓋題庫的每一個等級，且每個都有說明文字與對應考試", quiz.guide && quiz.guide.intro && quiz.levels.every(l => quiz.guide.levels.some(g => g.level === l && g.name && g.text && g.exams)));
   check("id 不重複、題目文字不重複", new Set(qs.map(q => q.id)).size === qs.length && new Set(qs.map(q => q.q)).size === qs.length);
   check("每題 4 個不同選項、answer 在範圍內、有解釋、等級／題型／主題都在題庫定義裡", qs.every(q => q.options.length === 4 && new Set(q.options).size === 4 && q.answer >= 0 && q.answer < 4 && q.explain && quiz.levels.includes(q.level) && quiz.skills[q.type] && quiz.topics[q.topic]), qs.filter(q => !(quiz.levels.includes(q.level) && quiz.skills[q.type] && quiz.topics[q.topic])).map(q => q.id));
   check("blueprint 每個等級每種題型的題庫都夠抽", quiz.levels.every(l => Object.entries(quiz.blueprint[l] || {}).every(([type, n]) => qs.filter(q => q.level === l && q.type === type).length >= n)));
