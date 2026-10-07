@@ -12,6 +12,7 @@
 - 改了 `apps-script/Code.gs`：要手動貼進 Apps Script、「管理部署作業 → 編輯 → 新版本」重新部署，並同步 `BACKEND_VERSION`（Code.gs）與 `BACKEND_MIN_VERSION`（shared.js）。
 - 內建卡片內容在 `data/cards.json`（`stages` 依序；`order: seq` 照順序、`random` 隨機），由後端讀 GitHub Pages 上的檔案抽卡；Sheet 的 `Cards` 只放使用者自己新增的卡。改了 cards.json 要 push 後約 10 分鐘（快取）才生效。
 - Sheet 分頁名稱 `Cards`、`Progress`、`Mastered`、`TestResults` 是程式寫死的，不能改名。
+- 新增分頁一律用 `sheet_(名稱, 表頭陣列)`（找不到就自動建立並寫表頭，已存在的不動；跟 cheng-daily 的 `ensureSheet` 同一個做法），並把「分頁名稱＋欄位」寫進 `Code.gs` 開頭的分頁清單註解。寫入純文字照既有慣例：`setNumberFormat("@")`、使用者輸入過 `safeText_`。
 
 ## 與 cheng-daily 的關係：不聯動
 決議（2026-10-08）：兩個專案完全獨立，要帶的東西太多、太複雜。練習、進度、小考都只在 lingo；daily 的「語言練習」習慣只是一般的手動打卡，列上多一個「語」連結連到這裡。字帖頁從 daily 的「練字」習慣用「字」連結連過來。
