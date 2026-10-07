@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="承語">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#f2eee4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#10141f" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="manifest" href="manifest.webmanifest">
 <title>承語 · 每日練習</title>
-<link rel="stylesheet" href="style.css?v=20261008000820">
-<link rel="stylesheet" href="lingo.css?v=20261008000820">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261008001838">
+<link rel="stylesheet" href="lingo.css?v=20261008001838">
 </head>
 <body>
 
@@ -69,7 +79,7 @@
             <p id="copyResult" class="lingo-copy-result"></p>
           </div>
 
-          <a id="printLink" class="lingo-print-link hidden" href="copybook.html" target="_blank" rel="noopener">🖨️ 印這一行的描紅字帖</a>
+          <a id="printLink" class="lingo-print-link hidden" href="copybook.html">🖨️ 印這一行的描紅字帖</a>
 
           <label id="masteredWrap" class="lingo-mastered hidden">
             <input id="masteredCheck" type="checkbox"> 我完全記得這張了，之後不用再出現
@@ -133,7 +143,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261008000820"></script>
-  <script src="lingo.js?v=20261008000820"></script>
+  <script src="shared.js?v=20261008001838"></script>
+  <script src="lingo.js?v=20261008001838"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "承語",
+  "short_name": "承語",
+  "description": "每天練英文、日文：抽卡、看／背／抄、練字字帖",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2eee4",
+  "theme_color": "#25407a",
+  "lang": "zh-Hant",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
