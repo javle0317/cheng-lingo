@@ -101,6 +101,12 @@ function rows_(sh, width) {
 }
 
 // ====== 內建內容（repo 的 data/cards.json，依階段排序）======
+// 在編輯器手動執行一次來授權「連線到外部服務」（結尾是 _ 的函式不會出現在執行選單）
+function authorize() {
+  var url = PropertiesService.getScriptProperties().getProperty("CARDS_URL") || CARDS_URL;
+  Logger.log("HTTP " + UrlFetchApp.fetch(url, { muteHttpExceptions: true }).getResponseCode());
+}
+
 // 讀不到時回傳空陣列（只剩自己新增的卡），錯誤寫進執行記錄
 function repoStages_() {
   var cache = CacheService.getScriptCache();
