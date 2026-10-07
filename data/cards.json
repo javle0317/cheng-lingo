@@ -945,58 +945,58 @@
     {
      "id": "en-g1-01",
      "type": "sentence",
-     "front": "我喜歡下班後和同事一起打匹克球。",
+     "front": "I enjoy playing pickleball with my coworkers after work.",
      "reading": "",
-     "back": "enjoy / avoid / finish / mind / suggest / keep + V-ing：這些動詞後面接動名詞，不接 to V。",
-     "note": ""
+     "back": "我喜歡下班後和同事一起打匹克球。",
+     "note": "enjoy / avoid / finish / mind / suggest / keep + V-ing：這些動詞後面接動名詞，不接 to V。"
     },
     {
      "id": "en-g1-02",
      "type": "sentence",
-     "front": "她建議搭火車，不要租車。",
+     "front": "She suggested taking the train instead of renting a car.",
      "reading": "",
-     "back": "suggest + V-ing（也可以說 suggest that we take…）；不能說 suggest to take。",
-     "note": ""
+     "back": "她建議搭火車，不要租車。",
+     "note": "suggest + V-ing（也可以說 suggest that we take…）；不能說 suggest to take。"
     },
     {
      "id": "en-g1-03",
      "type": "sentence",
-     "front": "我們辦好登機手續，就直接去登機門。",
+     "front": "We finished checking in and went straight to the gate.",
      "reading": "",
-     "back": "finish + V-ing：完成某件事。",
-     "note": ""
+     "back": "我們辦好登機手續，就直接去登機門。",
+     "note": "finish + V-ing：完成某件事。"
     },
     {
      "id": "en-g1-04",
      "type": "sentence",
-     "front": "我們決定訂球場附近的飯店。",
+     "front": "We decided to book the hotel near the stadium.",
      "reading": "",
-     "back": "decide / plan / hope / want / need + to V：這些動詞後面接 to + 原形。",
-     "note": ""
+     "back": "我們決定訂球場附近的飯店。",
+     "note": "decide / plan / hope / want / need + to V：這些動詞後面接 to + 原形。"
     },
     {
      "id": "en-g1-05",
      "type": "sentence",
-     "front": "我不能錯過第一球。",
+     "front": "I can't afford to miss the first pitch.",
      "reading": "",
-     "back": "afford / manage / refuse / promise + to V。",
-     "note": ""
+     "back": "我不能錯過第一球。",
+     "note": "afford / manage / refuse / promise + to V。"
     },
     {
      "id": "en-g1-06",
      "type": "sentence",
-     "front": "我不習慣為了搭飛機這麼早起。",
+     "front": "I'm not used to waking up this early for a flight.",
      "reading": "",
-     "back": "be used to + V-ing：習慣於（to 是介系詞，後面接名詞或 V-ing）。",
-     "note": ""
+     "back": "我不習慣為了搭飛機這麼早起。",
+     "note": "be used to + V-ing：習慣於（to 是介系詞，後面接名詞或 V-ing）。"
     },
     {
      "id": "en-g1-07",
      "type": "sentence",
-     "front": "我以前每場棒球賽都看，現在只看季後賽。",
+     "front": "I used to watch every baseball game, but now I only watch the playoffs.",
      "reading": "",
-     "back": "used to + 原形動詞：過去的習慣（現在已經沒有了）。跟 be used to + V-ing 意思不同。",
-     "note": ""
+     "back": "我以前每場棒球賽都看，現在只看季後賽。",
+     "note": "used to + 原形動詞：過去的習慣（現在已經沒有了）。跟 be used to + V-ing 意思不同。"
     }
    ]
   },
@@ -1145,74 +1145,74 @@
     {
      "id": "en-g2-01",
      "type": "sentence",
-     "front": "可以告訴我行李提領處在哪裡嗎？",
+     "front": "Could you tell me where the baggage claim is?",
      "reading": "",
-     "back": "間接問句用肯定句語序：where the baggage claim is（不是 where is the baggage claim）。",
-     "note": ""
+     "back": "可以告訴我行李提領處在哪裡嗎？",
+     "note": "間接問句用肯定句語序：where the baggage claim is（不是 where is the baggage claim）。"
     },
     {
      "id": "en-g2-02",
      "type": "sentence",
-     "front": "我想知道門票要多少錢。",
+     "front": "I wonder how much the tickets will cost.",
      "reading": "",
-     "back": "I wonder / I don't know / Do you know + 疑問詞 + 主詞 + 動詞（肯定句語序）。",
-     "note": ""
+     "back": "我想知道門票要多少錢。",
+     "note": "I wonder / I don't know / Do you know + 疑問詞 + 主詞 + 動詞（肯定句語序）。"
     },
     {
      "id": "en-g2-03",
      "type": "sentence",
-     "front": "會議延到下週一。",
+     "front": "The meeting was postponed until next Monday.",
      "reading": "",
-     "back": "被動語態：be + 過去分詞（was postponed）。重點是事情，不強調誰做的。",
-     "note": ""
+     "back": "會議延到下週一。",
+     "note": "被動語態：be + 過去分詞（was postponed）。重點是事情，不強調誰做的。"
     },
     {
      "id": "en-g2-04",
      "type": "sentence",
-     "front": "這座球場建於一九九〇年，之後整修過兩次。",
+     "front": "The stadium was built in 1990 and has been renovated twice.",
      "reading": "",
-     "back": "現在完成式被動：has / have been + 過去分詞。",
-     "note": ""
+     "back": "這座球場建於一九九〇年，之後整修過兩次。",
+     "note": "現在完成式被動：has / have been + 過去分詞。"
     },
     {
      "id": "en-g2-05",
      "type": "sentence",
-     "front": "等我們到機場時，報到櫃檯已經關了。",
+     "front": "By the time we got to the airport, the check-in desk had already closed.",
      "reading": "",
-     "back": "過去完成式 had + 過去分詞：在過去某個時間點之前就已經完成的事。",
-     "note": ""
+     "back": "等我們到機場時，報到櫃檯已經關了。",
+     "note": "過去完成式 had + 過去分詞：在過去某個時間點之前就已經完成的事。"
     },
     {
      "id": "en-g2-06",
      "type": "sentence",
-     "front": "我們找到座位時，比賽已經開始了。",
+     "front": "The game had already started when we found our seats.",
      "reading": "",
-     "back": "兩件過去的事，先發生的用過去完成式（had started），後發生的用過去式（found）。",
-     "note": ""
+     "back": "我們找到座位時，比賽已經開始了。",
+     "note": "兩件過去的事，先發生的用過去完成式（had started），後發生的用過去式（found）。"
     },
     {
      "id": "en-g2-07",
      "type": "sentence",
-     "front": "真希望我早點訂票。",
+     "front": "I wish I had booked the tickets earlier.",
      "reading": "",
-     "back": "wish + 過去完成式：對過去的遺憾。對現在的願望用 wish + 過去式（I wish I had more time）。",
-     "note": ""
+     "back": "真希望我早點訂票。",
+     "note": "wish + 過去完成式：對過去的遺憾。對現在的願望用 wish + 過去式（I wish I had more time）。"
     },
     {
      "id": "en-g2-08",
      "type": "sentence",
-     "front": "如果我有更多假期，我會多去旅行。",
+     "front": "If I had more vacation days, I would travel more.",
      "reading": "",
-     "back": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形。",
-     "note": ""
+     "back": "如果我有更多假期，我會多去旅行。",
+     "note": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形。"
     },
     {
      "id": "en-g2-09",
      "type": "sentence",
-     "front": "我們不只贏了，還得到了破紀錄的分數。",
+     "front": "Not only did we win, but we also scored a record number of runs.",
      "reading": "",
-     "back": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。",
-     "note": ""
+     "back": "我們不只贏了，還得到了破紀錄的分數。",
+     "note": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。"
     }
    ]
   },
