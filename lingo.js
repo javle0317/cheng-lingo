@@ -57,6 +57,7 @@ function renderCard() {
 
   // 看：全部顯示；背：先遮住答案；抄：全部顯示＋輸入框
   const recall = state.mode === "recall";
+  document.getElementById("cardReading").classList.toggle("hidden", recall && !state.revealed); // 背：讀音（羅馬拼音／音標）也先遮住
   document.getElementById("cardBackWrap").classList.toggle("hidden", recall && !state.revealed);
   document.getElementById("recallBox").classList.toggle("hidden", !(recall && !state.revealed));
   document.getElementById("copyBox").classList.toggle("hidden", state.mode !== "copy");
