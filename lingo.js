@@ -189,17 +189,35 @@ function exampleSentence(card) {
 }
 
 // 唸：瀏覽器內建語音合成，音質看裝置；日文假名一行以空白分開，逐字唸
+// 裝置沒有該語言的語音時，什麼聲音都不會出來，所以要明確提示（聲音清單載入可能要等一下，空的時候先試著唸）
+const LANG_LABEL = { en: "英文", ja: "日文" };
+function pickVoice(lang) {
+  const want = TTS_LANG[lang].toLowerCase();
+  const voices = window.speechSynthesis.getVoices();
+  const norm = v => v.lang.replace("_", "-").toLowerCase();
+  return { any: voices.length > 0, voice: voices.find(v => norm(v) === want) || voices.find(v => norm(v).startsWith(want.slice(0, 2))) || null };
+}
+
 function speak(text, lang, slow) {
   if (!HAS_TTS || !text) return;
   const synth = window.speechSynthesis;
+  const { any, voice } = pickVoice(lang);
+  if (any && !voice) {
+    showToast(`這個裝置沒有${LANG_LABEL[lang]}語音，要先在系統設定新增`, { error: true });
+    return;
+  }
   synth.cancel();
   const parts = lang === "ja" ? text.split(/\s+/).filter(Boolean) : [text];
-  parts.forEach(p => {
-    const u = new SpeechSynthesisUtterance(p);
-    u.lang = TTS_LANG[lang] || "en-US";
-    u.rate = slow ? 0.6 : 0.9;
-    synth.speak(u);
-  });
+  setTimeout(() => { // 緊接在 cancel 之後唸，部分瀏覽器會把整段吃掉
+    parts.forEach(p => {
+      const u = new SpeechSynthesisUtterance(p);
+      u.lang = TTS_LANG[lang] || "en-US";
+      if (voice) u.voice = voice;
+      u.rate = slow ? 0.6 : 0.9;
+      u.onerror = (e) => { if (e.error && e.error !== "canceled" && e.error !== "interrupted") showToast("發音失敗：" + e.error, { error: true }); };
+      synth.speak(u);
+    });
+  }, 60);
 }
 
 function speakCard(slow) {
