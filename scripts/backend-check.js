@@ -154,5 +154,42 @@ check("階段設了 after：前一階段還沒練完就不出，練完（或勾�
   return gated && idsOf(unlockedDay, "ja").some(x => x.startsWith("ja-s"));
 })());
 check("路由：drawPlan（寫入）、completeCard 帶 id", (() => { const g = fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"); return /case "drawPlan"/.test(g) && /case "completeCard".*textArg_\(b\.id/.test(g) && !/case "drawCard"/.test(g); })());
+
+// ====== 內容快取：Apps Script 的快取每個值上限 100 KB，cards.json 超過時不能整份讀不出來 ======
+console.log("內容快取");
+{
+  const zlib = require("zlib");
+  const rawCards = fs.readFileSync(path.join(__dirname, "..", "data", "cards.json"), "utf8");
+  const store = {};
+  const LIMIT = 100 * 1024;
+  const cache = {
+    get: k => (k in store ? store[k] : null),
+    getAll: ks => Object.fromEntries(ks.filter(k => k in store).map(k => [k, store[k]])),
+    putAll: o => { Object.entries(o).forEach(([k, v]) => { if (Buffer.byteLength(v) > LIMIT) throw new Error("以下引數過大：value"); store[k] = v; }); },
+    put: (k, v) => { if (Buffer.byteLength(v) > LIMIT) throw new Error("以下引數過大：value"); store[k] = v; },
+  };
+  const blob = (data) => ({ bytes: Buffer.isBuffer(data) ? data : Buffer.from(data), getBytes() { return Array.from(this.bytes); }, getDataAsString() { return this.bytes.toString("utf8"); } });
+  let fetches = 0;
+  const cb = vm.createContext({
+    console, Math, Array, String, Number, Object, JSON, Date, isFinite, parseInt,
+    CacheService: { getScriptCache: () => cache },
+    PropertiesService: { getScriptProperties: () => ({ getProperty: () => null }) },
+    UrlFetchApp: { fetch: () => { fetches++; return { getResponseCode: () => 200, getContentText: () => rawCards }; } },
+    Utilities: {
+      newBlob: (d) => blob(d),
+      gzip: b => blob(zlib.gzipSync(b.bytes)),
+      ungzip: b => blob(zlib.gunzipSync(b.bytes)),
+      base64Encode: bytes => Buffer.from(bytes).toString("base64"),
+      base64Decode: s => Array.from(Buffer.from(s, "base64")),
+    },
+  });
+  vm.runInContext(fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"), cb, { filename: "Code.gs" });
+  const first = vm.runInContext("repoStages_()", cb);
+  const second = vm.runInContext("repoStages_()", cb);
+  check(`cards.json（${Math.round(Buffer.byteLength(rawCards) / 1024)} KB）讀得到，而且快取沒有超過 100 KB 上限`, first.length > 10 && vm.runInContext("repoError_", cb) === "" && Object.keys(store).length >= 2, { stages: first.length, err: vm.runInContext("repoError_", cb) });
+  check("第二次從快取讀（不再抓檔）、內容一致、理解題已去掉", fetches === 1 && JSON.stringify(second) === JSON.stringify(first) && first.every(s => s.cards.every(c => !("questions" in c))), { fetches });
+  check("快取少一段（過期）時當作沒有快取，重新抓檔", (() => { delete store["repoCards.0"]; const again = vm.runInContext("repoStages_()", cb); return fetches === 2 && again.length === first.length; })());
+  check("寫快取失敗（超過上限）不影響讀內容", (() => { const orig = cache.putAll; cache.putAll = () => { throw new Error("以下引數過大：value"); }; Object.keys(store).forEach(k => delete store[k]); const r = vm.runInContext("repoStages_()", cb); cache.putAll = orig; return r.length === first.length && vm.runInContext("repoError_", cb) === ""; })());
+}
 if (failed) { console.log("\n" + failed + " 項失敗"); process.exit(1); }
 console.log("\n全部通過");

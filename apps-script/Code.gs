@@ -9,7 +9,7 @@
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-09.2";
+var BACKEND_VERSION = "2026-10-09.3";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -116,25 +116,60 @@ function authorize() {
 }
 
 // 讀不到時回傳空陣列（只剩自己新增的卡），錯誤寫進執行記錄
+// 快取（CacheService）每個值上限 100 KB，cards.json 早就超過了：去掉後端用不到的理解題、壓成 gzip 再分段存；
+// 快取失敗只是慢一點（下次重抓），不能讓整份內容讀不出來
 function repoStages_() {
   var cache = CacheService.getScriptCache();
-  var raw = cache.get("repoCards");
   try {
-    if (!raw) {
-      var url = PropertiesService.getScriptProperties().getProperty("CARDS_URL") || CARDS_URL;
-      // 加時間參數跳過 GitHub Pages 的 CDN 快取（它最久會讓舊檔多活 10 分鐘），我們自己的快取（CARDS_CACHE_SEC）才是唯一的延遲
-      var res = UrlFetchApp.fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + new Date().getTime(), { muteHttpExceptions: true });
-      if (res.getResponseCode() !== 200) throw new Error("HTTP " + res.getResponseCode());
-      raw = res.getContentText();
-      JSON.parse(raw);
-      cache.put("repoCards", raw, CARDS_CACHE_SEC);
-    }
-    return JSON.parse(raw).stages || [];
+    var cached = cacheGetBig_(cache, "repoCards");
+    if (cached) return JSON.parse(cached);
+  } catch (err) {
+    console.error("讀快取失敗，改抓檔案：" + err.message);
+  }
+  var stages;
+  try {
+    var url = PropertiesService.getScriptProperties().getProperty("CARDS_URL") || CARDS_URL;
+    // 加時間參數跳過 GitHub Pages 的 CDN 快取（它最久會讓舊檔多活 10 分鐘），我們自己的快取（CARDS_CACHE_SEC）才是唯一的延遲
+    var res = UrlFetchApp.fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + new Date().getTime(), { muteHttpExceptions: true });
+    if (res.getResponseCode() !== 200) throw new Error("HTTP " + res.getResponseCode());
+    stages = JSON.parse(res.getContentText()).stages || [];
   } catch (err) {
     repoError_ = "讀取 cards.json 失敗：" + err.message;
     console.error(repoError_);
     return [];
   }
+  stages.forEach(function (s) { s.cards.forEach(function (c) { delete c.questions; }); }); // 理解題只有前端用
+  try {
+    cachePutBig_(cache, "repoCards", JSON.stringify(stages));
+  } catch (err) {
+    console.error("寫快取失敗（不影響使用）：" + err.message);
+  }
+  return stages;
+}
+
+var CACHE_CHUNK = 90000; // 每段字元數（base64 都是單位元組字元），低於快取的 100 KB 上限
+function cachePutBig_(cache, key, text) {
+  var b64 = Utilities.base64Encode(Utilities.gzip(Utilities.newBlob(text, "application/json", "cards.json")).getBytes());
+  var n = Math.ceil(b64.length / CACHE_CHUNK);
+  var obj = {};
+  obj[key] = String(n);
+  for (var i = 0; i < n; i++) obj[key + "." + i] = b64.substr(i * CACHE_CHUNK, CACHE_CHUNK);
+  cache.putAll(obj, CARDS_CACHE_SEC);
+}
+
+function cacheGetBig_(cache, key) {
+  var n = parseInt(cache.get(key) || "0", 10);
+  if (!n) return null;
+  var keys = [];
+  for (var i = 0; i < n; i++) keys.push(key + "." + i);
+  var got = cache.getAll(keys);
+  var b64 = "";
+  for (var j = 0; j < n; j++) {
+    if (!got[keys[j]]) return null; // 少一段（過期了）就當沒有快取
+    b64 += got[keys[j]];
+  }
+  var bytes = Utilities.base64Decode(b64);
+  return Utilities.ungzip(Utilities.newBlob(bytes, "application/x-gzip", "cards.json.gz")).getDataAsString();
 }
 
 function repoCards_() {
