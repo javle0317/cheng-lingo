@@ -207,8 +207,10 @@ function speak(text, lang, slow) {
     return;
   }
   const parts = lang === "ja" ? text.split(/\s+/).filter(Boolean) : [text];
-  const go = () => parts.forEach(p => {
+  let started = false;
+  const go = () => parts.forEach((p, i) => {
     const u = new SpeechSynthesisUtterance(p);
+    u.onstart = () => { started = true; };
     u.lang = TTS_LANG[lang] || "en-US";
     if (voice) u.voice = voice;
     u.rate = slow ? 0.6 : 0.9;
@@ -217,6 +219,11 @@ function speak(text, lang, slow) {
   });
   // iPhone 要求在點擊當下就呼叫 speak，延遲會被擋掉，所以平常直接唸；只有正在唸的時候要先停，Chrome 對緊接著的 cancel→speak 會吃掉整段，這時才稍等一下
   if (synth.speaking || synth.pending) { synth.cancel(); setTimeout(go, 60); } else go();
+  if (synth.paused) synth.resume(); // 部分手機瀏覽器會卡在暫停狀態
+  // 1.5 秒內沒開始唸，就告訴使用者可能的原因（語音數是 0 通常表示這個環境沒有語音引擎）
+  setTimeout(() => {
+    if (!started) showToast(`沒有聲音（語音 ${synth.getVoices().length} 個）。請檢查靜音開關和媒體音量，或改用 Safari／Chrome 開啟`, { error: true });
+  }, 1500);
 }
 
 function speakCard(slow) {
