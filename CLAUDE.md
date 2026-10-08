@@ -15,7 +15,7 @@
 - 新增分頁一律用 `sheet_(名稱, 表頭陣列)`（找不到就自動建立並寫表頭，已存在的不動；跟 cheng-daily 的 `ensureSheet` 同一個做法），並把「分頁名稱＋欄位」寫進 `Code.gs` 開頭的分頁清單註解。寫入純文字照既有慣例：`setNumberFormat("@")`、使用者輸入過 `safeText_`。
 
 ## 功能地圖（邏輯放哪裡）
-- 抽卡：`Code.gs` 的 `pickStaged_`（階段順序）→ `pickReview_`（每 3 天複習）→ `pickRandom_`；「完全記得」存 `Mastered`，階段順序與複習都會跳過它。
+- 排今日清單：`Code.gs` 的 `drawPlan_`（新卡 `pickNew_`：每種類型一條進度線，各取第一個沒練完的階段 → 複習 `pickReviews_` → 階段都練完才 `pickRandomMany_`）；「完全記得」存 `Mastered`，新卡與複習都會跳過它。一天一個語言有多列 `Progress`（一列一張卡）。
 - 程度小考：題庫 `data/placement/<lang>.json`、抽題／計分／評語 `placement-score.js`、頁面 `placement.js`、結果存 `TestResults`；要登入。
 - 檢查指令（改了對應檔案就跑）：`node scripts/cards-check.js`、`placement-check.js`、`backend-check.js`、`layout-check.js`、`contrast-check.js`（用途見 README）。
 - 慣例：英文卡正面一定是英文、背面是中文；新增卡片資料後一定跑 `cards-check.js`（欄位放錯會直接讓卡片正面變成中文）。

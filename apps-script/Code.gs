@@ -4,12 +4,12 @@
 //   CARDS_URL    內建內容 data/cards.json 的網址，可先不設（預設 GitHub Pages 上的檔案）
 // 分頁（第一次執行會自動建立）：
 //   Cards     id | lang | type | front | reading | back | note | createdAt（只放自己新增的卡；內建內容在 repo 的 data/cards.json）
-//   Progress  date | lang | cardId | done | mode | updatedAt
+//   Progress  date | lang | cardId | done | mode | updatedAt（一列 = 當天清單裡的一張卡，一個語言一天有好幾列）
 //   Mastered  cardId | lang | updatedAt（勾了「完全記得」的卡：不再複習，階段順序也跳過）
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-08.2";
+var BACKEND_VERSION = "2026-10-09.1";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -17,7 +17,9 @@ var TEST_HEADERS = ["id", "date", "lang", "level", "skills", "correct", "total",
 var LANGS = ["en", "ja"];
 var TYPES = ["word", "sentence", "passage"];
 var repoError_ = ""; // 這次請求讀 cards.json 失敗的原因，會用 warn 帶回前端
-var REVIEW_EVERY = 3; // 有階段內容的語言：約每 N 天有 1 天改抽已完成過的卡複習
+var DAILY = { word: 5, sentence: 3, passage: 1 }; // 每個語言每天各類型的新卡數；階段可以用 perDay 覆寫（cards.json）
+var REVIEW_PER_DAY = 2; // 每天另外複習幾張（已完成過、最久沒練的）
+var FALLBACK_COUNT = 5; // 階段都練完之後，每天隨機抽幾張
 var RECENT_DAYS = 14; // 這幾天內抽過的卡盡量不重複
 var CARDS_URL = "https://javle0317.github.io/cheng-lingo/data/cards.json";
 var CARDS_CACHE_SEC = 600;
@@ -58,11 +60,11 @@ function write_(b) {
   switch (b.action) {
     case "addCard": return addCard_(b);
     case "deleteCard": return deleteCard_(textArg_(b.id, "id", 64));
-    case "drawCard": return drawCard_(textArg_(b.date, "date", 10), langArg_(b.lang), b.reroll === "1");
+    case "drawPlan": return drawPlan_(textArg_(b.date, "date", 10), langArg_(b.lang), b.more === "1");
     case "addTestResult": return addTestResult_(b);
     case "updateTestNote": return updateTestNote_(textArg_(b.id, "id", 64), optTextArg_(b.note, 500));
     case "setMastered": return setMastered_(textArg_(b.date, "date", 10), textArg_(b.id, "id", 64), b.value === "1");
-    case "completeCard": return completeCard_(textArg_(b.date, "date", 10), langArg_(b.lang), String(b.mode || "").slice(0, 10));
+    case "completeCard": return completeCard_(textArg_(b.date, "date", 10), langArg_(b.lang), textArg_(b.id, "id", 64), String(b.mode || "").slice(0, 10));
     default: throw new Error("unknown action");
   }
 }
@@ -262,6 +264,8 @@ function setMastered_(date, id, on) {
 }
 
 // ====== 每日進度 ======
+// 每個語言每天排一份「今日清單」：每種類型（單字／例句／短文）各取一批新卡，再加幾張複習。
+// Progress 一列 = 清單裡的一張卡；done 是這張卡有沒有練完。
 function progressRows_() {
   return rows_(sheet_("Progress", PROGRESS_HEADERS), PROGRESS_HEADERS.length).map(function (r, i) {
     return { row: i + 2, date: dateStr_(r[0]), lang: r[1], cardId: String(r[2]), done: r[3] === true || String(r[3]).toUpperCase() === "TRUE" }; // 該列被設成純文字格式，布林會被存成文字 "true"
@@ -272,7 +276,7 @@ function dateStr_(v) {
   return v instanceof Date ? Utilities.formatDate(v, Session.getScriptTimeZone(), "yyyy-MM-dd") : String(v);
 }
 
-// 回傳 { en: {cardId, done, review, mastered}, ja: {...} }；沒抽過的語言不會出現
+// 回傳 { en: { cards: [{cardId, done, review, mastered}, ...] }, ja: {...} }；今天沒排過的語言不會出現
 function todayState_(date) {
   var out = {};
   var rows = progressRows_();
@@ -281,90 +285,113 @@ function todayState_(date) {
   rows.forEach(function (p) { if (p.done && p.date < date) doneBefore[p.cardId] = true; });
   rows.forEach(function (p) {
     if (p.date !== date) return;
-    out[p.lang] = { cardId: p.cardId, done: p.done,
-      review: doneBefore[p.cardId] === true, mastered: mastered[p.cardId] === true };
+    if (!out[p.lang]) out[p.lang] = { cards: [] };
+    out[p.lang].cards.push({ cardId: p.cardId, done: p.done,
+      review: doneBefore[p.cardId] === true, mastered: mastered[p.cardId] === true });
   });
   return out;
 }
 
-function drawCard_(date, lang, reroll) {
+// 排今天的清單。今天已經排過就原樣回傳；more=true 是「再來一輪」：今天的卡都練完了才能再排一批新卡（不再加複習）
+function drawPlan_(date, lang, more) {
   var progress = progressRows_();
-  var existing = progress.filter(function (p) { return p.date === date && p.lang === lang; })[0];
-  if (existing && !reroll) return todayState_(date);
-  if (existing && existing.done) throw new Error("今天已完成，不能再換卡");
-
-  var cards = allCards_().filter(function (c) { return c.lang === lang; });
-  if (!cards.length) throw new Error("這個語言還沒有內容");
+  var today = progress.filter(function (p) { return p.date === date && p.lang === lang; });
+  if (today.length && !more) return todayState_(date);
+  if (more && today.some(function (p) { return !p.done; })) throw new Error("今天還有沒練完的卡");
+  if (!allCards_().some(function (c) { return c.lang === lang; })) throw new Error("這個語言還沒有內容");
 
   var mastered = masteredSet_();
-  var staged = pickStaged_(lang, existing, progress, mastered);
-  var pick = staged ? (pickReview_(lang, date, existing, progress, mastered) || staged) : pickRandom_(cards, date, existing, progress, lang);
+  var picks = [];
+  if (!today.length) pickReviews_(lang, date, progress, mastered).forEach(function (c) { picks.push(c); });
+  var fresh = pickNew_(lang, date, progress, mastered);
+  if (!fresh.length) fresh = pickRandomMany_(lang, date, progress, FALLBACK_COUNT, picks); // 階段都練完了：改隨機抽（這時自己新增的卡也會加入）
+  fresh.forEach(function (c) { picks.push(c); });
+  if (!picks.length) throw new Error("沒有可排的卡");
 
   var sh = sheet_("Progress", PROGRESS_HEADERS);
-  if (existing) {
-    sh.getRange(existing.row, 3, 1, 4).setValues([[pick.id, false, "", new Date()]]);
-  } else {
-    var r = sh.getLastRow() + 1;
-    var range = sh.getRange(r, 1, 1, 6);
-    range.setNumberFormat("@");
-    range.setValues([[date, lang, pick.id, false, "", new Date()]]);
-  }
+  var range = sh.getRange(sh.getLastRow() + 1, 1, picks.length, PROGRESS_HEADERS.length);
+  range.setNumberFormat("@");
+  range.setValues(picks.map(function (c) { return [date, lang, c.id, false, "", new Date()]; }));
   return todayState_(date);
 }
 
-// 有階段內容的語言：從第一個還沒練完的階段挑；seq 階段照順序，random 階段隨機。
-// 階段都練完、或這個語言沒有階段內容 → 回傳 null，改用 pickRandom_
-function pickStaged_(lang, existing, progress, mastered) {
-  var done = {};
-  progress.forEach(function (p) { if (p.lang === lang && p.done) done[p.cardId] = true; });
-  Object.keys(mastered).forEach(function (id) { done[id] = true; }); // 完全記得的卡視同練完，直接跳過
-  var stages = repoStages_().filter(function (s) { return s.lang === lang; });
-  for (var i = 0; i < stages.length; i++) {
-    var left = stages[i].cards.filter(function (c) { return !done[c.id]; });
-    if (!left.length) continue;
-    var others = left.filter(function (c) { return !existing || c.id !== existing.cardId; });
-    if (!others.length) others = left; // 只剩目前這張就沒得換
-    return stages[i].order === "seq" ? others[0] : others[Math.floor(Math.random() * others.length)];
+function stageType_(s) { return s.cards.length ? s.cards[0].type : ""; }
+
+function shuffle_(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
   }
-  return null;
+  return a;
 }
 
-// 複習日（依日期固定，換一張也不會變）：挑已完成過、最久沒練、沒勾「完全記得」的內建卡；
-// 沒有可複習的就回傳 null，改抽新卡
-function pickReview_(lang, date, existing, progress, mastered) {
-  if (Math.floor(Date.parse(date + "T00:00:00Z") / 86400000) % REVIEW_EVERY !== REVIEW_EVERY - 1) return null;
+// 新卡：每種類型（單字／例句／短文）各自一條「進度線」，各取第一個還沒練完的階段，一次取 perDay（沒設就用 DAILY）張。
+// seq 階段照順序取、random 階段隨機取。練完過、今天已排入、勾了「完全記得」的卡都不再算新卡。
+// 同類型的階段照 cards.json 的順序，前一個練完才輪到下一個。
+function pickNew_(lang, date, progress, mastered) {
+  var taken = {};
+  progress.forEach(function (p) { if (p.lang === lang && (p.done || p.date === date)) taken[p.cardId] = true; });
+  Object.keys(mastered).forEach(function (id) { taken[id] = true; });
+  var seen = {};
+  var out = [];
+  repoStages_().forEach(function (s) {
+    if (s.lang !== lang) return;
+    var type = stageType_(s);
+    if (seen[type]) return;
+    var left = s.cards.filter(function (c) { return !taken[c.id]; });
+    if (!left.length) return;
+    seen[type] = true;
+    var n = s.perDay || DAILY[type] || 1;
+    (s.order === "seq" ? left : shuffle_(left)).slice(0, n).forEach(function (c) {
+      out.push({ id: c.id, lang: lang });
+    });
+  });
+  return out;
+}
+
+// 複習：已完成過、最久沒練、沒勾「完全記得」、今天沒排過的內建卡，取 REVIEW_PER_DAY 張
+function pickReviews_(lang, date, progress, mastered) {
   var last = {};
+  var planned = {};
   progress.forEach(function (p) {
-    if (p.lang === lang && p.done && p.date < date && (!last[p.cardId] || p.date > last[p.cardId])) last[p.cardId] = p.date;
+    if (p.lang !== lang) return;
+    if (p.date === date) planned[p.cardId] = true;
+    if (p.done && p.date < date && (!last[p.cardId] || p.date > last[p.cardId])) last[p.cardId] = p.date;
   });
   var cands = [];
   repoStages_().forEach(function (s) {
     if (s.lang !== lang) return;
     s.cards.forEach(function (c) {
-      if (last[c.id] && !mastered[c.id] && (!existing || c.id !== existing.cardId)) cands.push({ card: c, last: last[c.id] });
+      if (last[c.id] && !mastered[c.id] && !planned[c.id]) cands.push({ id: c.id, last: last[c.id] });
     });
   });
-  if (!cands.length) return null;
   cands.sort(function (a, b) { return a.last < b.last ? -1 : a.last > b.last ? 1 : 0; });
-  return cands[0].card;
+  return cands.slice(0, REVIEW_PER_DAY);
 }
 
-function pickRandom_(cards, date, existing, progress, lang) {
+// 階段都練完之後：14 天內抽過的盡量不重複，隨機抽 n 張
+function pickRandomMany_(lang, date, progress, n, exclude) {
   var cutoff = new Date(date + "T00:00:00");
   cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
   var cutoffStr = Utilities.formatDate(cutoff, Session.getScriptTimeZone(), "yyyy-MM-dd");
   var recent = {};
-  progress.forEach(function (p) { if (p.lang === lang && p.date >= cutoffStr) recent[p.cardId] = true; });
-  if (existing) recent[existing.cardId] = true; // 換一張不要又抽到同一張
+  var planned = {};
+  progress.forEach(function (p) {
+    if (p.lang !== lang) return;
+    if (p.date >= cutoffStr) recent[p.cardId] = true;
+    if (p.date === date) planned[p.cardId] = true;
+  });
+  exclude.forEach(function (c) { planned[c.id] = true; }); // 剛排進來的複習卡不要又被抽到
+  var cards = allCards_().filter(function (c) { return c.lang === lang && !planned[c.id]; });
   var pool = cards.filter(function (c) { return !recent[c.id]; });
-  if (!pool.length) pool = cards.filter(function (c) { return !existing || c.id !== existing.cardId; });
-  if (!pool.length) pool = cards; // 只有一張卡就沒得換
-  return pool[Math.floor(Math.random() * pool.length)];
+  if (pool.length < n) pool = cards;
+  return shuffle_(pool).slice(0, n).map(function (c) { return { id: c.id, lang: lang }; });
 }
 
-function completeCard_(date, lang, mode) {
-  var p = progressRows_().filter(function (x) { return x.date === date && x.lang === lang; })[0];
-  if (!p) throw new Error("今天還沒抽卡");
+function completeCard_(date, lang, id, mode) {
+  var p = progressRows_().filter(function (x) { return x.date === date && x.lang === lang && x.cardId === id; })[0];
+  if (!p) throw new Error("今天的清單裡沒有這張卡");
   sheet_("Progress", PROGRESS_HEADERS).getRange(p.row, 4, 1, 3).setValues([[true, mode, new Date()]]);
   return todayState_(date);
 }

@@ -5,6 +5,7 @@
    "lang": "ja",
    "title": "平假名",
    "order": "seq",
+   "perDay": 2,
    "cards": [
     {
      "id": "ja-hira-a",
@@ -429,6 +430,7 @@
    "lang": "ja",
    "title": "片假名",
    "order": "seq",
+   "perDay": 2,
    "cards": [
     {
      "id": "ja-kata-a",
@@ -669,6 +671,7 @@
    "lang": "ja",
    "title": "濁音・半濁音",
    "order": "seq",
+   "perDay": 2,
    "cards": [
     {
      "id": "ja-hira-d-ga",
@@ -757,6 +760,7 @@
    "lang": "ja",
    "title": "拗音",
    "order": "seq",
+   "perDay": 2,
    "cards": [
     {
      "id": "ja-hira-y-kya",

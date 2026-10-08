@@ -138,3 +138,7 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-tabbar span { font-size: 1.3rem; line-height: 1.2; }
 .lingo-tabbar .active { color: var(--accent); font-weight: 500; }
 .lingo-copy textarea { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); font-size: 16px; font-family: inherit; } /* 16px 以上 iOS 才不會在點輸入框時自動放大 */
+.lingo-scount { margin-left: auto; font-size: 0.85rem; color: var(--text-dim); }
+.lingo-sbar-bar { margin: -4px 0 12px; }
+.lingo-goal-line { white-space: pre-wrap; }
+.lingo-goal button + button { margin-top: 8px; }
