@@ -15,6 +15,7 @@ const state = {
   cardId: "",  // 練習中的這張卡
   questions: {}, // 短文卡 id -> 理解題（從 data/cards.json 直接讀，不經後端）
   quiz: {},      // 短文卡 id -> { order: [每題隨機排好的選項順序], picked: [每題選了第幾個] }
+  skipQuiz: {},  // 短文卡 id -> true：不做題，直接看翻譯
 };
 
 const TYPE_LABEL = { word: "單字", sentence: "例句", passage: "短文" };
@@ -197,7 +198,8 @@ function renderCard() {
   const dictating = copy && state.dictate && !state.peek; // 聽寫：原文先遮住
   const typed = recall && card.type !== "passage";        // 背：看中文打外文（短文太長，維持先遮住答案再自評）
   const prompting = typed && !state.revealed;             // 還沒檢查：版面上放中文當題目
-  const hideAnswer = (recall && !state.revealed) || dictating;
+  const quizPending = (state.mode !== "recall") && quizUnfinished(card); // 有理解題的短文：答完題（或選擇略過）才顯示翻譯
+  const hideAnswer = (recall && !state.revealed) || dictating || quizPending;
 
   document.querySelector(".lingo-card").classList.toggle("passage", card.type === "passage");
   document.getElementById("cardType").textContent = cardTypeText(card, t);
@@ -248,6 +250,13 @@ function shuffled(n) {
   return a;
 }
 
+function quizUnfinished(card) {
+  const qs = state.questions[card.id];
+  if (!qs || state.skipQuiz[card.id]) return false;
+  const st = state.quiz[card.id];
+  return !st || st.picked.some(p => p < 0);
+}
+
 function renderQuiz(card, hidden) {
   const box = document.getElementById("quizBox");
   const qs = state.questions[card.id];
@@ -259,6 +268,7 @@ function renderQuiz(card, hidden) {
   if (!st) st = state.quiz[card.id] = { order: qs.map(q => shuffled(q.options.length)), picked: qs.map(() => -1) };
   const right = st.picked.filter((p, i) => p >= 0 && st.order[i][p] === qs[i].answer).length;
   const answered = st.picked.filter(p => p >= 0).length;
+  document.getElementById("skipQuizBtn").classList.toggle("hidden", answered === qs.length || !!state.skipQuiz[card.id] || state.mode === "recall");
   document.getElementById("quizSummary").textContent = answered === qs.length ? `閱讀理解題（答對 ${right} / ${qs.length}）` : `閱讀理解題（${qs.length} 題）`;
   const body = document.getElementById("quizBody");
   body.replaceChildren();
@@ -277,7 +287,7 @@ function renderQuiz(card, hidden) {
       b.addEventListener("click", () => {
         st.picked[qi] = pos;
         if (st.picked.every(p => p >= 0)) saveQuiz(card.id, st.picked.filter((p, i) => st.order[i][p] === qs[i].answer).length, qs.length);
-        renderQuiz(card, hidden);
+        renderCard(); // 答完最後一題後，翻譯會跟著顯示出來
       });
       wrap.appendChild(b);
     });
@@ -431,6 +441,10 @@ document.getElementById("revealBtn").addEventListener("click", () => {
   }
   state.revealed = true;
   renderCard();
+});
+document.getElementById("skipQuizBtn").addEventListener("click", () => {
+  const card = currentCard();
+  if (card) { state.skipQuiz[card.id] = true; renderCard(); }
 });
 document.getElementById("nextBtn").addEventListener("click", () => { const id = nextCardId(false); if (id) gotoCard(id); });
 

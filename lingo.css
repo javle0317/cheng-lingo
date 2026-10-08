@@ -153,3 +153,4 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-opt.right { border-color: var(--ok); background: var(--success-bg); color: var(--success-text); }
 .lingo-opt.wrong { border-color: var(--danger); color: var(--danger); }
 .lingo-q-explain { margin: 0 0 4px; font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; }
+.lingo-skip { margin-top: 10px; font-size: 0.85rem; }
