@@ -9,7 +9,7 @@
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-09.1";
+var BACKEND_VERSION = "2026-10-09.2";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -315,6 +315,12 @@ function drawPlan_(date, lang, more) {
   return todayState_(date);
 }
 
+// 階段 id 的每張卡都練完（或勾了完全記得）了嗎；找不到這個階段就當作已練完，不要卡住
+function stageFinished_(stages, id, finished) {
+  var st = stages.filter(function (s) { return s.id === id; })[0];
+  return !st || st.cards.every(function (c) { return finished[c.id]; });
+}
+
 function stageType_(s) { return s.cards.length ? s.cards[0].type : ""; }
 
 function shuffle_(arr) {
@@ -331,12 +337,19 @@ function shuffle_(arr) {
 // 同類型的階段照 cards.json 的順序，前一個練完才輪到下一個。
 function pickNew_(lang, date, progress, mastered) {
   var taken = {};
-  progress.forEach(function (p) { if (p.lang === lang && (p.done || p.date === date)) taken[p.cardId] = true; });
-  Object.keys(mastered).forEach(function (id) { taken[id] = true; });
+  var finished = {}; // 練完或勾了完全記得的卡（不含今天剛排的）；階段的 after 用它判斷前一階段是否練完
+  progress.forEach(function (p) {
+    if (p.lang !== lang) return;
+    if (p.done) finished[p.cardId] = true;
+    if (p.done || p.date === date) taken[p.cardId] = true;
+  });
+  Object.keys(mastered).forEach(function (id) { taken[id] = true; finished[id] = true; });
+  var stages = repoStages_();
   var seen = {};
   var out = [];
-  repoStages_().forEach(function (s) {
+  stages.forEach(function (s) {
     if (s.lang !== lang) return;
+    if (s.after && !stageFinished_(stages, s.after, finished)) return; // 還沒解鎖
     var type = stageType_(s);
     if (seen[type]) return;
     var left = s.cards.filter(function (c) { return !taken[c.id]; });

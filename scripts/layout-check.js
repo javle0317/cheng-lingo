@@ -69,7 +69,7 @@ console.log("日文五十音頁");
   check("jaGeometry：行距 11mm → 一頁 23 行、每行 15 格", g.lines === 23 && g.cells === 15, g);
   const cards = JSON.parse(read("data/cards.json"));
   const rows = [];
-  cards.stages.filter(s => s.lang === "ja" && s.order === "seq").forEach(s => s.cards.forEach(c => rows.push({ id: c.id, name: c.back, tokens: c.front.split(/\s+/).filter(Boolean), readings: c.reading.split(/\s+/).filter(Boolean) })));
+  cards.stages.filter(s => s.lang === "ja" && s.order === "seq" && /hiragana|katakana|dakuon|yoon/.test(s.id)).forEach(s => s.cards.forEach(c => rows.push({ id: c.id, name: c.back, tokens: c.front.split(/\s+/).filter(Boolean), readings: c.reading.split(/\s+/).filter(Boolean) })));
   check("假名行：平假名、片假名、濁音、拗音共 52 行，每行的假名與讀音一樣多", rows.length === 52 && rows.every(r => r.tokens.length > 0 && r.tokens.length === r.readings.length), rows.filter(r => r.tokens.length !== r.readings.length).map(r => r.id));
   let r = L.packJaRows({ rows, startIndex: 0, maxLines: g.lines });
   check("packJa：一頁整行放（あ〜た行 4 行 = 20 行，不切到第 5 行）", r.used.length === 4 && r.lines.length === 20 && r.next === 4, { used: r.used.length, lines: r.lines.length, next: r.next });

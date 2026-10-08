@@ -941,6 +941,823 @@
    ]
   },
   {
+   "id": "ja-7-greetings",
+   "lang": "ja",
+   "title": "招呼與常用語",
+   "order": "random",
+   "cards": [
+    {
+     "id": "ja-gr-01",
+     "type": "word",
+     "front": "おはよう",
+     "reading": "ohayou",
+     "back": "早安（對家人、朋友）",
+     "note": "おはよう → 禮貌說法是おはようございます。早い（早）的意思。"
+    },
+    {
+     "id": "ja-gr-02",
+     "type": "word",
+     "front": "おはようございます",
+     "reading": "ohayou gozaimasu",
+     "back": "早安（禮貌）",
+     "note": "對同事、長輩、店員都用這句。"
+    },
+    {
+     "id": "ja-gr-03",
+     "type": "word",
+     "front": "こんにちは",
+     "reading": "konnichiwa",
+     "back": "你好；午安",
+     "note": "寫作「は」，這裡唸 wa。今日は。"
+    },
+    {
+     "id": "ja-gr-04",
+     "type": "word",
+     "front": "こんばんは",
+     "reading": "konbanwa",
+     "back": "晚上好",
+     "note": "寫作「は」，這裡唸 wa。今晩は。"
+    },
+    {
+     "id": "ja-gr-05",
+     "type": "word",
+     "front": "おやすみなさい",
+     "reading": "oyasuminasai",
+     "back": "晚安（睡前）",
+     "note": "休みます（休息）的禮貌說法。"
+    },
+    {
+     "id": "ja-gr-06",
+     "type": "word",
+     "front": "ありがとう",
+     "reading": "arigatou",
+     "back": "謝謝",
+     "note": "禮貌說法是ありがとうございます。有難う。"
+    },
+    {
+     "id": "ja-gr-07",
+     "type": "word",
+     "front": "ありがとうございます",
+     "reading": "arigatou gozaimasu",
+     "back": "謝謝（禮貌）",
+     "note": "對店員、同事、長輩都適用。"
+    },
+    {
+     "id": "ja-gr-08",
+     "type": "word",
+     "front": "すみません",
+     "reading": "sumimasen",
+     "back": "不好意思；對不起；麻煩一下",
+     "note": "叫店員、道歉、道謝都能用，旅行最常用的一句。"
+    },
+    {
+     "id": "ja-gr-09",
+     "type": "word",
+     "front": "ごめんなさい",
+     "reading": "gomennasai",
+     "back": "對不起（道歉）",
+     "note": "比すみません更偏向「我做錯了」。"
+    },
+    {
+     "id": "ja-gr-10",
+     "type": "word",
+     "front": "はい",
+     "reading": "hai",
+     "back": "是；好",
+     "note": "回答「對」或「好的」。"
+    },
+    {
+     "id": "ja-gr-11",
+     "type": "word",
+     "front": "いいえ",
+     "reading": "iie",
+     "back": "不是；不會",
+     "note": "否定的回答。對方道謝時回答「いいえ」也有「不會」的意思。"
+    },
+    {
+     "id": "ja-gr-12",
+     "type": "word",
+     "front": "ください",
+     "reading": "kudasai",
+     "back": "請給我",
+     "note": "名詞 + を + ください：請給我～。漢字寫作「下さい」。"
+    },
+    {
+     "id": "ja-gr-13",
+     "type": "word",
+     "front": "おねがいします",
+     "reading": "onegaishimasu",
+     "back": "麻煩你；拜託了",
+     "note": "點餐、請人幫忙時都能用。お願いします。"
+    },
+    {
+     "id": "ja-gr-14",
+     "type": "word",
+     "front": "だいじょうぶです",
+     "reading": "daijoubu desu",
+     "back": "沒問題；不用了；我可以",
+     "note": "大丈夫です。拒絕店員推銷時也能說。"
+    },
+    {
+     "id": "ja-gr-15",
+     "type": "word",
+     "front": "わかりません",
+     "reading": "wakarimasen",
+     "back": "我不懂；我不知道",
+     "note": "分かりません。肯定是わかります。"
+    },
+    {
+     "id": "ja-gr-16",
+     "type": "word",
+     "front": "もう いちど おねがいします",
+     "reading": "mou ichido onegaishimasu",
+     "back": "請再說一次",
+     "note": "もう一度お願いします。聽不懂時的救命句。"
+    },
+    {
+     "id": "ja-gr-17",
+     "type": "word",
+     "front": "ゆっくり おねがいします",
+     "reading": "yukkuri onegaishimasu",
+     "back": "請說慢一點",
+     "note": "ゆっくり（慢慢地）お願いします。"
+    },
+    {
+     "id": "ja-gr-18",
+     "type": "word",
+     "front": "さようなら",
+     "reading": "sayounara",
+     "back": "再見（較正式）",
+     "note": "日常對朋友常說じゃあね、またね。"
+    },
+    {
+     "id": "ja-gr-19",
+     "type": "word",
+     "front": "いただきます",
+     "reading": "itadakimasu",
+     "back": "開動了",
+     "note": "吃飯前說的話。"
+    },
+    {
+     "id": "ja-gr-20",
+     "type": "word",
+     "front": "ごちそうさまでした",
+     "reading": "gochisousama deshita",
+     "back": "謝謝招待；我吃飽了",
+     "note": "吃完飯後說的話。ご馳走様でした。"
+    },
+    {
+     "id": "ja-gr-21",
+     "type": "word",
+     "front": "はじめまして",
+     "reading": "hajimemashite",
+     "back": "初次見面",
+     "note": "初めまして。自我介紹時第一句。"
+    },
+    {
+     "id": "ja-gr-22",
+     "type": "word",
+     "front": "よろしく おねがいします",
+     "reading": "yoroshiku onegaishimasu",
+     "back": "請多指教",
+     "note": "よろしく お願いします。自我介紹的結尾。"
+    },
+    {
+     "id": "ja-gr-23",
+     "type": "word",
+     "front": "おげんきですか",
+     "reading": "ogenki desu ka",
+     "back": "你好嗎？",
+     "note": "お元気ですか。か 放句尾變疑問。"
+    },
+    {
+     "id": "ja-gr-24",
+     "type": "word",
+     "front": "げんきです",
+     "reading": "genki desu",
+     "back": "我很好",
+     "note": "元気です。"
+    }
+   ]
+  },
+  {
+   "id": "ja-8-numbers-time",
+   "lang": "ja",
+   "title": "數字與時間",
+   "order": "random",
+   "cards": [
+    {
+     "id": "ja-nt-01",
+     "type": "word",
+     "front": "いち に さん",
+     "reading": "ichi ni san",
+     "back": "一、二、三",
+     "note": "一・二・三。"
+    },
+    {
+     "id": "ja-nt-02",
+     "type": "word",
+     "front": "よん ご ろく",
+     "reading": "yon go roku",
+     "back": "四、五、六",
+     "note": "四也可以唸し（shi），但數數字常用よん。四・五・六。"
+    },
+    {
+     "id": "ja-nt-03",
+     "type": "word",
+     "front": "なな はち きゅう",
+     "reading": "nana hachi kyuu",
+     "back": "七、八、九",
+     "note": "七也唸しち（shichi）、九也唸く（ku）。七・八・九。"
+    },
+    {
+     "id": "ja-nt-04",
+     "type": "word",
+     "front": "じゅう",
+     "reading": "juu",
+     "back": "十",
+     "note": "十。"
+    },
+    {
+     "id": "ja-nt-05",
+     "type": "word",
+     "front": "ひゃく",
+     "reading": "hyaku",
+     "back": "百",
+     "note": "百。"
+    },
+    {
+     "id": "ja-nt-06",
+     "type": "word",
+     "front": "せん",
+     "reading": "sen",
+     "back": "千",
+     "note": "千。"
+    },
+    {
+     "id": "ja-nt-07",
+     "type": "word",
+     "front": "まん",
+     "reading": "man",
+     "back": "萬",
+     "note": "万。日文大數字以「萬」為單位進位（不是千），一萬日圓是いちまんえん。"
+    },
+    {
+     "id": "ja-nt-08",
+     "type": "word",
+     "front": "ゼロ",
+     "reading": "zero",
+     "back": "零",
+     "note": "也可以說れい（rei）。"
+    },
+    {
+     "id": "ja-nt-09",
+     "type": "word",
+     "front": "いま",
+     "reading": "ima",
+     "back": "現在",
+     "note": "今。"
+    },
+    {
+     "id": "ja-nt-10",
+     "type": "word",
+     "front": "なんじ",
+     "reading": "nanji",
+     "back": "幾點",
+     "note": "何時。なん（什麼）＋じ（點）。"
+    },
+    {
+     "id": "ja-nt-11",
+     "type": "word",
+     "front": "ごぜん",
+     "reading": "gozen",
+     "back": "上午",
+     "note": "午前。"
+    },
+    {
+     "id": "ja-nt-12",
+     "type": "word",
+     "front": "ごご",
+     "reading": "gogo",
+     "back": "下午",
+     "note": "午後。"
+    },
+    {
+     "id": "ja-nt-13",
+     "type": "word",
+     "front": "きょう",
+     "reading": "kyou",
+     "back": "今天",
+     "note": "今日。"
+    },
+    {
+     "id": "ja-nt-14",
+     "type": "word",
+     "front": "あした",
+     "reading": "ashita",
+     "back": "明天",
+     "note": "明日。"
+    },
+    {
+     "id": "ja-nt-15",
+     "type": "word",
+     "front": "きのう",
+     "reading": "kinou",
+     "back": "昨天",
+     "note": "昨日。"
+    },
+    {
+     "id": "ja-nt-16",
+     "type": "word",
+     "front": "まいにち",
+     "reading": "mainichi",
+     "back": "每天",
+     "note": "毎日。"
+    },
+    {
+     "id": "ja-nt-17",
+     "type": "word",
+     "front": "まいあさ",
+     "reading": "maiasa",
+     "back": "每天早上",
+     "note": "毎朝。"
+    },
+    {
+     "id": "ja-nt-18",
+     "type": "word",
+     "front": "らいしゅう",
+     "reading": "raishuu",
+     "back": "下週",
+     "note": "来週。"
+    },
+    {
+     "id": "ja-nt-19",
+     "type": "word",
+     "front": "にちようび",
+     "reading": "nichiyoubi",
+     "back": "星期日",
+     "note": "日曜日。曜日（ようび）是星期。"
+    },
+    {
+     "id": "ja-nt-20",
+     "type": "word",
+     "front": "どようび",
+     "reading": "doyoubi",
+     "back": "星期六",
+     "note": "土曜日。"
+    }
+   ]
+  },
+  {
+   "id": "ja-9-travel-words",
+   "lang": "ja",
+   "title": "單字・旅遊",
+   "order": "random",
+   "cards": [
+    {
+     "id": "ja-tw-01",
+     "type": "word",
+     "front": "えき",
+     "reading": "eki",
+     "back": "車站",
+     "note": "駅。"
+    },
+    {
+     "id": "ja-tw-02",
+     "type": "word",
+     "front": "でんしゃ",
+     "reading": "densha",
+     "back": "電車",
+     "note": "電車。"
+    },
+    {
+     "id": "ja-tw-03",
+     "type": "word",
+     "front": "ひこうき",
+     "reading": "hikouki",
+     "back": "飛機",
+     "note": "飛行機。"
+    },
+    {
+     "id": "ja-tw-04",
+     "type": "word",
+     "front": "くうこう",
+     "reading": "kuukou",
+     "back": "機場",
+     "note": "空港。"
+    },
+    {
+     "id": "ja-tw-05",
+     "type": "word",
+     "front": "ちかてつ",
+     "reading": "chikatetsu",
+     "back": "地鐵",
+     "note": "地下鉄。"
+    },
+    {
+     "id": "ja-tw-06",
+     "type": "word",
+     "front": "きっぷ",
+     "reading": "kippu",
+     "back": "車票；票",
+     "note": "切符。小さい「っ」是停頓一拍。"
+    },
+    {
+     "id": "ja-tw-07",
+     "type": "word",
+     "front": "ちず",
+     "reading": "chizu",
+     "back": "地圖",
+     "note": "地図。"
+    },
+    {
+     "id": "ja-tw-08",
+     "type": "word",
+     "front": "みち",
+     "reading": "michi",
+     "back": "道路",
+     "note": "道。"
+    },
+    {
+     "id": "ja-tw-09",
+     "type": "word",
+     "front": "みぎ",
+     "reading": "migi",
+     "back": "右邊",
+     "note": "右。"
+    },
+    {
+     "id": "ja-tw-10",
+     "type": "word",
+     "front": "ひだり",
+     "reading": "hidari",
+     "back": "左邊",
+     "note": "左。"
+    },
+    {
+     "id": "ja-tw-11",
+     "type": "word",
+     "front": "まっすぐ",
+     "reading": "massugu",
+     "back": "直走；筆直",
+     "note": "小さい「っ」是停頓一拍。"
+    },
+    {
+     "id": "ja-tw-12",
+     "type": "word",
+     "front": "ここ",
+     "reading": "koko",
+     "back": "這裡",
+     "note": "こ・そ・あ・ど：ここ（這裡）、そこ（那裡）、あそこ（遠處）、どこ（哪裡）。"
+    },
+    {
+     "id": "ja-tw-13",
+     "type": "word",
+     "front": "そこ",
+     "reading": "soko",
+     "back": "那裡（離對方近）",
+     "note": "こ・そ・あ・ど系列。"
+    },
+    {
+     "id": "ja-tw-14",
+     "type": "word",
+     "front": "あそこ",
+     "reading": "asoko",
+     "back": "那邊（離兩人都遠）",
+     "note": "こ・そ・あ・ど系列。"
+    },
+    {
+     "id": "ja-tw-15",
+     "type": "word",
+     "front": "トイレ",
+     "reading": "toire",
+     "back": "廁所",
+     "note": "外來語，旅行一定會用到。"
+    },
+    {
+     "id": "ja-tw-16",
+     "type": "word",
+     "front": "みず",
+     "reading": "mizu",
+     "back": "水",
+     "note": "水。點餐時常說「お水をください」。"
+    },
+    {
+     "id": "ja-tw-17",
+     "type": "word",
+     "front": "おかね",
+     "reading": "okane",
+     "back": "錢",
+     "note": "お金。お 是禮貌的前綴。"
+    },
+    {
+     "id": "ja-tw-18",
+     "type": "word",
+     "front": "えん",
+     "reading": "en",
+     "back": "日圓",
+     "note": "円。"
+    },
+    {
+     "id": "ja-tw-19",
+     "type": "word",
+     "front": "いくら",
+     "reading": "ikura",
+     "back": "多少錢",
+     "note": "「いくらですか」是問價錢最常用的一句。"
+    },
+    {
+     "id": "ja-tw-20",
+     "type": "word",
+     "front": "ごはん",
+     "reading": "gohan",
+     "back": "飯；餐",
+     "note": "ご飯。朝ごはん＝早餐。"
+    },
+    {
+     "id": "ja-tw-21",
+     "type": "word",
+     "front": "おいしい",
+     "reading": "oishii",
+     "back": "好吃的",
+     "note": "美味しい。い形容詞。"
+    },
+    {
+     "id": "ja-tw-22",
+     "type": "word",
+     "front": "たかい",
+     "reading": "takai",
+     "back": "貴的；高的",
+     "note": "高い。"
+    },
+    {
+     "id": "ja-tw-23",
+     "type": "word",
+     "front": "やすい",
+     "reading": "yasui",
+     "back": "便宜的",
+     "note": "安い。"
+    },
+    {
+     "id": "ja-tw-24",
+     "type": "word",
+     "front": "おおきい",
+     "reading": "ookii",
+     "back": "大的",
+     "note": "大きい。"
+    },
+    {
+     "id": "ja-tw-25",
+     "type": "word",
+     "front": "ちいさい",
+     "reading": "chiisai",
+     "back": "小的",
+     "note": "小さい。"
+    },
+    {
+     "id": "ja-tw-26",
+     "type": "word",
+     "front": "タクシー",
+     "reading": "takushii",
+     "back": "計程車",
+     "note": "外來語，ー 表示拉長音。"
+    },
+    {
+     "id": "ja-tw-27",
+     "type": "word",
+     "front": "バス",
+     "reading": "basu",
+     "back": "公車",
+     "note": "外來語。"
+    },
+    {
+     "id": "ja-tw-28",
+     "type": "word",
+     "front": "パスポート",
+     "reading": "pasupooto",
+     "back": "護照",
+     "note": "外來語。"
+    },
+    {
+     "id": "ja-tw-29",
+     "type": "word",
+     "front": "レストラン",
+     "reading": "resutoran",
+     "back": "餐廳",
+     "note": "外來語。"
+    },
+    {
+     "id": "ja-tw-30",
+     "type": "word",
+     "front": "コーヒー",
+     "reading": "koohii",
+     "back": "咖啡",
+     "note": "外來語。"
+    },
+    {
+     "id": "ja-tw-31",
+     "type": "word",
+     "front": "へや",
+     "reading": "heya",
+     "back": "房間",
+     "note": "部屋。"
+    },
+    {
+     "id": "ja-tw-32",
+     "type": "word",
+     "front": "かぎ",
+     "reading": "kagi",
+     "back": "鑰匙",
+     "note": "鍵。"
+    },
+    {
+     "id": "ja-tw-33",
+     "type": "word",
+     "front": "でぐち",
+     "reading": "deguchi",
+     "back": "出口",
+     "note": "出口。"
+    },
+    {
+     "id": "ja-tw-34",
+     "type": "word",
+     "front": "いりぐち",
+     "reading": "iriguchi",
+     "back": "入口",
+     "note": "入口。"
+    }
+   ]
+  },
+  {
+   "id": "ja-10-basic-sentences",
+   "lang": "ja",
+   "title": "基本句型",
+   "order": "seq",
+   "after": "ja-9-travel-words",
+   "cards": [
+    {
+     "id": "ja-bs-01",
+     "type": "sentence",
+     "front": "わたしは たいわんじんです。",
+     "reading": "watashi wa taiwanjin desu.",
+     "back": "我是台灣人。",
+     "note": "私は台湾人です。〜は〜です：A 是 B。は 當助詞時唸 wa。"
+    },
+    {
+     "id": "ja-bs-02",
+     "type": "sentence",
+     "front": "わたしは かいしゃいんです。",
+     "reading": "watashi wa kaishain desu.",
+     "back": "我是上班族。",
+     "note": "私は会社員です。"
+    },
+    {
+     "id": "ja-bs-03",
+     "type": "sentence",
+     "front": "これは ほんです。",
+     "reading": "kore wa hon desu.",
+     "back": "這是書。",
+     "note": "これ（這個）、それ（那個）、あれ（那邊那個）。"
+    },
+    {
+     "id": "ja-bs-04",
+     "type": "sentence",
+     "front": "それは なんですか。",
+     "reading": "sore wa nan desu ka.",
+     "back": "那是什麼？",
+     "note": "それは何ですか。句尾加か變成疑問句，不用問號也行。"
+    },
+    {
+     "id": "ja-bs-05",
+     "type": "sentence",
+     "front": "あれは えきです。",
+     "reading": "are wa eki desu.",
+     "back": "那邊那個是車站。",
+     "note": "あれは駅です。"
+    },
+    {
+     "id": "ja-bs-06",
+     "type": "sentence",
+     "front": "トイレは どこですか。",
+     "reading": "toire wa doko desu ka.",
+     "back": "廁所在哪裡？",
+     "note": "〜はどこですか：～在哪裡？旅行必備句型。"
+    },
+    {
+     "id": "ja-bs-07",
+     "type": "sentence",
+     "front": "えきは どこですか。",
+     "reading": "eki wa doko desu ka.",
+     "back": "車站在哪裡？",
+     "note": "駅はどこですか。換掉名詞就能問路。"
+    },
+    {
+     "id": "ja-bs-08",
+     "type": "sentence",
+     "front": "みずを ください。",
+     "reading": "mizu wo kudasai.",
+     "back": "請給我水。",
+     "note": "水をください。を 寫作「を」，唸 o；標示動作的對象。"
+    },
+    {
+     "id": "ja-bs-09",
+     "type": "sentence",
+     "front": "コーヒーを ください。",
+     "reading": "koohii wo kudasai.",
+     "back": "請給我咖啡。",
+     "note": "點餐萬用句：名詞 + を + ください。"
+    },
+    {
+     "id": "ja-bs-10",
+     "type": "sentence",
+     "front": "これを ください。",
+     "reading": "kore wo kudasai.",
+     "back": "請給我這個。",
+     "note": "手指著東西就能買，最實用的一句。"
+    },
+    {
+     "id": "ja-bs-11",
+     "type": "sentence",
+     "front": "いくらですか。",
+     "reading": "ikura desu ka.",
+     "back": "多少錢？",
+     "note": "いくらですか。"
+    },
+    {
+     "id": "ja-bs-12",
+     "type": "sentence",
+     "front": "ぜんぶで いくらですか。",
+     "reading": "zenbu de ikura desu ka.",
+     "back": "全部多少錢？",
+     "note": "全部でいくらですか。で 在這裡表示「合計」。"
+    },
+    {
+     "id": "ja-bs-13",
+     "type": "sentence",
+     "front": "これは おいしいです。",
+     "reading": "kore wa oishii desu.",
+     "back": "這個很好吃。",
+     "note": "これは美味しいです。い形容詞 + です。"
+    },
+    {
+     "id": "ja-bs-14",
+     "type": "sentence",
+     "front": "ここは たかいです。",
+     "reading": "koko wa takai desu.",
+     "back": "這裡很貴。",
+     "note": "ここは高いです。"
+    },
+    {
+     "id": "ja-bs-15",
+     "type": "sentence",
+     "front": "わたしは すしが すきです。",
+     "reading": "watashi wa sushi ga suki desu.",
+     "back": "我喜歡壽司。",
+     "note": "私は寿司が好きです。〜が好きです：喜歡～。"
+    },
+    {
+     "id": "ja-bs-16",
+     "type": "sentence",
+     "front": "わたしは みずを のみます。",
+     "reading": "watashi wa mizu wo nomimasu.",
+     "back": "我喝水。",
+     "note": "私は水を飲みます。〜ます 是動詞的禮貌形。"
+    },
+    {
+     "id": "ja-bs-17",
+     "type": "sentence",
+     "front": "わたしは あさ ごはんを たべます。",
+     "reading": "watashi wa asa gohan wo tabemasu.",
+     "back": "我早上吃飯。",
+     "note": "私は朝ご飯を食べます。時間詞（あさ）放在動詞前面。"
+    },
+    {
+     "id": "ja-bs-18",
+     "type": "sentence",
+     "front": "まいにち でんしゃに のります。",
+     "reading": "mainichi densha ni norimasu.",
+     "back": "我每天搭電車。",
+     "note": "毎日電車に乗ります。に 表示搭乘的對象。"
+    },
+    {
+     "id": "ja-bs-19",
+     "type": "sentence",
+     "front": "わたしは ひこうきで いきます。",
+     "reading": "watashi wa hikouki de ikimasu.",
+     "back": "我搭飛機去。",
+     "note": "私は飛行機で行きます。で 表示手段或交通工具。"
+    },
+    {
+     "id": "ja-bs-20",
+     "type": "sentence",
+     "front": "あした ホテルに いきます。",
+     "reading": "ashita hoteru ni ikimasu.",
+     "back": "明天去飯店。",
+     "note": "明日ホテルに行きます。に 表示目的地。"
+    }
+   ]
+  },
+  {
    "id": "en-1-grammar-ing-to",
    "lang": "en",
    "title": "文法・V-ing / to V",

@@ -1,6 +1,6 @@
 // ====== 練字字帖頁（描紅：只印淺灰色的字，不畫格線）======
 // 版面計算在 copybook-layout.js（純函式）；這裡負責資料、字型、畫面與列印。
-// 中文／英文內容在 data/copybook.json；日文五十音從 data/cards.json 的假名階段（order: "seq"）取「行」。
+// 中文／英文內容在 data/copybook.json；日文五十音從 data/cards.json 的假名階段（id 含 hiragana／katakana／dakuon／yoon 的 seq 階段）取「行」。
 // 網址 ?lang=zh|en&ids=id1,id2 可以重現同一頁；?lang=ja&start=<卡片 id> 從那一行開始排。
 // 這一頁是純靜態、不用登入、不呼叫後端。
 
@@ -45,10 +45,10 @@ async function loadJson(path) {
   return res.json();
 }
 
-// 假名行：cards.json 裡 lang=ja、order=seq 的階段，每張卡片 = 一行（front 以空白分隔每個假名，reading 同樣）
+// 假名行：cards.json 裡 lang=ja、order=seq 且 id 是假名階段的，每張卡片 = 一行（front 以空白分隔每個假名，reading 同樣）
 function jaRowsFrom(cardsJson) {
   const rows = [];
-  (cardsJson.stages || []).filter(s => s.lang === "ja" && s.order === "seq").forEach(s => {
+  (cardsJson.stages || []).filter(s => s.lang === "ja" && s.order === "seq" && /hiragana|katakana|dakuon|yoon/.test(s.id)).forEach(s => {
     s.cards.forEach(c => {
       const tokens = c.front.split(/\s+/).filter(Boolean);
       const readings = (c.reading || "").split(/\s+/).filter(Boolean);

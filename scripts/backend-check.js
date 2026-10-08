@@ -143,6 +143,16 @@ check("階段都練完：改隨機抽（FALLBACK_COUNT 張），不含今天已�
   const c = idsOf(r, "ja");
   return c.length >= 5 && new Set(c).size === c.length;
 })());
+check("階段設了 after：前一階段還沒練完就不出，練完（或勾完全記得）之後才解鎖", (() => {
+  book.Progress = fakeSheet(["date", "lang", "cardId", "done", "mode", "updatedAt"]);
+  book.Mastered = fakeSheet(["cardId", "lang", "updatedAt"]);
+  stages.push({ id: "ja-s", lang: "ja", title: "句子", order: "seq", after: "ja-2", cards: ids("ja-s", 3).map(i => card(i, "sentence")) });
+  const before = idsOf(P('drawPlan_("2026-11-01", "ja", false)'), "ja");
+  const gated = !before.some(x => x.startsWith("ja-s"));
+  stages.filter(s => s.lang === "ja" && s.id !== "ja-s").forEach(s => s.cards.forEach(c => book.Progress.data.push(["2026-10-20", "ja", c.id, true, "look", new Date()])));
+  const unlockedDay = P('drawPlan_("2026-11-02", "ja", false)');
+  return gated && idsOf(unlockedDay, "ja").some(x => x.startsWith("ja-s"));
+})());
 check("路由：drawPlan（寫入）、completeCard 帶 id", (() => { const g = fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"); return /case "drawPlan"/.test(g) && /case "completeCard".*textArg_\(b\.id/.test(g) && !/case "drawCard"/.test(g); })());
 if (failed) { console.log("\n" + failed + " 項失敗"); process.exit(1); }
 console.log("\n全部通過");

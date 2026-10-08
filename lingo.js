@@ -200,7 +200,7 @@ function renderCard() {
   document.getElementById("sentBtn").classList.toggle("hidden", !exampleSentence(card) || prompting || dictating); // 整句例句裡有答案，題目階段不給
 
   const printLink = document.getElementById("printLink"); // 假名階段的卡才有描紅字帖（單字階段沒有）
-  const kana = card.repo && card.lang === "ja" && /^ja-\d+-(hiragana|katakana|dakuon|yoon)$/.test(card.stage);
+  const kana = card.repo && card.lang === "ja" && KANA_STAGE.test(card.stage);
   printLink.classList.toggle("hidden", !kana);
   if (kana) printLink.href = `copybook.html?lang=ja&start=${encodeURIComponent(card.id)}`;
   document.getElementById("masteredWrap").classList.toggle("hidden", !card.repo); // 只有內建卡有階段／複習
@@ -242,7 +242,7 @@ function pickVoice(lang) {
   return { any: voices.length > 0, voice: voices.find(v => norm(v) === want) || voices.find(v => norm(v).startsWith(want.slice(0, 2))) || null };
 }
 
-function speak(text, lang, slow) {
+function speak(text, lang, slow, split) {
   if (!HAS_TTS || !text) return;
   const synth = window.speechSynthesis;
   const { any, voice } = pickVoice(lang);
@@ -250,7 +250,7 @@ function speak(text, lang, slow) {
     showToast(`這個裝置沒有${LANG_LABEL[lang]}語音，要先在系統設定新增`, { error: true });
     return;
   }
-  const parts = lang === "ja" ? text.split(/\s+/).filter(Boolean) : [text];
+  const parts = split ? text.split(/\s+/).filter(Boolean) : [text];
   let started = false;
   const go = () => parts.forEach((p, i) => {
     const u = new SpeechSynthesisUtterance(p);
@@ -270,9 +270,10 @@ function speak(text, lang, slow) {
   }, 1500);
 }
 
+const KANA_STAGE = /^ja-\d+-(hiragana|katakana|dakuon|yoon)$/;
 function speakCard(slow) {
   const card = currentCard();
-  if (card) speak(card.front, card.lang, slow);
+  if (card) speak(card.front, card.lang, slow, KANA_STAGE.test(card.stage || "")); // 假名一行才逐字唸；句子與單字整段唸
 }
 
 function renderList() {
@@ -385,7 +386,7 @@ document.getElementById("dictBtn").addEventListener("click", () => {
 // 抄：只做比對提示，不擋完成。日文也接受直接打羅馬拼音（還沒裝日文輸入法時用）
 function copyMatches(typed, card, loose) {
   const norm = s => {
-    const t = s.replace(/\s+/g, " ").trim();
+    const t = s.replace(/\s+/g, card.lang === "ja" ? "" : " ").trim(); // 日文的空白只是方便閱讀，打的時候有沒有空格都算對
     return loose ? t.toLowerCase().replace(/[.,!?;:'"。、！？]/g, "") : t;
   };
   if (norm(typed) === norm(card.front)) return true;

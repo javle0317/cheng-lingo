@@ -20,6 +20,8 @@ check(`英文卡（${en.length} 張）：正面是英文（有英文字母、沒
 const ja = all.filter(c => c.lang === "ja");
 check(`日文卡（${ja.length} 張）：正面有日文假名或漢字，背面有中文`, ja.every(c => (KANA.test(c.front) || CJK.test(c.front)) && CJK.test(c.back)), ja.filter(c => !(KANA.test(c.front) || CJK.test(c.front))).map(c => c.id));
 check("英文單字卡都有音標、閱讀卡（passage）至少 40 個英文字", en.filter(c => c.type === "word").every(c => /^\/.+\/$/.test(c.reading)) && en.filter(c => c.type === "passage").every(c => c.front.split(/\s+/).length >= 40));
-check("日文假名階段（seq）每張卡的假名與讀音一樣多", data.stages.filter(s => s.lang === "ja" && s.order === "seq").every(s => s.cards.every(c => c.front.split(/\s+/).length === c.reading.split(/\s+/).length)));
+check("日文假名階段（seq）每張卡的假名與讀音一樣多", data.stages.filter(s => s.lang === "ja" && s.order === "seq" && /hiragana|katakana|dakuon|yoon/.test(s.id)).every(s => s.cards.every(c => c.front.split(/\s+/).length === c.reading.split(/\s+/).length)));
+const stageIds = new Set(data.stages.map(s => s.id));
+check("階段的 after 指向存在的階段，而且在它後面", data.stages.every((s, i) => !s.after || (stageIds.has(s.after) && data.stages.findIndex(x => x.id === s.after) < i)), data.stages.filter(s => s.after && !stageIds.has(s.after)).map(s => s.id));
 if (failed) { console.log("\n" + failed + " 項失敗"); process.exit(1); }
 console.log("\n全部通過");
