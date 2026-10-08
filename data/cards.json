@@ -1653,6 +1653,174 @@
    ]
   },
   {
+   "id": "en-15-words-daily",
+   "lang": "en",
+   "title": "單字・日常",
+   "order": "random",
+   "cards": [
+    {
+     "id": "en-wd-01",
+     "type": "word",
+     "front": "neighbor",
+     "reading": "/ˈneɪbər/",
+     "back": "鄰居",
+     "note": "My neighbor often helps me carry my groceries."
+    },
+    {
+     "id": "en-wd-02",
+     "type": "word",
+     "front": "neighborhood",
+     "reading": "/ˈneɪbərhʊd/",
+     "back": "社區；住家附近",
+     "note": "This neighborhood is quiet and safe."
+    },
+    {
+     "id": "en-wd-03",
+     "type": "word",
+     "front": "apartment",
+     "reading": "/əˈpɑːrtmənt/",
+     "back": "公寓；住宅單位",
+     "note": "We live in a small apartment near the station."
+    },
+    {
+     "id": "en-wd-04",
+     "type": "word",
+     "front": "rent",
+     "reading": "/rent/",
+     "back": "租金；租",
+     "note": "The rent goes up every year."
+    },
+    {
+     "id": "en-wd-05",
+     "type": "word",
+     "front": "appointment",
+     "reading": "/əˈpɔɪntmənt/",
+     "back": "預約；約診",
+     "note": "I have a dentist appointment at three o'clock."
+    },
+    {
+     "id": "en-wd-06",
+     "type": "word",
+     "front": "prescription",
+     "reading": "/prɪˈskrɪpʃn/",
+     "back": "處方箋；處方藥",
+     "note": "The doctor gave me a prescription for my cough."
+    },
+    {
+     "id": "en-wd-07",
+     "type": "word",
+     "front": "headache",
+     "reading": "/ˈhedeɪk/",
+     "back": "頭痛",
+     "note": "I have a headache because I slept badly."
+    },
+    {
+     "id": "en-wd-08",
+     "type": "word",
+     "front": "groceries",
+     "reading": "/ˈɡroʊsəriz/",
+     "back": "（買回家的）食品雜貨",
+     "note": "I buy groceries every Saturday morning."
+    },
+    {
+     "id": "en-wd-09",
+     "type": "word",
+     "front": "recipe",
+     "reading": "/ˈresəpi/",
+     "back": "食譜",
+     "note": "Can you send me the recipe for this soup?"
+    },
+    {
+     "id": "en-wd-10",
+     "type": "word",
+     "front": "laundry",
+     "reading": "/ˈlɔːndri/",
+     "back": "待洗衣物；洗衣",
+     "note": "I do the laundry on Sunday."
+    },
+    {
+     "id": "en-wd-11",
+     "type": "word",
+     "front": "chore",
+     "reading": "/tʃɔːr/",
+     "back": "家務；雜事",
+     "note": "Washing dishes is my least favorite chore."
+    },
+    {
+     "id": "en-wd-12",
+     "type": "word",
+     "front": "delivery",
+     "reading": "/dɪˈlɪvəri/",
+     "back": "外送；送貨",
+     "note": "The delivery will arrive between two and four."
+    },
+    {
+     "id": "en-wd-13",
+     "type": "word",
+     "front": "garbage",
+     "reading": "/ˈɡɑːrbɪdʒ/",
+     "back": "垃圾",
+     "note": "Please take out the garbage before you leave."
+    },
+    {
+     "id": "en-wd-14",
+     "type": "word",
+     "front": "charger",
+     "reading": "/ˈtʃɑːrdʒər/",
+     "back": "充電器",
+     "note": "I forgot my phone charger at the office."
+    },
+    {
+     "id": "en-wd-15",
+     "type": "word",
+     "front": "battery",
+     "reading": "/ˈbætəri/",
+     "back": "電池；電量",
+     "note": "My phone battery is almost dead."
+    },
+    {
+     "id": "en-wd-16",
+     "type": "word",
+     "front": "password",
+     "reading": "/ˈpæswɜːrd/",
+     "back": "密碼",
+     "note": "I forgot the password for my email."
+    },
+    {
+     "id": "en-wd-17",
+     "type": "word",
+     "front": "subscription",
+     "reading": "/səbˈskrɪpʃn/",
+     "back": "訂閱",
+     "note": "I canceled my subscription to the music app."
+    },
+    {
+     "id": "en-wd-18",
+     "type": "word",
+     "front": "traffic jam",
+     "reading": "/ˈtræfɪk dʒæm/",
+     "back": "塞車",
+     "note": "We were late because of a traffic jam."
+    },
+    {
+     "id": "en-wd-19",
+     "type": "word",
+     "front": "exercise",
+     "reading": "/ˈeksərsaɪz/",
+     "back": "運動；鍛鍊",
+     "note": "Regular exercise helps me sleep better."
+    },
+    {
+     "id": "en-wd-20",
+     "type": "word",
+     "front": "errand",
+     "reading": "/ˈerənd/",
+     "back": "跑腿；雜事",
+     "note": "I have a few errands to run after work."
+    }
+   ]
+  },
+  {
    "id": "en-3-reading-travel",
    "lang": "en",
    "title": "閱讀・旅遊",
@@ -1681,6 +1849,62 @@
      "reading": "",
      "back": "我在找博物館，但是迷路了。我問路上的一位女士：「不好意思，可以告訴我怎麼去博物館嗎？」她微笑著說走路大約十分鐘。「直走，在銀行那裡左轉，就會在右手邊看到。」我謝謝她，照著她說的走，很容易就找到了。",
      "note": "重點：get lost 迷路／could you tell me how to… 間接問句／on your right 在你右手邊"
+    },
+    {
+     "id": "en-rt-04",
+     "type": "passage",
+     "front": "Last Friday I arrived at the airport two hours before my flight. I checked in at the counter and dropped off my big suitcase. The staff member said my carry-on bag was too heavy, so I moved a book into my backpack. Then I showed my boarding pass at security and walked to gate 12. Because I was early, I had time to buy a coffee and relax.",
+     "reading": "",
+     "back": "上週五我在班機起飛前兩小時到了機場。我在櫃檯辦好登機手續，託運了大行李箱。地勤人員說我的隨身行李太重，所以我把一本書放進背包。接著我在安檢出示登機證，走向十二號登機門。因為我很早到，還有時間買杯咖啡休息一下。",
+     "note": "重點：check in 辦理登機／carry-on 隨身行李／boarding pass 登機證"
+    },
+    {
+     "id": "en-rt-05",
+     "type": "passage",
+     "front": "On my way to Seattle, I had a six-hour layover in Dubai. The airport was crowded, but I found a quiet seat near a window. I ate dinner, walked around the shops, and called my family. At night, an announcement said that my next flight had a short delay. I was tired, but I was glad to have enough time to rest.",
+     "reading": "",
+     "back": "前往西雅圖的路上，我在杜拜有六小時的中途停留。機場很擁擠，但我在窗邊找到一個安靜的位子。我吃了晚餐、逛了逛店，還打電話給家人。晚上廣播說我的下一班飛機會稍微延誤。我很累，但很高興有足夠的時間休息。",
+     "note": "重點：layover 中途停留／crowded 擁擠的／delay 延誤"
+    },
+    {
+     "id": "en-rt-06",
+     "type": "passage",
+     "front": "On the last morning of our trip, we packed our bags and went to the front desk to check out. The receptionist asked if we had used anything from the minibar. We said no, and she returned our deposit of fifty dollars. She also sent us a receipt by email. Before leaving, I thanked the housekeeping staff for the clean room.",
+     "reading": "",
+     "back": "旅行的最後一天早上，我們收好行李，到櫃檯退房。接待人員問我們有沒有用過小冰箱裡的東西。我們說沒有，她就退還了五十美元的押金。她也用電子郵件寄給我們收據。離開前，我謝謝客房清潔人員把房間整理得很乾淨。",
+     "note": "重點：check out 退房／deposit 押金／receipt 收據"
+    },
+    {
+     "id": "en-rt-07",
+     "type": "passage",
+     "front": "To go to the old town, we had to transfer trains at the central station. I checked the timetable on my phone and found the right platform. The fare was only three dollars, and the next train came in five minutes. It was crowded, so we stood near the door. Fifteen minutes later, we arrived and walked to the market.",
+     "reading": "",
+     "back": "要去老城區，我們得在中央車站轉車。我用手機查了時刻表，找到正確的月台。車資只要三美元，下一班車五分鐘後就來了。車上很擠，所以我們站在門邊。十五分鐘後我們到了，然後走去市場。",
+     "note": "重點：transfer 轉乘／timetable 時刻表／fare 車資"
+    },
+    {
+     "id": "en-rt-08",
+     "type": "passage",
+     "front": "My friend is a vegetarian, and I am allergic to shrimp, so choosing a restaurant is not always easy. Last night, we told the waiter about our needs before ordering. He recommended a vegetable appetizer and a chicken soup for me. The food was delicious, and the service was great. When we asked for the bill, we left a ten percent tip.",
+     "reading": "",
+     "back": "我的朋友吃素，而我對蝦子過敏，所以選餐廳不一定容易。昨天晚上，我們點餐前先告訴服務生我們的需求。他為朋友推薦了蔬菜開胃菜，也為我推薦了一份雞肉湯。食物很美味，服務也很棒。我們要求結帳時，留了百分之十的小費。",
+     "note": "重點：vegetarian 素食者／allergic 過敏的／tip 小費"
+    },
+    {
+     "id": "en-rt-09",
+     "type": "passage",
+     "front": "On the second day of our trip, I woke up with a bad stomachache. My sister helped me walk to a pharmacy near the hotel. The pharmacist asked a few questions and gave me some medicine. I felt much better in the evening. This experience taught me to bring basic medicine and to learn how to ask for help in an emergency.",
+     "reading": "",
+     "back": "旅行的第二天，我醒來時肚子很痛。姊姊陪我走到飯店附近的藥局。藥師問了幾個問題，給了我一些藥。到了晚上我好多了。這次經驗讓我學到要帶基本的藥品，也要學會在緊急情況下怎麼求助。",
+     "note": "重點：pharmacy 藥局／emergency 緊急情況／how to 怎麼做（疑問詞 + to V）"
+    },
+    {
+     "id": "en-rt-10",
+     "type": "passage",
+     "front": "We joined a guided tour of the old castle on Sunday morning. The admission was cheaper with a student discount, and the guide spoke slowly, so I understood most of the story. The castle was a famous landmark, so it was very crowded. At the end of the tour, I bought a small souvenir for my mother. It was a great way to learn about the city.",
+     "reading": "",
+     "back": "星期天早上，我們參加了老城堡的導覽行程。用學生折扣，入場費比較便宜，而且導覽員說得很慢，所以我聽懂了大部分的故事。這座城堡是有名的地標，所以非常擁擠。導覽結束時，我為媽媽買了一個小紀念品。這是認識這座城市很棒的方式。",
+     "note": "重點：guided tour 導覽行程／admission 入場費／landmark 地標"
     }
    ]
   },
