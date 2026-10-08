@@ -1,19 +1,38 @@
-// ====== 承語：今日卡片 + 三種練習模式（看 / 背 / 抄）+ 內容庫 ======
-// 唸（TTS 發音）、五十音、英文定級小測之後再加。
+// ====== 承語：今日首頁 + 練習（看 / 背 / 抄、唸）+ 內容庫 ======
+// 畫面分三塊：home（今日）、session（練習一張卡）、library（內容庫）；底部分頁列切換。
+// 一天仍是每個語言一張卡；之後後端改成一天多張時，首頁的進度條與「再來一輪」再接上。
 
 const state = {
+  view: "home",
   lang: localStorage.getItem("lingo_lang") || "en",
   mode: "look",
+  revealed: false,
+  dictate: false, // 抄：聽寫（只聽不看）
+  peek: false,    // 聽寫時已顯示原文
   cards: [],
   tests: [],   // 程度小考歷次結果（用來提醒重考）
   today: {},   // lang -> { cardId, done }
 };
 
 const TYPE_LABEL = { word: "單字", sentence: "例句", passage: "短文" };
+const LANG_NAME = { en: "English", ja: "日本語" };
+const TTS_LANG = { en: "en-US", ja: "ja-JP" };
+const HAS_TTS = "speechSynthesis" in window;
 
 function currentCard() {
   const t = state.today[state.lang];
   return t ? state.cards.find(c => c.id === t.cardId) || null : null;
+}
+
+function cardTypeText(card, t) {
+  return (TYPE_LABEL[card.type] || card.type) + (card.stageTitle ? "・" + card.stageTitle : "") + ((t || {}).review ? "・複習" : "");
+}
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
 }
 
 window.loadPageData = async function () {
@@ -29,29 +48,75 @@ window.loadPageData = async function () {
 
 function render() {
   document.getElementById("todayLine").textContent = toDateStr(new Date());
-  document.querySelectorAll(".lingo-lang").forEach(b => b.classList.toggle("active", b.dataset.lang === state.lang));
-  document.querySelectorAll(".lingo-mode").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
-  renderCard();
-  renderList();
-  renderRetestHint();
+  ["home", "session", "library"].forEach(v => document.getElementById(v + "View").classList.toggle("hidden", state.view !== v));
+  document.getElementById("tabBar").classList.toggle("hidden", state.view === "session");
+  document.querySelectorAll("#tabBar [data-view]").forEach(b => b.classList.toggle("active", b.dataset.view === (state.view === "library" ? "library" : "home")));
+  if (state.view === "home") { renderHome(); renderRetestHint(); }
+  if (state.view === "session") {
+    document.querySelectorAll(".lingo-mode").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
+    renderCard();
+  }
+  if (state.view === "library") renderList();
+}
+
+function goView(v) {
+  state.view = v;
+  state.revealed = false;
+  state.dictate = false;
+  state.peek = false;
+  render();
+  window.scrollTo(0, 0);
+}
+
+// 今日：每個語言一張進度卡（目前一天一張，進度條是 0／1）
+function renderHome() {
+  const wrap = document.getElementById("homeCards");
+  wrap.replaceChildren();
+  ["en", "ja"].forEach(lang => {
+    const t = state.today[lang];
+    const card = t ? state.cards.find(c => c.id === t.cardId) : null;
+    const has = state.cards.some(c => c.lang === lang);
+    const box = el("section", "card lingo-goal");
+    const row = el("div", "lingo-goal-row");
+    row.append(el("h2", "", LANG_NAME[lang]), el("span", "lingo-goal-state" + (t && t.done ? " done" : ""), t ? (t.done ? "✓ 今天完成了" : "進行中") : "還沒開始"));
+    box.appendChild(row);
+    box.appendChild(el("p", "lingo-goal-line", card ? cardTypeText(card, t) : (has ? "今天的卡還沒抽" : "還沒有內容")));
+    const bar = el("div", "lingo-bar");
+    const fill = el("i");
+    fill.style.width = t && t.done ? "100%" : "0%";
+    bar.appendChild(fill);
+    box.append(bar, el("p", "lingo-goal-count", "今日 " + (t && t.done ? 1 : 0) + " / 1"));
+    const btn = el("button", t && t.done ? "ghost-btn" : "", !has ? "到內容庫新增" : t && t.done ? "再看一次" : t ? "繼續練習" : "開始練習");
+    btn.type = "button";
+    btn.addEventListener("click", () => {
+      if (!has) { goView("library"); return; }
+      state.lang = lang;
+      localStorage.setItem("lingo_lang", lang);
+      goView("session");
+    });
+    box.appendChild(btn);
+    wrap.appendChild(box);
+  });
 }
 
 // 距離上次這個語言的程度小考超過 8 週，就在頂端提醒一句（沒考過不提醒）
 const RETEST_AFTER_DAYS = 56;
-const LANG_NAME = { en: "英文", ja: "日文" };
+const LANG_CN = { en: "英文", ja: "日文" };
 function renderRetestHint() {
-  const el = document.getElementById("retestHint");
-  const list = state.tests.filter(t => t.lang === state.lang);
-  const last = list[list.length - 1];
-  const days = last ? Math.floor((new Date(toDateStr(new Date()) + "T00:00:00") - new Date(last.date + "T00:00:00")) / 86400000) : 0;
-  const due = !!last && days >= RETEST_AFTER_DAYS;
-  el.classList.toggle("hidden", !due);
+  const box = document.getElementById("retestHint");
+  const today = new Date(toDateStr(new Date()) + "T00:00:00");
+  const due = [state.lang, state.lang === "en" ? "ja" : "en"].map(lang => {
+    const last = state.tests.filter(t => t.lang === lang).pop();
+    const days = last ? Math.floor((today - new Date(last.date + "T00:00:00")) / 86400000) : 0;
+    return last && days >= RETEST_AFTER_DAYS ? { lang, days } : null;
+  }).filter(Boolean)[0];
+  box.classList.toggle("hidden", !due);
   if (!due) return;
-  el.textContent = `距離上次${LANG_NAME[state.lang] || ""}程度小考已經 ${Math.floor(days / 7)} 週了，要不要重考看看進步？ `;
+  box.textContent = `距離上次${LANG_CN[due.lang] || ""}程度小考已經 ${Math.floor(due.days / 7)} 週了，要不要重考看看進步？ `;
   const a = document.createElement("a");
   a.href = "placement.html";
   a.textContent = "去考試";
-  el.appendChild(a);
+  box.appendChild(a);
 }
 
 function renderCard() {
@@ -59,19 +124,31 @@ function renderCard() {
   const hasAny = state.cards.some(c => c.lang === state.lang);
   document.getElementById("cardEmpty").classList.toggle("hidden", hasAny);
   document.getElementById("cardBody").classList.toggle("hidden", !hasAny);
+  document.getElementById("actionsBar").classList.toggle("hidden", !hasAny);
+  document.getElementById("sessionTitle").textContent = LANG_NAME[state.lang];
   if (!hasAny) return;
   if (!card) { // 這個語言今天還沒抽過
     draw(false);
     return;
   }
-  const done = !!(state.today[state.lang] || {}).done;
+  const t = state.today[state.lang] || {};
+  const done = !!t.done;
+  const recall = state.mode === "recall";
+  const copy = state.mode === "copy";
+  const dictating = copy && state.dictate && !state.peek; // 聽寫：原文先遮住
+  const hideAnswer = (recall && !state.revealed) || dictating;
+
   document.querySelector(".lingo-card").classList.toggle("passage", card.type === "passage");
-  document.getElementById("cardType").textContent = (TYPE_LABEL[card.type] || card.type) + (card.stageTitle ? "・" + card.stageTitle : "") + ((state.today[state.lang] || {}).review ? "・複習" : "");
-  document.getElementById("cardFront").textContent = card.front;
-  document.getElementById("cardReading").textContent = card.reading || "";
+  document.getElementById("cardType").textContent = cardTypeText(card, t);
+  document.getElementById("cardFront").textContent = dictating ? "？？？" : card.front;
+  document.getElementById("cardReading").textContent = hideAnswer ? "" : (card.reading || ""); // 背：讀音（羅馬拼音／音標）也先遮住
   document.getElementById("cardBack").textContent = card.back;
   document.getElementById("cardNote").textContent = card.note || "";
-  const t = state.today[state.lang] || {};
+  document.getElementById("cardBackWrap").classList.toggle("hidden", hideAnswer);
+
+  document.getElementById("speakRow").classList.toggle("hidden", !HAS_TTS);
+  document.getElementById("sentBtn").classList.toggle("hidden", !exampleSentence(card));
+
   const printLink = document.getElementById("printLink"); // 假名階段的卡才有描紅字帖（單字階段沒有）
   const kana = card.repo && card.lang === "ja" && /^ja-\d+-(hiragana|katakana|dakuon|yoon)$/.test(card.stage);
   printLink.classList.toggle("hidden", !kana);
@@ -79,15 +156,43 @@ function renderCard() {
   document.getElementById("masteredWrap").classList.toggle("hidden", !card.repo); // 只有內建卡有階段／複習
   document.getElementById("masteredCheck").checked = !!t.mastered;
 
-  // 看：全部顯示；背：先遮住答案；抄：全部顯示＋輸入框
-  const recall = state.mode === "recall";
-  document.getElementById("cardReading").classList.toggle("hidden", recall && !state.revealed); // 背：讀音（羅馬拼音／音標）也先遮住
-  document.getElementById("cardBackWrap").classList.toggle("hidden", recall && !state.revealed);
-  document.getElementById("recallBox").classList.toggle("hidden", !(recall && !state.revealed));
-  document.getElementById("copyBox").classList.toggle("hidden", state.mode !== "copy");
+  document.getElementById("copyBox").classList.toggle("hidden", !copy);
+  const dictBtn = document.getElementById("dictBtn");
+  dictBtn.classList.toggle("active", state.dictate);
+  dictBtn.textContent = state.dictate ? (state.peek ? "聽寫：已顯示原文" : "聽寫：顯示原文") : "聽寫：只聽不看";
+
+  // 底部操作：看／抄 → 完成；背 → 先顯示答案，再自評
+  document.getElementById("revealBtn").classList.toggle("hidden", !(recall && !state.revealed));
+  document.getElementById("ratingBox").classList.toggle("hidden", !(recall && state.revealed));
   const doneBtn = document.getElementById("doneBtn");
+  doneBtn.classList.toggle("hidden", recall);
   doneBtn.textContent = done ? "✓ 今天已完成" : "✓ 完成今天的練習";
   doneBtn.disabled = done;
+  document.getElementById("drawBtn").disabled = done;
+}
+
+// 英文單字卡備註裡的例句（整句唸）
+function exampleSentence(card) {
+  return card.lang === "en" && card.type === "word" && /^[A-Za-z]/.test(card.note || "") ? card.note : "";
+}
+
+// 唸：瀏覽器內建語音合成，音質看裝置；日文假名一行以空白分開，逐字唸
+function speak(text, lang, slow) {
+  if (!HAS_TTS || !text) return;
+  const synth = window.speechSynthesis;
+  synth.cancel();
+  const parts = lang === "ja" ? text.split(/\s+/).filter(Boolean) : [text];
+  parts.forEach(p => {
+    const u = new SpeechSynthesisUtterance(p);
+    u.lang = TTS_LANG[lang] || "en-US";
+    u.rate = slow ? 0.6 : 0.9;
+    synth.speak(u);
+  });
+}
+
+function speakCard(slow) {
+  const card = currentCard();
+  if (card) speak(card.front, card.lang, slow);
 }
 
 function renderList() {
@@ -134,18 +239,16 @@ async function draw(reroll) {
   }
 }
 
-document.querySelectorAll(".lingo-lang").forEach(b => b.addEventListener("click", () => {
-  state.lang = b.dataset.lang;
-  state.revealed = false;
-  localStorage.setItem("lingo_lang", state.lang);
-  render();
-}));
 
 document.querySelectorAll(".lingo-mode").forEach(b => b.addEventListener("click", () => {
   state.mode = b.dataset.mode;
   state.revealed = false;
+  state.peek = false;
   render();
 }));
+
+document.querySelectorAll("#tabBar [data-view]").forEach(b => b.addEventListener("click", () => goView(b.dataset.view)));
+document.getElementById("exitBtn").addEventListener("click", () => goView("home"));
 
 document.getElementById("masteredCheck").addEventListener("change", async (e) => {
   const card = currentCard();
@@ -168,29 +271,64 @@ document.getElementById("masteredCheck").addEventListener("change", async (e) =>
 document.getElementById("revealBtn").addEventListener("click", () => { state.revealed = true; renderCard(); });
 document.getElementById("drawBtn").addEventListener("click", () => draw(true));
 
-// 抄：只做比對提示，不擋完成
+document.getElementById("speakBtn").addEventListener("click", () => speakCard(false));
+document.getElementById("slowBtn").addEventListener("click", () => speakCard(true));
+document.getElementById("sentBtn").addEventListener("click", () => {
+  const card = currentCard();
+  if (card) speak(exampleSentence(card), card.lang, false);
+});
+
+// 聽寫：開啟時隱藏原文並先播一次；再按一下顯示原文
+document.getElementById("dictBtn").addEventListener("click", () => {
+  if (state.dictate && !state.peek) { state.peek = true; renderCard(); return; }
+  state.dictate = !state.dictate;
+  state.peek = false;
+  renderCard();
+  if (state.dictate) speakCard(false);
+});
+
+// 抄：只做比對提示，不擋完成。日文也接受直接打羅馬拼音（還沒裝日文輸入法時用）
+function copyMatches(typed, card) {
+  const norm = s => s.replace(/\s+/g, " ").trim();
+  if (norm(typed) === norm(card.front)) return true;
+  return card.lang === "ja" && !!card.reading && norm(typed).toLowerCase() === norm(card.reading).toLowerCase();
+}
 document.getElementById("copyInput").addEventListener("input", (e) => {
   const card = currentCard();
   const out = document.getElementById("copyResult");
   if (!card || !e.target.value.trim()) { out.textContent = ""; out.className = "lingo-copy-result"; return; }
-  const norm = s => s.replace(/\s+/g, " ").trim();
-  const ok = norm(e.target.value) === norm(card.front);
+  const ok = copyMatches(e.target.value, card);
   out.textContent = ok ? "✓ 完全一致" : "還有不同的地方，再對照一下";
   out.className = "lingo-copy-result " + (ok ? "ok" : "bad");
+  if (ok && state.dictate && !state.peek) { state.peek = true; renderCard(); } // 聽寫寫對了就揭曉原文
 });
 
-document.getElementById("doneBtn").addEventListener("click", async () => {
-  const btn = document.getElementById("doneBtn");
-  btn.disabled = true;
+// 打卡成功就回到今日。背的自評（忘了／模糊／記得）先只記在這台裝置，之後後端改版再決定複習間隔
+async function complete(rating) {
+  const card = currentCard();
+  const btns = document.querySelectorAll("#doneBtn, #ratingBox button");
+  btns.forEach(b => { b.disabled = true; });
   try {
     state.today = await api("completeCard", { date: toDateStr(new Date()), lang: state.lang, mode: state.mode });
+    if (rating && card) saveRating(card.id, rating);
     showToast("今天完成了");
-    renderCard();
+    goView("home");
   } catch (err) {
-    btn.disabled = false;
+    btns.forEach(b => { b.disabled = false; });
     setStatus("打卡失敗：" + err.message, true);
   }
-});
+}
+
+function saveRating(cardId, rating) {
+  try {
+    const all = JSON.parse(localStorage.getItem("lingo_ratings") || "{}");
+    all[cardId] = { rating, date: toDateStr(new Date()) };
+    localStorage.setItem("lingo_ratings", JSON.stringify(all));
+  } catch (e) { /* 存不了就算了，不影響打卡 */ }
+}
+
+document.getElementById("doneBtn").addEventListener("click", () => complete(""));
+document.querySelectorAll("#ratingBox [data-rate]").forEach(b => b.addEventListener("click", () => complete(b.dataset.rate)));
 
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();

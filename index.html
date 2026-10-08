@@ -16,10 +16,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261008014007">
-<link rel="stylesheet" href="lingo.css?v=20261008014007">
+<link rel="stylesheet" href="style.css?v=20261008210201">
+<link rel="stylesheet" href="lingo.css?v=20261008210201">
 </head>
-<body>
+<body class="lingo-home">
 
   <div id="lockScreen" class="lock-screen">
     <div id="lockLoading" class="lock-card hidden">
@@ -35,68 +35,80 @@
   </div>
 
   <div id="app" class="app hidden">
-    <header class="app-header">
-      <div>
-        <h1>承語</h1>
-        <p class="progress-line"><span id="todayLine"></span>　<a href="copybook.html" class="back-link">練字字帖</a>　<a href="placement.html" class="back-link">程度小考</a></p>
-      </div>
-      <div class="header-actions">
-        <button id="logoutBtn" class="ghost-btn">登出</button>
-      </div>
-    </header>
-
     <main>
-      <div class="lingo-tabs" role="group" aria-label="語言">
-        <button type="button" class="ghost-btn lingo-lang" data-lang="en">English</button>
-        <button type="button" class="ghost-btn lingo-lang" data-lang="ja">日本語</button>
-      </div>
-
-      <p id="retestHint" class="lingo-retest hidden"></p>
-
-      <section class="card" id="cardSection">
-        <div id="cardEmpty" class="empty-hint hidden">還沒有這個語言的內容，先在下面「內容庫」新增幾張。</div>
-        <div id="cardBody" class="hidden">
-          <div class="lingo-modes" role="group" aria-label="練習模式">
-            <button type="button" class="ghost-btn lingo-mode" data-mode="look">看</button>
-            <button type="button" class="ghost-btn lingo-mode" data-mode="recall">背</button>
-            <button type="button" class="ghost-btn lingo-mode" data-mode="copy">抄</button>
+      <section id="homeView">
+        <header class="app-header">
+          <div>
+            <h1>承語</h1>
+            <p class="progress-line"><span id="todayLine"></span></p>
           </div>
+        </header>
+        <p id="retestHint" class="lingo-retest hidden"></p>
+        <div id="homeCards"></div>
+      </section>
 
-          <div class="lingo-card">
-            <p id="cardType" class="lingo-type"></p>
-            <p id="cardFront" class="lingo-front"></p>
-            <p id="cardReading" class="lingo-reading"></p>
-            <div id="cardBackWrap">
-              <p id="cardBack" class="lingo-back"></p>
-              <p id="cardNote" class="lingo-note"></p>
+      <section id="sessionView" class="hidden">
+        <div class="lingo-sbar">
+          <button id="exitBtn" type="button" class="ghost-btn" aria-label="回到今日">← 今日</button>
+          <span id="sessionTitle" class="lingo-stitle"></span>
+        </div>
+
+        <section class="card" id="cardSection">
+          <div id="cardEmpty" class="empty-hint hidden">還沒有這個語言的內容，先到「內容庫」新增幾張。</div>
+          <div id="cardBody" class="hidden">
+            <div class="lingo-modes" role="group" aria-label="練習模式">
+              <button type="button" class="ghost-btn lingo-mode" data-mode="look">看</button>
+              <button type="button" class="ghost-btn lingo-mode" data-mode="recall">背</button>
+              <button type="button" class="ghost-btn lingo-mode" data-mode="copy">抄</button>
+            </div>
+
+            <div class="lingo-card">
+              <p id="cardType" class="lingo-type"></p>
+              <p id="cardFront" class="lingo-front"></p>
+              <p id="cardReading" class="lingo-reading"></p>
+              <div id="speakRow" class="lingo-speak">
+                <button id="speakBtn" type="button" class="lingo-speak-btn" aria-label="播放發音">🔊</button>
+                <button id="slowBtn" type="button" class="ghost-btn">慢速</button>
+                <button id="sentBtn" type="button" class="ghost-btn hidden">整句</button>
+              </div>
+              <div id="cardBackWrap">
+                <p id="cardBack" class="lingo-back"></p>
+                <p id="cardNote" class="lingo-note"></p>
+              </div>
+            </div>
+
+            <div id="copyBox" class="lingo-copy hidden">
+              <button id="dictBtn" type="button" class="ghost-btn lingo-dict">聽寫：只聽不看</button>
+              <textarea id="copyInput" rows="3" placeholder="照著抄一遍（日文也可以直接打羅馬拼音）" autocomplete="off" spellcheck="false"></textarea>
+              <p id="copyResult" class="lingo-copy-result"></p>
+            </div>
+
+            <label id="masteredWrap" class="lingo-mastered hidden">
+              <input id="masteredCheck" type="checkbox"> 我完全記得這張了，之後不用再出現
+            </label>
+
+            <a id="printLink" class="lingo-print-link hidden" href="copybook.html">🖨️ 印這一行的描紅字帖（要接印表機才需要）</a>
+          </div>
+        </section>
+
+        <div id="actionsBar" class="lingo-actions-bar hidden">
+          <button id="revealBtn" type="button" class="hidden">顯示答案</button>
+          <div id="ratingBox" class="lingo-rating hidden">
+            <p class="lingo-rating-q">剛剛想起來了嗎？</p>
+            <div class="lingo-rating-row">
+              <button type="button" class="ghost-btn" data-rate="forgot">忘了</button>
+              <button type="button" class="ghost-btn" data-rate="fuzzy">模糊</button>
+              <button type="button" data-rate="good">記得</button>
             </div>
           </div>
-
-          <div id="recallBox" class="lingo-recall hidden">
-            <button id="revealBtn" type="button" class="ghost-btn">顯示答案</button>
-          </div>
-
-          <div id="copyBox" class="lingo-copy hidden">
-            <textarea id="copyInput" rows="3" placeholder="照著抄一遍（可以對照上面的原文）" autocomplete="off" spellcheck="false"></textarea>
-            <p id="copyResult" class="lingo-copy-result"></p>
-          </div>
-
-          <label id="masteredWrap" class="lingo-mastered hidden">
-            <input id="masteredCheck" type="checkbox"> 我完全記得這張了，之後不用再出現
-          </label>
-
-          <div class="lingo-actions">
-            <button id="drawBtn" type="button" class="ghost-btn">🎲 換一張</button>
-            <button id="doneBtn" type="button">✓ 完成今天的練習</button>
-          </div>
-
-          <a id="printLink" class="lingo-print-link hidden" href="copybook.html">🖨️ 印這一行的描紅字帖（要接印表機才需要）</a>
+          <button id="doneBtn" type="button">✓ 完成今天的練習</button>
+          <button id="drawBtn" type="button" class="ghost-btn">🎲 換一張</button>
         </div>
       </section>
 
-      <section class="card">
-        <details id="manage">
-          <summary>內容庫（新增單字、例句、短文）</summary>
+      <section id="libraryView" class="hidden">
+        <section class="card">
+          <h2>內容庫（新增單字、例句、短文）</h2>
           <form id="addForm" class="lingo-form">
             <label>語言
               <select id="addLang">
@@ -126,11 +138,21 @@
             <button type="submit">新增</button>
           </form>
           <ul id="cardList" class="lingo-list"></ul>
-        </details>
+        </section>
+        <section class="card">
+          <button id="logoutBtn" class="ghost-btn">登出</button>
+        </section>
       </section>
     </main>
 
     <p id="statusLine" class="status-line"></p>
+
+    <nav id="tabBar" class="lingo-tabbar" aria-label="主選單">
+      <button type="button" data-view="home"><span aria-hidden="true">🏠</span>今日</button>
+      <button type="button" data-view="library"><span aria-hidden="true">📚</span>內容庫</button>
+      <a href="placement.html"><span aria-hidden="true">📝</span>小考</a>
+      <a href="copybook.html"><span aria-hidden="true">✍️</span>字帖</a>
+    </nav>
   </div>
 
   <div id="toast" class="toast hidden"></div>
@@ -145,7 +167,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261008014007"></script>
-  <script src="lingo.js?v=20261008014007"></script>
+  <script src="shared.js?v=20261008210201"></script>
+  <script src="lingo.js?v=20261008210201"></script>
 </body>
 </html>

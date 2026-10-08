@@ -1,7 +1,7 @@
 /* 承語專用樣式；底色與按鈕沿用 style.css 的變數 */
-.lingo-tabs, .lingo-modes { display: flex; gap: 8px; margin-bottom: 12px; }
-.lingo-tabs .ghost-btn, .lingo-modes .ghost-btn { flex: 1; }
-.lingo-tabs .active, .lingo-modes .active { background: var(--accent); color: var(--on-accent); }
+.lingo-modes { display: flex; gap: 8px; margin-bottom: 12px; }
+.lingo-modes .ghost-btn { flex: 1; }
+.lingo-modes .active { background: var(--accent); color: var(--on-accent); }
 
 .lingo-card { padding: 16px 4px; text-align: center; }
 .lingo-type { font-size: 0.8rem; color: var(--text-dim); margin: 0 0 8px; }
@@ -105,3 +105,36 @@
 .placement-guide-row.current { border-color: var(--accent); background: var(--accent-soft); }
 .placement-guide-row.current span { color: var(--accent); font-size: 0.8rem; }
 .placement-guide-exam { color: var(--text-dim); font-size: 0.8rem; }
+
+/* ====== 今日首頁、練習畫面、底部分頁列（加到主畫面後單手操作） ====== */
+body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+.lingo-goal { margin-bottom: 14px; }
+.lingo-goal-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.lingo-goal-row h2 { margin: 0; }
+.lingo-goal-state { font-size: 0.85rem; color: var(--text-dim); }
+.lingo-goal-state.done { color: var(--ok); }
+.lingo-goal-line { margin: 8px 0 10px; font-size: 0.9rem; color: var(--text-dim); min-height: 1.3em; }
+.lingo-bar { height: 6px; border-radius: 3px; background: var(--input-bg); overflow: hidden; }
+.lingo-bar i { display: block; height: 100%; background: var(--accent); }
+.lingo-goal-count { margin: 6px 0 14px; font-size: 0.8rem; color: var(--text-dim); }
+.lingo-goal button { width: 100%; padding: 12px; font-size: 1rem; }
+
+.lingo-sbar { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.lingo-stitle { font-weight: 500; }
+.lingo-modes .ghost-btn { padding: 10px 14px; }
+
+.lingo-speak { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 6px 0 14px; }
+.lingo-speak-btn { width: 52px; height: 52px; border-radius: 50%; padding: 0; font-size: 1.4rem; line-height: 1; background: var(--accent-soft); border: 1px solid var(--border); cursor: pointer; }
+.lingo-dict { margin-bottom: 8px; font-size: 0.85rem; }
+.lingo-dict.active { background: var(--accent-soft); border-color: var(--accent); }
+
+.lingo-actions-bar { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; padding: 12px 0 calc(env(safe-area-inset-bottom) + 8px); background: var(--bg); }
+.lingo-actions-bar button { width: 100%; padding: 13px; font-size: 1rem; }
+.lingo-rating-q { margin: 0 0 8px; text-align: center; font-size: 0.85rem; color: var(--text-dim); }
+.lingo-rating-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+
+.lingo-tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; background: var(--card-bg); border-top: 1px solid var(--border); padding: 6px max(8px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 6px) max(8px, env(safe-area-inset-left)); }
+.lingo-tabbar button, .lingo-tabbar a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 48px; padding: 4px 0; border: none; background: none; color: var(--text-dim); font-size: 0.75rem; text-decoration: none; cursor: pointer; }
+.lingo-tabbar span { font-size: 1.3rem; line-height: 1.2; }
+.lingo-tabbar .active { color: var(--accent); font-weight: 500; }
+.lingo-copy textarea { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); font-size: 16px; font-family: inherit; } /* 16px 以上 iOS 才不會在點輸入框時自動放大 */
