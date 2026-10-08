@@ -997,6 +997,246 @@
      "reading": "",
      "back": "我以前每場棒球賽都看，現在只看季後賽。",
      "note": "used to + 原形動詞：過去的習慣（現在已經沒有了）。跟 be used to + V-ing 意思不同。"
+    },
+    {
+     "id": "en-g1-08",
+     "type": "sentence",
+     "front": "I forgot to bring my passport, so I had to go back home.",
+     "reading": "",
+     "back": "我忘了帶護照，所以必須回家。",
+     "note": "forget + to V：忘了去做（那件事還沒做）。"
+    },
+    {
+     "id": "en-g1-09",
+     "type": "sentence",
+     "front": "I will never forget visiting Kyoto for the first time.",
+     "reading": "",
+     "back": "我永遠不會忘記第一次去京都。",
+     "note": "forget / remember + V-ing：忘記／記得「已經做過的事」。跟 forget to V 意思不同。"
+    },
+    {
+     "id": "en-g1-10",
+     "type": "sentence",
+     "front": "He stopped to buy a bottle of water on the way to the court.",
+     "reading": "",
+     "back": "他在去球場的路上停下來買了一瓶水。",
+     "note": "stop + to V：停下來，去做另一件事。"
+    },
+    {
+     "id": "en-g1-11",
+     "type": "sentence",
+     "front": "Please stop talking during the presentation.",
+     "reading": "",
+     "back": "簡報時請不要講話。",
+     "note": "stop + V-ing：停止正在做的事。"
+    },
+    {
+     "id": "en-g1-12",
+     "type": "sentence",
+     "front": "I'm interested in learning Japanese for my next trip.",
+     "reading": "",
+     "back": "我有興趣為下次旅行學日文。",
+     "note": "介系詞後面接 V-ing：interested in / good at / afraid of / thank you for。"
+    },
+    {
+     "id": "en-g1-13",
+     "type": "sentence",
+     "front": "I'm looking forward to seeing you at the meeting.",
+     "reading": "",
+     "back": "我期待在會議上見到你。",
+     "note": "look forward to + V-ing：這裡的 to 是介系詞，所以後面接 V-ing，不是原形。"
+    },
+    {
+     "id": "en-g1-14",
+     "type": "sentence",
+     "front": "It is difficult to find a good seat on opening day.",
+     "reading": "",
+     "back": "開幕日很難找到好位子。",
+     "note": "It is + 形容詞 + to V：用來說明某件事的難易、好壞。"
+    },
+    {
+     "id": "en-g1-15",
+     "type": "sentence",
+     "front": "She taught me how to serve in pickleball.",
+     "reading": "",
+     "back": "她教我怎麼發匹克球。",
+     "note": "疑問詞 + to V：how to / where to / what to / when to。"
+    }
+   ]
+  },
+  {
+   "id": "en-9-grammar-indirect",
+   "lang": "en",
+   "title": "文法・間接問句",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g3-01",
+     "type": "sentence",
+     "front": "Do you know what time the museum opens?",
+     "reading": "",
+     "back": "你知道博物館幾點開門嗎？",
+     "note": "Do you know + 疑問詞 + 主詞 + 動詞：不再用助動詞 does，動詞也不倒裝。"
+    },
+    {
+     "id": "en-g3-02",
+     "type": "sentence",
+     "front": "Excuse me, could you tell me how I can get to the station?",
+     "reading": "",
+     "back": "不好意思，可以告訴我怎麼去車站嗎？",
+     "note": "how + 主詞 + can（不是 how can I）：助動詞放在主詞後面。"
+    },
+    {
+     "id": "en-g3-03",
+     "type": "sentence",
+     "front": "I'd like to know whether the flight is on time.",
+     "reading": "",
+     "back": "我想知道班機是否準時。",
+     "note": "沒有疑問詞時，用 whether 或 if 帶出間接問句。"
+    },
+    {
+     "id": "en-g3-04",
+     "type": "sentence",
+     "front": "Can you tell me if this bus goes to the airport?",
+     "reading": "",
+     "back": "可以告訴我這班公車有到機場嗎？",
+     "note": "是非問句改成間接問句：if / whether + 肯定句語序（不是 does this bus go）。"
+    },
+    {
+     "id": "en-g3-05",
+     "type": "sentence",
+     "front": "She asked me where I was going.",
+     "reading": "",
+     "back": "她問我要去哪裡。",
+     "note": "轉述問句：語序用肯定句（where I was going），不是 where was I going。"
+    },
+    {
+     "id": "en-g3-06",
+     "type": "sentence",
+     "front": "I have no idea who will be at the meeting.",
+     "reading": "",
+     "back": "我不知道誰會參加會議。",
+     "note": "疑問詞當主詞時語序本來就不變：who will be。"
+    },
+    {
+     "id": "en-g3-07",
+     "type": "sentence",
+     "front": "Could you explain why the schedule changed?",
+     "reading": "",
+     "back": "可以解釋為什麼行程改了嗎？",
+     "note": "why + 主詞 + 動詞（changed）：不要再加 did。"
+    },
+    {
+     "id": "en-g3-08",
+     "type": "sentence",
+     "front": "Let me know when the game starts.",
+     "reading": "",
+     "back": "比賽幾點開始請告訴我。",
+     "note": "Let me know 後面接的也是間接問句：when + 主詞 + 動詞。"
+    },
+    {
+     "id": "en-g3-09",
+     "type": "sentence",
+     "front": "I'm not sure how much the room costs per night.",
+     "reading": "",
+     "back": "我不確定房間一晚多少錢。",
+     "note": "how much + 主詞 + 動詞（costs）：肯定句語序。"
+    },
+    {
+     "id": "en-g3-10",
+     "type": "sentence",
+     "front": "Do you remember where we parked the car?",
+     "reading": "",
+     "back": "你記得我們把車停在哪裡嗎？",
+     "note": "正確：where we parked；錯誤：where did we park。"
+    }
+   ]
+  },
+  {
+   "id": "en-10-grammar-perfect",
+   "lang": "en",
+   "title": "文法・現在完成式",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g4-01",
+     "type": "sentence",
+     "front": "I have worked at this company for three years.",
+     "reading": "",
+     "back": "我在這家公司工作三年了。",
+     "note": "for + 一段時間：現在完成式表示「從過去一直持續到現在」。"
+    },
+    {
+     "id": "en-g4-02",
+     "type": "sentence",
+     "front": "She has lived in Taipei since 2019.",
+     "reading": "",
+     "back": "她從二〇一九年起就住在台北。",
+     "note": "since + 起點時間（2019、Monday、last year）。"
+    },
+    {
+     "id": "en-g4-03",
+     "type": "sentence",
+     "front": "Have you ever been to Japan?",
+     "reading": "",
+     "back": "你去過日本嗎？",
+     "note": "ever：問「有沒有這個經驗」。have been to = 去過（已經回來了）。"
+    },
+    {
+     "id": "en-g4-04",
+     "type": "sentence",
+     "front": "I have never tried pickleball before.",
+     "reading": "",
+     "back": "我以前從沒試過匹克球。",
+     "note": "never + 現在完成式：到現在為止從來沒有。"
+    },
+    {
+     "id": "en-g4-05",
+     "type": "sentence",
+     "front": "We have already booked the hotel.",
+     "reading": "",
+     "back": "我們已經訂好飯店了。",
+     "note": "already：已經（放在 have 和過去分詞中間）。"
+    },
+    {
+     "id": "en-g4-06",
+     "type": "sentence",
+     "front": "The flight hasn't landed yet.",
+     "reading": "",
+     "back": "班機還沒降落。",
+     "note": "not ... yet：還沒（通常放句尾）。"
+    },
+    {
+     "id": "en-g4-07",
+     "type": "sentence",
+     "front": "I lost my wallet yesterday.",
+     "reading": "",
+     "back": "我昨天弄丟了錢包。",
+     "note": "有明確的過去時間（yesterday、last week、in 2020）要用過去式，不能用現在完成式。"
+    },
+    {
+     "id": "en-g4-08",
+     "type": "sentence",
+     "front": "I have lost my wallet, so I can't pay for lunch.",
+     "reading": "",
+     "back": "我的錢包不見了，所以沒辦法付午餐錢。",
+     "note": "強調過去的事「對現在的影響」時用現在完成式。"
+    },
+    {
+     "id": "en-g4-09",
+     "type": "sentence",
+     "front": "How long have you been waiting for the bus?",
+     "reading": "",
+     "back": "你等公車等多久了？",
+     "note": "How long + have + 主詞 + been + V-ing：問動作持續了多久。"
+    },
+    {
+     "id": "en-g4-10",
+     "type": "sentence",
+     "front": "I have been learning English for two years, and I'm still improving.",
+     "reading": "",
+     "back": "我學英文兩年了，而且還在進步。",
+     "note": "have been V-ing（現在完成進行式）：強調動作從過去持續到現在。"
     }
    ]
   },
@@ -1441,82 +1681,162 @@
    ]
   },
   {
-   "id": "en-4-grammar-b1",
+   "id": "en-11-grammar-conditionals",
    "lang": "en",
-   "title": "文法・B1 句型",
+   "title": "文法・條件句",
    "order": "seq",
    "cards": [
     {
-     "id": "en-g2-01",
+     "id": "en-g5-01",
      "type": "sentence",
-     "front": "Could you tell me where the baggage claim is?",
+     "front": "If it rains tomorrow, the game will be canceled.",
      "reading": "",
-     "back": "可以告訴我行李提領處在哪裡嗎？",
-     "note": "間接問句用肯定句語序：where the baggage claim is（不是 where is the baggage claim）。"
+     "back": "如果明天下雨，比賽會取消。",
+     "note": "第一類條件句（可能發生）：if + 現在式，will + 原形。if 子句不用 will。"
     },
     {
-     "id": "en-g2-02",
+     "id": "en-g5-02",
      "type": "sentence",
-     "front": "I wonder how much the tickets will cost.",
+     "front": "If you heat water to 100 degrees, it boils.",
      "reading": "",
-     "back": "我想知道門票要多少錢。",
-     "note": "I wonder / I don't know / Do you know + 疑問詞 + 主詞 + 動詞（肯定句語序）。"
+     "back": "水加熱到一百度就會沸騰。",
+     "note": "零類條件句（事實或通則）：if + 現在式，現在式。"
     },
     {
-     "id": "en-g2-03",
+     "id": "en-g5-03",
      "type": "sentence",
-     "front": "The meeting was postponed until next Monday.",
+     "front": "I will call you if I arrive late.",
      "reading": "",
-     "back": "會議延到下週一。",
-     "note": "被動語態：be + 過去分詞（was postponed）。重點是事情，不強調誰做的。"
+     "back": "如果我會晚到，我會打給你。",
+     "note": "if 子句放在後面時，中間不用逗號。"
     },
     {
-     "id": "en-g2-04",
+     "id": "en-g5-04",
      "type": "sentence",
-     "front": "The stadium was built in 1990 and has been renovated twice.",
+     "front": "If we leave now, we won't miss the train.",
      "reading": "",
-     "back": "這座球場建於一九九〇年，之後整修過兩次。",
-     "note": "現在完成式被動：has / have been + 過去分詞。"
+     "back": "如果現在出發，我們不會錯過火車。",
+     "note": "主要子句用 will 的否定：won't + 原形。"
     },
     {
-     "id": "en-g2-05",
+     "id": "en-g5-05",
      "type": "sentence",
-     "front": "By the time we got to the airport, the check-in desk had already closed.",
+     "front": "Unless you hurry, you will miss the flight.",
      "reading": "",
-     "back": "等我們到機場時，報到櫃檯已經關了。",
-     "note": "過去完成式 had + 過去分詞：在過去某個時間點之前就已經完成的事。"
+     "back": "除非你快一點，否則會趕不上班機。",
+     "note": "unless = if ... not：後面不用再加 not。"
     },
     {
-     "id": "en-g2-06",
+     "id": "en-g5-06",
      "type": "sentence",
-     "front": "The game had already started when we found our seats.",
+     "front": "If I were you, I would book the tickets today.",
      "reading": "",
-     "back": "我們找到座位時，比賽已經開始了。",
-     "note": "兩件過去的事，先發生的用過去完成式（had started），後發生的用過去式（found）。"
+     "back": "如果我是你，我今天就會訂票。",
+     "note": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形；be 動詞一律用 were。"
     },
     {
-     "id": "en-g2-07",
+     "id": "en-g5-07",
      "type": "sentence",
-     "front": "I wish I had booked the tickets earlier.",
+     "front": "If I won the lottery, I would travel around the world.",
      "reading": "",
-     "back": "真希望我早點訂票。",
-     "note": "wish + 過去完成式：對過去的遺憾。對現在的願望用 wish + 過去式（I wish I had more time）。"
+     "back": "如果我中樂透，我就會環遊世界。",
+     "note": "第二類條件句：不可能或不太可能的假設。"
     },
     {
-     "id": "en-g2-08",
+     "id": "en-g5-08",
      "type": "sentence",
-     "front": "If I had more vacation days, I would travel more.",
+     "front": "What would you do if you lost your passport abroad?",
      "reading": "",
-     "back": "如果我有更多假期，我會多去旅行。",
-     "note": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形。"
+     "back": "如果你在國外弄丟護照，你會怎麼辦？",
+     "note": "疑問句也可以用第二類條件句：What would you do if + 過去式？"
     },
     {
-     "id": "en-g2-09",
+     "id": "en-g5-09",
      "type": "sentence",
-     "front": "Not only did we win, but we also scored a record number of runs.",
+     "front": "If you need any help, just let me know.",
      "reading": "",
-     "back": "我們不只贏了，還得到了破紀錄的分數。",
-     "note": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。"
+     "back": "如果需要幫忙，告訴我就好。",
+     "note": "if + 現在式，後面也可以接祈使句（請求、建議）。"
+    },
+    {
+     "id": "en-g5-10",
+     "type": "sentence",
+     "front": "She would take the job if the salary were higher.",
+     "reading": "",
+     "back": "如果薪水再高一點，她就會接這份工作。",
+     "note": "第二類條件句：主詞是 she 也用 were（if the salary were higher）。"
+    }
+   ]
+  },
+  {
+   "id": "en-12-grammar-modals",
+   "lang": "en",
+   "title": "文法・情態動詞",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g6-01",
+     "type": "sentence",
+     "front": "You should check the weather before you pack.",
+     "reading": "",
+     "back": "打包前你應該先看一下天氣。",
+     "note": "should：建議、應該。"
+    },
+    {
+     "id": "en-g6-02",
+     "type": "sentence",
+     "front": "You must show your passport at the border.",
+     "reading": "",
+     "back": "你在邊境必須出示護照。",
+     "note": "must：規定或強烈的必要性。"
+    },
+    {
+     "id": "en-g6-03",
+     "type": "sentence",
+     "front": "You don't have to wear a suit to the interview.",
+     "reading": "",
+     "back": "你不用穿西裝去面試。",
+     "note": "don't have to：不需要（沒有義務），不是「不可以」。"
+    },
+    {
+     "id": "en-g6-04",
+     "type": "sentence",
+     "front": "You mustn't use your phone during the exam.",
+     "reading": "",
+     "back": "考試時不可以用手機。",
+     "note": "mustn't：禁止。跟 don't have to 完全不同。"
+    },
+    {
+     "id": "en-g6-05",
+     "type": "sentence",
+     "front": "The train might be late because of the storm.",
+     "reading": "",
+     "back": "因為暴風雨，火車可能會誤點。",
+     "note": "might：有可能（把握不高）。"
+    },
+    {
+     "id": "en-g6-06",
+     "type": "sentence",
+     "front": "We could take a taxi if the bus is full.",
+     "reading": "",
+     "back": "如果公車客滿，我們可以搭計程車。",
+     "note": "could：提出可行的選項。"
+    },
+    {
+     "id": "en-g6-07",
+     "type": "sentence",
+     "front": "You should have called me when the flight was canceled.",
+     "reading": "",
+     "back": "班機取消時你應該打給我的。",
+     "note": "should have + 過去分詞：當時該做卻沒做（有點責備或遺憾）。"
+    },
+    {
+     "id": "en-g6-08",
+     "type": "sentence",
+     "front": "He must have forgotten the meeting, because he isn't here.",
+     "reading": "",
+     "back": "他一定是忘了開會，因為他不在這裡。",
+     "note": "must have + 過去分詞：對過去的事做肯定的推測。"
     }
    ]
   },
@@ -1853,6 +2173,158 @@
      "reading": "",
      "back": "在台灣，去看棒球賽非常有趣，即使你不懂規則也一樣。球迷會為每位球員唱專屬的歌。投手投出速球時，整個球場安靜地等待。然後，三振之後，大家一起大喊。我覺得最棒的部分是食物，因為你可以一邊吃零食，一邊為你的球隊加油。",
      "note": "重點：fastball 速球／strikeout 三振／cheer 加油"
+    }
+   ]
+  },
+  {
+   "id": "en-13-grammar-relative",
+   "lang": "en",
+   "title": "文法・關係子句",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g7-01",
+     "type": "sentence",
+     "front": "The man who sits next to me is my new supervisor.",
+     "reading": "",
+     "back": "坐在我旁邊的男士是我的新主管。",
+     "note": "who：關係代名詞，修飾「人」，在子句中當主詞。"
+    },
+    {
+     "id": "en-g7-02",
+     "type": "sentence",
+     "front": "This is the hotel where we stayed last year.",
+     "reading": "",
+     "back": "這是我們去年住的飯店。",
+     "note": "where：修飾地點，後面接完整子句（主詞 + 動詞）。"
+    },
+    {
+     "id": "en-g7-03",
+     "type": "sentence",
+     "front": "I lost the book which I borrowed from the library.",
+     "reading": "",
+     "back": "我弄丟了向圖書館借的書。",
+     "note": "which：修飾「物」。which 當受詞時可以省略。"
+    },
+    {
+     "id": "en-g7-04",
+     "type": "sentence",
+     "front": "The restaurant that we went to was crowded.",
+     "reading": "",
+     "back": "我們去的餐廳很擠。",
+     "note": "that 可代替 who / which；介系詞（went to）留在動詞後面。"
+    },
+    {
+     "id": "en-g7-05",
+     "type": "sentence",
+     "front": "She is the player whose serve is the fastest.",
+     "reading": "",
+     "back": "她是發球最快的球員。",
+     "note": "whose：表示所有關係（她的發球），後面接名詞。"
+    },
+    {
+     "id": "en-g7-06",
+     "type": "sentence",
+     "front": "The tickets I bought online were cheaper.",
+     "reading": "",
+     "back": "我在網路上買的票比較便宜。",
+     "note": "受詞關係代名詞可以省略：The tickets (that) I bought online。"
+    },
+    {
+     "id": "en-g7-07",
+     "type": "sentence",
+     "front": "My manager, who has worked here for ten years, is retiring.",
+     "reading": "",
+     "back": "我的主管在這裡工作十年了，他要退休了。",
+     "note": "逗號隔開的補充說明：要用 who / which，不能用 that。"
+    },
+    {
+     "id": "en-g7-08",
+     "type": "sentence",
+     "front": "I know a café where you can study quietly.",
+     "reading": "",
+     "back": "我知道一家可以安靜念書的咖啡店。",
+     "note": "where 引導的子句可以直接說明地點的特色。"
+    }
+   ]
+  },
+  {
+   "id": "en-4-grammar-b1",
+   "lang": "en",
+   "title": "文法・進階句型（B2）",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g2-01",
+     "type": "sentence",
+     "front": "Could you tell me where the baggage claim is?",
+     "reading": "",
+     "back": "可以告訴我行李提領處在哪裡嗎？",
+     "note": "間接問句用肯定句語序：where the baggage claim is（不是 where is the baggage claim）。"
+    },
+    {
+     "id": "en-g2-02",
+     "type": "sentence",
+     "front": "I wonder how much the tickets will cost.",
+     "reading": "",
+     "back": "我想知道門票要多少錢。",
+     "note": "I wonder / I don't know / Do you know + 疑問詞 + 主詞 + 動詞（肯定句語序）。"
+    },
+    {
+     "id": "en-g2-03",
+     "type": "sentence",
+     "front": "The meeting was postponed until next Monday.",
+     "reading": "",
+     "back": "會議延到下週一。",
+     "note": "被動語態：be + 過去分詞（was postponed）。重點是事情，不強調誰做的。"
+    },
+    {
+     "id": "en-g2-04",
+     "type": "sentence",
+     "front": "The stadium was built in 1990 and has been renovated twice.",
+     "reading": "",
+     "back": "這座球場建於一九九〇年，之後整修過兩次。",
+     "note": "現在完成式被動：has / have been + 過去分詞。"
+    },
+    {
+     "id": "en-g2-05",
+     "type": "sentence",
+     "front": "By the time we got to the airport, the check-in desk had already closed.",
+     "reading": "",
+     "back": "等我們到機場時，報到櫃檯已經關了。",
+     "note": "過去完成式 had + 過去分詞：在過去某個時間點之前就已經完成的事。"
+    },
+    {
+     "id": "en-g2-06",
+     "type": "sentence",
+     "front": "The game had already started when we found our seats.",
+     "reading": "",
+     "back": "我們找到座位時，比賽已經開始了。",
+     "note": "兩件過去的事，先發生的用過去完成式（had started），後發生的用過去式（found）。"
+    },
+    {
+     "id": "en-g2-07",
+     "type": "sentence",
+     "front": "I wish I had booked the tickets earlier.",
+     "reading": "",
+     "back": "真希望我早點訂票。",
+     "note": "wish + 過去完成式：對過去的遺憾。對現在的願望用 wish + 過去式（I wish I had more time）。"
+    },
+    {
+     "id": "en-g2-08",
+     "type": "sentence",
+     "front": "If I had more vacation days, I would travel more.",
+     "reading": "",
+     "back": "如果我有更多假期，我會多去旅行。",
+     "note": "第二類條件句（與現在事實相反）：if + 過去式，would + 原形。"
+    },
+    {
+     "id": "en-g2-09",
+     "type": "sentence",
+     "front": "Not only did we win, but we also scored a record number of runs.",
+     "reading": "",
+     "back": "我們不只贏了，還得到了破紀錄的分數。",
+     "note": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。"
     }
    ]
   },
@@ -2349,6 +2821,78 @@
      "reading": "",
      "back": "昨天我參加了一場有三個國家同事的電話會議。會議晚開始，因為有人的網路很慢。我們的主管把議程控制得很精簡，所以三十分鐘就結束了。結束通話前，有人做了會議記錄，並答應用電子郵件寄出。我喜歡這種短會議，因為我能完成其他工作。",
      "note": "重點：conference call 電話會議／agenda 議程／minutes 會議記錄"
+    }
+   ]
+  },
+  {
+   "id": "en-14-grammar-reported",
+   "lang": "en",
+   "title": "文法・間接引述",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-g8-01",
+     "type": "sentence",
+     "front": "He said that he was tired.",
+     "reading": "",
+     "back": "他說他很累。",
+     "note": "轉述時時態往後退一格：am / is → was。"
+    },
+    {
+     "id": "en-g8-02",
+     "type": "sentence",
+     "front": "She told me that she would send the file.",
+     "reading": "",
+     "back": "她告訴我她會寄檔案。",
+     "note": "will → would；tell + 人 + that。"
+    },
+    {
+     "id": "en-g8-03",
+     "type": "sentence",
+     "front": "They said they had already left the hotel.",
+     "reading": "",
+     "back": "他們說已經退房了。",
+     "note": "過去式／現在完成式 → had + 過去分詞。"
+    },
+    {
+     "id": "en-g8-04",
+     "type": "sentence",
+     "front": "He asked if I wanted some coffee.",
+     "reading": "",
+     "back": "他問我要不要喝咖啡。",
+     "note": "轉述是非問句：if / whether + 肯定句語序。"
+    },
+    {
+     "id": "en-g8-05",
+     "type": "sentence",
+     "front": "She asked where the meeting room was.",
+     "reading": "",
+     "back": "她問會議室在哪裡。",
+     "note": "轉述疑問句：where + 主詞 + 動詞（不倒裝）。"
+    },
+    {
+     "id": "en-g8-06",
+     "type": "sentence",
+     "front": "The coach told us to warm up first.",
+     "reading": "",
+     "back": "教練叫我們先熱身。",
+     "note": "tell + 人 + to V：轉述命令或要求。"
+    },
+    {
+     "id": "en-g8-07",
+     "type": "sentence",
+     "front": "My boss asked me not to be late.",
+     "reading": "",
+     "back": "老闆要我不要遲到。",
+     "note": "否定的要求：not to V（not 放在 to 前面）。"
+    },
+    {
+     "id": "en-g8-08",
+     "type": "sentence",
+     "front": "He promised to call back in an hour.",
+     "reading": "",
+     "back": "他答應一小時後回電。",
+     "note": "promise + to V：轉述承諾。"
     }
    ]
   }
