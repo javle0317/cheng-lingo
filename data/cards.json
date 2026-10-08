@@ -1101,6 +1101,310 @@
      "reading": "/əˌkɑːməˈdeɪʃn/",
      "back": "住宿",
      "note": "Accommodation in the city center is expensive."
+    },
+    {
+     "id": "en-wt-13",
+     "type": "word",
+     "front": "check in",
+     "reading": "/tʃek ɪn/",
+     "back": "辦理登機；辦理入住",
+     "note": "You can check in online 24 hours before departure."
+    },
+    {
+     "id": "en-wt-14",
+     "type": "word",
+     "front": "layover",
+     "reading": "/ˈleɪoʊvər/",
+     "back": "中途停留",
+     "note": "We have a three-hour layover in Dubai."
+    },
+    {
+     "id": "en-wt-15",
+     "type": "word",
+     "front": "gate",
+     "reading": "/ɡeɪt/",
+     "back": "登機門",
+     "note": "Your flight leaves from gate 12."
+    },
+    {
+     "id": "en-wt-16",
+     "type": "word",
+     "front": "carry-on",
+     "reading": "/ˈkæri ɑːn/",
+     "back": "隨身行李",
+     "note": "Each passenger can bring one carry-on bag."
+    },
+    {
+     "id": "en-wt-17",
+     "type": "word",
+     "front": "aisle seat",
+     "reading": "/ˈaɪl siːt/",
+     "back": "靠走道的座位",
+     "note": "I prefer an aisle seat so I can stand up easily."
+    },
+    {
+     "id": "en-wt-18",
+     "type": "word",
+     "front": "turbulence",
+     "reading": "/ˈtɜːrbjələns/",
+     "back": "亂流",
+     "note": "The plane shook because of turbulence."
+    },
+    {
+     "id": "en-wt-19",
+     "type": "word",
+     "front": "visa",
+     "reading": "/ˈviːzə/",
+     "back": "簽證",
+     "note": "Do I need a visa to travel to Canada?"
+    },
+    {
+     "id": "en-wt-20",
+     "type": "word",
+     "front": "passport control",
+     "reading": "/ˈpæspɔːrt kənˌtroʊl/",
+     "back": "證照查驗（入境審查）",
+     "note": "Please go to passport control and have your passport ready."
+    },
+    {
+     "id": "en-wt-21",
+     "type": "word",
+     "front": "vacancy",
+     "reading": "/ˈveɪkənsi/",
+     "back": "空房",
+     "note": "The sign says there are no vacancies tonight."
+    },
+    {
+     "id": "en-wt-22",
+     "type": "word",
+     "front": "check out",
+     "reading": "/tʃek aʊt/",
+     "back": "退房",
+     "note": "Check-out time is 11 a.m."
+    },
+    {
+     "id": "en-wt-23",
+     "type": "word",
+     "front": "front desk",
+     "reading": "/ˌfrʌnt ˈdesk/",
+     "back": "櫃檯",
+     "note": "Please leave your key at the front desk."
+    },
+    {
+     "id": "en-wt-24",
+     "type": "word",
+     "front": "deposit",
+     "reading": "/dɪˈpɑːzɪt/",
+     "back": "押金；訂金",
+     "note": "The hotel asked for a deposit of fifty dollars."
+    },
+    {
+     "id": "en-wt-25",
+     "type": "word",
+     "front": "amenities",
+     "reading": "/əˈmenətiz/",
+     "back": "設施；便利設備",
+     "note": "The hotel's amenities include a pool and a gym."
+    },
+    {
+     "id": "en-wt-26",
+     "type": "word",
+     "front": "complimentary",
+     "reading": "/ˌkɑːmpləˈmentri/",
+     "back": "免費贈送的",
+     "note": "Breakfast is complimentary for all guests."
+    },
+    {
+     "id": "en-wt-27",
+     "type": "word",
+     "front": "housekeeping",
+     "reading": "/ˈhaʊskiːpɪŋ/",
+     "back": "客房清潔服務",
+     "note": "Could you ask housekeeping to bring more towels?"
+    },
+    {
+     "id": "en-wt-28",
+     "type": "word",
+     "front": "round-trip",
+     "reading": "/ˈraʊnd trɪp/",
+     "back": "來回的",
+     "note": "A round-trip ticket is cheaper than two one-way tickets."
+    },
+    {
+     "id": "en-wt-29",
+     "type": "word",
+     "front": "one-way",
+     "reading": "/ˌwʌn ˈweɪ/",
+     "back": "單程的",
+     "note": "I'd like a one-way ticket to Osaka."
+    },
+    {
+     "id": "en-wt-30",
+     "type": "word",
+     "front": "transfer",
+     "reading": "/trænsˈfɜːr/",
+     "back": "轉乘；轉機",
+     "note": "You need to transfer at Shinjuku Station."
+    },
+    {
+     "id": "en-wt-31",
+     "type": "word",
+     "front": "platform",
+     "reading": "/ˈplætfɔːrm/",
+     "back": "月台",
+     "note": "The train to Boston leaves from platform 4."
+    },
+    {
+     "id": "en-wt-32",
+     "type": "word",
+     "front": "fare",
+     "reading": "/fer/",
+     "back": "車資",
+     "note": "The bus fare is two dollars."
+    },
+    {
+     "id": "en-wt-33",
+     "type": "word",
+     "front": "timetable",
+     "reading": "/ˈtaɪmteɪbl/",
+     "back": "時刻表",
+     "note": "Let me check the train timetable."
+    },
+    {
+     "id": "en-wt-34",
+     "type": "word",
+     "front": "car rental",
+     "reading": "/ˈkɑːr rentl/",
+     "back": "租車",
+     "note": "We booked a car rental for the weekend."
+    },
+    {
+     "id": "en-wt-35",
+     "type": "word",
+     "front": "appetizer",
+     "reading": "/ˈæpɪtaɪzər/",
+     "back": "開胃菜",
+     "note": "Let's share an appetizer before the main course."
+    },
+    {
+     "id": "en-wt-36",
+     "type": "word",
+     "front": "vegetarian",
+     "reading": "/ˌvedʒəˈteriən/",
+     "back": "素食者；素食的",
+     "note": "Do you have any vegetarian dishes?"
+    },
+    {
+     "id": "en-wt-37",
+     "type": "word",
+     "front": "allergic",
+     "reading": "/əˈlɜːrdʒɪk/",
+     "back": "過敏的",
+     "note": "I'm allergic to peanuts."
+    },
+    {
+     "id": "en-wt-38",
+     "type": "word",
+     "front": "tip",
+     "reading": "/tɪp/",
+     "back": "小費",
+     "note": "Is the tip included in the bill?"
+    },
+    {
+     "id": "en-wt-39",
+     "type": "word",
+     "front": "bill",
+     "reading": "/bɪl/",
+     "back": "帳單",
+     "note": "Could we have the bill, please?"
+    },
+    {
+     "id": "en-wt-40",
+     "type": "word",
+     "front": "takeout",
+     "reading": "/ˈteɪkaʊt/",
+     "back": "外帶",
+     "note": "I'd like two coffees for takeout."
+    },
+    {
+     "id": "en-wt-41",
+     "type": "word",
+     "front": "landmark",
+     "reading": "/ˈlændmɑːrk/",
+     "back": "地標",
+     "note": "The old clock tower is a famous landmark."
+    },
+    {
+     "id": "en-wt-42",
+     "type": "word",
+     "front": "admission",
+     "reading": "/ədˈmɪʃn/",
+     "back": "入場費",
+     "note": "Admission is free for children under six."
+    },
+    {
+     "id": "en-wt-43",
+     "type": "word",
+     "front": "guided tour",
+     "reading": "/ˌɡaɪdɪd ˈtʊr/",
+     "back": "導覽行程",
+     "note": "We joined a guided tour of the old town."
+    },
+    {
+     "id": "en-wt-44",
+     "type": "word",
+     "front": "crowded",
+     "reading": "/ˈkraʊdɪd/",
+     "back": "擁擠的",
+     "note": "The station was crowded during rush hour."
+    },
+    {
+     "id": "en-wt-45",
+     "type": "word",
+     "front": "pharmacy",
+     "reading": "/ˈfɑːrməsi/",
+     "back": "藥局",
+     "note": "Is there a pharmacy near the hotel?"
+    },
+    {
+     "id": "en-wt-46",
+     "type": "word",
+     "front": "lost and found",
+     "reading": "/ˌlɔːst ən ˈfaʊnd/",
+     "back": "失物招領處",
+     "note": "I left my umbrella, so I went to the lost and found."
+    },
+    {
+     "id": "en-wt-47",
+     "type": "word",
+     "front": "emergency",
+     "reading": "/iˈmɜːrdʒənsi/",
+     "back": "緊急情況",
+     "note": "In an emergency, call 911."
+    },
+    {
+     "id": "en-wt-48",
+     "type": "word",
+     "front": "receipt",
+     "reading": "/rɪˈsiːt/",
+     "back": "收據",
+     "note": "Please keep the receipt in case you need a refund."
+    },
+    {
+     "id": "en-wt-49",
+     "type": "word",
+     "front": "discount",
+     "reading": "/ˈdɪskaʊnt/",
+     "back": "折扣",
+     "note": "Students get a ten percent discount."
+    },
+    {
+     "id": "en-wt-50",
+     "type": "word",
+     "front": "sold out",
+     "reading": "/ˌsoʊld ˈaʊt/",
+     "back": "售完",
+     "note": "The concert tickets are sold out."
     }
    ]
   },
@@ -1213,142 +1517,6 @@
      "reading": "",
      "back": "我們不只贏了，還得到了破紀錄的分數。",
      "note": "Not only 放句首時要倒裝：did we win（助動詞 + 主詞）。"
-    }
-   ]
-  },
-  {
-   "id": "en-5-words-work",
-   "lang": "en",
-   "title": "單字・工作",
-   "order": "random",
-   "cards": [
-    {
-     "id": "en-ww-01",
-     "type": "word",
-     "front": "deadline",
-     "reading": "/ˈdedlaɪn/",
-     "back": "截止期限",
-     "note": "We need to meet the deadline on Friday."
-    },
-    {
-     "id": "en-ww-02",
-     "type": "word",
-     "front": "schedule",
-     "reading": "/ˈskedʒuːl/",
-     "back": "行程表；排定",
-     "note": "Let's schedule a meeting for next week."
-    },
-    {
-     "id": "en-ww-03",
-     "type": "word",
-     "front": "colleague",
-     "reading": "/ˈkɑːliːɡ/",
-     "back": "同事",
-     "note": "I'm having lunch with a colleague."
-    },
-    {
-     "id": "en-ww-04",
-     "type": "word",
-     "front": "proposal",
-     "reading": "/prəˈpoʊzl/",
-     "back": "提案",
-     "note": "She presented a proposal for the new project."
-    },
-    {
-     "id": "en-ww-05",
-     "type": "word",
-     "front": "budget",
-     "reading": "/ˈbʌdʒɪt/",
-     "back": "預算",
-     "note": "The project is over budget."
-    },
-    {
-     "id": "en-ww-06",
-     "type": "word",
-     "front": "attend",
-     "reading": "/əˈtend/",
-     "back": "出席；參加",
-     "note": "Will you attend the conference next month?"
-    },
-    {
-     "id": "en-ww-07",
-     "type": "word",
-     "front": "negotiate",
-     "reading": "/nɪˈɡoʊʃieɪt/",
-     "back": "協商；談判",
-     "note": "We negotiated a better price with the supplier."
-    },
-    {
-     "id": "en-ww-08",
-     "type": "word",
-     "front": "responsible",
-     "reading": "/rɪˈspɑːnsəbl/",
-     "back": "負責的",
-     "note": "Who is responsible for this task?"
-    },
-    {
-     "id": "en-ww-09",
-     "type": "word",
-     "front": "priority",
-     "reading": "/praɪˈɔːrəti/",
-     "back": "優先事項",
-     "note": "Customer service is our top priority."
-    },
-    {
-     "id": "en-ww-10",
-     "type": "word",
-     "front": "feedback",
-     "reading": "/ˈfiːdbæk/",
-     "back": "意見回饋",
-     "note": "Thanks for your feedback on my report."
-    },
-    {
-     "id": "en-ww-11",
-     "type": "word",
-     "front": "agenda",
-     "reading": "/əˈdʒendə/",
-     "back": "議程",
-     "note": "What's on the agenda for today's meeting?"
-    },
-    {
-     "id": "en-ww-12",
-     "type": "word",
-     "front": "follow up",
-     "reading": "/ˈfɑːloʊ ʌp/",
-     "back": "後續追蹤",
-     "note": "I'll follow up with you by email tomorrow."
-    }
-   ]
-  },
-  {
-   "id": "en-6-reading-work",
-   "lang": "en",
-   "title": "閱讀・工作",
-   "order": "seq",
-   "cards": [
-    {
-     "id": "en-rw-01",
-     "type": "passage",
-     "front": "On Monday morning, my team had a meeting to discuss a new project. Our manager explained the goals and asked everyone to share ideas. We agreed on a deadline of three weeks. After the meeting, I wrote down my tasks and sent an email to my colleagues. I felt a little nervous, but I was excited to start.",
-     "reading": "",
-     "back": "週一早上，我的團隊開會討論一個新專案。主管說明了目標，並請大家分享想法。我們同意以三週為期限。會後，我寫下自己的工作項目，並寄信給同事。我有一點緊張，但也很期待開始。",
-     "note": "重點：goal 目標／deadline 期限／task 工作項目"
-    },
-    {
-     "id": "en-rw-02",
-     "type": "passage",
-     "front": "Last week I finished a report for a client. Before sending it, I asked my colleague to read it and give me some feedback. She said the data was clear, but the summary was too long. I shortened it and added a chart. The client liked the new version and thanked us for the quick response.",
-     "reading": "",
-     "back": "上週我完成了一份給客戶的報告。寄出前，我請同事先看過並給我一些意見。她說資料很清楚，但摘要太長。我把它縮短，又加了一張圖表。客戶很喜歡新版本，並感謝我們快速回覆。",
-     "note": "重點：client 客戶／feedback 回饋／summary 摘要"
-    },
-    {
-     "id": "en-rw-03",
-     "type": "passage",
-     "front": "Some companies let employees work from home a few days a week. People who work at home save time because they don't have to commute. However, it can be hard to separate work from personal life. To stay productive, many people set a fixed schedule and take short breaks. Others miss talking face to face with their coworkers.",
-     "reading": "",
-     "back": "有些公司讓員工每週在家工作幾天。在家工作的人可以省下通勤時間。不過，要把工作和私人生活分開可能不容易。為了保持效率，許多人會訂定固定的作息並短暫休息。也有人懷念和同事面對面聊天。",
-     "note": "重點：commute 通勤／productive 有效率的／face to face 面對面"
     }
    ]
   },
@@ -1485,6 +1653,142 @@
      "reading": "",
      "back": "十月，世界各地的棒球迷都在看季後賽。每一場比賽都很重要，因為輸一場就可能結束整季。先發投手努力不讓對手得分，累了之後由牛棚接手。最後一局的一次三振就可能改變一切。球迷們盯著螢幕，直到最後一個出局數。",
      "note": "重點：playoffs 季後賽／pitcher 投手／strikeout 三振"
+    }
+   ]
+  },
+  {
+   "id": "en-5-words-work",
+   "lang": "en",
+   "title": "單字・工作",
+   "order": "random",
+   "cards": [
+    {
+     "id": "en-ww-01",
+     "type": "word",
+     "front": "deadline",
+     "reading": "/ˈdedlaɪn/",
+     "back": "截止期限",
+     "note": "We need to meet the deadline on Friday."
+    },
+    {
+     "id": "en-ww-02",
+     "type": "word",
+     "front": "schedule",
+     "reading": "/ˈskedʒuːl/",
+     "back": "行程表；排定",
+     "note": "Let's schedule a meeting for next week."
+    },
+    {
+     "id": "en-ww-03",
+     "type": "word",
+     "front": "colleague",
+     "reading": "/ˈkɑːliːɡ/",
+     "back": "同事",
+     "note": "I'm having lunch with a colleague."
+    },
+    {
+     "id": "en-ww-04",
+     "type": "word",
+     "front": "proposal",
+     "reading": "/prəˈpoʊzl/",
+     "back": "提案",
+     "note": "She presented a proposal for the new project."
+    },
+    {
+     "id": "en-ww-05",
+     "type": "word",
+     "front": "budget",
+     "reading": "/ˈbʌdʒɪt/",
+     "back": "預算",
+     "note": "The project is over budget."
+    },
+    {
+     "id": "en-ww-06",
+     "type": "word",
+     "front": "attend",
+     "reading": "/əˈtend/",
+     "back": "出席；參加",
+     "note": "Will you attend the conference next month?"
+    },
+    {
+     "id": "en-ww-07",
+     "type": "word",
+     "front": "negotiate",
+     "reading": "/nɪˈɡoʊʃieɪt/",
+     "back": "協商；談判",
+     "note": "We negotiated a better price with the supplier."
+    },
+    {
+     "id": "en-ww-08",
+     "type": "word",
+     "front": "responsible",
+     "reading": "/rɪˈspɑːnsəbl/",
+     "back": "負責的",
+     "note": "Who is responsible for this task?"
+    },
+    {
+     "id": "en-ww-09",
+     "type": "word",
+     "front": "priority",
+     "reading": "/praɪˈɔːrəti/",
+     "back": "優先事項",
+     "note": "Customer service is our top priority."
+    },
+    {
+     "id": "en-ww-10",
+     "type": "word",
+     "front": "feedback",
+     "reading": "/ˈfiːdbæk/",
+     "back": "意見回饋",
+     "note": "Thanks for your feedback on my report."
+    },
+    {
+     "id": "en-ww-11",
+     "type": "word",
+     "front": "agenda",
+     "reading": "/əˈdʒendə/",
+     "back": "議程",
+     "note": "What's on the agenda for today's meeting?"
+    },
+    {
+     "id": "en-ww-12",
+     "type": "word",
+     "front": "follow up",
+     "reading": "/ˈfɑːloʊ ʌp/",
+     "back": "後續追蹤",
+     "note": "I'll follow up with you by email tomorrow."
+    }
+   ]
+  },
+  {
+   "id": "en-6-reading-work",
+   "lang": "en",
+   "title": "閱讀・工作",
+   "order": "seq",
+   "cards": [
+    {
+     "id": "en-rw-01",
+     "type": "passage",
+     "front": "On Monday morning, my team had a meeting to discuss a new project. Our manager explained the goals and asked everyone to share ideas. We agreed on a deadline of three weeks. After the meeting, I wrote down my tasks and sent an email to my colleagues. I felt a little nervous, but I was excited to start.",
+     "reading": "",
+     "back": "週一早上，我的團隊開會討論一個新專案。主管說明了目標，並請大家分享想法。我們同意以三週為期限。會後，我寫下自己的工作項目，並寄信給同事。我有一點緊張，但也很期待開始。",
+     "note": "重點：goal 目標／deadline 期限／task 工作項目"
+    },
+    {
+     "id": "en-rw-02",
+     "type": "passage",
+     "front": "Last week I finished a report for a client. Before sending it, I asked my colleague to read it and give me some feedback. She said the data was clear, but the summary was too long. I shortened it and added a chart. The client liked the new version and thanked us for the quick response.",
+     "reading": "",
+     "back": "上週我完成了一份給客戶的報告。寄出前，我請同事先看過並給我一些意見。她說資料很清楚，但摘要太長。我把它縮短，又加了一張圖表。客戶很喜歡新版本，並感謝我們快速回覆。",
+     "note": "重點：client 客戶／feedback 回饋／summary 摘要"
+    },
+    {
+     "id": "en-rw-03",
+     "type": "passage",
+     "front": "Some companies let employees work from home a few days a week. People who work at home save time because they don't have to commute. However, it can be hard to separate work from personal life. To stay productive, many people set a fixed schedule and take short breaks. Others miss talking face to face with their coworkers.",
+     "reading": "",
+     "back": "有些公司讓員工每週在家工作幾天。在家工作的人可以省下通勤時間。不過，要把工作和私人生活分開可能不容易。為了保持效率，許多人會訂定固定的作息並短暫休息。也有人懷念和同事面對面聊天。",
+     "note": "重點：commute 通勤／productive 有效率的／face to face 面對面"
     }
    ]
   }
