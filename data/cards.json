@@ -1621,6 +1621,150 @@
      "reading": "/ˈvɑːli/",
      "back": "截擊（球落地前打回）",
      "note": "Try to volley the ball before it bounces."
+    },
+    {
+     "id": "en-ws-13",
+     "type": "word",
+     "front": "batter",
+     "reading": "/ˈbætər/",
+     "back": "打者",
+     "note": "The batter hit the first pitch over the fence."
+    },
+    {
+     "id": "en-ws-14",
+     "type": "word",
+     "front": "catcher",
+     "reading": "/ˈkætʃər/",
+     "back": "捕手",
+     "note": "The catcher gave a signal to the pitcher."
+    },
+    {
+     "id": "en-ws-15",
+     "type": "word",
+     "front": "outfield",
+     "reading": "/ˈaʊtfiːld/",
+     "back": "外野",
+     "note": "She caught the ball deep in the outfield."
+    },
+    {
+     "id": "en-ws-16",
+     "type": "word",
+     "front": "shortstop",
+     "reading": "/ˈʃɔːrtstɑːp/",
+     "back": "游擊手",
+     "note": "The shortstop made a great throw to first base."
+    },
+    {
+     "id": "en-ws-17",
+     "type": "word",
+     "front": "umpire",
+     "reading": "/ˈʌmpaɪər/",
+     "back": "（棒球）裁判",
+     "note": "The umpire said the runner was out."
+    },
+    {
+     "id": "en-ws-18",
+     "type": "word",
+     "front": "foul ball",
+     "reading": "/ˈfaʊl bɔːl/",
+     "back": "界外球",
+     "note": "A foul ball flew into the crowd."
+    },
+    {
+     "id": "en-ws-19",
+     "type": "word",
+     "front": "fastball",
+     "reading": "/ˈfæstbɔːl/",
+     "back": "速球",
+     "note": "His fastball is over 150 kilometers per hour."
+    },
+    {
+     "id": "en-ws-20",
+     "type": "word",
+     "front": "bunt",
+     "reading": "/bʌnt/",
+     "back": "短打；觸擊",
+     "note": "He tried to bunt the ball to move the runner."
+    },
+    {
+     "id": "en-ws-21",
+     "type": "word",
+     "front": "steal",
+     "reading": "/stiːl/",
+     "back": "（棒球）盜壘",
+     "note": "The runner tried to steal second base."
+    },
+    {
+     "id": "en-ws-22",
+     "type": "word",
+     "front": "double play",
+     "reading": "/ˌdʌbl ˈpleɪ/",
+     "back": "雙殺",
+     "note": "The shortstop started a double play to end the inning."
+    },
+    {
+     "id": "en-ws-23",
+     "type": "word",
+     "front": "kitchen",
+     "reading": "/ˈkɪtʃɪn/",
+     "back": "（匹克球）廚房區；網前不可截擊區",
+     "note": "You can't volley the ball when you stand in the kitchen."
+    },
+    {
+     "id": "en-ws-24",
+     "type": "word",
+     "front": "fault",
+     "reading": "/fɔːlt/",
+     "back": "（匹克球）違例；失誤",
+     "note": "Stepping on the line while you serve is a fault."
+    },
+    {
+     "id": "en-ws-25",
+     "type": "word",
+     "front": "court",
+     "reading": "/kɔːrt/",
+     "back": "球場",
+     "note": "There are four pickleball courts near my house."
+    },
+    {
+     "id": "en-ws-26",
+     "type": "word",
+     "front": "baseline",
+     "reading": "/ˈbeɪslaɪn/",
+     "back": "底線",
+     "note": "Her serve landed just inside the baseline."
+    },
+    {
+     "id": "en-ws-27",
+     "type": "word",
+     "front": "out of bounds",
+     "reading": "/ˌaʊt əv ˈbaʊndz/",
+     "back": "出界",
+     "note": "The ball landed out of bounds, so we lost the point."
+    },
+    {
+     "id": "en-ws-28",
+     "type": "word",
+     "front": "doubles",
+     "reading": "/ˈdʌblz/",
+     "back": "雙打",
+     "note": "I like playing doubles with my friends."
+    },
+    {
+     "id": "en-ws-29",
+     "type": "word",
+     "front": "opponent",
+     "reading": "/əˈpoʊnənt/",
+     "back": "對手",
+     "note": "Our opponents were very good at the net."
+    },
+    {
+     "id": "en-ws-30",
+     "type": "word",
+     "front": "warm up",
+     "reading": "/ˈwɔːrm ʌp/",
+     "back": "熱身",
+     "note": "We always warm up for ten minutes before we play."
     }
    ]
   },
@@ -1653,6 +1797,62 @@
      "reading": "",
      "back": "十月，世界各地的棒球迷都在看季後賽。每一場比賽都很重要，因為輸一場就可能結束整季。先發投手努力不讓對手得分，累了之後由牛棚接手。最後一局的一次三振就可能改變一切。球迷們盯著螢幕，直到最後一個出局數。",
      "note": "重點：playoffs 季後賽／pitcher 投手／strikeout 三振"
+    },
+    {
+     "id": "en-rs-04",
+     "type": "passage",
+     "front": "A baseball game has nine innings. In each inning, both teams get a turn to bat. The pitcher throws the ball, and the batter tries to hit it. If the batter gets three strikes, the batter is out. If a player hits the ball and runs around all four bases, the team scores a run. The team with more runs at the end of the game wins.",
+     "reading": "",
+     "back": "一場棒球賽有九局。每一局，兩隊都有輪流打擊的機會。投手投球，打者試著把球打出去。如果打者被三次好球，就出局了。如果球員把球打出去並跑完四個壘包，球隊就得一分。比賽結束時得分較多的隊伍獲勝。",
+     "note": "重點：inning 局／batter 打者／strike 好球／score a run 得分"
+    },
+    {
+     "id": "en-rs-05",
+     "type": "passage",
+     "front": "Last weekend, my coworker Ken invited me to watch a baseball game. Our seats were near the outfield, so we could see the players clearly. In the third inning, a foul ball flew toward us, and everyone jumped up. Ken tried to catch it, but a little boy got it first. The boy smiled so brightly that we both laughed. It was not a perfect game, but it was a great night.",
+     "reading": "",
+     "back": "上週末，我的同事 Ken 邀我去看棒球賽。我們的座位靠近外野，所以可以把球員看得很清楚。第三局時，一顆界外球朝我們飛來，大家都跳了起來。Ken 想接住它，但是一個小男孩先拿到了。男孩笑得好燦爛，我們兩個都笑了。這不是一場完美的比賽，但卻是美好的夜晚。",
+     "note": "重點：outfield 外野／foul ball 界外球／clearly 清楚地"
+    },
+    {
+     "id": "en-rs-06",
+     "type": "passage",
+     "front": "Yesterday I played pickleball for the first time. My friend explained the rules before we started. The most important rule is the kitchen, the area next to the net. You cannot volley the ball when you stand there. At first, I made many faults because I forgot this rule. After an hour, I started to remember it, and we played our first doubles game. I lost, but I want to play again.",
+     "reading": "",
+     "back": "昨天我第一次打匹克球。開始前，朋友先解釋了規則。最重要的規則是廚房區，也就是球網旁邊的區域。站在那裡時不能截擊。一開始我因為忘了這條規則，犯了很多次違例。一個小時後，我開始記住了，我們打了第一場雙打。我輸了，但我還想再打。",
+     "note": "重點：kitchen 廚房區／fault 違例／doubles 雙打"
+    },
+    {
+     "id": "en-rs-07",
+     "type": "passage",
+     "front": "Before every game, our pickleball group warms up for ten minutes. We stretch our legs and arms, and then we hit some easy shots. Our coach says a good warm-up helps us avoid injuries. We also bring plenty of water because we sweat a lot. Last month, one player skipped the warm-up and hurt a muscle. Now nobody forgets it.",
+     "reading": "",
+     "back": "每場比賽前，我們的匹克球小組都會熱身十分鐘。我們伸展腿和手臂，然後打一些簡單的球。教練說好的熱身能幫助我們避免受傷。我們也會帶很多水，因為會流很多汗。上個月，有一位球友跳過熱身，拉傷了肌肉。現在沒有人會忘記熱身。",
+     "note": "重點：warm up 熱身／stretch 伸展／injury 受傷"
+    },
+    {
+     "id": "en-rs-08",
+     "type": "passage",
+     "front": "I wanted to see a baseball game with my sister, so we went to the stadium ticket office. I asked the clerk, \"Do you have two seats together?\" She said the cheap seats were sold out, but there were two seats behind home plate. The price was higher than I expected, but we decided to buy them. She gave us a receipt, and we walked into the stadium feeling excited.",
+     "reading": "",
+     "back": "我想和姊姊一起看棒球賽，所以我們去了球場售票處。我問售票員：「你們有兩個連在一起的座位嗎？」她說便宜的座位賣完了，但本壘板後方還有兩個位子。價錢比我預期的高，但我們決定買下來。她給了我們收據，我們興奮地走進球場。",
+     "note": "重點：sold out 售完／behind home plate 本壘板後方／expect 預期"
+    },
+    {
+     "id": "en-rs-09",
+     "type": "passage",
+     "front": "Our club joined a pickleball tournament last Sunday. In the first round, our opponents were much taller than us, and they served very hard. We kept the ball low and tried to hit it near their baseline. In the last point, our ball landed out of bounds, so we lost the match. We did not win the trophy, but we learned a lot. Next time, we will practice our serve more.",
+     "reading": "",
+     "back": "上週日，我們的社團參加了匹克球比賽。第一輪時，對手比我們高很多，而且發球很用力。我們把球打得低一點，並試著打到他們的底線附近。最後一分，我們的球出界了，所以輸掉比賽。我們沒有拿到獎盃，但學到了很多。下次我們會多練習發球。",
+     "note": "重點：opponent 對手／baseline 底線／out of bounds 出界"
+    },
+    {
+     "id": "en-rs-10",
+     "type": "passage",
+     "front": "In Taiwan, going to a baseball game is a lot of fun, even if you don't know the rules. Fans sing a special song for each player. When the pitcher throws a fastball, the whole stadium waits quietly. Then, after a strikeout, everyone shouts together. I think the best part is the food, because you can eat snacks while you cheer for your team.",
+     "reading": "",
+     "back": "在台灣，去看棒球賽非常有趣，即使你不懂規則也一樣。球迷會為每位球員唱專屬的歌。投手投出速球時，整個球場安靜地等待。然後，三振之後，大家一起大喊。我覺得最棒的部分是食物，因為你可以一邊吃零食，一邊為你的球隊加油。",
+     "note": "重點：fastball 速球／strikeout 三振／cheer 加油"
     }
    ]
   },
