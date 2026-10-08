@@ -59,7 +59,13 @@ function render() {
   if (state.view === "library") renderList();
 }
 
+function resetInputs() {
+  ["copyInput", "recallInput"].forEach(id => { document.getElementById(id).value = ""; });
+  ["copyResult", "recallResult"].forEach(id => { const r = document.getElementById(id); r.textContent = ""; r.className = "lingo-copy-result"; });
+}
+
 function goView(v) {
+  resetInputs();
   state.view = v;
   state.revealed = false;
   state.dictate = false;
@@ -136,18 +142,22 @@ function renderCard() {
   const recall = state.mode === "recall";
   const copy = state.mode === "copy";
   const dictating = copy && state.dictate && !state.peek; // 聽寫：原文先遮住
+  const typed = recall && card.type !== "passage";        // 背：看中文打外文（短文太長，維持先遮住答案再自評）
+  const prompting = typed && !state.revealed;             // 還沒檢查：版面上放中文當題目
   const hideAnswer = (recall && !state.revealed) || dictating;
 
   document.querySelector(".lingo-card").classList.toggle("passage", card.type === "passage");
   document.getElementById("cardType").textContent = cardTypeText(card, t);
-  document.getElementById("cardFront").textContent = dictating ? "？？？" : card.front;
+  document.getElementById("cardFront").textContent = dictating ? "？？？" : prompting ? card.back : card.front;
   document.getElementById("cardReading").textContent = hideAnswer ? "" : (card.reading || ""); // 背：讀音（羅馬拼音／音標）也先遮住
   document.getElementById("cardBack").textContent = card.back;
   document.getElementById("cardNote").textContent = card.note || "";
   document.getElementById("cardBackWrap").classList.toggle("hidden", hideAnswer);
+  document.getElementById("recallBox").classList.toggle("hidden", !typed);
+  document.getElementById("recallInput").readOnly = state.revealed;
 
   document.getElementById("speakRow").classList.toggle("hidden", !HAS_TTS);
-  document.getElementById("sentBtn").classList.toggle("hidden", !exampleSentence(card));
+  document.getElementById("sentBtn").classList.toggle("hidden", !exampleSentence(card) || prompting || dictating); // 整句例句裡有答案，題目階段不給
 
   const printLink = document.getElementById("printLink"); // 假名階段的卡才有描紅字帖（單字階段沒有）
   const kana = card.repo && card.lang === "ja" && /^ja-\d+-(hiragana|katakana|dakuon|yoon)$/.test(card.stage);
@@ -162,7 +172,9 @@ function renderCard() {
   dictBtn.textContent = state.dictate ? (state.peek ? "聽寫：已顯示原文" : "聽寫：顯示原文") : "聽寫：只聽不看";
 
   // 底部操作：看／抄 → 完成；背 → 先顯示答案，再自評
-  document.getElementById("revealBtn").classList.toggle("hidden", !(recall && !state.revealed));
+  const revealBtn = document.getElementById("revealBtn");
+  revealBtn.classList.toggle("hidden", !(recall && !state.revealed));
+  revealBtn.textContent = typed ? "檢查答案" : "顯示答案";
   document.getElementById("ratingBox").classList.toggle("hidden", !(recall && state.revealed));
   const doneBtn = document.getElementById("doneBtn");
   doneBtn.classList.toggle("hidden", recall);
@@ -229,8 +241,7 @@ async function draw(reroll) {
   try {
     state.today = await api("drawCard", { date: toDateStr(new Date()), lang: state.lang, reroll: reroll ? "1" : "" });
     state.revealed = false;
-    document.getElementById("copyInput").value = "";
-    document.getElementById("copyResult").textContent = "";
+    resetInputs();
     renderCard();
   } catch (err) {
     setStatus("抽卡失敗：" + err.message, true);
@@ -244,6 +255,7 @@ document.querySelectorAll(".lingo-mode").forEach(b => b.addEventListener("click"
   state.mode = b.dataset.mode;
   state.revealed = false;
   state.peek = false;
+  resetInputs();
   render();
 }));
 
@@ -268,7 +280,19 @@ document.getElementById("masteredCheck").addEventListener("change", async (e) =>
   }
 });
 
-document.getElementById("revealBtn").addEventListener("click", () => { state.revealed = true; renderCard(); });
+// 背：打的內容和答案比一下（不分大小寫、不計標點；日文也接受羅馬拼音），不對不擋，最後由你自評
+document.getElementById("revealBtn").addEventListener("click", () => {
+  const card = currentCard();
+  if (card && state.mode === "recall" && card.type !== "passage") {
+    const v = document.getElementById("recallInput").value.trim();
+    const out = document.getElementById("recallResult");
+    const ok = !!v && copyMatches(v, card, true);
+    out.textContent = !v ? "沒有輸入，答案在上面" : ok ? "✓ 答對了" : "和答案不一樣，對照一下";
+    out.className = "lingo-copy-result " + (ok ? "ok" : "bad");
+  }
+  state.revealed = true;
+  renderCard();
+});
 document.getElementById("drawBtn").addEventListener("click", () => draw(true));
 
 document.getElementById("speakBtn").addEventListener("click", () => speakCard(false));
@@ -288,8 +312,11 @@ document.getElementById("dictBtn").addEventListener("click", () => {
 });
 
 // 抄：只做比對提示，不擋完成。日文也接受直接打羅馬拼音（還沒裝日文輸入法時用）
-function copyMatches(typed, card) {
-  const norm = s => s.replace(/\s+/g, " ").trim();
+function copyMatches(typed, card, loose) {
+  const norm = s => {
+    const t = s.replace(/\s+/g, " ").trim();
+    return loose ? t.toLowerCase().replace(/[.,!?;:'"。、！？]/g, "") : t;
+  };
   if (norm(typed) === norm(card.front)) return true;
   return card.lang === "ja" && !!card.reading && norm(typed).toLowerCase() === norm(card.reading).toLowerCase();
 }
