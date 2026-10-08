@@ -206,18 +206,17 @@ function speak(text, lang, slow) {
     showToast(`這個裝置沒有${LANG_LABEL[lang]}語音，要先在系統設定新增`, { error: true });
     return;
   }
-  synth.cancel();
   const parts = lang === "ja" ? text.split(/\s+/).filter(Boolean) : [text];
-  setTimeout(() => { // 緊接在 cancel 之後唸，部分瀏覽器會把整段吃掉
-    parts.forEach(p => {
-      const u = new SpeechSynthesisUtterance(p);
-      u.lang = TTS_LANG[lang] || "en-US";
-      if (voice) u.voice = voice;
-      u.rate = slow ? 0.6 : 0.9;
-      u.onerror = (e) => { if (e.error && e.error !== "canceled" && e.error !== "interrupted") showToast("發音失敗：" + e.error, { error: true }); };
-      synth.speak(u);
-    });
-  }, 60);
+  const go = () => parts.forEach(p => {
+    const u = new SpeechSynthesisUtterance(p);
+    u.lang = TTS_LANG[lang] || "en-US";
+    if (voice) u.voice = voice;
+    u.rate = slow ? 0.6 : 0.9;
+    u.onerror = (e) => { if (e.error && e.error !== "canceled" && e.error !== "interrupted") showToast("發音失敗：" + e.error, { error: true }); };
+    synth.speak(u);
+  });
+  // iPhone 要求在點擊當下就呼叫 speak，延遲會被擋掉，所以平常直接唸；只有正在唸的時候要先停，Chrome 對緊接著的 cancel→speak 會吃掉整段，這時才稍等一下
+  if (synth.speaking || synth.pending) { synth.cancel(); setTimeout(go, 60); } else go();
 }
 
 function speakCard(slow) {
