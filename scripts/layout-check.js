@@ -84,5 +84,13 @@ console.log("日文五十音頁");
 const copybook = JSON.parse(read("data/copybook.json"));
 check("內建範例：每篇都有 id/lang/title/text，zh 與 en 都有，id 與標題都不重複", copybook.entries.length > 30 && copybook.entries.every(e => e.id && ["zh", "en"].includes(e.lang) && e.title && e.text) && new Set(copybook.entries.map(e => e.id)).size === copybook.entries.length && new Set(copybook.entries.map(e => e.lang + e.title)).size === copybook.entries.length);
 
+console.log("頁面元素");
+for (const [js, html] of [["lingo.js", "index.html"], ["placement.js", "placement.html"], ["copybook.js", "copybook.html"]]) {
+  const src = fs.readFileSync(path.join(__dirname, "..", js), "utf8");
+  const page = fs.readFileSync(path.join(__dirname, "..", html), "utf8");
+  const used = [...new Set([...src.matchAll(/getElementById\("([A-Za-z0-9_-]+)"\)/g)].map(m => m[1]))];
+  const missing = used.filter(id => !page.includes(`id="${id}"`) && !src.includes(`.id = "${id}"`));
+  check(`${js} 用到的元素 id 都在 ${html} 裡（少了就是載入時報錯、整頁壞掉）`, missing.length === 0, missing);
+}
 if (failed) { console.log("\n" + failed + " 項失敗"); process.exit(1); }
 console.log("\n全部通過");

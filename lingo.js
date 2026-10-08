@@ -13,6 +13,8 @@ const state = {
   tests: [],   // 程度小考歷次結果（用來提醒重考）
   today: {},   // lang -> { cards: [{ cardId, done, review, mastered }] }
   cardId: "",  // 練習中的這張卡
+  questions: {}, // 短文卡 id -> 理解題（從 data/cards.json 直接讀，不經後端）
+  quiz: {},      // 短文卡 id -> { order: [每題隨機排好的選項順序], picked: [每題選了第幾個] }
 };
 
 const TYPE_LABEL = { word: "單字", sentence: "例句", passage: "短文" };
@@ -46,8 +48,19 @@ window.loadPageData = async function () {
   state.cards = cards;
   state.today = today;
   state.tests = tests;
+  await loadQuestions();
   render();
 };
+
+// 理解題在 cards.json 的短文卡上；前端直接讀檔（後端不用改），讀不到就沒有理解題，不影響練習
+async function loadQuestions() {
+  if (Object.keys(state.questions).length) return;
+  try {
+    const res = await fetch("data/cards.json", { cache: "no-cache" });
+    const data = await res.json();
+    (data.stages || []).forEach(st => st.cards.forEach(c => { if (c.questions && c.questions.length) state.questions[c.id] = c.questions; }));
+  } catch (err) { /* 沒有理解題而已 */ }
+}
 
 function render() {
   document.getElementById("todayLine").textContent = toDateStr(new Date());
@@ -206,6 +219,7 @@ function renderCard() {
   document.getElementById("masteredWrap").classList.toggle("hidden", !card.repo); // 只有內建卡有階段／複習
   document.getElementById("masteredCheck").checked = !!t.mastered;
 
+  renderQuiz(card, dictating);
   document.getElementById("copyBox").classList.toggle("hidden", !copy);
   const dictBtn = document.getElementById("dictBtn");
   dictBtn.classList.toggle("active", state.dictate);
@@ -225,6 +239,59 @@ function renderCard() {
   document.getElementById("sessionCount").textContent = `${idx + 1} / ${plan.length}`;
   document.getElementById("sessionBar").firstElementChild.style.width = Math.round(plan.filter(e => e.done).length / plan.length * 100) + "%";
   document.getElementById("nextBtn").classList.toggle("hidden", plan.length < 2);
+}
+
+// 閱讀理解題：選項順序每張卡第一次顯示時隨機排好並記住（資料裡第一個選項是正解），作答後顯示對錯與中文解釋
+function shuffled(n) {
+  const a = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+function renderQuiz(card, hidden) {
+  const box = document.getElementById("quizBox");
+  const qs = state.questions[card.id];
+  const show = !!qs && !hidden;
+  box.classList.toggle("hidden", !show);
+  if (!show) return;
+  if (box.dataset.cardId !== card.id) { box.dataset.cardId = card.id; box.open = false; }
+  let st = state.quiz[card.id];
+  if (!st) st = state.quiz[card.id] = { order: qs.map(q => shuffled(q.options.length)), picked: qs.map(() => -1) };
+  const right = st.picked.filter((p, i) => p >= 0 && st.order[i][p] === qs[i].answer).length;
+  const answered = st.picked.filter(p => p >= 0).length;
+  document.getElementById("quizSummary").textContent = answered === qs.length ? `閱讀理解題（答對 ${right} / ${qs.length}）` : `閱讀理解題（${qs.length} 題）`;
+  const body = document.getElementById("quizBody");
+  body.replaceChildren();
+  qs.forEach((q, qi) => {
+    const wrap = el("div", "lingo-q");
+    wrap.appendChild(el("p", "lingo-q-text", `${qi + 1}. ${q.q}`));
+    const picked = st.picked[qi];
+    st.order[qi].forEach((optIdx, pos) => {
+      const b = el("button", "ghost-btn lingo-opt", q.options[optIdx]);
+      b.type = "button";
+      if (picked >= 0) {
+        b.disabled = true;
+        if (optIdx === q.answer) b.classList.add("right");
+        else if (pos === picked) b.classList.add("wrong");
+      }
+      b.addEventListener("click", () => {
+        st.picked[qi] = pos;
+        if (st.picked.every(p => p >= 0)) saveQuiz(card.id, st.picked.filter((p, i) => st.order[i][p] === qs[i].answer).length, qs.length);
+        renderQuiz(card, hidden);
+      });
+      wrap.appendChild(b);
+    });
+    if (picked >= 0) wrap.appendChild(el("p", "lingo-q-explain", (st.order[qi][picked] === q.answer ? "✓ " : "✗ ") + q.explain));
+    body.appendChild(wrap);
+  });
+}
+
+function saveQuiz(cardId, score, total) {
+  try {
+    const all = JSON.parse(localStorage.getItem("lingo_quiz") || "{}");
+    all[cardId] = { score, total, date: toDateStr(new Date()) };
+    localStorage.setItem("lingo_quiz", JSON.stringify(all));
+  } catch (e) { /* 存不了就算了 */ }
 }
 
 // 英文單字卡備註裡的例句（整句唸）

@@ -142,3 +142,14 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-sbar-bar { margin: -4px 0 12px; }
 .lingo-goal-line { white-space: pre-wrap; }
 .lingo-goal button + button { margin-top: 8px; }
+
+/* 閱讀理解題 */
+.lingo-quiz { margin: 12px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; }
+.lingo-quiz summary { cursor: pointer; font-weight: 500; }
+.lingo-q { margin-top: 14px; }
+.lingo-q-text { margin: 0 0 8px; line-height: 1.5; }
+.lingo-opt { display: block; width: 100%; margin-bottom: 8px; padding: 10px 12px; text-align: left; white-space: normal; }
+.lingo-opt:disabled { opacity: 1; }
+.lingo-opt.right { border-color: var(--ok); background: var(--success-bg); color: var(--success-text); }
+.lingo-opt.wrong { border-color: var(--danger); color: var(--danger); }
+.lingo-q-explain { margin: 0 0 4px; font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; }

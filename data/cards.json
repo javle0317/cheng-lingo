@@ -2649,7 +2649,39 @@
      "front": "Last month I almost missed my train to Kaohsiung. I woke up late, so I took a taxi to the station. The traffic was terrible, and I arrived five minutes before the departure time. I ran to the platform and jumped on just as the doors were closing. I was out of breath, but I was happy to be on board. Next time, I will set two alarms.",
      "reading": "",
      "back": "上個月我差點錯過去高雄的火車。我睡過頭，所以搭計程車去車站。路上塞車很嚴重，我在發車前五分鐘才到。我跑到月台，在車門正要關上時跳上車。我氣喘吁吁，但很高興趕上了。下次我會設兩個鬧鐘。",
-     "note": "重點：almost 差點／departure 出發／out of breath 上氣不接下氣"
+     "note": "重點：almost 差點／departure 出發／out of breath 上氣不接下氣",
+     "questions": [
+      {
+       "q": "How did the writer get to the station?",
+       "options": [
+        "By taxi",
+        "By bus",
+        "On foot"
+       ],
+       "answer": 0,
+       "explain": "文中：I took a taxi to the station（我搭計程車去車站）。"
+      },
+      {
+       "q": "When did the writer get on the train?",
+       "options": [
+        "As the doors were closing",
+        "After the doors closed",
+        "Ten minutes early"
+       ],
+       "answer": 0,
+       "explain": "文中：jumped on just as the doors were closing（車門正要關上時跳上車）。"
+      },
+      {
+       "q": "What will the writer do next time?",
+       "options": [
+        "Set two alarms",
+        "Take a taxi again",
+        "Buy a faster ticket"
+       ],
+       "answer": 0,
+       "explain": "最後一句：Next time, I will set two alarms（下次設兩個鬧鐘）。"
+      }
+     ]
     },
     {
      "id": "en-rt-02",
@@ -2657,7 +2689,39 @@
      "front": "When we arrived at the hotel, the receptionist asked for our names and passports. She said our room was not ready yet, but we could leave our luggage at the front desk. She also gave us a map and explained how to get to the night market. After a short walk, we came back, and our room was ready. It had a great view of the city.",
      "reading": "",
      "back": "我們抵達飯店時，櫃檯人員請我們出示姓名和護照。她說房間還沒準備好，但我們可以把行李寄放在櫃檯。她還給了我們一張地圖，並說明怎麼去夜市。走了一小段路回來後，房間已經準備好了，窗外的城市景色很棒。",
-     "note": "重點：receptionist 櫃檯接待／front desk 櫃檯／view 景色"
+     "note": "重點：receptionist 櫃檯接待／front desk 櫃檯／view 景色",
+     "questions": [
+      {
+       "q": "Why couldn't the guests go to their room right away?",
+       "options": [
+        "It was not ready yet",
+        "They forgot their passports",
+        "The hotel was full"
+       ],
+       "answer": 0,
+       "explain": "文中：our room was not ready yet（房間還沒準備好）。"
+      },
+      {
+       "q": "What did the receptionist give them?",
+       "options": [
+        "A map",
+        "A free dinner",
+        "A key to the night market"
+       ],
+       "answer": 0,
+       "explain": "文中：She also gave us a map（她還給了我們一張地圖）。"
+      },
+      {
+       "q": "What was good about the room?",
+       "options": [
+        "It had a great view",
+        "It was very cheap",
+        "It was near the station"
+       ],
+       "answer": 0,
+       "explain": "最後一句：It had a great view of the city（可以看到很棒的城市景色）。"
+      }
+     ]
     },
     {
      "id": "en-rt-03",
@@ -2665,7 +2729,39 @@
      "front": "I was looking for the museum, but I got lost. I asked a woman on the street, \"Excuse me, could you tell me how to get to the museum?\" She smiled and said it was a ten-minute walk. \"Go straight, turn left at the bank, and you will see it on your right.\" I thanked her and followed her directions. It was easy to find.",
      "reading": "",
      "back": "我在找博物館，但是迷路了。我問路上的一位女士：「不好意思，可以告訴我怎麼去博物館嗎？」她微笑著說走路大約十分鐘。「直走，在銀行那裡左轉，就會在右手邊看到。」我謝謝她，照著她說的走，很容易就找到了。",
-     "note": "重點：get lost 迷路／could you tell me how to… 間接問句／on your right 在你右手邊"
+     "note": "重點：get lost 迷路／could you tell me how to… 間接問句／on your right 在你右手邊",
+     "questions": [
+      {
+       "q": "Why did the writer ask a woman for help?",
+       "options": [
+        "The writer was lost",
+        "The museum was closed",
+        "The writer wanted a taxi"
+       ],
+       "answer": 0,
+       "explain": "文中：I got lost（我迷路了），所以才問路。"
+      },
+      {
+       "q": "How far was the museum?",
+       "options": [
+        "A ten-minute walk",
+        "Ten kilometers",
+        "A ten-minute bus ride"
+       ],
+       "answer": 0,
+       "explain": "文中：it was a ten-minute walk（走路十分鐘）。"
+      },
+      {
+       "q": "Where is the museum, according to the woman?",
+       "options": [
+        "On the right, after turning left at the bank",
+        "On the left, before the bank",
+        "Next to the station"
+       ],
+       "answer": 0,
+       "explain": "文中：turn left at the bank, and you will see it on your right（在銀行左轉，博物館在你的右邊）。"
+      }
+     ]
     },
     {
      "id": "en-rt-04",
@@ -2673,7 +2769,39 @@
      "front": "Last Friday I arrived at the airport two hours before my flight. I checked in at the counter and dropped off my big suitcase. The staff member said my carry-on bag was too heavy, so I moved a book into my backpack. Then I showed my boarding pass at security and walked to gate 12. Because I was early, I had time to buy a coffee and relax.",
      "reading": "",
      "back": "上週五我在班機起飛前兩小時到了機場。我在櫃檯辦好登機手續，託運了大行李箱。地勤人員說我的隨身行李太重，所以我把一本書放進背包。接著我在安檢出示登機證，走向十二號登機門。因為我很早到，還有時間買杯咖啡休息一下。",
-     "note": "重點：check in 辦理登機／carry-on 隨身行李／boarding pass 登機證"
+     "note": "重點：check in 辦理登機／carry-on 隨身行李／boarding pass 登機證",
+     "questions": [
+      {
+       "q": "How early did the writer arrive at the airport?",
+       "options": [
+        "Two hours before the flight",
+        "Thirty minutes before the flight",
+        "One hour before the flight"
+       ],
+       "answer": 0,
+       "explain": "文中：two hours before my flight（起飛前兩小時）。"
+      },
+      {
+       "q": "What did the writer do because the carry-on bag was too heavy?",
+       "options": [
+        "Moved a book into the backpack",
+        "Paid extra money",
+        "Threw something away"
+       ],
+       "answer": 0,
+       "explain": "文中：I moved a book into my backpack（把一本書放進背包）。"
+      },
+      {
+       "q": "What does \"relax\" mean in the last sentence?",
+       "options": [
+        "Rest and feel calm",
+        "Work hard",
+        "Run quickly"
+       ],
+       "answer": 0,
+       "explain": "relax 是放鬆、休息。因為很早到，所以有時間買咖啡放鬆。"
+      }
+     ]
     },
     {
      "id": "en-rt-05",
@@ -2681,7 +2809,39 @@
      "front": "On my way to Seattle, I had a six-hour layover in Dubai. The airport was crowded, but I found a quiet seat near a window. I ate dinner, walked around the shops, and called my family. At night, an announcement said that my next flight had a short delay. I was tired, but I was glad to have enough time to rest.",
      "reading": "",
      "back": "前往西雅圖的路上，我在杜拜有六小時的中途停留。機場很擁擠，但我在窗邊找到一個安靜的位子。我吃了晚餐、逛了逛店，還打電話給家人。晚上廣播說我的下一班飛機會稍微延誤。我很累，但很高興有足夠的時間休息。",
-     "note": "重點：layover 中途停留／crowded 擁擠的／delay 延誤"
+     "note": "重點：layover 中途停留／crowded 擁擠的／delay 延誤",
+     "questions": [
+      {
+       "q": "How long was the layover?",
+       "options": [
+        "Six hours",
+        "Two hours",
+        "Twelve hours"
+       ],
+       "answer": 0,
+       "explain": "文中：a six-hour layover（六小時的中途停留）。"
+      },
+      {
+       "q": "Where did the writer sit?",
+       "options": [
+        "Near a window",
+        "Near the gate",
+        "In a restaurant"
+       ],
+       "answer": 0,
+       "explain": "文中：a quiet seat near a window（窗邊安靜的位子）。"
+      },
+      {
+       "q": "What did the announcement say?",
+       "options": [
+        "The next flight had a short delay",
+        "The next flight was canceled",
+        "The airport was closed"
+       ],
+       "answer": 0,
+       "explain": "文中：my next flight had a short delay（下一班飛機稍微延誤）。"
+      }
+     ]
     },
     {
      "id": "en-rt-06",
@@ -2689,7 +2849,39 @@
      "front": "On the last morning of our trip, we packed our bags and went to the front desk to check out. The receptionist asked if we had used anything from the minibar. We said no, and she returned our deposit of fifty dollars. She also sent us a receipt by email. Before leaving, I thanked the housekeeping staff for the clean room.",
      "reading": "",
      "back": "旅行的最後一天早上，我們收好行李，到櫃檯退房。接待人員問我們有沒有用過小冰箱裡的東西。我們說沒有，她就退還了五十美元的押金。她也用電子郵件寄給我們收據。離開前，我謝謝客房清潔人員把房間整理得很乾淨。",
-     "note": "重點：check out 退房／deposit 押金／receipt 收據"
+     "note": "重點：check out 退房／deposit 押金／receipt 收據",
+     "questions": [
+      {
+       "q": "What did the receptionist ask?",
+       "options": [
+        "If they used anything from the minibar",
+        "If they needed a taxi",
+        "If they liked the hotel"
+       ],
+       "answer": 0,
+       "explain": "文中：asked if we had used anything from the minibar（問有沒有用小冰箱的東西）。"
+      },
+      {
+       "q": "How much deposit was returned?",
+       "options": [
+        "Fifty dollars",
+        "Fifteen dollars",
+        "Five dollars"
+       ],
+       "answer": 0,
+       "explain": "文中：our deposit of fifty dollars（五十美元的押金）。"
+      },
+      {
+       "q": "How did the writer get the receipt?",
+       "options": [
+        "By email",
+        "On paper",
+        "By phone call"
+       ],
+       "answer": 0,
+       "explain": "文中：She also sent us a receipt by email（用電子郵件寄收據）。"
+      }
+     ]
     },
     {
      "id": "en-rt-07",
@@ -2697,7 +2889,39 @@
      "front": "To go to the old town, we had to transfer trains at the central station. I checked the timetable on my phone and found the right platform. The fare was only three dollars, and the next train came in five minutes. It was crowded, so we stood near the door. Fifteen minutes later, we arrived and walked to the market.",
      "reading": "",
      "back": "要去老城區，我們得在中央車站轉車。我用手機查了時刻表，找到正確的月台。車資只要三美元，下一班車五分鐘後就來了。車上很擠，所以我們站在門邊。十五分鐘後我們到了，然後走去市場。",
-     "note": "重點：transfer 轉乘／timetable 時刻表／fare 車資"
+     "note": "重點：transfer 轉乘／timetable 時刻表／fare 車資",
+     "questions": [
+      {
+       "q": "Where did they change trains?",
+       "options": [
+        "At the central station",
+        "At the market",
+        "At the airport"
+       ],
+       "answer": 0,
+       "explain": "文中：transfer trains at the central station（在中央車站轉車）。"
+      },
+      {
+       "q": "How much was the fare?",
+       "options": [
+        "Three dollars",
+        "Five dollars",
+        "Fifteen dollars"
+       ],
+       "answer": 0,
+       "explain": "文中：The fare was only three dollars（車資只要三美元）。"
+      },
+      {
+       "q": "Why did they stand near the door?",
+       "options": [
+        "The train was crowded",
+        "The seats were dirty",
+        "They liked the view"
+       ],
+       "answer": 0,
+       "explain": "文中：It was crowded, so we stood near the door（很擠，所以站在門邊）。"
+      }
+     ]
     },
     {
      "id": "en-rt-08",
@@ -2705,7 +2929,39 @@
      "front": "My friend is a vegetarian, and I am allergic to shrimp, so choosing a restaurant is not always easy. Last night, we told the waiter about our needs before ordering. He recommended a vegetable appetizer and a chicken soup for me. The food was delicious, and the service was great. When we asked for the bill, we left a ten percent tip.",
      "reading": "",
      "back": "我的朋友吃素，而我對蝦子過敏，所以選餐廳不一定容易。昨天晚上，我們點餐前先告訴服務生我們的需求。他為朋友推薦了蔬菜開胃菜，也為我推薦了一份雞肉湯。食物很美味，服務也很棒。我們要求結帳時，留了百分之十的小費。",
-     "note": "重點：vegetarian 素食者／allergic 過敏的／tip 小費"
+     "note": "重點：vegetarian 素食者／allergic 過敏的／tip 小費",
+     "questions": [
+      {
+       "q": "What is the writer allergic to?",
+       "options": [
+        "Shrimp",
+        "Peanuts",
+        "Milk"
+       ],
+       "answer": 0,
+       "explain": "文中：I am allergic to shrimp（我對蝦子過敏）。"
+      },
+      {
+       "q": "When did they tell the waiter about their needs?",
+       "options": [
+        "Before ordering",
+        "After the meal",
+        "When paying"
+       ],
+       "answer": 0,
+       "explain": "文中：told the waiter about our needs before ordering（點餐前先告訴服務生）。"
+      },
+      {
+       "q": "How much tip did they leave?",
+       "options": [
+        "Ten percent",
+        "Twenty percent",
+        "Five percent"
+       ],
+       "answer": 0,
+       "explain": "最後一句：a ten percent tip（百分之十的小費）。"
+      }
+     ]
     },
     {
      "id": "en-rt-09",
@@ -2713,7 +2969,39 @@
      "front": "On the second day of our trip, I woke up with a bad stomachache. My sister helped me walk to a pharmacy near the hotel. The pharmacist asked a few questions and gave me some medicine. I felt much better in the evening. This experience taught me to bring basic medicine and to learn how to ask for help in an emergency.",
      "reading": "",
      "back": "旅行的第二天，我醒來時肚子很痛。姊姊陪我走到飯店附近的藥局。藥師問了幾個問題，給了我一些藥。到了晚上我好多了。這次經驗讓我學到要帶基本的藥品，也要學會在緊急情況下怎麼求助。",
-     "note": "重點：pharmacy 藥局／emergency 緊急情況／how to 怎麼做（疑問詞 + to V）"
+     "note": "重點：pharmacy 藥局／emergency 緊急情況／how to 怎麼做（疑問詞 + to V）",
+     "questions": [
+      {
+       "q": "What happened on the second day of the trip?",
+       "options": [
+        "The writer had a stomachache",
+        "The writer lost a bag",
+        "The hotel was closed"
+       ],
+       "answer": 0,
+       "explain": "文中：I woke up with a bad stomachache（醒來肚子很痛）。"
+      },
+      {
+       "q": "Who helped the writer walk to the pharmacy?",
+       "options": [
+        "The writer's sister",
+        "A taxi driver",
+        "A hotel worker"
+       ],
+       "answer": 0,
+       "explain": "文中：My sister helped me walk to a pharmacy（姊姊陪我走到藥局）。"
+      },
+      {
+       "q": "What did the writer learn from this experience?",
+       "options": [
+        "To bring basic medicine",
+        "To avoid traveling",
+        "To eat less"
+       ],
+       "answer": 0,
+       "explain": "最後一句：taught me to bring basic medicine（學到要帶基本的藥品）。"
+      }
+     ]
     },
     {
      "id": "en-rt-10",
@@ -2721,7 +3009,39 @@
      "front": "We joined a guided tour of the old castle on Sunday morning. The admission was cheaper with a student discount, and the guide spoke slowly, so I understood most of the story. The castle was a famous landmark, so it was very crowded. At the end of the tour, I bought a small souvenir for my mother. It was a great way to learn about the city.",
      "reading": "",
      "back": "星期天早上，我們參加了老城堡的導覽行程。用學生折扣，入場費比較便宜，而且導覽員說得很慢，所以我聽懂了大部分的故事。這座城堡是有名的地標，所以非常擁擠。導覽結束時，我為媽媽買了一個小紀念品。這是認識這座城市很棒的方式。",
-     "note": "重點：guided tour 導覽行程／admission 入場費／landmark 地標"
+     "note": "重點：guided tour 導覽行程／admission 入場費／landmark 地標",
+     "questions": [
+      {
+       "q": "Why was the admission cheaper?",
+       "options": [
+        "The writer had a student discount",
+        "It was a holiday",
+        "The castle was small"
+       ],
+       "answer": 0,
+       "explain": "文中：cheaper with a student discount（用學生折扣比較便宜）。"
+      },
+      {
+       "q": "Why did the writer understand most of the story?",
+       "options": [
+        "The guide spoke slowly",
+        "The guide spoke very fast",
+        "The writer read a book first"
+       ],
+       "answer": 0,
+       "explain": "文中：the guide spoke slowly（導覽員說得很慢）。"
+      },
+      {
+       "q": "What does \"landmark\" mean here?",
+       "options": [
+        "A famous place that people recognize",
+        "A kind of ticket",
+        "A small shop"
+       ],
+       "answer": 0,
+       "explain": "landmark 是地標，知名、容易辨認的地方。"
+      }
+     ]
     }
    ]
   },
@@ -3145,7 +3465,39 @@
      "front": "My friends and I went to a baseball game on Saturday night. We bought hot dogs and cold drinks and found our seats behind first base. In the seventh inning, everyone stood up and sang a song together. In the ninth inning, our team hit a home run and won the game. The whole stadium was shouting with joy.",
      "reading": "",
      "back": "星期六晚上，我和朋友去看了一場棒球賽。我們買了熱狗和冷飲，找到一壘後方的座位。第七局時，所有人站起來一起唱歌。第九局，我們的球隊打出全壘打並贏下比賽。整個球場都在歡呼。",
-     "note": "重點：seats 座位／inning 局／home run 全壘打"
+     "note": "重點：seats 座位／inning 局／home run 全壘打",
+     "questions": [
+      {
+       "q": "Where were their seats?",
+       "options": [
+        "Behind first base",
+        "Near the outfield",
+        "Behind home plate"
+       ],
+       "answer": 0,
+       "explain": "文中：found our seats behind first base（座位在一壘後方）。"
+      },
+      {
+       "q": "What happened in the seventh inning?",
+       "options": [
+        "Everyone stood up and sang a song",
+        "A home run was hit",
+        "The game was stopped by rain"
+       ],
+       "answer": 0,
+       "explain": "文中：In the seventh inning, everyone stood up and sang a song together（第七局大家站起來一起唱歌）。"
+      },
+      {
+       "q": "How did the game end?",
+       "options": [
+        "The team won after a home run",
+        "It ended in a tie",
+        "The team lost"
+       ],
+       "answer": 0,
+       "explain": "文中：In the ninth inning, our team hit a home run and won the game（第九局打出全壘打並獲勝）。"
+      }
+     ]
     },
     {
      "id": "en-rs-02",
@@ -3153,7 +3505,39 @@
      "front": "Pickleball is easy to learn, which is why so many people enjoy it. The court is smaller than a tennis court, and the ball moves more slowly. You must let the ball bounce once on each side before you volley. Beginners usually spend their first few games trying to serve the ball over the net. After a week, most people can keep a rally going.",
      "reading": "",
      "back": "匹克球很容易學，所以很多人喜歡。球場比網球場小，球速也比較慢。球在兩邊各要落地一次，才可以截擊。初學者通常在最初幾場比賽都在努力把球發過網。一週後，大多數人都能持續對打。",
-     "note": "重點：bounce 彈跳／volley 截擊／rally 來回對打"
+     "note": "重點：bounce 彈跳／volley 截擊／rally 來回對打",
+     "questions": [
+      {
+       "q": "Why do many people enjoy pickleball?",
+       "options": [
+        "It is easy to learn",
+        "It is very cheap",
+        "It is only played indoors"
+       ],
+       "answer": 0,
+       "explain": "第一句：Pickleball is easy to learn, which is why so many people enjoy it。"
+      },
+      {
+       "q": "How is a pickleball court different from a tennis court?",
+       "options": [
+        "It is smaller",
+        "It is bigger",
+        "It has no net"
+       ],
+       "answer": 0,
+       "explain": "文中：The court is smaller than a tennis court（比網球場小）。"
+      },
+      {
+       "q": "What do beginners spend their first games doing?",
+       "options": [
+        "Trying to serve the ball over the net",
+        "Practicing volleys at the net",
+        "Watching other players"
+       ],
+       "answer": 0,
+       "explain": "文中：trying to serve the ball over the net（試著把球發過網）。"
+      }
+     ]
     },
     {
      "id": "en-rs-03",
@@ -3161,7 +3545,39 @@
      "front": "In October, baseball fans around the world watch the playoffs. Every game matters because one loss can end a team's season. Starting pitchers work hard to keep the other team from scoring, and the bullpen takes over when they get tired. A single strikeout in the last inning can change everything. Fans stay glued to their screens until the final out.",
      "reading": "",
      "back": "十月，世界各地的棒球迷都在看季後賽。每一場比賽都很重要，因為輸一場就可能結束整季。先發投手努力不讓對手得分，累了之後由牛棚接手。最後一局的一次三振就可能改變一切。球迷們盯著螢幕，直到最後一個出局數。",
-     "note": "重點：playoffs 季後賽／pitcher 投手／strikeout 三振"
+     "note": "重點：playoffs 季後賽／pitcher 投手／strikeout 三振",
+     "questions": [
+      {
+       "q": "Why does every playoff game matter?",
+       "options": [
+        "One loss can end a team's season",
+        "Tickets are cheap",
+        "The pitchers are young"
+       ],
+       "answer": 0,
+       "explain": "文中：one loss can end a team's season（輸一場就可能結束整季）。"
+      },
+      {
+       "q": "What does the bullpen do?",
+       "options": [
+        "Takes over when starting pitchers get tired",
+        "Sells food to fans",
+        "Teaches new players"
+       ],
+       "answer": 0,
+       "explain": "文中：the bullpen takes over when they get tired（先發投手累了由牛棚接手）。"
+      },
+      {
+       "q": "What does \"glued to their screens\" mean?",
+       "options": [
+        "Watching without looking away",
+        "Having trouble with their TVs",
+        "Sleeping near the TV"
+       ],
+       "answer": 0,
+       "explain": "glued to 是「黏在上面」，形容目不轉睛地看。"
+      }
+     ]
     },
     {
      "id": "en-rs-04",
@@ -3169,7 +3585,39 @@
      "front": "A baseball game has nine innings. In each inning, both teams get a turn to bat. The pitcher throws the ball, and the batter tries to hit it. If the batter gets three strikes, the batter is out. If a player hits the ball and runs around all four bases, the team scores a run. The team with more runs at the end of the game wins.",
      "reading": "",
      "back": "一場棒球賽有九局。每一局，兩隊都有輪流打擊的機會。投手投球，打者試著把球打出去。如果打者被三次好球，就出局了。如果球員把球打出去並跑完四個壘包，球隊就得一分。比賽結束時得分較多的隊伍獲勝。",
-     "note": "重點：inning 局／batter 打者／strike 好球／score a run 得分"
+     "note": "重點：inning 局／batter 打者／strike 好球／score a run 得分",
+     "questions": [
+      {
+       "q": "How many innings are in a baseball game?",
+       "options": [
+        "Nine",
+        "Seven",
+        "Eleven"
+       ],
+       "answer": 0,
+       "explain": "第一句：A baseball game has nine innings。"
+      },
+      {
+       "q": "When is a batter out?",
+       "options": [
+        "After three strikes",
+        "After one miss",
+        "After a foul ball"
+       ],
+       "answer": 0,
+       "explain": "文中：If the batter gets three strikes, the batter is out（三次好球就出局）。"
+      },
+      {
+       "q": "How does a team score a run?",
+       "options": [
+        "A player hits the ball and runs around all four bases",
+        "A pitcher strikes out three players",
+        "A catcher catches the ball"
+       ],
+       "answer": 0,
+       "explain": "文中：hits the ball and runs around all four bases, the team scores a run（打出去並跑完四個壘包就得一分）。"
+      }
+     ]
     },
     {
      "id": "en-rs-05",
@@ -3177,7 +3625,39 @@
      "front": "Last weekend, my coworker Ken invited me to watch a baseball game. Our seats were near the outfield, so we could see the players clearly. In the third inning, a foul ball flew toward us, and everyone jumped up. Ken tried to catch it, but a little boy got it first. The boy smiled so brightly that we both laughed. It was not a perfect game, but it was a great night.",
      "reading": "",
      "back": "上週末，我的同事 Ken 邀我去看棒球賽。我們的座位靠近外野，所以可以把球員看得很清楚。第三局時，一顆界外球朝我們飛來，大家都跳了起來。Ken 想接住它，但是一個小男孩先拿到了。男孩笑得好燦爛，我們兩個都笑了。這不是一場完美的比賽，但卻是美好的夜晚。",
-     "note": "重點：outfield 外野／foul ball 界外球／clearly 清楚地"
+     "note": "重點：outfield 外野／foul ball 界外球／clearly 清楚地",
+     "questions": [
+      {
+       "q": "Who invited the writer to the game?",
+       "options": [
+        "A coworker named Ken",
+        "The writer's sister",
+        "A neighbor"
+       ],
+       "answer": 0,
+       "explain": "第一句：my coworker Ken invited me（同事 Ken 邀請我）。"
+      },
+      {
+       "q": "What flew toward them in the third inning?",
+       "options": [
+        "A foul ball",
+        "A bird",
+        "A hot dog"
+       ],
+       "answer": 0,
+       "explain": "文中：a foul ball flew toward us（一顆界外球朝我們飛來）。"
+      },
+      {
+       "q": "Who got the ball?",
+       "options": [
+        "A little boy",
+        "Ken",
+        "The writer"
+       ],
+       "answer": 0,
+       "explain": "文中：a little boy got it first（一個小男孩先拿到了）。"
+      }
+     ]
     },
     {
      "id": "en-rs-06",
@@ -3185,7 +3665,39 @@
      "front": "Yesterday I played pickleball for the first time. My friend explained the rules before we started. The most important rule is the kitchen, the area next to the net. You cannot volley the ball when you stand there. At first, I made many faults because I forgot this rule. After an hour, I started to remember it, and we played our first doubles game. I lost, but I want to play again.",
      "reading": "",
      "back": "昨天我第一次打匹克球。開始前，朋友先解釋了規則。最重要的規則是廚房區，也就是球網旁邊的區域。站在那裡時不能截擊。一開始我因為忘了這條規則，犯了很多次違例。一個小時後，我開始記住了，我們打了第一場雙打。我輸了，但我還想再打。",
-     "note": "重點：kitchen 廚房區／fault 違例／doubles 雙打"
+     "note": "重點：kitchen 廚房區／fault 違例／doubles 雙打",
+     "questions": [
+      {
+       "q": "What is the kitchen in pickleball?",
+       "options": [
+        "The area next to the net",
+        "A place to eat after games",
+        "The back line of the court"
+       ],
+       "answer": 0,
+       "explain": "文中：the kitchen, the area next to the net（廚房區就是球網旁邊的區域）。"
+      },
+      {
+       "q": "Why did the writer make many faults at first?",
+       "options": [
+        "The writer forgot the kitchen rule",
+        "The net was too high",
+        "The ball was broken"
+       ],
+       "answer": 0,
+       "explain": "文中：I made many faults because I forgot this rule（因為忘了這條規則而違例很多次）。"
+      },
+      {
+       "q": "How did the writer feel at the end?",
+       "options": [
+        "Wanted to play again",
+        "Wanted to quit",
+        "Was too tired to play"
+       ],
+       "answer": 0,
+       "explain": "最後一句：I lost, but I want to play again。"
+      }
+     ]
     },
     {
      "id": "en-rs-07",
@@ -3193,7 +3705,39 @@
      "front": "Before every game, our pickleball group warms up for ten minutes. We stretch our legs and arms, and then we hit some easy shots. Our coach says a good warm-up helps us avoid injuries. We also bring plenty of water because we sweat a lot. Last month, one player skipped the warm-up and hurt a muscle. Now nobody forgets it.",
      "reading": "",
      "back": "每場比賽前，我們的匹克球小組都會熱身十分鐘。我們伸展腿和手臂，然後打一些簡單的球。教練說好的熱身能幫助我們避免受傷。我們也會帶很多水，因為會流很多汗。上個月，有一位球友跳過熱身，拉傷了肌肉。現在沒有人會忘記熱身。",
-     "note": "重點：warm up 熱身／stretch 伸展／injury 受傷"
+     "note": "重點：warm up 熱身／stretch 伸展／injury 受傷",
+     "questions": [
+      {
+       "q": "How long does the group warm up before every game?",
+       "options": [
+        "Ten minutes",
+        "Five minutes",
+        "Thirty minutes"
+       ],
+       "answer": 0,
+       "explain": "第一句：warms up for ten minutes（熱身十分鐘）。"
+      },
+      {
+       "q": "According to the coach, why is a warm-up useful?",
+       "options": [
+        "It helps avoid injuries",
+        "It saves time",
+        "It makes games shorter"
+       ],
+       "answer": 0,
+       "explain": "文中：a good warm-up helps us avoid injuries（好的熱身能避免受傷）。"
+      },
+      {
+       "q": "What happened to the player who skipped the warm-up?",
+       "options": [
+        "That player hurt a muscle",
+        "That player won the game",
+        "That player lost the ball"
+       ],
+       "answer": 0,
+       "explain": "文中：skipped the warm-up and hurt a muscle（跳過熱身，拉傷肌肉）。"
+      }
+     ]
     },
     {
      "id": "en-rs-08",
@@ -3201,7 +3745,39 @@
      "front": "I wanted to see a baseball game with my sister, so we went to the stadium ticket office. I asked the clerk, \"Do you have two seats together?\" She said the cheap seats were sold out, but there were two seats behind home plate. The price was higher than I expected, but we decided to buy them. She gave us a receipt, and we walked into the stadium feeling excited.",
      "reading": "",
      "back": "我想和姊姊一起看棒球賽，所以我們去了球場售票處。我問售票員：「你們有兩個連在一起的座位嗎？」她說便宜的座位賣完了，但本壘板後方還有兩個位子。價錢比我預期的高，但我們決定買下來。她給了我們收據，我們興奮地走進球場。",
-     "note": "重點：sold out 售完／behind home plate 本壘板後方／expect 預期"
+     "note": "重點：sold out 售完／behind home plate 本壘板後方／expect 預期",
+     "questions": [
+      {
+       "q": "Who did the writer want to see the game with?",
+       "options": [
+        "The writer's sister",
+        "A coworker",
+        "A friend from school"
+       ],
+       "answer": 0,
+       "explain": "第一句：with my sister（和姊姊）。"
+      },
+      {
+       "q": "What did the clerk say about the cheap seats?",
+       "options": [
+        "They were sold out",
+        "They were closed",
+        "They were behind first base"
+       ],
+       "answer": 0,
+       "explain": "文中：the cheap seats were sold out（便宜的座位賣完了）。"
+      },
+      {
+       "q": "How was the price compared with what the writer expected?",
+       "options": [
+        "Higher than expected",
+        "Lower than expected",
+        "The same as expected"
+       ],
+       "answer": 0,
+       "explain": "文中：The price was higher than I expected（價格比預期的高）。"
+      }
+     ]
     },
     {
      "id": "en-rs-09",
@@ -3209,7 +3785,39 @@
      "front": "Our club joined a pickleball tournament last Sunday. In the first round, our opponents were much taller than us, and they served very hard. We kept the ball low and tried to hit it near their baseline. In the last point, our ball landed out of bounds, so we lost the match. We did not win the trophy, but we learned a lot. Next time, we will practice our serve more.",
      "reading": "",
      "back": "上週日，我們的社團參加了匹克球比賽。第一輪時，對手比我們高很多，而且發球很用力。我們把球打得低一點，並試著打到他們的底線附近。最後一分，我們的球出界了，所以輸掉比賽。我們沒有拿到獎盃，但學到了很多。下次我們會多練習發球。",
-     "note": "重點：opponent 對手／baseline 底線／out of bounds 出界"
+     "note": "重點：opponent 對手／baseline 底線／out of bounds 出界",
+     "questions": [
+      {
+       "q": "What was true about the opponents in the first round?",
+       "options": [
+        "They were much taller than the writer's team",
+        "They were much younger",
+        "They arrived late"
+       ],
+       "answer": 0,
+       "explain": "文中：our opponents were much taller than us（對手比我們高很多）。"
+      },
+      {
+       "q": "How did the team lose the match?",
+       "options": [
+        "Their ball landed out of bounds on the last point",
+        "Their paddle broke",
+        "They arrived late"
+       ],
+       "answer": 0,
+       "explain": "文中：In the last point, our ball landed out of bounds, so we lost the match。"
+      },
+      {
+       "q": "What will the team do next time?",
+       "options": [
+        "Practice their serve more",
+        "Change clubs",
+        "Skip the tournament"
+       ],
+       "answer": 0,
+       "explain": "最後一句：we will practice our serve more（下次多練發球）。"
+      }
+     ]
     },
     {
      "id": "en-rs-10",
@@ -3217,7 +3825,39 @@
      "front": "In Taiwan, going to a baseball game is a lot of fun, even if you don't know the rules. Fans sing a special song for each player. When the pitcher throws a fastball, the whole stadium waits quietly. Then, after a strikeout, everyone shouts together. I think the best part is the food, because you can eat snacks while you cheer for your team.",
      "reading": "",
      "back": "在台灣，去看棒球賽非常有趣，即使你不懂規則也一樣。球迷會為每位球員唱專屬的歌。投手投出速球時，整個球場安靜地等待。然後，三振之後，大家一起大喊。我覺得最棒的部分是食物，因為你可以一邊吃零食，一邊為你的球隊加油。",
-     "note": "重點：fastball 速球／strikeout 三振／cheer 加油"
+     "note": "重點：fastball 速球／strikeout 三振／cheer 加油",
+     "questions": [
+      {
+       "q": "What do fans do for each player?",
+       "options": [
+        "Sing a special song",
+        "Wear a uniform",
+        "Make a poster"
+       ],
+       "answer": 0,
+       "explain": "文中：Fans sing a special song for each player（球迷為每位球員唱專屬的歌）。"
+      },
+      {
+       "q": "What does the whole stadium do when the pitcher throws a fastball?",
+       "options": [
+        "Waits quietly",
+        "Shouts loudly",
+        "Takes photos"
+       ],
+       "answer": 0,
+       "explain": "文中：the whole stadium waits quietly（整個球場安靜等待）。"
+      },
+      {
+       "q": "What does the writer think is the best part?",
+       "options": [
+        "The food",
+        "The music",
+        "The rules"
+       ],
+       "answer": 0,
+       "explain": "最後一句：I think the best part is the food。"
+      }
+     ]
     }
    ]
   },
@@ -3793,7 +4433,39 @@
      "front": "On Monday morning, my team had a meeting to discuss a new project. Our manager explained the goals and asked everyone to share ideas. We agreed on a deadline of three weeks. After the meeting, I wrote down my tasks and sent an email to my colleagues. I felt a little nervous, but I was excited to start.",
      "reading": "",
      "back": "週一早上，我的團隊開會討論一個新專案。主管說明了目標，並請大家分享想法。我們同意以三週為期限。會後，我寫下自己的工作項目，並寄信給同事。我有一點緊張，但也很期待開始。",
-     "note": "重點：goal 目標／deadline 期限／task 工作項目"
+     "note": "重點：goal 目標／deadline 期限／task 工作項目",
+     "questions": [
+      {
+       "q": "What was the meeting about?",
+       "options": [
+        "A new project",
+        "A holiday plan",
+        "A job interview"
+       ],
+       "answer": 0,
+       "explain": "第一句：to discuss a new project（討論新專案）。"
+      },
+      {
+       "q": "How long did the team have to finish?",
+       "options": [
+        "Three weeks",
+        "Three months",
+        "Three days"
+       ],
+       "answer": 0,
+       "explain": "文中：a deadline of three weeks（三週的期限）。"
+      },
+      {
+       "q": "How did the writer feel at the end?",
+       "options": [
+        "A little nervous but excited",
+        "Bored and sleepy",
+        "Angry at the manager"
+       ],
+       "answer": 0,
+       "explain": "最後一句：I felt a little nervous, but I was excited to start。"
+      }
+     ]
     },
     {
      "id": "en-rw-02",
@@ -3801,7 +4473,39 @@
      "front": "Last week I finished a report for a client. Before sending it, I asked my colleague to read it and give me some feedback. She said the data was clear, but the summary was too long. I shortened it and added a chart. The client liked the new version and thanked us for the quick response.",
      "reading": "",
      "back": "上週我完成了一份給客戶的報告。寄出前，我請同事先看過並給我一些意見。她說資料很清楚，但摘要太長。我把它縮短，又加了一張圖表。客戶很喜歡新版本，並感謝我們快速回覆。",
-     "note": "重點：client 客戶／feedback 回饋／summary 摘要"
+     "note": "重點：client 客戶／feedback 回饋／summary 摘要",
+     "questions": [
+      {
+       "q": "Who read the report before it was sent?",
+       "options": [
+        "A colleague",
+        "The client",
+        "The manager"
+       ],
+       "answer": 0,
+       "explain": "文中：I asked my colleague to read it（請同事先看）。"
+      },
+      {
+       "q": "What was wrong with the report, according to the colleague?",
+       "options": [
+        "The summary was too long",
+        "The data was unclear",
+        "The title was missing"
+       ],
+       "answer": 0,
+       "explain": "文中：the data was clear, but the summary was too long（資料很清楚，但摘要太長）。"
+      },
+      {
+       "q": "What did the writer add to the report?",
+       "options": [
+        "A chart",
+        "A photo",
+        "A new title"
+       ],
+       "answer": 0,
+       "explain": "文中：I shortened it and added a chart（縮短後加了圖表）。"
+      }
+     ]
     },
     {
      "id": "en-rw-03",
@@ -3809,7 +4513,39 @@
      "front": "Some companies let employees work from home a few days a week. People who work at home save time because they don't have to commute. However, it can be hard to separate work from personal life. To stay productive, many people set a fixed schedule and take short breaks. Others miss talking face to face with their coworkers.",
      "reading": "",
      "back": "有些公司讓員工每週在家工作幾天。在家工作的人可以省下通勤時間。不過，要把工作和私人生活分開可能不容易。為了保持效率，許多人會訂定固定的作息並短暫休息。也有人懷念和同事面對面聊天。",
-     "note": "重點：commute 通勤／productive 有效率的／face to face 面對面"
+     "note": "重點：commute 通勤／productive 有效率的／face to face 面對面",
+     "questions": [
+      {
+       "q": "Why do people who work at home save time?",
+       "options": [
+        "They don't have to commute",
+        "They work fewer hours",
+        "They eat faster"
+       ],
+       "answer": 0,
+       "explain": "文中：they don't have to commute（不用通勤）。"
+      },
+      {
+       "q": "What can be hard when working at home?",
+       "options": [
+        "Separating work from personal life",
+        "Finding a computer",
+        "Getting a salary"
+       ],
+       "answer": 0,
+       "explain": "文中：it can be hard to separate work from personal life（很難把工作和私生活分開）。"
+      },
+      {
+       "q": "What do some people miss?",
+       "options": [
+        "Talking face to face with coworkers",
+        "Their commute",
+        "The office coffee"
+       ],
+       "answer": 0,
+       "explain": "最後一句：miss talking face to face with their coworkers（懷念和同事面對面聊天）。"
+      }
+     ]
     },
     {
      "id": "en-rw-04",
@@ -3817,7 +4553,39 @@
      "front": "This morning I received an email from a new client. She asked for a price list, so I opened the attachment and checked the numbers. Then I forwarded the email to my manager because I was not sure about one price. He replied in ten minutes and fixed the mistake. I thanked him and sent the final list to the client before lunch.",
      "reading": "",
      "back": "今天早上我收到一位新客戶的電子郵件。她要一份價目表，所以我打開附件，檢查了數字。接著我把信轉寄給我的主管，因為我不確定其中一個價格。他十分鐘內就回信，並改正了錯誤。我向他道謝，並在午餐前把最後的價目表寄給客戶。",
-     "note": "重點：attachment 附件／forward 轉寄／reply 回覆"
+     "note": "重點：attachment 附件／forward 轉寄／reply 回覆",
+     "questions": [
+      {
+       "q": "What did the new client ask for?",
+       "options": [
+        "A price list",
+        "A job",
+        "A meeting"
+       ],
+       "answer": 0,
+       "explain": "文中：She asked for a price list（她要價目表）。"
+      },
+      {
+       "q": "Why did the writer forward the email to the manager?",
+       "options": [
+        "The writer was not sure about one price",
+        "The email was spam",
+        "The writer wanted a day off"
+       ],
+       "answer": 0,
+       "explain": "文中：because I was not sure about one price（不確定其中一個價格）。"
+      },
+      {
+       "q": "When did the writer send the final list to the client?",
+       "options": [
+        "Before lunch",
+        "After work",
+        "The next day"
+       ],
+       "answer": 0,
+       "explain": "最後一句：before lunch（午餐前）。"
+      }
+     ]
     },
     {
      "id": "en-rw-05",
@@ -3825,7 +4593,39 @@
      "front": "Last week I had a job interview at a travel company. I updated my CV and practiced answering questions the night before. At the interview, the manager asked about my experience and my skills. I was nervous, but I spoke slowly and smiled. At the end, she said they would call me in three days. I am still waiting, but I feel proud of myself.",
      "reading": "",
      "back": "上週我去一家旅行社面試。前一晚我更新了履歷，並練習回答問題。面試時，主管問了我的經驗和技能。我很緊張，但我說得很慢，也面帶微笑。最後她說三天後會打電話給我。我還在等，但我為自己感到驕傲。",
-     "note": "重點：interview 面試／CV 履歷／experience 經驗"
+     "note": "重點：interview 面試／CV 履歷／experience 經驗",
+     "questions": [
+      {
+       "q": "What kind of company was the interview at?",
+       "options": [
+        "A travel company",
+        "A bank",
+        "A school"
+       ],
+       "answer": 0,
+       "explain": "第一句：a job interview at a travel company。"
+      },
+      {
+       "q": "What did the writer do the night before?",
+       "options": [
+        "Updated the CV and practiced answering questions",
+        "Went shopping",
+        "Traveled abroad"
+       ],
+       "answer": 0,
+       "explain": "文中：I updated my CV and practiced answering questions the night before。"
+      },
+      {
+       "q": "What is the writer doing now?",
+       "options": [
+        "Waiting for a call",
+        "Starting the job",
+        "Looking for another job"
+       ],
+       "answer": 0,
+       "explain": "文中：I am still waiting（我還在等）。"
+      }
+     ]
     },
     {
      "id": "en-rw-06",
@@ -3833,7 +4633,39 @@
      "front": "This month my workload is very heavy. Two projects have the same deadline, so I worked overtime almost every night. My supervisor noticed that I looked tired, and she asked me to make a list of my tasks. We decided to move one task to another colleague. It was a good solution, and now I can go home on time again.",
      "reading": "",
      "back": "這個月我的工作量很大。兩個專案的截止日期是同一天，所以我幾乎每天晚上都加班。我的主管注意到我看起來很累，請我列出所有工作項目。我們決定把其中一項交給另一位同事。這是個好辦法，現在我又能準時回家了。",
-     "note": "重點：workload 工作量／overtime 加班／task 工作項目"
+     "note": "重點：workload 工作量／overtime 加班／task 工作項目",
+     "questions": [
+      {
+       "q": "Why did the writer work overtime?",
+       "options": [
+        "Two projects had the same deadline",
+        "The writer liked working late",
+        "The office was closed"
+       ],
+       "answer": 0,
+       "explain": "文中：Two projects have the same deadline（兩個專案同一天截止）。"
+      },
+      {
+       "q": "What did the supervisor ask the writer to do?",
+       "options": [
+        "Make a list of tasks",
+        "Take a vacation",
+        "Quit a project"
+       ],
+       "answer": 0,
+       "explain": "文中：she asked me to make a list of my tasks（請我列出工作項目）。"
+      },
+      {
+       "q": "What was the solution?",
+       "options": [
+        "Move one task to another colleague",
+        "Work on weekends",
+        "Hire a new manager"
+       ],
+       "answer": 0,
+       "explain": "文中：We decided to move one task to another colleague。"
+      }
+     ]
     },
     {
      "id": "en-rw-07",
@@ -3841,7 +4673,39 @@
      "front": "Our client wanted to meet on Tuesday, but my manager was sick. I wrote an email to ask if we could reschedule the meeting for Thursday. The client replied quickly and said Thursday was fine. I changed the schedule, sent a new invitation, and prepared the presentation again. Everything went well, and the client liked our plan.",
      "reading": "",
      "back": "我們的客戶想在週二開會，但我的主管生病了。我寫了一封信，問能不能把會議改到週四。客戶很快回覆，說週四可以。我更改了行程，寄出新的邀請，並重新準備簡報。一切都很順利，客戶也喜歡我們的計畫。",
-     "note": "重點：reschedule 改期／invitation 邀請／presentation 簡報"
+     "note": "重點：reschedule 改期／invitation 邀請／presentation 簡報",
+     "questions": [
+      {
+       "q": "Why did the writer need to reschedule the meeting?",
+       "options": [
+        "The manager was sick",
+        "The client was late",
+        "The room was full"
+       ],
+       "answer": 0,
+       "explain": "文中：my manager was sick（主管生病了）。"
+      },
+      {
+       "q": "What day was the new meeting?",
+       "options": [
+        "Thursday",
+        "Tuesday",
+        "Friday"
+       ],
+       "answer": 0,
+       "explain": "文中：reschedule the meeting for Thursday（改到週四）。"
+      },
+      {
+       "q": "How did the client respond?",
+       "options": [
+        "Replied quickly and said Thursday was fine",
+        "Did not answer",
+        "Asked to cancel"
+       ],
+       "answer": 0,
+       "explain": "文中：The client replied quickly and said Thursday was fine。"
+      }
+     ]
     },
     {
      "id": "en-rw-08",
@@ -3849,7 +4713,39 @@
      "front": "After two years at my company, I decided to ask for a raise. First, I wrote down what I achieved: I delivered three projects on time and helped two new employees. Then I made an appointment with my supervisor. She listened carefully and said she would talk to her boss. A week later, I got a small raise and a better position.",
      "reading": "",
      "back": "在公司工作兩年後，我決定要求加薪。首先，我寫下自己的成果：我準時交付了三個專案，還幫助了兩位新進員工。接著我和主管約了時間。她仔細聽完，說會和她的上司談談。一週後，我得到小幅加薪和更好的職位。",
-     "note": "重點：raise 加薪／achieve 達成／deliver 交付"
+     "note": "重點：raise 加薪／achieve 達成／deliver 交付",
+     "questions": [
+      {
+       "q": "How long had the writer worked at the company?",
+       "options": [
+        "Two years",
+        "Six months",
+        "Ten years"
+       ],
+       "answer": 0,
+       "explain": "第一句：After two years at my company。"
+      },
+      {
+       "q": "What did the writer do first?",
+       "options": [
+        "Wrote down what the writer achieved",
+        "Looked for a new job",
+        "Asked a coworker for money"
+       ],
+       "answer": 0,
+       "explain": "文中：First, I wrote down what I achieved（先寫下自己的成果）。"
+      },
+      {
+       "q": "What happened a week later?",
+       "options": [
+        "The writer got a small raise and a better position",
+        "The writer was fired",
+        "Nothing changed"
+       ],
+       "answer": 0,
+       "explain": "最後一句：A week later, I got a small raise and a better position。"
+      }
+     ]
     },
     {
      "id": "en-rw-09",
@@ -3857,7 +4753,39 @@
      "front": "Our team will launch a new app next month. Every week, we hold a short meeting to check our progress. The designers show their work, and the engineers explain what they finished. If someone has a problem, we collaborate to find a solution. Because we communicate clearly, we have not missed a single target so far.",
      "reading": "",
      "back": "我們的團隊下個月要推出一個新的應用程式。每週我們都開一場簡短的會議來確認進度。設計師展示他們的作品，工程師說明完成了什麼。如果有人遇到問題，我們會合作找出解決辦法。因為我們溝通清楚，到目前為止沒有錯過任何一個目標。",
-     "note": "重點：launch 推出／progress 進度／collaborate 合作"
+     "note": "重點：launch 推出／progress 進度／collaborate 合作",
+     "questions": [
+      {
+       "q": "When will the team launch the app?",
+       "options": [
+        "Next month",
+        "Next week",
+        "Next year"
+       ],
+       "answer": 0,
+       "explain": "第一句：will launch a new app next month。"
+      },
+      {
+       "q": "What do the engineers do in the weekly meeting?",
+       "options": [
+        "Explain what they finished",
+        "Show their designs",
+        "Plan the budget"
+       ],
+       "answer": 0,
+       "explain": "文中：the engineers explain what they finished（工程師說明完成了什麼）；設計師才是展示作品。"
+      },
+      {
+       "q": "Why has the team not missed a single target so far?",
+       "options": [
+        "They communicate clearly",
+        "They work every weekend",
+        "They have a very small project"
+       ],
+       "answer": 0,
+       "explain": "最後一句：Because we communicate clearly（因為溝通清楚）。"
+      }
+     ]
     },
     {
      "id": "en-rw-10",
@@ -3865,7 +4793,39 @@
      "front": "Yesterday I joined a conference call with colleagues in three countries. The meeting started late because someone's internet was slow. Our manager kept the agenda brief, so we finished in thirty minutes. Before we ended the call, someone took the minutes and promised to send them by email. I like short meetings like this because I can finish my other work.",
      "reading": "",
      "back": "昨天我參加了一場有三個國家同事的電話會議。會議晚開始，因為有人的網路很慢。我們的主管把議程控制得很精簡，所以三十分鐘就結束了。結束通話前，有人做了會議記錄，並答應用電子郵件寄出。我喜歡這種短會議，因為我能完成其他工作。",
-     "note": "重點：conference call 電話會議／agenda 議程／minutes 會議記錄"
+     "note": "重點：conference call 電話會議／agenda 議程／minutes 會議記錄",
+     "questions": [
+      {
+       "q": "Why did the meeting start late?",
+       "options": [
+        "Someone's internet was slow",
+        "The manager was sick",
+        "The agenda was long"
+       ],
+       "answer": 0,
+       "explain": "文中：because someone's internet was slow（有人的網路很慢）。"
+      },
+      {
+       "q": "How long was the call?",
+       "options": [
+        "Thirty minutes",
+        "One hour",
+        "Ten minutes"
+       ],
+       "answer": 0,
+       "explain": "文中：we finished in thirty minutes（三十分鐘就結束）。"
+      },
+      {
+       "q": "Why does the writer like short meetings?",
+       "options": [
+        "The writer can finish other work",
+        "The writer likes silence",
+        "They are more fun"
+       ],
+       "answer": 0,
+       "explain": "最後一句：because I can finish my other work。"
+      }
+     ]
     }
    ]
   },

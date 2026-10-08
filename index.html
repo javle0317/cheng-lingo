@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261008224316">
-<link rel="stylesheet" href="lingo.css?v=20261008224316">
+<link rel="stylesheet" href="style.css?v=20261008225444">
+<link rel="stylesheet" href="lingo.css?v=20261008225444">
 </head>
 <body class="lingo-home">
 
@@ -51,7 +51,9 @@
         <div class="lingo-sbar">
           <button id="exitBtn" type="button" class="ghost-btn" aria-label="回到今日">← 今日</button>
           <span id="sessionTitle" class="lingo-stitle"></span>
+          <span id="sessionCount" class="lingo-scount"></span>
         </div>
+        <div id="sessionBar" class="lingo-bar lingo-sbar-bar"><i></i></div>
 
         <section class="card" id="cardSection">
           <div id="cardEmpty" class="empty-hint hidden">還沒有這個語言的內容，先到「內容庫」新增幾張。</div>
@@ -76,6 +78,11 @@
                 <p id="cardNote" class="lingo-note"></p>
               </div>
             </div>
+
+            <details id="quizBox" class="lingo-quiz hidden">
+              <summary id="quizSummary">閱讀理解題</summary>
+              <div id="quizBody"></div>
+            </details>
 
             <div id="recallBox" class="lingo-copy hidden">
               <textarea id="recallInput" rows="2" placeholder="看中文，打出外文（日文可打羅馬拼音）" autocomplete="off" spellcheck="false"></textarea>
@@ -106,8 +113,8 @@
               <button type="button" data-rate="good">記得</button>
             </div>
           </div>
-          <button id="doneBtn" type="button">✓ 完成今天的練習</button>
-          <button id="drawBtn" type="button" class="ghost-btn">🎲 換一張</button>
+          <button id="doneBtn" type="button">✓ 完成這一張</button>
+          <button id="nextBtn" type="button" class="ghost-btn">下一張 →</button>
         </div>
       </section>
 
@@ -172,7 +179,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261008224316"></script>
-  <script src="lingo.js?v=20261008224316"></script>
+  <script src="shared.js?v=20261008225444"></script>
+  <script src="lingo.js?v=20261008225444"></script>
 </body>
 </html>
