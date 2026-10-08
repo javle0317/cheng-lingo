@@ -1957,6 +1957,310 @@
      "reading": "/ˈfɑːloʊ ʌp/",
      "back": "後續追蹤",
      "note": "I'll follow up with you by email tomorrow."
+    },
+    {
+     "id": "en-ww-13",
+     "type": "word",
+     "front": "minutes",
+     "reading": "/ˈmɪnəts/",
+     "back": "會議記錄",
+     "note": "Could you take the minutes during the meeting?"
+    },
+    {
+     "id": "en-ww-14",
+     "type": "word",
+     "front": "reschedule",
+     "reading": "/ˌriːˈskedʒuːl/",
+     "back": "改期",
+     "note": "Can we reschedule the meeting for Thursday?"
+    },
+    {
+     "id": "en-ww-15",
+     "type": "word",
+     "front": "postpone",
+     "reading": "/poʊstˈpoʊn/",
+     "back": "延後",
+     "note": "The manager postponed the launch by a week."
+    },
+    {
+     "id": "en-ww-16",
+     "type": "word",
+     "front": "presentation",
+     "reading": "/ˌpreznˈteɪʃn/",
+     "back": "簡報；報告",
+     "note": "I have to give a presentation to our clients tomorrow."
+    },
+    {
+     "id": "en-ww-17",
+     "type": "word",
+     "front": "attachment",
+     "reading": "/əˈtætʃmənt/",
+     "back": "（電子郵件的）附件",
+     "note": "I forgot to open the attachment in your email."
+    },
+    {
+     "id": "en-ww-18",
+     "type": "word",
+     "front": "forward",
+     "reading": "/ˈfɔːrwərd/",
+     "back": "轉寄",
+     "note": "Please forward the email to the whole team."
+    },
+    {
+     "id": "en-ww-19",
+     "type": "word",
+     "front": "reply",
+     "reading": "/rɪˈplaɪ/",
+     "back": "回覆",
+     "note": "I'll reply to your message this afternoon."
+    },
+    {
+     "id": "en-ww-20",
+     "type": "word",
+     "front": "conference call",
+     "reading": "/ˈkɑːnfərəns kɔːl/",
+     "back": "電話會議",
+     "note": "We have a conference call with the Tokyo office at ten."
+    },
+    {
+     "id": "en-ww-21",
+     "type": "word",
+     "front": "brief",
+     "reading": "/briːf/",
+     "back": "簡短的",
+     "note": "Let's keep the meeting brief."
+    },
+    {
+     "id": "en-ww-22",
+     "type": "word",
+     "front": "clarify",
+     "reading": "/ˈklerəfaɪ/",
+     "back": "釐清；說明清楚",
+     "note": "Could you clarify what you mean by next week?"
+    },
+    {
+     "id": "en-ww-23",
+     "type": "word",
+     "front": "task",
+     "reading": "/tæsk/",
+     "back": "任務；工作項目",
+     "note": "My first task today is to answer emails."
+    },
+    {
+     "id": "en-ww-24",
+     "type": "word",
+     "front": "progress",
+     "reading": "/ˈprɑːɡres/",
+     "back": "進度；進展",
+     "note": "We made good progress on the project this week."
+    },
+    {
+     "id": "en-ww-25",
+     "type": "word",
+     "front": "delegate",
+     "reading": "/ˈdelɪɡeɪt/",
+     "back": "授權；委派",
+     "note": "A good manager knows how to delegate."
+    },
+    {
+     "id": "en-ww-26",
+     "type": "word",
+     "front": "workload",
+     "reading": "/ˈwɜːrkloʊd/",
+     "back": "工作量",
+     "note": "My workload is very heavy this month."
+    },
+    {
+     "id": "en-ww-27",
+     "type": "word",
+     "front": "overtime",
+     "reading": "/ˈoʊvərtaɪm/",
+     "back": "加班；加班費",
+     "note": "I worked overtime to finish the report."
+    },
+    {
+     "id": "en-ww-28",
+     "type": "word",
+     "front": "collaborate",
+     "reading": "/kəˈlæbəreɪt/",
+     "back": "合作",
+     "note": "Our two teams collaborate on every project."
+    },
+    {
+     "id": "en-ww-29",
+     "type": "word",
+     "front": "achieve",
+     "reading": "/əˈtʃiːv/",
+     "back": "達成；實現",
+     "note": "We achieved our sales goal in June."
+    },
+    {
+     "id": "en-ww-30",
+     "type": "word",
+     "front": "target",
+     "reading": "/ˈtɑːrɡɪt/",
+     "back": "目標；指標",
+     "note": "Our sales target for this quarter is high."
+    },
+    {
+     "id": "en-ww-31",
+     "type": "word",
+     "front": "launch",
+     "reading": "/lɔːntʃ/",
+     "back": "推出；上市",
+     "note": "The company will launch a new app next month."
+    },
+    {
+     "id": "en-ww-32",
+     "type": "word",
+     "front": "deliver",
+     "reading": "/dɪˈlɪvər/",
+     "back": "交付；送達",
+     "note": "We must deliver the project on time."
+    },
+    {
+     "id": "en-ww-33",
+     "type": "word",
+     "front": "review",
+     "reading": "/rɪˈvjuː/",
+     "back": "檢視；審查",
+     "note": "Please review the contract before you sign it."
+    },
+    {
+     "id": "en-ww-34",
+     "type": "word",
+     "front": "revise",
+     "reading": "/rɪˈvaɪz/",
+     "back": "修改；修訂",
+     "note": "I need to revise my proposal."
+    },
+    {
+     "id": "en-ww-35",
+     "type": "word",
+     "front": "supervisor",
+     "reading": "/ˈsuːpərvaɪzər/",
+     "back": "主管；上司",
+     "note": "My supervisor approved my vacation request."
+    },
+    {
+     "id": "en-ww-36",
+     "type": "word",
+     "front": "employee",
+     "reading": "/ɪmˈplɔɪiː/",
+     "back": "員工",
+     "note": "The company has about two hundred employees."
+    },
+    {
+     "id": "en-ww-37",
+     "type": "word",
+     "front": "employer",
+     "reading": "/ɪmˈplɔɪər/",
+     "back": "雇主",
+     "note": "My employer pays for my English class."
+    },
+    {
+     "id": "en-ww-38",
+     "type": "word",
+     "front": "applicant",
+     "reading": "/ˈæplɪkənt/",
+     "back": "應徵者；申請人",
+     "note": "There were fifty applicants for the job."
+    },
+    {
+     "id": "en-ww-39",
+     "type": "word",
+     "front": "CV",
+     "reading": "/ˌsiː ˈviː/",
+     "back": "履歷",
+     "note": "Please send your CV by email."
+    },
+    {
+     "id": "en-ww-40",
+     "type": "word",
+     "front": "interview",
+     "reading": "/ˈɪntərvjuː/",
+     "back": "面試",
+     "note": "I have a job interview on Friday."
+    },
+    {
+     "id": "en-ww-41",
+     "type": "word",
+     "front": "promotion",
+     "reading": "/prəˈmoʊʃn/",
+     "back": "升遷",
+     "note": "She got a promotion after two years."
+    },
+    {
+     "id": "en-ww-42",
+     "type": "word",
+     "front": "salary",
+     "reading": "/ˈsæləri/",
+     "back": "薪水",
+     "note": "The salary is good, but the hours are long."
+    },
+    {
+     "id": "en-ww-43",
+     "type": "word",
+     "front": "raise",
+     "reading": "/reɪz/",
+     "back": "加薪",
+     "note": "I asked my boss for a raise."
+    },
+    {
+     "id": "en-ww-44",
+     "type": "word",
+     "front": "benefits",
+     "reading": "/ˈbenɪfɪts/",
+     "back": "福利",
+     "note": "The job offers health insurance and other benefits."
+    },
+    {
+     "id": "en-ww-45",
+     "type": "word",
+     "front": "resign",
+     "reading": "/rɪˈzaɪn/",
+     "back": "辭職",
+     "note": "He decided to resign and start his own business."
+    },
+    {
+     "id": "en-ww-46",
+     "type": "word",
+     "front": "position",
+     "reading": "/pəˈzɪʃn/",
+     "back": "職位；職缺",
+     "note": "I'm applying for the sales position."
+    },
+    {
+     "id": "en-ww-47",
+     "type": "word",
+     "front": "experience",
+     "reading": "/ɪkˈspɪriəns/",
+     "back": "經驗；經歷",
+     "note": "Do you have any experience in marketing?"
+    },
+    {
+     "id": "en-ww-48",
+     "type": "word",
+     "front": "skill",
+     "reading": "/skɪl/",
+     "back": "技能",
+     "note": "Good communication is an important skill at work."
+    },
+    {
+     "id": "en-ww-49",
+     "type": "word",
+     "front": "client",
+     "reading": "/ˈklaɪənt/",
+     "back": "客戶",
+     "note": "We have a meeting with a new client at noon."
+    },
+    {
+     "id": "en-ww-50",
+     "type": "word",
+     "front": "invoice",
+     "reading": "/ˈɪnvɔɪs/",
+     "back": "發票；請款單",
+     "note": "Please send the invoice by the end of the month."
     }
    ]
   },
@@ -1989,6 +2293,62 @@
      "reading": "",
      "back": "有些公司讓員工每週在家工作幾天。在家工作的人可以省下通勤時間。不過，要把工作和私人生活分開可能不容易。為了保持效率，許多人會訂定固定的作息並短暫休息。也有人懷念和同事面對面聊天。",
      "note": "重點：commute 通勤／productive 有效率的／face to face 面對面"
+    },
+    {
+     "id": "en-rw-04",
+     "type": "passage",
+     "front": "This morning I received an email from a new client. She asked for a price list, so I opened the attachment and checked the numbers. Then I forwarded the email to my manager because I was not sure about one price. He replied in ten minutes and fixed the mistake. I thanked him and sent the final list to the client before lunch.",
+     "reading": "",
+     "back": "今天早上我收到一位新客戶的電子郵件。她要一份價目表，所以我打開附件，檢查了數字。接著我把信轉寄給我的主管，因為我不確定其中一個價格。他十分鐘內就回信，並改正了錯誤。我向他道謝，並在午餐前把最後的價目表寄給客戶。",
+     "note": "重點：attachment 附件／forward 轉寄／reply 回覆"
+    },
+    {
+     "id": "en-rw-05",
+     "type": "passage",
+     "front": "Last week I had a job interview at a travel company. I updated my CV and practiced answering questions the night before. At the interview, the manager asked about my experience and my skills. I was nervous, but I spoke slowly and smiled. At the end, she said they would call me in three days. I am still waiting, but I feel proud of myself.",
+     "reading": "",
+     "back": "上週我去一家旅行社面試。前一晚我更新了履歷，並練習回答問題。面試時，主管問了我的經驗和技能。我很緊張，但我說得很慢，也面帶微笑。最後她說三天後會打電話給我。我還在等，但我為自己感到驕傲。",
+     "note": "重點：interview 面試／CV 履歷／experience 經驗"
+    },
+    {
+     "id": "en-rw-06",
+     "type": "passage",
+     "front": "This month my workload is very heavy. Two projects have the same deadline, so I worked overtime almost every night. My supervisor noticed that I looked tired, and she asked me to make a list of my tasks. We decided to move one task to another colleague. It was a good solution, and now I can go home on time again.",
+     "reading": "",
+     "back": "這個月我的工作量很大。兩個專案的截止日期是同一天，所以我幾乎每天晚上都加班。我的主管注意到我看起來很累，請我列出所有工作項目。我們決定把其中一項交給另一位同事。這是個好辦法，現在我又能準時回家了。",
+     "note": "重點：workload 工作量／overtime 加班／task 工作項目"
+    },
+    {
+     "id": "en-rw-07",
+     "type": "passage",
+     "front": "Our client wanted to meet on Tuesday, but my manager was sick. I wrote an email to ask if we could reschedule the meeting for Thursday. The client replied quickly and said Thursday was fine. I changed the schedule, sent a new invitation, and prepared the presentation again. Everything went well, and the client liked our plan.",
+     "reading": "",
+     "back": "我們的客戶想在週二開會，但我的主管生病了。我寫了一封信，問能不能把會議改到週四。客戶很快回覆，說週四可以。我更改了行程，寄出新的邀請，並重新準備簡報。一切都很順利，客戶也喜歡我們的計畫。",
+     "note": "重點：reschedule 改期／invitation 邀請／presentation 簡報"
+    },
+    {
+     "id": "en-rw-08",
+     "type": "passage",
+     "front": "After two years at my company, I decided to ask for a raise. First, I wrote down what I achieved: I delivered three projects on time and helped two new employees. Then I made an appointment with my supervisor. She listened carefully and said she would talk to her boss. A week later, I got a small raise and a better position.",
+     "reading": "",
+     "back": "在公司工作兩年後，我決定要求加薪。首先，我寫下自己的成果：我準時交付了三個專案，還幫助了兩位新進員工。接著我和主管約了時間。她仔細聽完，說會和她的上司談談。一週後，我得到小幅加薪和更好的職位。",
+     "note": "重點：raise 加薪／achieve 達成／deliver 交付"
+    },
+    {
+     "id": "en-rw-09",
+     "type": "passage",
+     "front": "Our team will launch a new app next month. Every week, we hold a short meeting to check our progress. The designers show their work, and the engineers explain what they finished. If someone has a problem, we collaborate to find a solution. Because we communicate clearly, we have not missed a single target so far.",
+     "reading": "",
+     "back": "我們的團隊下個月要推出一個新的應用程式。每週我們都開一場簡短的會議來確認進度。設計師展示他們的作品，工程師說明完成了什麼。如果有人遇到問題，我們會合作找出解決辦法。因為我們溝通清楚，到目前為止沒有錯過任何一個目標。",
+     "note": "重點：launch 推出／progress 進度／collaborate 合作"
+    },
+    {
+     "id": "en-rw-10",
+     "type": "passage",
+     "front": "Yesterday I joined a conference call with colleagues in three countries. The meeting started late because someone's internet was slow. Our manager kept the agenda brief, so we finished in thirty minutes. Before we ended the call, someone took the minutes and promised to send them by email. I like short meetings like this because I can finish my other work.",
+     "reading": "",
+     "back": "昨天我參加了一場有三個國家同事的電話會議。會議晚開始，因為有人的網路很慢。我們的主管把議程控制得很精簡，所以三十分鐘就結束了。結束通話前，有人做了會議記錄，並答應用電子郵件寄出。我喜歡這種短會議，因為我能完成其他工作。",
+     "note": "重點：conference call 電話會議／agenda 議程／minutes 會議記錄"
     }
    ]
   }
