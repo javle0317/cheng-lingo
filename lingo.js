@@ -240,7 +240,9 @@ function renderCard() {
   const idx = plan.findIndex(e => e.cardId === state.cardId);
   document.getElementById("sessionCount").textContent = `${idx + 1} / ${plan.length}`;
   document.getElementById("sessionBar").firstElementChild.style.width = Math.round(plan.filter(e => e.done).length / plan.length * 100) + "%";
-  document.getElementById("nextBtn").classList.toggle("hidden", plan.length < 2);
+  document.getElementById("navBox").classList.toggle("hidden", plan.length < 2);
+  document.getElementById("prevBtn").disabled = idx <= 0;
+  document.getElementById("nextBtn").disabled = idx >= plan.length - 1;
 }
 
 // 閱讀理解題：選項順序每張卡第一次顯示時隨機排好並記住（資料裡第一個選項是正解），作答後顯示對錯與中文解釋
@@ -392,6 +394,13 @@ function gotoCard(id) {
   window.scrollTo(0, 0);
 }
 
+// 清單裡前一張／後一張（不繞圈，第一張沒有前一張、最後一張沒有後一張）；回傳 "" 表示沒有
+function stepCardId(dir) {
+  const plan = planOf(state.lang);
+  const e = plan[plan.findIndex(x => x.cardId === state.cardId) + dir];
+  return e ? e.cardId : "";
+}
+
 function nextCardId(onlyUndone) {
   const plan = planOf(state.lang);
   const i = plan.findIndex(e => e.cardId === state.cardId);
@@ -446,7 +455,8 @@ document.getElementById("skipQuizBtn").addEventListener("click", () => {
   const card = currentCard();
   if (card) { state.skipQuiz[card.id] = true; renderCard(); }
 });
-document.getElementById("nextBtn").addEventListener("click", () => { const id = nextCardId(false); if (id) gotoCard(id); });
+document.getElementById("nextBtn").addEventListener("click", () => { const id = stepCardId(1); if (id) gotoCard(id); });
+document.getElementById("prevBtn").addEventListener("click", () => { const id = stepCardId(-1); if (id) gotoCard(id); });
 
 document.getElementById("speakBtn").addEventListener("click", () => speakCard(false));
 document.getElementById("slowBtn").addEventListener("click", () => speakCard(true));
