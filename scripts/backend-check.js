@@ -111,19 +111,19 @@ check("英文第一天：每種類型各取一批（例句 3、單字 5、短文
 check("日文第一天：假名階段 perDay=2 只取 2 張（單字階段還沒輪到）", idsOf(P('drawPlan_("2026-10-09", "ja", false)'), "ja").join() === "ja-k1,ja-k2");
 check("同一天再排一次，原樣回傳、不會多排", P('drawPlan_("2026-10-09", "en", false)').en.cards.length === 9 && book.Progress.data.length === 1 + 9 + 2);
 check("練完今天的卡之前，不能再來一輪", throws(() => P('drawPlan_("2026-10-09", "en", true)')));
-check("completeCard_ 只標那一張，清單裡沒有的卡丟錯", (() => {
-  const after = P('completeCard_("2026-10-09", "en", "g1-1", "look")');
-  return after.en.cards.filter(c => c.done).length === 1 && after.en.cards[0].cardId === "g1-1" && after.en.cards[0].done && throws(() => P('completeCard_("2026-10-09", "en", "nope", "look")'));
+check("setCardDone_ 只標那一張，可以取消，清單裡沒有的卡丟錯", (() => {
+  const after = P('setCardDone_("2026-10-09", "en", "g1-1", true, "look")');
+  return after.en.cards.filter(c => c.done).length === 1 && after.en.cards[0].cardId === "g1-1" && after.en.cards[0].done && throws(() => P('setCardDone_("2026-10-09", "en", "nope", true, "look")')) && (() => { const undone = P('setCardDone_("2026-10-09", "en", "g1-1", false, "")'); return undone.en.cards[0].cardId === "g1-1" && !undone.en.cards[0].done && P('setCardDone_("2026-10-09", "en", "g1-1", true, "look")').en.cards[0].done; })();
 })());
 P('idsOfToday = ' + JSON.stringify(idsOf(st, "en")));
-st = (P('idsOfToday.forEach(function (id) { completeCard_("2026-10-09", "en", id, "look"); })'), P('todayState_("2026-10-09")'));
+st = (P('idsOfToday.forEach(function (id) { setCardDone_("2026-10-09", "en", id, true, "look"); })'), P('todayState_("2026-10-09")'));
 check("全部練完後，再來一輪取到下一批新卡（例句 g1-4、單字剩下 2 張、短文 r1-2；沒有複習）", (() => {
   const more = P('drawPlan_("2026-10-09", "en", true)');
   const fresh = more.en.cards.filter(c => !c.done).map(c => c.cardId);
   return fresh.length === 4 && fresh.includes("g1-4") && fresh.includes("r1-2") && fresh.filter(x => x.startsWith("w1-")).length === 2 && fresh.every(c => !more.en.cards.find(x => x.cardId === c).review);
 })(), P('todayState_("2026-10-09")').en.cards.filter(c => !c.done).map(c => c.cardId));
 check("第二天：新卡接著上次的進度，另外加 2 張最久沒練的複習", (() => {
-  P('completeCard_("2026-10-09", "en", "g1-4", "look")');
+  P('setCardDone_("2026-10-09", "en", "g1-4", true, "look")');
   const day2 = P('drawPlan_("2026-10-10", "en", false)');
   const reviews = day2.en.cards.filter(c => c.review);
   const news = day2.en.cards.filter(c => !c.review).map(c => c.cardId);
@@ -174,7 +174,15 @@ check("新增、刪除自己的卡之後，回傳的是完整內容（內建教�
   const afterDelete = P('deleteCard_("' + mine.id + '")');
   return added.some(c => c.repo) && !!mine && afterDelete.some(c => c.repo) && !afterDelete.some(c => c.front === "mine");
 })());
-check("路由：drawPlan（寫入）、completeCard 帶 id", (() => { const g = fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"); return /case "drawPlan"/.test(g) && /case "completeCard".*textArg_\(b\.id/.test(g) && !/case "drawCard"/.test(g); })());
+check("getStats_：每天每個語言排了幾張／完成幾張（新到舊），累積不重複卡片數與練習天數", (() => {
+  book.Progress = fakeSheet(["date", "lang", "cardId", "done", "mode", "updatedAt"]);
+  const rows = [["2026-10-01", "en", "a", true], ["2026-10-01", "en", "b", false], ["2026-10-01", "ja", "k", true], ["2026-10-02", "en", "a", true], ["2026-10-02", "en", "c", "TRUE"]];
+  rows.forEach(r => book.Progress.data.push([r[0], r[1], r[2], r[3], "look", new Date()]));
+  const st = P("getStats_()");
+  const d = (date, lang) => st.days.find(x => x.date === date && x.lang === lang);
+  return st.days[0].date === "2026-10-02" && d("2026-10-01", "en").planned === 2 && d("2026-10-01", "en").done === 1 && d("2026-10-02", "en").done === 2 && d("2026-10-01", "ja").done === 1 && st.totals.en.cards === 2 && st.totals.en.days === 2 && st.totals.ja.cards === 1;
+})(), P("getStats_()"));
+check("路由：drawPlan 與 setCardDone 是寫入、getStats 是讀取，setCardDone 帶 id", (() => { const g = fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"); return /case "drawPlan"/.test(g) && /case "setCardDone".*textArg_\(b\.id/.test(g) && /case "getStats"/.test(g) && !/case "drawCard"/.test(g) && !/case "completeCard"/.test(g); })());
 
 // ====== 內容快取：Apps Script 的快取每個值上限 100 KB，cards.json 超過時不能整份讀不出來 ======
 console.log("內容快取");

@@ -14,6 +14,7 @@ const state = {
   today: {},   // lang -> { cards: [{ cardId, done, review, mastered }] }
   cardId: "",  // 練習中的這張卡
   questions: {}, // 短文卡 id -> 理解題（從 data/cards.json 直接讀，不經後端）
+  stats: null,   // 統計（getStats）
   quiz: {},      // 短文卡 id -> { order: [每題隨機排好的選項順序], picked: [每題選了第幾個] }
   skipQuiz: {},  // 短文卡 id -> true：不做題，直接看翻譯
 };
@@ -65,15 +66,16 @@ async function loadQuestions() {
 
 function render() {
   document.getElementById("todayLine").textContent = toDateStr(new Date());
-  ["home", "session", "library"].forEach(v => document.getElementById(v + "View").classList.toggle("hidden", state.view !== v));
+  ["home", "session", "library", "stats"].forEach(v => document.getElementById(v + "View").classList.toggle("hidden", state.view !== v));
   document.getElementById("tabBar").classList.toggle("hidden", state.view === "session");
-  document.querySelectorAll("#tabBar [data-view]").forEach(b => b.classList.toggle("active", b.dataset.view === (state.view === "library" ? "library" : "home")));
+  document.querySelectorAll("#tabBar [data-view]").forEach(b => b.classList.toggle("active", b.dataset.view === (state.view === "library" || state.view === "stats" ? state.view : "home")));
   if (state.view === "home") { renderHome(); renderRetestHint(); }
   if (state.view === "session") {
     document.querySelectorAll(".lingo-mode").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
     renderCard();
   }
   if (state.view === "library") renderList();
+  if (state.view === "stats") renderStats();
 }
 
 function resetInputs() {
@@ -83,6 +85,7 @@ function resetInputs() {
 
 function goView(v) {
   resetInputs();
+  if (v === "stats") loadStats();
   state.view = v;
   state.revealed = false;
   state.dictate = false;
@@ -233,9 +236,9 @@ function renderCard() {
   revealBtn.textContent = typed ? "檢查答案" : "顯示答案";
   document.getElementById("ratingBox").classList.toggle("hidden", !(recall && state.revealed));
   const doneBtn = document.getElementById("doneBtn");
-  doneBtn.classList.toggle("hidden", recall);
-  doneBtn.textContent = done ? "✓ 這張已完成" : "✓ 完成這一張";
-  doneBtn.disabled = done;
+  doneBtn.classList.toggle("hidden", recall && !done); // 背：還沒讀完時用自評按鈕；已經讀過了才顯示已讀鈕（可以取消）
+  doneBtn.classList.toggle("is-done", done);
+  document.getElementById("doneText").textContent = done ? "已讀（按住取消）" : "按住標記為已讀";
   const plan = planOf(state.lang);
   const idx = plan.findIndex(e => e.cardId === state.cardId);
   document.getElementById("sessionCount").textContent = `${idx + 1} / ${plan.length}`;
@@ -494,22 +497,25 @@ document.getElementById("copyInput").addEventListener("input", (e) => {
 });
 
 // 打卡成功就回到今日。背的自評（忘了／模糊／記得）先只記在這台裝置，之後後端改版再決定複習間隔
-async function complete(rating) {
+async function setDone(done, rating) {
   const card = currentCard();
   const btns = document.querySelectorAll("#doneBtn, #ratingBox button");
   btns.forEach(b => { b.disabled = true; });
   try {
-    state.today = await api("completeCard", { date: toDateStr(new Date()), lang: state.lang, id: state.cardId, mode: state.mode });
+    state.today = await api("setCardDone", { date: toDateStr(new Date()), lang: state.lang, id: state.cardId, done: done ? "1" : "0", mode: state.mode });
+    state.stats = null;
+    if (!done) { showToast("已取消已讀"); return; }
     if (rating && card) saveRating(card.id, rating);
+    showToast("已標記為已讀");
     const next = nextCardId(true);
     if (next) { gotoCard(next); return; }
     showToast("今天的卡都練完了");
     goView("home");
   } catch (err) {
-    setStatus("打卡失敗：" + err.message, true);
+    setStatus("更新失敗：" + err.message, true);
   } finally {
     btns.forEach(b => { b.disabled = false; }); // 不管成功或失敗都要恢復，否則下一輪進來按鈕還是停用的
-    if (state.view === "session") renderCard();   // 完成鈕的停用與否由這張卡有沒有完成決定
+    if (state.view === "session") renderCard();
   }
 }
 
@@ -521,8 +527,81 @@ function saveRating(cardId, rating) {
   } catch (e) { /* 存不了就算了，不影響打卡 */ }
 }
 
-document.getElementById("doneBtn").addEventListener("click", () => complete(""));
-document.querySelectorAll("#ratingBox [data-rate]").forEach(b => b.addEventListener("click", () => complete(b.dataset.rate)));
+// 已讀鈕：要按住 HOLD_MS 才會標記（取消也一樣），短按只提示，避免誤觸；鍵盤用 Enter／空白鍵直接觸發
+const HOLD_MS = 600;
+(function setupHold() {
+  const btn = document.getElementById("doneBtn");
+  let timer = null, raf = 0, start = 0;
+  const reset = () => { clearTimeout(timer); cancelAnimationFrame(raf); timer = null; btn.classList.remove("holding"); btn.style.setProperty("--p", "0"); };
+  const fire = () => { const e = currentEntry(); setDone(!e.done, ""); };
+  btn.addEventListener("pointerdown", () => {
+    if (btn.disabled || timer) return;
+    start = performance.now();
+    btn.classList.add("holding");
+    const tick = () => { btn.style.setProperty("--p", String(Math.min(1, (performance.now() - start) / HOLD_MS))); raf = requestAnimationFrame(tick); };
+    tick();
+    timer = setTimeout(() => { reset(); if (navigator.vibrate) navigator.vibrate(30); fire(); }, HOLD_MS);
+  });
+  btn.addEventListener("pointerup", () => { if (timer) { reset(); showToast("要按住一下才會標記喔"); } });
+  ["pointerleave", "pointercancel"].forEach(ev => btn.addEventListener(ev, () => { if (timer) reset(); }));
+  btn.addEventListener("contextmenu", e => e.preventDefault());
+  btn.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (!btn.disabled) fire(); } });
+})();
+document.querySelectorAll("#ratingBox [data-rate]").forEach(b => b.addEventListener("click", () => setDone(true, b.dataset.rate)));
+
+// 統計：近 14 天每天、分語言的完成／排定張數，加上累積
+async function loadStats() {
+  try {
+    state.stats = await api("getStats");
+  } catch (err) {
+    setStatus("讀取統計失敗：" + err.message, true);
+  }
+  if (state.view === "stats") renderStats();
+}
+
+function renderStats() {
+  const body = document.getElementById("statsBody");
+  body.replaceChildren();
+  if (!state.stats) { body.appendChild(el("p", "lingo-goal-line", "讀取中…")); return; }
+  const WEEK = ["日", "一", "二", "三", "四", "五", "六"];
+  const sum = el("div", "lingo-stat-sum");
+  ["en", "ja"].forEach(lang => {
+    const t = state.stats.totals[lang] || { cards: 0, days: 0 };
+    const box = el("div", "lingo-stat-total");
+    box.append(el("b", "", LANG_NAME[lang]), el("span", "", `累積讀過 ${t.cards} 張`), el("span", "", `練習 ${t.days} 天`));
+    sum.appendChild(box);
+  });
+  body.appendChild(sum);
+  const byKey = {};
+  state.stats.days.forEach(d => { byKey[d.date + "|" + d.lang] = d; });
+  const table = el("div", "lingo-stat-table");
+  const head = el("div", "lingo-stat-row lingo-stat-head");
+  head.append(el("span", "", "日期"), el("span", "", "English"), el("span", "", "日本語"));
+  table.appendChild(head);
+  const now = new Date();
+  for (let i = 0; i < 14; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+    const key = toDateStr(d);
+    const row = el("div", "lingo-stat-row");
+    row.appendChild(el("span", "", `${key.slice(5)}（${WEEK[d.getDay()]}）${i === 0 ? " 今天" : ""}`));
+    ["en", "ja"].forEach(lang => {
+      const x = byKey[key + "|" + lang];
+      const cell = el("span", "lingo-stat-cell");
+      if (!x) { cell.textContent = "—"; cell.classList.add("empty"); }
+      else {
+        cell.textContent = `${x.done} / ${x.planned}`;
+        const bar = el("div", "lingo-bar");
+        const fill = el("i");
+        fill.style.width = Math.round(x.done / x.planned * 100) + "%";
+        bar.appendChild(fill);
+        cell.appendChild(bar);
+      }
+      row.appendChild(cell);
+    });
+    table.appendChild(row);
+  }
+  body.append(table, el("p", "lingo-goal-count", "數字是「已讀 / 當天排定」張數，複習卡也算在內。"));
+}
 
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();

@@ -9,7 +9,7 @@
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-09.4";
+var BACKEND_VERSION = "2026-10-09.5";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -52,6 +52,7 @@ function read_(b) {
     case "getCards": return allCards_();
     case "getToday": return todayState_(textArg_(b.date, "date", 10));
     case "getTestResults": return readTestResults_();
+    case "getStats": return getStats_();
     default: throw new Error("unknown action");
   }
 }
@@ -64,7 +65,7 @@ function write_(b) {
     case "addTestResult": return addTestResult_(b);
     case "updateTestNote": return updateTestNote_(textArg_(b.id, "id", 64), optTextArg_(b.note, 500));
     case "setMastered": return setMastered_(textArg_(b.date, "date", 10), textArg_(b.id, "id", 64), b.value === "1");
-    case "completeCard": return completeCard_(textArg_(b.date, "date", 10), langArg_(b.lang), textArg_(b.id, "id", 64), String(b.mode || "").slice(0, 10));
+    case "setCardDone": return setCardDone_(textArg_(b.date, "date", 10), langArg_(b.lang), textArg_(b.id, "id", 64), b.done === "1", String(b.mode || "").slice(0, 10));
     default: throw new Error("unknown action");
   }
 }
@@ -437,9 +438,31 @@ function pickRandomMany_(lang, date, progress, n, exclude, mastered) {
   return shuffle_(pool).slice(0, n).map(function (c) { return { id: c.id, lang: lang }; });
 }
 
-function completeCard_(date, lang, id, mode) {
+// 標記今天清單裡的一張卡「已讀」或取消（前端要按住才會送出，取消也一樣；done=false 把 mode 清空）
+function setCardDone_(date, lang, id, done, mode) {
   var p = progressRows_().filter(function (x) { return x.date === date && x.lang === lang && x.cardId === id; })[0];
   if (!p) throw new Error("今天的清單裡沒有這張卡");
-  sheet_("Progress", PROGRESS_HEADERS).getRange(p.row, 4, 1, 3).setValues([[true, mode, new Date()]]);
+  sheet_("Progress", PROGRESS_HEADERS).getRange(p.row, 4, 1, 3).setValues([[done, done ? mode : "", new Date()]]);
   return todayState_(date);
+}
+
+// 統計：每天每個語言「排了幾張、完成幾張」（新到舊，最多 120 筆），加上累積完成的不重複卡片數與練習天數
+function getStats_() {
+  var byKey = {};
+  var cards = { en: {}, ja: {} };
+  var days = { en: {}, ja: {} };
+  progressRows_().forEach(function (p) {
+    var k = p.date + "|" + p.lang;
+    var o = byKey[k] || (byKey[k] = { date: p.date, lang: p.lang, planned: 0, done: 0 });
+    o.planned++;
+    if (p.done) {
+      o.done++;
+      if (cards[p.lang]) { cards[p.lang][p.cardId] = true; days[p.lang][p.date] = true; }
+    }
+  });
+  var list = Object.keys(byKey).map(function (k) { return byKey[k]; })
+    .sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }).slice(0, 120);
+  var totals = {};
+  LANGS.forEach(function (l) { totals[l] = { cards: Object.keys(cards[l]).length, days: Object.keys(days[l]).length }; });
+  return { days: list, totals: totals };
 }

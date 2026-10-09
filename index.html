@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261009104407">
-<link rel="stylesheet" href="lingo.css?v=20261009104407">
+<link rel="stylesheet" href="style.css?v=20261009231839">
+<link rel="stylesheet" href="lingo.css?v=20261009231839">
 </head>
 <body class="lingo-home">
 
@@ -114,12 +114,22 @@
               <button type="button" data-rate="good">記得</button>
             </div>
           </div>
-          <button id="doneBtn" type="button">✓ 完成這一張</button>
+          <button id="doneBtn" type="button" class="lingo-hold" aria-label="按住標記為已讀">
+            <span class="hold-fill"></span>
+            <span class="hold-label"><span class="hold-icon" aria-hidden="true">✓</span><span id="doneText">按住標記為已讀</span></span>
+          </button>
           <div id="navBox" class="lingo-nav">
             <button id="prevBtn" type="button" class="ghost-btn">← 上一張</button>
             <button id="nextBtn" type="button" class="ghost-btn">下一張 →</button>
           </div>
         </div>
+      </section>
+
+      <section id="statsView" class="hidden">
+        <section class="card">
+          <h2>統計</h2>
+          <div id="statsBody"><p class="lingo-goal-line">讀取中…</p></div>
+        </section>
       </section>
 
       <section id="libraryView" class="hidden">
@@ -165,6 +175,7 @@
 
     <nav id="tabBar" class="lingo-tabbar" aria-label="主選單">
       <button type="button" data-view="home"><span aria-hidden="true">🏠</span>今日</button>
+      <button type="button" data-view="stats"><span aria-hidden="true">📊</span>統計</button>
       <button type="button" data-view="library"><span aria-hidden="true">📚</span>內容庫</button>
       <a href="placement.html"><span aria-hidden="true">📝</span>小考</a>
       <a href="copybook.html"><span aria-hidden="true">✍️</span>字帖</a>
@@ -183,7 +194,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=20261009104407"></script>
-  <script src="lingo.js?v=20261009104407"></script>
+  <script src="shared.js?v=20261009231839"></script>
+  <script src="lingo.js?v=20261009231839"></script>
 </body>
 </html>

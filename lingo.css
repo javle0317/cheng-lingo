@@ -156,3 +156,23 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-skip { margin-top: 10px; font-size: 0.85rem; }
 .lingo-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .lingo-nav button:disabled { opacity: 0.4; }
+
+/* 已讀鈕：按住才會標記 */
+.lingo-hold { position: relative; overflow: hidden; padding: 0; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: manipulation; --p: 0; }
+.lingo-hold .hold-fill { position: absolute; inset: 0 auto 0 0; width: calc(var(--p) * 100%); background: var(--accent-soft); pointer-events: none; }
+.lingo-hold .hold-label { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 13px; pointer-events: none; }
+.lingo-hold .hold-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; border: 2px solid currentColor; font-size: 1rem; line-height: 1; opacity: 0.55; }
+.lingo-hold.holding .hold-icon { opacity: 1; }
+.lingo-hold.is-done { background: var(--success-bg); color: var(--success-text); border-color: var(--ok); }
+.lingo-hold.is-done .hold-icon { background: var(--ok); border-color: var(--ok); color: var(--on-accent); opacity: 1; }
+
+/* 統計 */
+.lingo-stat-sum { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
+.lingo-stat-total { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--accent-soft); font-size: 0.85rem; }
+.lingo-stat-total b { font-weight: 500; font-size: 0.95rem; }
+.lingo-stat-row { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)); gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid var(--border); font-size: 0.85rem; }
+.lingo-stat-head { border-top: none; color: var(--text-dim); font-size: 0.8rem; }
+.lingo-stat-cell { display: flex; flex-direction: column; gap: 4px; }
+.lingo-stat-cell.empty { color: var(--text-dim); }
+.lingo-actions-bar .lingo-hold { padding: 0; }
+.lingo-stat-row { grid-template-columns: minmax(0, 1.7fr) repeat(2, minmax(0, 1fr)); }
