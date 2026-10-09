@@ -153,6 +153,27 @@ check("階段設了 after：前一階段還沒練完就不出，練完（或勾�
   const unlockedDay = P('drawPlan_("2026-11-02", "ja", false)');
   return gated && idsOf(unlockedDay, "ja").some(x => x.startsWith("ja-s"));
 })());
+check("階段都練完改隨機抽時，勾了完全記得的卡不會再被抽到", (() => {
+  book.Progress = fakeSheet(["date", "lang", "cardId", "done", "mode", "updatedAt"]);
+  book.Mastered = fakeSheet(["cardId", "lang", "updatedAt"]);
+  const old = stages.splice(0, stages.length, { id: "ja-x", lang: "ja", title: "全部", order: "random", cards: ids("ja-x", 8).map(i => card(i, "word")) });
+  stages[0].cards.forEach(c => book.Progress.data.push(["2026-09-01", "ja", c.id, true, "look", new Date()]));
+  ["ja-x1", "ja-x2", "ja-x3"].forEach(id => book.Mastered.data.push([id, "ja", new Date()]));
+  let bad = 0;
+  for (let day = 1; day <= 20; day++) {
+    const r = idsOf(P('drawPlan_("2026-12-' + String(day).padStart(2, "0") + '", "ja", false)'), "ja");
+    bad += r.filter(id => ["ja-x1", "ja-x2", "ja-x3"].includes(id)).length;
+  }
+  stages.splice(0, stages.length, ...old);
+  return bad === 0;
+})());
+check("新增、刪除自己的卡之後，回傳的是完整內容（內建教材 + 自己的卡），前端才不會丟掉內建卡", (() => {
+  book.Cards = fakeSheet(["id", "lang", "type", "front", "reading", "back", "note", "createdAt"]);
+  const added = P('addCard_({ lang: "en", type: "word", front: "mine", back: "我的" })');
+  const mine = added.find(c => c.front === "mine");
+  const afterDelete = P('deleteCard_("' + mine.id + '")');
+  return added.some(c => c.repo) && !!mine && afterDelete.some(c => c.repo) && !afterDelete.some(c => c.front === "mine");
+})());
 check("路由：drawPlan（寫入）、completeCard 帶 id", (() => { const g = fs.readFileSync(path.join(__dirname, "..", "apps-script", "Code.gs"), "utf8"); return /case "drawPlan"/.test(g) && /case "completeCard".*textArg_\(b\.id/.test(g) && !/case "drawCard"/.test(g); })());
 
 // ====== 內容快取：Apps Script 的快取每個值上限 100 KB，cards.json 超過時不能整份讀不出來 ======

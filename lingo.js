@@ -492,12 +492,14 @@ async function complete(rating) {
     state.today = await api("completeCard", { date: toDateStr(new Date()), lang: state.lang, id: state.cardId, mode: state.mode });
     if (rating && card) saveRating(card.id, rating);
     const next = nextCardId(true);
-    if (next) { gotoCard(next); btns.forEach(b => { b.disabled = false; }); renderCard(); return; }
+    if (next) { gotoCard(next); return; }
     showToast("今天的卡都練完了");
     goView("home");
   } catch (err) {
-    btns.forEach(b => { b.disabled = false; });
     setStatus("打卡失敗：" + err.message, true);
+  } finally {
+    btns.forEach(b => { b.disabled = false; }); // 不管成功或失敗都要恢復，否則下一輪進來按鈕還是停用的
+    if (state.view === "session") renderCard();   // 完成鈕的停用與否由這張卡有沒有完成決定
   }
 }
 

@@ -9,7 +9,7 @@
 //   TestResults  id | date | lang | level | skills | correct | total | comment | note | asked | createdAt
 //                （程度小考歷次結果：skills 是 JSON，各題型的等級；asked 是這次考過的題目 id，用逗號分隔，重考時優先抽沒考過的）
 
-var BACKEND_VERSION = "2026-10-09.3";
+var BACKEND_VERSION = "2026-10-09.4";
 var CARD_HEADERS = ["id", "lang", "type", "front", "reading", "back", "note", "createdAt"];
 var PROGRESS_HEADERS = ["date", "lang", "cardId", "done", "mode", "updatedAt"];
 var MASTERED_HEADERS = ["cardId", "lang", "updatedAt"];
@@ -209,7 +209,7 @@ function addCard_(b) {
   var range = sh.getRange(r, 1, 1, row.length);
   range.setNumberFormat("@"); // 全部當純文字，避免 Sheet 自動轉成日期或數字
   range.setValues([row]);
-  return readCards_();
+  return allCards_(); // 前端直接拿回傳值當整份卡片，要包含內建教材（只回自訂卡會讓內建卡暫時消失）
 }
 
 function deleteCard_(id) {
@@ -218,7 +218,7 @@ function deleteCard_(id) {
   for (var i = 0; i < data.length; i++) {
     if (String(data[i][0]) === id) { sh.deleteRow(i + 2); break; }
   }
-  return readCards_();
+  return allCards_();
 }
 
 // ====== 程度小考歷次結果 ======
@@ -339,7 +339,7 @@ function drawPlan_(date, lang, more) {
   var picks = [];
   if (!today.length) pickReviews_(lang, date, progress, mastered).forEach(function (c) { picks.push(c); });
   var fresh = pickNew_(lang, date, progress, mastered);
-  if (!fresh.length) fresh = pickRandomMany_(lang, date, progress, FALLBACK_COUNT, picks); // 階段都練完了：改隨機抽（這時自己新增的卡也會加入）
+  if (!fresh.length) fresh = pickRandomMany_(lang, date, progress, FALLBACK_COUNT, picks, mastered); // 階段都練完了：改隨機抽（這時自己新增的卡也會加入）
   fresh.forEach(function (c) { picks.push(c); });
   if (!picks.length) throw new Error("沒有可排的卡");
 
@@ -419,7 +419,7 @@ function pickReviews_(lang, date, progress, mastered) {
 }
 
 // 階段都練完之後：14 天內抽過的盡量不重複，隨機抽 n 張
-function pickRandomMany_(lang, date, progress, n, exclude) {
+function pickRandomMany_(lang, date, progress, n, exclude, mastered) {
   var cutoff = new Date(date + "T00:00:00");
   cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
   var cutoffStr = Utilities.formatDate(cutoff, Session.getScriptTimeZone(), "yyyy-MM-dd");
@@ -431,7 +431,7 @@ function pickRandomMany_(lang, date, progress, n, exclude) {
     if (p.date === date) planned[p.cardId] = true;
   });
   exclude.forEach(function (c) { planned[c.id] = true; }); // 剛排進來的複習卡不要又被抽到
-  var cards = allCards_().filter(function (c) { return c.lang === lang && !planned[c.id]; });
+  var cards = allCards_().filter(function (c) { return c.lang === lang && !planned[c.id] && !mastered[c.id]; }); // 勾了完全記得的不再出現
   var pool = cards.filter(function (c) { return !recent[c.id]; });
   if (pool.length < n) pool = cards;
   return shuffle_(pool).slice(0, n).map(function (c) { return { id: c.id, lang: lang }; });

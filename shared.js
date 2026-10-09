@@ -8,7 +8,7 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyN2j8iODdQvIgptJ0y3
 const PASSWORD_KEY = "lingo_password";
 
 // 前端需要的後端最低版本（Code.gs 的 BACKEND_VERSION）
-const BACKEND_MIN_VERSION = "2026-10-09.3";
+const BACKEND_MIN_VERSION = "2026-10-09.4";
 let backendWarned = false;
 let contentWarned = false;
 
