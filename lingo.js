@@ -387,7 +387,13 @@ function renderList() {
 }
 
 // 換到清單裡的另一張（不會改清單）
+// 換卡後 NAV_LOCK_MS 內不再接受上一張／下一張：換卡時畫面變化不大、手指又停在同一個位置，容易連點兩下一次跳兩張
+const NAV_LOCK_MS = 450;
+let lastNavAt = 0;
+function navLocked() { return performance.now() - lastNavAt < NAV_LOCK_MS; }
+
 function gotoCard(id) {
+  lastNavAt = performance.now();
   state.cardId = id;
   state.revealed = false;
   state.dictate = false;
@@ -395,6 +401,10 @@ function gotoCard(id) {
   resetInputs();
   renderCard();
   window.scrollTo(0, 0);
+  const cardEl = document.querySelector(".lingo-card"); // 淡入一下，讓人看得出卡片換了
+  cardEl.classList.remove("swap");
+  void cardEl.offsetWidth;
+  cardEl.classList.add("swap");
 }
 
 // 清單裡前一張／後一張（不繞圈，第一張沒有前一張、最後一張沒有後一張）；回傳 "" 表示沒有
@@ -458,8 +468,8 @@ document.getElementById("skipQuizBtn").addEventListener("click", () => {
   const card = currentCard();
   if (card) { state.skipQuiz[card.id] = true; renderCard(); }
 });
-document.getElementById("nextBtn").addEventListener("click", () => { const id = stepCardId(1); if (id) gotoCard(id); });
-document.getElementById("prevBtn").addEventListener("click", () => { const id = stepCardId(-1); if (id) gotoCard(id); });
+document.getElementById("nextBtn").addEventListener("click", () => { if (navLocked()) return; const id = stepCardId(1); if (id) gotoCard(id); });
+document.getElementById("prevBtn").addEventListener("click", () => { if (navLocked()) return; const id = stepCardId(-1); if (id) gotoCard(id); });
 
 document.getElementById("speakBtn").addEventListener("click", () => speakCard(false));
 document.getElementById("slowBtn").addEventListener("click", () => speakCard(true));

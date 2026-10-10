@@ -176,3 +176,6 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-stat-cell.empty { color: var(--text-dim); }
 .lingo-actions-bar .lingo-hold { padding: 0; }
 .lingo-stat-row { grid-template-columns: minmax(0, 1.7fr) repeat(2, minmax(0, 1fr)); }
+.lingo-card.swap { animation: lingoSwap 0.2s ease-out; }
+@keyframes lingoSwap { from { opacity: 0.25; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lingo-card.swap { animation: none; } }
