@@ -179,3 +179,4 @@ body.lingo-home .app { padding-bottom: calc(84px + env(safe-area-inset-bottom));
 .lingo-card.swap { animation: lingoSwap 0.2s ease-out; }
 @keyframes lingoSwap { from { opacity: 0.25; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .lingo-card.swap { animation: none; } }
+.lingo-nav .attn { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }

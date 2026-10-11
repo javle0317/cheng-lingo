@@ -246,6 +246,7 @@ function renderCard() {
   document.getElementById("navBox").classList.toggle("hidden", plan.length < 2);
   document.getElementById("prevBtn").disabled = idx <= 0;
   document.getElementById("nextBtn").disabled = idx >= plan.length - 1;
+  document.getElementById("nextBtn").classList.toggle("attn", done && idx < plan.length - 1); // 這張讀過了：把「下一張」標出來，提示下一步
 }
 
 // 閱讀理解題：選項順序每張卡第一次顯示時隨機排好並記住（資料裡第一個選項是正解），作答後顯示對錯與中文解釋
@@ -414,14 +415,6 @@ function stepCardId(dir) {
   return e ? e.cardId : "";
 }
 
-function nextCardId(onlyUndone) {
-  const plan = planOf(state.lang);
-  const i = plan.findIndex(e => e.cardId === state.cardId);
-  const order = plan.slice(i + 1).concat(plan.slice(0, i)); // 目前這張之後、繞一圈
-  const pick = onlyUndone ? order.find(e => !e.done) : order[0];
-  return pick ? pick.cardId : "";
-}
-
 document.querySelectorAll(".lingo-mode").forEach(b => b.addEventListener("click", () => {
   state.mode = b.dataset.mode;
   state.revealed = false;
@@ -516,11 +509,8 @@ async function setDone(done, rating) {
     state.stats = null;
     if (!done) { showToast("已取消已讀"); return; }
     if (rating && card) saveRating(card.id, rating);
-    showToast("已標記為已讀");
-    const next = nextCardId(true);
-    if (next) { gotoCard(next); return; }
-    showToast("今天的卡都練完了");
-    goView("home");
+    // 標記只是標記，不自動換卡：要不要換、什麼時候換由你按「下一張」決定
+    showToast(planOf(state.lang).every(e => e.done) ? "已標記為已讀，今天的卡都練完了" : "已標記為已讀");
   } catch (err) {
     setStatus("更新失敗：" + err.message, true);
   } finally {
