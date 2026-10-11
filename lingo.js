@@ -389,9 +389,11 @@ function renderList() {
 
 // 換到清單裡的另一張（不會改清單）
 // 換卡後 NAV_LOCK_MS 內不再接受上一張／下一張：換卡時畫面變化不大、手指又停在同一個位置，容易連點兩下一次跳兩張
+// 按住標記的過程（按住中、等後端回應中）也鎖住：後端回應要一秒左右，這段時間畫面沒變，手指再按「下一張」就會跟自動換卡疊在一起跳兩張
 const NAV_LOCK_MS = 450;
 let lastNavAt = 0;
-function navLocked() { return performance.now() - lastNavAt < NAV_LOCK_MS; }
+let marking = false;   // 正在按住標記，或標記的請求還沒回來
+function navLocked() { return marking || performance.now() - lastNavAt < NAV_LOCK_MS; }
 
 function gotoCard(id) {
   lastNavAt = performance.now();
@@ -409,6 +411,14 @@ function gotoCard(id) {
 }
 
 // 清單裡前一張／後一張（不繞圈，第一張沒有前一張、最後一張沒有後一張）；回傳 "" 表示沒有
+// 目前這張之後（繞一圈）第一張還沒讀的；沒有就回傳 ""
+function nextCardId() {
+  const plan = planOf(state.lang);
+  const i = plan.findIndex(e => e.cardId === state.cardId);
+  const pick = plan.slice(i + 1).concat(plan.slice(0, i)).find(e => !e.done);
+  return pick ? pick.cardId : "";
+}
+
 function stepCardId(dir) {
   const plan = planOf(state.lang);
   const e = plan[plan.findIndex(x => x.cardId === state.cardId) + dir];
@@ -502,18 +512,23 @@ document.getElementById("copyInput").addEventListener("input", (e) => {
 // 打卡成功就回到今日。背的自評（忘了／模糊／記得）先只記在這台裝置，之後後端改版再決定複習間隔
 async function setDone(done, rating) {
   const card = currentCard();
-  const btns = document.querySelectorAll("#doneBtn, #ratingBox button");
+  const btns = document.querySelectorAll("#doneBtn, #ratingBox button, #prevBtn, #nextBtn");
+  marking = true;
   btns.forEach(b => { b.disabled = true; });
   try {
     state.today = await api("setCardDone", { date: toDateStr(new Date()), lang: state.lang, id: state.cardId, done: done ? "1" : "0", mode: state.mode });
     state.stats = null;
     if (!done) { showToast("已取消已讀"); return; }
     if (rating && card) saveRating(card.id, rating);
-    // 標記只是標記，不自動換卡：要不要換、什麼時候換由你按「下一張」決定
-    showToast(planOf(state.lang).every(e => e.done) ? "已標記為已讀，今天的卡都練完了" : "已標記為已讀");
+    showToast("已標記為已讀");
+    const next = nextCardId();
+    if (next) { gotoCard(next); return; }
+    showToast("今天的卡都練完了");
+    goView("home");
   } catch (err) {
     setStatus("更新失敗：" + err.message, true);
   } finally {
+    marking = false;
     btns.forEach(b => { b.disabled = false; }); // 不管成功或失敗都要恢復，否則下一輪進來按鈕還是停用的
     if (state.view === "session") renderCard();
   }
@@ -532,11 +547,12 @@ const HOLD_MS = 600;
 (function setupHold() {
   const btn = document.getElementById("doneBtn");
   let timer = null, raf = 0, start = 0;
-  const reset = () => { clearTimeout(timer); cancelAnimationFrame(raf); timer = null; btn.classList.remove("holding"); btn.style.setProperty("--p", "0"); };
+  const reset = () => { clearTimeout(timer); cancelAnimationFrame(raf); timer = null; marking = false; btn.classList.remove("holding"); btn.style.setProperty("--p", "0"); };
   const fire = () => { const e = currentEntry(); setDone(!e.done, ""); };
   btn.addEventListener("pointerdown", () => {
     if (btn.disabled || timer) return;
     start = performance.now();
+    marking = true; // 按住期間就先鎖住上一張／下一張
     btn.classList.add("holding");
     const tick = () => { btn.style.setProperty("--p", String(Math.min(1, (performance.now() - start) / HOLD_MS))); raf = requestAnimationFrame(tick); };
     tick();
